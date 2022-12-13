@@ -4,19 +4,6 @@ export const theme = {
     white: '#ffffff',
     accent: '#F59256',
     orange: '#FF6101',
-    // green: '#24CCA7',
-    // pink: '#FF6596',
-    // blue: '#4A56E2',
-    // gray: '#BDBDBD',
-    // grayIcon: '#E0E0E0',
-    // error: '#ff0000',
-
-    // button: {
-    //   edit: '#F59256',
-    //   delete: '#4A56E2',
-    //   plus: '#24CCA7',
-    //   active: '#24CCA7',
-    // },
 
     background: {
       white: '#FFFFFF',
