@@ -37,46 +37,54 @@ const authSlice = createSlice({
     deleteTask(state, action) {},
     toggleCompleted(state, action) {},
   },
-  extraReducers: {
-    [registerUser.pending]: pendingHandlerAuth,
-    [loginUser.pending]: pendingHandlerAuth,
-    [logOutUser.pending]: pendingHandlerAuth,
-    [refreshUser.pending]: pendingHandlerAuth,
-    [registerUser.rejected]: rejectedHandler,
-    [loginUser.rejected]: rejectedHandler,
-    // [loginUser.rejected] (state, action) {
-    //     return {...state, isLoading: false, error: action.payload}
-    // },
-    [logOutUser.rejected]: rejectedHandler,
-    [refreshUser.rejected]: rejectedHandler,
-    [registerUser.fulfilled](state, action) {
-      state.error = null;
-      state.isLoading = false;
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-    },
-
-    [loginUser.fulfilled](state, action) {
-      console.log(action.payload);
-      state.error = null;
-      state.isLoading = false;
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-    },
-
-    [logOutUser.fulfilled](state, action) {
-      state.error = null;
-      state.isLoading = false;
-      state.user = {};
-      state.token = null;
-    },
-
-    [refreshUser.fulfilled](state, action) {
-      state.user = action.payload;
-      state.error = null;
-      state.isLoading = false;
-    },
+  extraReducers: builder => {
+    builder.addCase(registerUser.pending, pendingHandlerAuth);
+    builder.addCase(loginUser.pending, pendingHandlerAuth);
+    builder.addCase(logOutUser.pending, pendingHandlerAuth);
+    builder.addCase(registerUser.rejected, pendingHandlerAuth);
+    builder.addCase(loginUser.rejected, pendingHandlerAuth);
+    builder.addCase(logOutUser.rejected, pendingHandlerAuth);
   },
 });
 
 export const authReducer = authSlice.reducer;
+
+// [registerUser.pending]: pendingHandlerAuth,
+// [loginUser.pending]: pendingHandlerAuth,
+// [logOutUser.pending]: pendingHandlerAuth,
+// [refreshUser.pending]: pendingHandlerAuth,
+// [registerUser.rejected]: rejectedHandler,
+// [loginUser.rejected]: rejectedHandler,
+// // [loginUser.rejected] (state, action) {
+// //     return {...state, isLoading: false, error: action.payload}
+// // },
+// [logOutUser.rejected]: rejectedHandler,
+// [refreshUser.rejected]: rejectedHandler,
+// [registerUser.fulfilled](state, action) {
+//   state.error = null;
+//   state.isLoading = false;
+//   state.user = action.payload.user;
+//   state.token = action.payload.token;
+// },
+
+// [loginUser.fulfilled](state, action) {
+//   console.log(action.payload);
+//   state.error = null;
+//   state.isLoading = false;
+//   state.user = action.payload.user;
+//   state.token = action.payload.token;
+// },
+
+// [logOutUser.fulfilled](state, action) {
+//   state.error = null;
+//   state.isLoading = false;
+//   state.user = {};
+//   state.token = null;
+// },
+
+// [refreshUser.fulfilled](state, action) {
+//   state.user = action.payload;
+//   state.error = null;
+//   state.isLoading = false;
+// },
+// },

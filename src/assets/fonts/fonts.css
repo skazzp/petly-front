@@ -1,25 +1,3 @@
-/* @font-face {
-    font-family: 'Circe';
-    src: url('./circe/Circe-Regular.eot');
-    src: local('Circe'), local('Circe-Regular'),
-        url('./circe/Circe-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./circe/Circe-Regular.woff') format('woff'),
-        url('./circe/Circe-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Circe';
-    src: url('./circe/Circe-Bold.eot');
-    src: local('Circe Bold'), local('Circe-Bold'),
-        url('./circe/Circe-Bold.eot?#iefix') format('embedded-opentype'),
-        url('./circe/Circe-Bold.woff') format('woff'),
-        url('./circe/Circe-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-} */
-
 @font-face {
   font-family: 'Poppins';
   src: url('./poppins/Poppins-Regular.eot');
