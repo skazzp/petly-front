@@ -19,9 +19,11 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<SharedLayout />}></Route>
+        <Route path="/" element={<SharedLayout />}>
+          <Route path="/user" element={<h1>UserPage</h1>}/>
+        </Route>
         <Route path="/test" element={<Test />} />
-        <Route path="*" element={<Navigate to={'/'} />} />
+        {/* <Route path="*" element={<Navigate to={'/'} />} /> */}
       </Routes>
     </>
   );

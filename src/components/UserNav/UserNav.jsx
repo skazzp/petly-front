@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom"
-export const UserNav = () => {
+import { Link, NavLink } from "react-router-dom";
+import icon from '../../assets/images/icons.svg'
+export const UserNav = ({toggleMenu}) => {
     return(<div>
-<Link to="/user">UserPage</Link>
+<NavLink to="/user" style={{display: 'block', textAlign: "center"}} onClick={toggleMenu}>
+    <svg style={{width: '17px', height: '17px'}}>
+        <use href={icon + `#icon-avatar`} ></use>
+    </svg>
+    <span>Account</span>
+</NavLink>
     </div>)
 }
