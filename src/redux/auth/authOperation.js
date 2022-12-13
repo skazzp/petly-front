@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://wallet.goit.ua/';
+axios.defaults.baseURL = 'https://petly-bc26.cyclic.app/';
 
 export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -32,23 +32,24 @@ export const loginUser = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-        return thunkApi.rejectWithValue(error.response.status);
+      return thunkApi.rejectWithValue(error.response.status);
     }
   }
 );
+
 export const logOutUser = createAsyncThunk(
   'auth/logOutUser',
   async (_, thunkApi) => {
     try {
       const response = await axios.delete('/api/auth/sign-out');
       clearAuthHeader();
-      // console.log('logOutUser', response);
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
   }
 );
+
 export const refreshUser = createAsyncThunk(
   'auth/refreshUser',
   async (_, thunkApi) => {
