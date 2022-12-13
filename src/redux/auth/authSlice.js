@@ -8,25 +8,22 @@ import {
 } from './authOperation';
 
 const userInitialState = {
-  user: {
-    id: 'string',
-    username: 'infinity',
-    email: 'infinity@gmail.com',
-    password: 'infinity26',
-    balance: 0,
-  },
+  user: {},
   token: null,
   isLoading: false,
   error: null,
 };
+
 const pendingHandlerAuth = (state, action) => {
   state.isLoading = true;
   state.error = null;
 };
+
 const rejectedHandler = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };
+
 const authSlice = createSlice({
   name: 'auth',
 
@@ -39,52 +36,40 @@ const authSlice = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(registerUser.pending, pendingHandlerAuth);
+    builder.addCase(registerUser.rejected, rejectedHandler);
+    builder.addCase(registerUser.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+    });
+
     builder.addCase(loginUser.pending, pendingHandlerAuth);
+    builder.addCase(loginUser.rejected, rejectedHandler);
+    builder.addCase(loginUser.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+    });
+
     builder.addCase(logOutUser.pending, pendingHandlerAuth);
-    builder.addCase(registerUser.rejected, pendingHandlerAuth);
-    builder.addCase(loginUser.rejected, pendingHandlerAuth);
-    builder.addCase(logOutUser.rejected, pendingHandlerAuth);
+    builder.addCase(logOutUser.rejected, rejectedHandler);
+    builder.addCase(logOutUser.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.user = {};
+      state.token = null;
+    });
+
+    builder.addCase(refreshUser.pending, pendingHandlerAuth);
+    builder.addCase(refreshUser.rejected, rejectedHandler);
+    builder.addCase(refreshUser.fulfilled, (state, action) => {
+      state.user = action.payload;
+      state.error = null;
+      state.isLoading = false;
+    });
   },
 });
 
 export const authReducer = authSlice.reducer;
-
-// [registerUser.pending]: pendingHandlerAuth,
-// [loginUser.pending]: pendingHandlerAuth,
-// [logOutUser.pending]: pendingHandlerAuth,
-// [refreshUser.pending]: pendingHandlerAuth,
-// [registerUser.rejected]: rejectedHandler,
-// [loginUser.rejected]: rejectedHandler,
-// // [loginUser.rejected] (state, action) {
-// //     return {...state, isLoading: false, error: action.payload}
-// // },
-// [logOutUser.rejected]: rejectedHandler,
-// [refreshUser.rejected]: rejectedHandler,
-// [registerUser.fulfilled](state, action) {
-//   state.error = null;
-//   state.isLoading = false;
-//   state.user = action.payload.user;
-//   state.token = action.payload.token;
-// },
-
-// [loginUser.fulfilled](state, action) {
-//   console.log(action.payload);
-//   state.error = null;
-//   state.isLoading = false;
-//   state.user = action.payload.user;
-//   state.token = action.payload.token;
-// },
-
-// [logOutUser.fulfilled](state, action) {
-//   state.error = null;
-//   state.isLoading = false;
-//   state.user = {};
-//   state.token = null;
-// },
-
-// [refreshUser.fulfilled](state, action) {
-//   state.user = action.payload;
-//   state.error = null;
-//   state.isLoading = false;
-// },
-// },
