@@ -1,13 +1,34 @@
 {
   "files": {
-    "main.css": "/petly-front/static/css/main.7acaea2f.css",
-    "main.js": "/petly-front/static/js/main.b0e6b370.js",
+    "main.css": "/petly-front/static/css/main.117d7bc8.css",
+    "main.js": "/petly-front/static/js/main.2da75328.js",
+    "static/media/Poppins-Regular.eot": "/petly-front/static/media/Poppins-Regular.dd1ec14243b1116b57a0.eot",
+    "static/media/Poppins-Regular.ttf": "/petly-front/static/media/Poppins-Regular.9c4f95b9398348dfe795.ttf",
+    "static/media/Poppins-Bold.eot": "/petly-front/static/media/Poppins-Bold.22cfe96ce2d603dcf200.eot",
+    "static/media/Poppins-Bold.ttf": "/petly-front/static/media/Poppins-Bold.13c17db889176bed9ddf.ttf",
+    "static/media/Poppins-Regular.woff": "/petly-front/static/media/Poppins-Regular.7d50cfcb7fdf5bd337a0.woff",
+    "static/media/Poppins-Bold.woff": "/petly-front/static/media/Poppins-Bold.125974335c0c9046c212.woff",
+    "static/media/manrope-v13-latin_cyrillic-500.svg": "/petly-front/static/media/manrope-v13-latin_cyrillic-500.1d95003ab976d6ea08f4.svg",
+    "static/media/manrope-v13-latin_cyrillic-700.svg": "/petly-front/static/media/manrope-v13-latin_cyrillic-700.ca7d51d16dafac7ef720.svg",
+    "static/media/manrope-v13-latin_cyrillic-regular.svg": "/petly-front/static/media/manrope-v13-latin_cyrillic-regular.f9f7b8f5159c9e3f0157.svg",
+    "static/media/manrope-v13-latin_cyrillic-500.ttf": "/petly-front/static/media/manrope-v13-latin_cyrillic-500.d83d9800bd8cc10e0cef.ttf",
+    "static/media/manrope-v13-latin_cyrillic-regular.ttf": "/petly-front/static/media/manrope-v13-latin_cyrillic-regular.160cd52a2da56e1456a0.ttf",
+    "static/media/manrope-v13-latin_cyrillic-700.ttf": "/petly-front/static/media/manrope-v13-latin_cyrillic-700.aa869e08ab462125caac.ttf",
+    "static/media/manrope-v13-latin_cyrillic-regular.woff": "/petly-front/static/media/manrope-v13-latin_cyrillic-regular.e62db8200e37b75a4fcb.woff",
+    "static/media/manrope-v13-latin_cyrillic-700.woff": "/petly-front/static/media/manrope-v13-latin_cyrillic-700.91b23c6d19dd1bab28b1.woff",
+    "static/media/manrope-v13-latin_cyrillic-500.woff": "/petly-front/static/media/manrope-v13-latin_cyrillic-500.c8721b16e62fa490b861.woff",
+    "static/media/manrope-v13-latin_cyrillic-700.eot": "/petly-front/static/media/manrope-v13-latin_cyrillic-700.d858a4e614808ba4668c.eot",
+    "static/media/manrope-v13-latin_cyrillic-regular.eot": "/petly-front/static/media/manrope-v13-latin_cyrillic-regular.c5923229ac1bda888d7f.eot",
+    "static/media/manrope-v13-latin_cyrillic-500.eot": "/petly-front/static/media/manrope-v13-latin_cyrillic-500.d21e85592c4f2c02e14a.eot",
+    "static/media/manrope-v13-latin_cyrillic-700.woff2": "/petly-front/static/media/manrope-v13-latin_cyrillic-700.37aa7a32bdad260f7d03.woff2",
+    "static/media/manrope-v13-latin_cyrillic-regular.woff2": "/petly-front/static/media/manrope-v13-latin_cyrillic-regular.63ce9221ad65dca24c29.woff2",
+    "static/media/manrope-v13-latin_cyrillic-500.woff2": "/petly-front/static/media/manrope-v13-latin_cyrillic-500.e46ccb57689dd45d7346.woff2",
     "index.html": "/petly-front/index.html",
-    "main.7acaea2f.css.map": "/petly-front/static/css/main.7acaea2f.css.map",
-    "main.b0e6b370.js.map": "/petly-front/static/js/main.b0e6b370.js.map"
+    "main.117d7bc8.css.map": "/petly-front/static/css/main.117d7bc8.css.map",
+    "main.2da75328.js.map": "/petly-front/static/js/main.2da75328.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.b0e6b370.js"
+    "static/css/main.117d7bc8.css",
+    "static/js/main.2da75328.js"
   ]
 }
