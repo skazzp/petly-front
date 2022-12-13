@@ -1,22 +1,17 @@
-import { Navigate, Route, Routes} from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 
 const Test = () => {
-  return(<h1>Insert there your Component for testing</h1>)
-}
-
+  return <h1>Insert there your Component for testing</h1>;
+};
 
 export const App = () => {
-
-      return (
+  return (
     <>
-    <Routes>
-      <Route path='/' element={<SharedLayout/>}>
-      </Route>
-      <Route path='/test' element={<Test/>}/>
-     </Routes>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}></Route>
+        <Route path="/test" element={<Test />} />
+      </Routes>
     </>
   );
 };
-
-
