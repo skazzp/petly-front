@@ -4,11 +4,14 @@ export const schema = yup.object().shape({
   email: yup.string().email().required('enter your E-mail, please'),
   password: yup
     .string()
-    .min(6, 'min Password 6 simvols')
-    .max(12, 'max Password 12 simvols')
+    .min(7, 'min Password 7 simvols')
+    .max(32, 'max Password 32 simvols')
     .required('enter your Password, please'),
-  firstName: yup.string().required('enter your First Name, please'),
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref('password'), null], 'Passwords must match'),
+    .oneOf([yup.ref('password'), null], 'Passwords must match')
+    .required('confirm password, please'),
+  name: yup.string().required('enter your Name, please'),
+  city: yup.string().required('chenge your city, please'),
+  phone: yup.string().required('enter your adress, please'),
 });

@@ -8,7 +8,14 @@ import {
 } from './authOperation';
 
 const userInitialState = {
-  user: {},
+  user: {
+    email: '',
+    password: '',
+    confirmPassword: '',
+    name: '',
+    city: '',
+    phone: '',
+  },
   token: null,
   isLoading: false,
   error: null,
