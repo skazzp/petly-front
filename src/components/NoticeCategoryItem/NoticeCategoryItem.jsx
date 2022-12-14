@@ -1,5 +1,5 @@
 import icon from '../../assets/images/icons.svg';
-import img from '../../assets/images/bg/Bg-girl-desc-1x.png';
+import defaultImage from '../../assets/images/default-pets.jpg';
 import {
   BtnAddFavorite,
   BtnBox,
@@ -17,34 +17,47 @@ import {
   Wrapper,
 } from './NoticeCategoryItem.styled';
 
-const NoticeCategoryItem = () => {
+const NoticeCategoryItem = ({
+  birthday,
+  breed,
+  category,
+  comments,
+  location,
+  name,
+  owner,
+  photoURL,
+  price,
+  sex,
+  title,
+  _id,
+}) => {
   return (
     <Item>
-      <Image src={img} alt="dog" />
-      <Category>In good hands</Category>
+      <Image src={photoURL ? photoURL : defaultImage} alt={breed} />
+      <Category>{category}</Category>
       <BtnAddFavorite type="button">
         <svg width="24" height="22">
           <use href={icon + '#heart'}></use>
         </svg>
       </BtnAddFavorite>
       <Wrapper>
-        <Title>Сute dog looking for a home</Title>
+        <Title>{title}</Title>
         <InfoList>
           <InfoItem>
             <InfoTitle>Breed:</InfoTitle>
-            <Info>Pomeranian</Info>
+            <Info>{breed} </Info>
           </InfoItem>
           <InfoItem>
             <InfoTitle>Place:</InfoTitle>
-            <Info>Lviv</Info>
+            <Info>{location}</Info>
           </InfoItem>
           <InfoItem>
             <InfoTitle>Age:</InfoTitle>
-            <Info>one year</Info>
+            <Info>{birthday}</Info>
           </InfoItem>
           <InfoItem>
             <InfoTitle>Price:</InfoTitle>
-            <Info>50$</Info>
+            <Info>{price}</Info>
           </InfoItem>
         </InfoList>
       </Wrapper>
