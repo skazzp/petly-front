@@ -5,21 +5,25 @@ import { Navigation } from "components/Navigation/Navigation"
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Container, IconBtn } from './Header.styled'
-export const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
-    }
-    const closeMenu = () => setIsMenuOpen(false)
+import { UserNav } from 'components/UserNav/UserNav'
+import { AuthNav } from 'components/AuthNav/AuthNav'
+import { Nav } from 'components/Nav/Nav'
 
-    return ( <div>
+export const Header = ({toggleMenu, isMenuOpen}) => {
+
+    return ( <div style ={{position: "relative"}}>
         <Container >
         <Logo/>
-            <IconBtn  onClick={toggleMenu}>
-                <use href={icon + (isMenuOpen ? `#icon-close` : `#icon-menu`)}></use>
+        <Navigation>
+            <Nav/>
+            <UserNav/>
+            <AuthNav/>
+        </Navigation>
+        
+        {/* <IconBtn  onClick={toggleMenu}>
+                <use href={icon + (isMenuOpen ? `#closeModal-button-mobile` : `#burger-menu-mobile`)}></use>
                 
-            </IconBtn>
+        </IconBtn> */}
         </Container>
-    {isMenuOpen && <Navigation toggleMenu={toggleMenu} onClick={toggleMenu}/>}
     </div>)
 }

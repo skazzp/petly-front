@@ -4,8 +4,8 @@ import { Link, NavLink } from "react-router-dom"
 export const AuthNav = ({toggleMenu}) => {
     return(
         <Box>
-            <AuthNavLink to='/register' onClick={toggleMenu}>Login</AuthNavLink > 
-            <AuthInversionNavigationLink to='/login' onClick={toggleMenu}>Registration</AuthInversionNavigationLink>
+            <AuthNavLink to='/login' onClick={toggleMenu}>Login</AuthNavLink > 
+            <AuthInversionNavigationLink to='/register' onClick={toggleMenu}>Registration</AuthInversionNavigationLink>
         </Box>
     )
 }

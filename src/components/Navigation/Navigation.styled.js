@@ -48,8 +48,9 @@ box-sizing: border-box;
 width: 144px;
 `
 export const UserSvg = styled.svg`
-width: 17px;
-height: 17px; 
+width: 20px;
+height: 20px;
+margin-right: 12px;
 `
 export const NavTitleBox = styled.ul`
 text-align: center;
@@ -68,6 +69,7 @@ transition: color 300ms linear, text-decoration 300ms linear;
     color: #F59256;
     text-decoration: underline; 
 };
+
 `
 
 export const NavTitle = styled(NavLink)`
@@ -77,4 +79,8 @@ font-weight: 500;
 font-size: 32px;
 line-height: 1.37;
 letter-spacing: 0.04em;
+&.active {
+    color: #F59256;
+    text-decoration: underline;  
+}
 `
