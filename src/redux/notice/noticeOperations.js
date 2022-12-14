@@ -95,3 +95,54 @@ export const getUserNotices = createAsyncThunk(
     }
   }
 );
+
+// Remove from favorites
+export const deleteFavorites = createAsyncThunk(
+  'notice/deleteFavorites',
+  async (item, thunkApi) => {
+    try {
+      const state = thunkApi.getState();
+      const persistedToken = state.auth.token;
+      setAuthHeader(persistedToken);
+      const response = await axios.delete(`api/notices/favorites/${item.id}`);
+      console.log('notice/deleteFavorites', response);
+      return response.data; // TODO
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);
+
+// Add to favorites
+export const addFavorites = createAsyncThunk(
+  'notice/addFavorites',
+  async (item, thunkApi) => {
+    try {
+      const state = thunkApi.getState();
+      const persistedToken = state.auth.token;
+      setAuthHeader(persistedToken);
+      const response = await axios.get(`api/notices/favorites/${item.id}`);
+      console.log('notice/addFavorites', response);
+      return response.data; // TODO
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);
+
+// Add to favorites
+export const getByCategory = createAsyncThunk(
+  'notice/getByCategory',
+  async (category, thunkApi) => {
+    try {
+      const state = thunkApi.getState();
+      const persistedToken = state.auth.token;
+      setAuthHeader(persistedToken);
+      const response = await axios.get(`api/notices/category/${category}`);
+      console.log('notice/getByCategory', response);
+      return response.data; // TODO
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);
