@@ -3,7 +3,7 @@
 // import { toast } from 'react-toastify';
 // import { selectToken } from '../../redux/auth/authSelectors';
 // import ModalPage from '../../pages';
-// import AddNoticeModal from '../';
+// import ModalAddNotice from '../ModalAddNotice';
 import icons from '../../assets/images/icons.svg';
 import { BtnWrapper, AddBtn, Plus } from './AddNoticeButton.styled';
 
@@ -37,11 +37,11 @@ export default function AddNoticeButton() {
             setIsOpen(false);
           }}
         >
-          <AddNoticeModal
+          <ModalAddNotice
             onClose={() => {
               setIsOpen(false);
             }}
-          ></AddNoticeModal>
+          />
         </ModalPage>
       )} */}
     </>
