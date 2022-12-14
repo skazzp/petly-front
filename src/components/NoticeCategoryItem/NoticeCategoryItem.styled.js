@@ -5,6 +5,20 @@ export const Item = styled.li`
   width: 280px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 12px;
+
+  background: ${props => props.theme.colors.white};
+
+  box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
+  border-radius: 0px 0px 20px 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 288px;
+  }
 `;
 
 export const Image = styled.img`
@@ -12,6 +26,18 @@ export const Image = styled.img`
   height: 288px;
 
   padding-bottom: ${props => props.theme.space[4]}px;
+
+  background-color: black;
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    height: 288px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 288px;
+    height: 288px;
+  }
 `;
 
 export const Category = styled.p`
@@ -52,6 +78,12 @@ export const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-bottom: ${props => props.theme.space[4]}px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -121,7 +153,8 @@ export const BtnLearnMore = styled.button`
   border: 2px solid #f59256;
   border-radius: ${props => props.theme.space[6]}px;
 
-  :hover {
+  :hover,
+  :focus {
     border: 2px solid #ff6101;
     color: ${props => props.theme.colors.orange};
   }
@@ -142,8 +175,13 @@ export const BtnDlt = styled.button`
   border: 2px solid #f59256;
   border-radius: ${props => props.theme.space[6]}px;
 
-  :hover {
+  :hover,
+  :focus {
     border: 2px solid #ff6101;
     color: ${props => props.theme.colors.orange};
   }
+`;
+
+export const Span = styled.span`
+  padding-right: 15px;
 `;
