@@ -28,8 +28,15 @@ export const App = () => {
         <Route path="/" element={<SharedLayout />}>
           <Route path="/user" element={<h1>UserPage</h1>} />
         </Route>
+        {/* component for tests */}
         <Route path="/test" element={<Test />} />
-        {/* <Route path="*" element={<Navigate to={'/'} />} /> */}
+        {/* component for tests */}
+        <Route path="/register" element={<Test />} />
+        <Route path="/login" element={<Test />} />
+        <Route path="/register" element={<Test />} />
+        <Route path="/friends" element={<Test />} />
+        <Route path="/news" element={<Test />} />
+
         <Route path="/notice" element={<NoticesPage />}>
           <Route path="lost-found" element={<p>lost</p>} />
           <Route path="for-free" element={<p>free</p>} />
@@ -37,6 +44,7 @@ export const App = () => {
           <Route path="favorite" element={<p>favorite</p>} />
           <Route path="own" element={<p>own</p>} />
         </Route>
+        {/* <Route path="*" element={<Navigate to={'/'} />} /> */}
       </Routes>
     </>
   );
