@@ -1,18 +1,11 @@
 import NoticesPage from 'pages/NoticesPage/NoticesPage';
+import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
 import { Navigate, Route, Routes } from 'react-router-dom';
-
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { refreshUser } from 'redux/auth/authOperation';
-// import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
+import { LoadingMessage } from 'react-select/dist/declarations/src/components/Menu';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 
 const Test = () => {
-  return (
-    <>
-      <h1>Insert there your Component for testing</h1>;
-    </>
-  );
+  return <h1>Insert there your Component for testing</h1>;
 };
 
 export const App = () => {
@@ -28,15 +21,14 @@ export const App = () => {
         <Route path="/" element={<SharedLayout />}>
           <Route path="/user" element={<h1>UserPage</h1>} />
         </Route>
-        {/* component for tests */}
+
         <Route path="/test" element={<Test />} />
-        {/* component for tests */}
-        <Route path="/register" element={<Test />} />
-        <Route path="/login" element={<Test />} />
+
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="/login" element={<LoadingMessage />} />
         <Route path="/register" element={<Test />} />
         <Route path="/friends" element={<Test />} />
         <Route path="/news" element={<Test />} />
-
         <Route path="/notice" element={<NoticesPage />}>
           <Route path="lost-found" element={<p>lost</p>} />
           <Route path="for-free" element={<p>free</p>} />

@@ -7,6 +7,7 @@ export const Div = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 0px 20px;
+  width: 280px;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -17,12 +18,11 @@ export const Div = styled.div`
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
     border-radius: 40px;
     padding: 60px 80px 60px 80px;
-    max-width: 608px;
+    width: 448px;
   }
 
   @media screen and (min-width: 1280px) {
-    max-width: 618px;
-
+    width: 458px;
     z-index: 1;
   }
 `;
@@ -48,39 +48,58 @@ export const Title = styled.h2`
 `;
 
 export const Form = styled.form`
+  min-width: 100%;
   display: flex;
   flex-direction: column;
-  min-width: 280px;
+
   @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1280px) {
-    min-width: 458px;
   }
 `;
 
-export const Input = styled.input`
-  padding: 11px 14px;
-  margin-bottom: 13px;
+export const Label = styled.label`
   background: none;
   border: 1px solid rgba(245, 146, 86, 0.5);
 
   border-radius: 40px;
+  margin-bottom: 13px;
+  padding: 11px 14px;
   :focus,
   :hover {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 100%;
+
+    height: 22px;
+
+    background: #fdf7f2;
+    padding: 14px 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 16px;
+  }
+`;
+
+export const Input = styled.input`
+  outline: none;
+  background: none;
+  border: none;
+  box-shadow: 0;
+  width: 100%;
+  height: 100%;
   ::placeholder {
     font-family: 'Manrope';
     font-weight: 400;
     font-size: 1, 3;
     line-height: 25px;
   }
-  @media screen and (min-width: 768px) {
-    margin-bottom: 16px;
 
-    padding: 14px 32px;
-    background: #fdf7f2;
+  @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1280px) {
@@ -108,7 +127,8 @@ export const Button = styled.button`
 
   :focus,
   :hover {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   }
 
   @media screen and (min-width: 768px) {
