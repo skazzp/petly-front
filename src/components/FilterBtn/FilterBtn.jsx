@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Button, FilterList } from './FilterBtn.styled';
 
 const buttons = [
@@ -33,13 +34,13 @@ function FilterBtn() {
     <>
       <FilterList>
         {buttons.map(b => (
-          <li>
+          <li key={uuidv4()}>
             <Button to={b.link}>{b.btn}</Button>
           </li>
         ))}
         {auth &&
           authButtons.map(b => (
-            <li>
+            <li key={uuidv4()}>
               <Button to={b.link}>{b.btn}</Button>
             </li>
           ))}
