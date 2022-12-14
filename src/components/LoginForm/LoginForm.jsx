@@ -1,6 +1,7 @@
 import {
   Div,
   Title,
+  Label,
   Input,
   Form,
   Button,
@@ -11,10 +12,9 @@ import { useFormik } from 'formik';
 // import { useDispatch } from 'react-redux';
 import { schema } from './Valodation';
 
-
 const LoginForm = () => {
   //  const dispatch = useDispatch();
-  
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -31,20 +31,27 @@ const LoginForm = () => {
     <Div>
       <Title>Login</Title>
       <Form>
-        <Input  placeholder="E-mail"
-              id="email"
-              name="email"
-              type="text"
-              onChange={formik.handleChange}
-              value={formik.values.email}></Input>
-        <Input
-          placeholder="Password"
-              id="password"
-              name="password"
-              type="password"
-              onChange={formik.handleChange}
-              value={formik.values.confirmPassword}
-        ></Input>
+        <Label>
+          <Input
+            placeholder="E-mail"
+            id="email"
+            name="email"
+            type="text"
+            onChange={formik.handleChange}
+            value={formik.values.email}
+          ></Input>
+        </Label>
+        <Label>
+          <Input
+            placeholder="Password"
+            id="password"
+            name="password"
+            type="password"
+            onChange={formik.handleChange}
+            value={formik.values.confirmPassword}
+          ></Input>
+        </Label>
+
         <Button>Login</Button>
       </Form>
       <Span>

@@ -4,7 +4,7 @@ export const schema = yup.object().shape({
   email: yup.string().email().required('enter your E-mail, please'),
   password: yup
     .string()
-    .min(6, 'min Password 6 simvols')
-    .max(12, 'max Password 12 simvols')
+    .min(7, 'min Password 7 simvols')
+    .max(32, 'max Password 32 simvols')
     .required('enter your Password, please'),
 });
