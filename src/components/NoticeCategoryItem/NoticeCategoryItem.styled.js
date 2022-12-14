@@ -27,8 +27,6 @@ export const Image = styled.img`
 
   padding-bottom: ${props => props.theme.space[4]}px;
 
-  background-color: black;
-
   @media screen and (min-width: 768px) {
     width: 336px;
     height: 288px;
