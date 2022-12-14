@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { setAuthHeader } from 'redux/auth/authOperation';
+// import { setAuthHeader } from 'redux/auth/authOperation';
 
 axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
 
@@ -19,7 +19,7 @@ export const createNotice = createAsyncThunk(
 );
 
 // Get all notices for logged in user
-export const getAllTransactions = createAsyncThunk(
+export const getAllNotices = createAsyncThunk(
   'notice/getAllNotices',
   async (_, thunkApi) => {
     try {
@@ -59,58 +59,3 @@ export const deleteNotices = createAsyncThunk(
     }
   }
 );
-
-// Get transactions summary for period
-export const getTransactionsForPeriod = createAsyncThunk(
-  'transaction/getTransactionsForPeriod',
-  async (date, thunkApi) => {
-    const state = thunkApi.getState();
-    const persistedToken = state.auth.token;
-
-    setAuthHeader(persistedToken);
-
-    if (persistedToken === null) {
-      return thunkApi.rejectWithValue('Unable to fetch user');
-    }
-
-    try {
-      const response = await axios.get(
-        `api/transactions-summary?month=${date.month}&year=${date.year}`
-      );
-      // console.log('get Transactions For Period', response);
-      return response.data;
-    } catch (error) {
-      return thunkApi.rejectWithValue(error.response.status);
-    }
-  }
-);
-
-// export const getTransactionCategories = createAsyncThunk(
-//   'transaction/getTransactionCategories',
-//   async (_, thunkApi) => {
-//     try {
-//       const response = await axios.get('api/transaction-categories');
-//       // console.log('getTransactionCategories', response);
-
-//       return response.data;
-//     } catch (error) {
-//       return thunkApi.rejectWithValue(error.response.status);
-//     }
-//   }
-// );
-
-// Update transaction
-// export const updateTransaction = createAsyncThunk(
-//   'transaction/updateTransaction',
-//   async ({ id, ...transaction }, thunkApi) => {
-//     const oldSum = thunkApi.getState().transaction.modalData.amount;
-//     try {
-//       const response = await axios.patch(`api/transactions/${id}`, transaction);
-//       // console.log('updateTransaction', response);
-//       const newSum = response.data.amount - oldSum;
-//       return { response: response.data, newSum };
-//     } catch (error) {
-//       return thunkApi.rejectWithValue(error.response.status);
-//     }
-//   }
-// );
