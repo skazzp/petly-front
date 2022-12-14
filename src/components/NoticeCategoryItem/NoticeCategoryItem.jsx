@@ -12,6 +12,7 @@ import {
   InfoList,
   InfoTitle,
   Item,
+  Span,
   Title,
   Wrapper,
 } from './NoticeCategoryItem.styled';
@@ -49,7 +50,12 @@ const NoticeCategoryItem = () => {
       </Wrapper>
       <BtnBox>
         <BtnLearnMore type="button">Learn more</BtnLearnMore>
-        <BtnDlt type="button">Delete</BtnDlt>
+        <BtnDlt type="button">
+          <Span>Delete</Span>
+          <svg width="17" height="17">
+            <use href={icon + '#delete-button'}></use>
+          </svg>
+        </BtnDlt>
       </BtnBox>
     </Item>
   );
