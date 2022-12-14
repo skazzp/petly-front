@@ -7,6 +7,9 @@ margin: 20px 16px;
 
 `
 export const IconBtn = styled.svg`
-width: 30px;
-height: 20px;
+width: 40px;
+height: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
 `

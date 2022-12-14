@@ -1,10 +1,11 @@
+import { AuthInversionNavigationLink, AuthNavLink, Box } from "components/Navigation/Navigation.styled"
 import { Link, NavLink } from "react-router-dom"
 
 export const AuthNav = ({toggleMenu}) => {
     return(
-        <div style={{textAlign: "center"}}>
-            <NavLink to='/register' onClick={toggleMenu}>RegisterPage</NavLink > 
-            <NavLink to='/login' onClick={toggleMenu}>LoginPage</NavLink>
-        </div>
+        <Box>
+            <AuthNavLink to='/register' onClick={toggleMenu}>Login</AuthNavLink > 
+            <AuthInversionNavigationLink to='/login' onClick={toggleMenu}>Registration</AuthInversionNavigationLink>
+        </Box>
     )
 }

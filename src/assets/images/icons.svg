@@ -162,6 +162,6 @@
 <symbol id="Plus-add-pet" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M9 17V9m0 0V1m0 8h8M9 9H1" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
 </symbol>
-<symbol id="avatar account" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="avatar-account" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M14 2.333C7.56 2.333 2.333 7.56 2.333 14c0 6.44 5.227 11.667 11.667 11.667 6.44 0 11.666-5.227 11.666-11.667C25.666 7.56 20.44 2.333 14 2.333ZM14 7a4.088 4.088 0 0 1 4.083 4.083A4.088 4.088 0 0 1 14 15.167a4.088 4.088 0 0 1-4.084-4.084A4.088 4.088 0 0 1 14 7Zm0 16.333c-2.369 0-5.169-.956-7.164-3.36a11.604 11.604 0 0 1 14.327 0c-1.995 2.404-4.795 3.36-7.163 3.36Z" fill="#fff"/>
 </symbol>
