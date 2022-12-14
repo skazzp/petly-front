@@ -16,8 +16,8 @@
 <symbol id="icon-avatar" viewBox="0 0 32 32">
 <path d="M9.00002 0.666992C4.40002 0.666992 0.666687 4.40033 0.666687 9.00033C0.666687 13.6003 4.40002 17.3337 9.00002 17.3337C13.6 17.3337 17.3334 13.6003 17.3334 9.00033C17.3334 4.40033 13.6 0.666992 9.00002 0.666992ZM9.00002 4.00033C10.6084 4.00033 11.9167 5.30866 11.9167 6.91699C11.9167 8.52533 10.6084 9.83366 9.00002 9.83366C7.39169 9.83366 6.08335 8.52533 6.08335 6.91699C6.08335 5.30866 7.39169 4.00033 9.00002 4.00033ZM9.00002 15.667C7.30835 15.667 5.30835 14.9837 3.88335 13.267C5.34302 12.1218 7.1447 11.4993 9.00002 11.4993C10.8553 11.4993 12.657 12.1218 14.1167 13.267C12.6917 14.9837 10.6917 15.667 9.00002 15.667Z" fill="white"/>
 </symbol>
-</defs>
-</svg>
+
+
 <symbol id="male-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g filter="url(#a)">
     <path d="M34.773 0a2 2 0 0 0-2 2v3.519a2 2 0 0 0 2 2h6.258L30.147 18.263a19.539 19.539 0 0 0-10.603-3.104C8.75 15.159 0 23.853 0 34.579 0 45.304 8.75 54 19.544 54c10.793 0 19.541-8.696 19.541-19.421 0-4.077-1.263-7.86-3.423-10.984L46.363 12.96v6.134a2 2 0 0 0 2 2h3.566c1.105 0 2-.895 2.002-2 .01-5.473.058-11.633.067-17.095C54 .895 53.105 0 52 0H34.773Zm-15.23 22.976c6.45 0 11.676 5.194 11.676 11.603 0 6.408-5.227 11.604-11.675 11.604-6.45 0-11.678-5.196-11.678-11.604 0-6.409 5.229-11.603 11.678-11.603Z" fill="#23C2EF"/>
@@ -44,7 +44,7 @@
 <symbol id="femaile-icon" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M20 0C9.357 0 .727 8.63.727 19.273c0 8.813 5.919 16.246 13.997 18.542.922.262 1.606 1.075 1.606 2.033v2.553a2 2 0 0 1-2 2h-4.266a2 2 0 0 0-2 2v3.337a2 2 0 0 0 2 2h4.266a2 2 0 0 1 2 2V58a2 2 0 0 0 2 2h3.337a2 2 0 0 0 2-2v-4.262a2 2 0 0 1 2-2h4.265a2 2 0 0 0 2-2v-3.337a2 2 0 0 0-2-2h-4.265a2 2 0 0 1-2-2v-4.204c8.889-1.713 15.606-9.535 15.606-18.924C39.273 8.63 30.643 0 20 0Zm0 7.664c6.412 0 11.61 5.197 11.61 11.61 0 6.41-5.198 11.608-11.61 11.608-6.412 0-11.61-5.197-11.61-11.609S13.589 7.663 20 7.663Z" fill="#FF8787"/>
 </symbol>
-<symbol id="button-loadPetsImage" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="button-load-pets-image" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M25.5 49.166V25.5m0 0V1.833m0 23.667h23.667m-23.667 0H1.833" stroke="#111" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>
 </symbol>
 <symbol id="male-icon-mobile" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +92,7 @@
 <symbol id="burger-menu-mobile" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M0 20h30v-3.333H0V20Zm0-8.333h30V8.333H0v3.334ZM0 0v3.333h30V0H0Z" fill="#212121"/>
 </symbol>
-<symbol id="Burger-menu-tablet" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="burger-menu-tablet" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M0 20h30v-3.333H0V20Zm0-8.333h30V8.333H0v3.334ZM0 0v3.333h30V0H0Z" fill="#212121"/>
 </symbol>
 <symbol id="heart-home-page-desc" viewBox="0 0 92 89" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,13 +155,18 @@
 <symbol id="search" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M12.5 11h-.79l-.28-.27A6.471 6.471 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L17.49 16l-4.99-5Zm-6 0C4.01 11 2 8.99 2 6.5S4.01 2 6.5 2 11 4.01 11 6.5 8.99 11 6.5 11Z" fill="#111"/>
 </symbol>
-<symbol id="Plus-add-pet-mobile" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="plus-add-pet-mobile" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M12 22.666V12v10.666ZM12 12V1.333 12Zm0 0h10.666H12Zm0 0H1.333 12Z" fill="#fff"/>
   <path d="M12 22.666V12m0 0V1.333M12 12h10.666M12 12H1.333" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
 </symbol>
-<symbol id="Plus-add-pet" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="plus-add-pet" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M9 17V9m0 0V1m0 8h8M9 9H1" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
 </symbol>
-<symbol id="avatar account" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="avatar-account" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M14 2.333C7.56 2.333 2.333 7.56 2.333 14c0 6.44 5.227 11.667 11.667 11.667 6.44 0 11.666-5.227 11.666-11.667C25.666 7.56 20.44 2.333 14 2.333ZM14 7a4.088 4.088 0 0 1 4.083 4.083A4.088 4.088 0 0 1 14 15.167a4.088 4.088 0 0 1-4.084-4.084A4.088 4.088 0 0 1 14 7Zm0 16.333c-2.369 0-5.169-.956-7.164-3.36a11.604 11.604 0 0 1 14.327 0c-1.995 2.404-4.795 3.36-7.163 3.36Z" fill="#fff"/>
 </symbol>
+<symbol id="heart-button" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5.167 1c-1.84 0-3.333 1.477-3.333 3.3 0 1.471.583 4.963 6.325 8.493a.657.657 0 0 0 .682 0c5.743-3.53 6.326-7.022 6.326-8.493 0-1.823-1.493-3.3-3.333-3.3C9.993 1 8.5 3 8.5 3S7.008 1 5.167 1Z" fill="#F59256" stroke="#F59256" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+  </defs>
+</svg>
