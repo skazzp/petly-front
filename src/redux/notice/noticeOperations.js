@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import { setAuthHeader } from 'redux/auth/authOperation';
+import { setAuthHeader } from 'redux/auth/authOperation';
 
 axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
 
@@ -53,6 +53,42 @@ export const deleteNotices = createAsyncThunk(
     try {
       const response = await axios.delete(`api/notices/${item.id}`);
       console.log('notice/deleteNotices', response);
+      return response.data; // TODO
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);
+
+// Get favorites
+export const getFavoriteNotices = createAsyncThunk(
+  'notice/getFavoriteNotices',
+  async (_, thunkApi) => {
+    const state = thunkApi.getState();
+    const persistedToken = state.auth.token;
+    setAuthHeader(persistedToken);
+
+    try {
+      const response = await axios.get(`api/notices/favorites`);
+      console.log('notice/getFavoriteNotices', response);
+      return response.data; // TODO
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);
+
+// Get User notices
+export const getUserNotices = createAsyncThunk(
+  'notice/getUserNotices',
+  async (_, thunkApi) => {
+    const state = thunkApi.getState();
+    const persistedToken = state.auth.token;
+    setAuthHeader(persistedToken);
+
+    try {
+      const response = await axios.get(`api/notices/personal`);
+      console.log('notice/getUserNotices', response);
       return response.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
