@@ -14,6 +14,9 @@ const buttons = [
     btn: 'sell',
     link: 'sell',
   },
+];
+
+const authButtons = [
   {
     btn: 'favorite ads',
     link: 'favorite',
@@ -25,6 +28,7 @@ const buttons = [
 ];
 
 function FilterBtn() {
+  const auth = true;
   return (
     <>
       <FilterList>
@@ -33,6 +37,12 @@ function FilterBtn() {
             <Button to={b.link}>{b.btn}</Button>
           </li>
         ))}
+        {auth &&
+          authButtons.map(b => (
+            <li>
+              <Button to={b.link}>{b.btn}</Button>
+            </li>
+          ))}
       </FilterList>
     </>
   );
