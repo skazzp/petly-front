@@ -29,11 +29,7 @@ const authSlice = createSlice({
 
   initialState: userInitialState,
 
-  reducers: {
-    addTask(state, action) {},
-    deleteTask(state, action) {},
-    toggleCompleted(state, action) {},
-  },
+  reducers: {},
   extraReducers: builder => {
     builder.addCase(registerUser.pending, pendingHandlerAuth);
     builder.addCase(registerUser.rejected, rejectedHandler);
