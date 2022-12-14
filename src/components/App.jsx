@@ -1,3 +1,4 @@
+import NoticesPage from 'pages/NoticesPage/NoticesPage';
 import { Navigate, Route, Routes} from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 
@@ -21,7 +22,7 @@ export const App = () => {
         </Route>
         <Route path="/test" element={<Test />} />
         {/* <Route path="*" element={<Navigate to={'/'} />} /> */}
-        <Route path="/notice" element={<NoticesPage />}>
+        <Route path="/notice" element={<NoticesPage/>}>
           <Route path="lost-found" element={<p>lost</p>} />
           <Route path="for-free" element={<p>free</p>} />
           <Route path="sell" element={<p>sell</p>} />

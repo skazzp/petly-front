@@ -33,8 +33,16 @@ const RegistrationForm = () => {
     },
     validationSchema: schema,
 
-    onSubmit: values => {
-        dispatch(registerUser(values));
+    onSubmit: async values  => {
+      const user = {
+        email: values.email,
+        password: values.password,
+        name: values.name,
+        city: values.city,
+        phone: values.phone,
+      }
+      const res = await dispatch(registerUser(user));
+      console.log(res);
     },
   });
   const onClickNext = e => {
