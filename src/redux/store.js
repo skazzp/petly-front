@@ -12,6 +12,7 @@ import storage from 'redux-persist/lib/storage';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { authReducer } from './auth/authSlice';
 import { petsReducer } from './pets/petsSlice';
+import { noticeReducer } from './notice/noticeSlice';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -36,6 +37,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     userPets: persistReducer(petsPersistConfig, petsReducer),
+    notice: noticeReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
