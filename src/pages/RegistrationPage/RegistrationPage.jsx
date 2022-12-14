@@ -1,5 +1,8 @@
+import RegistrationForm from "components/RegistrationForm/RegistrationForm";
+import { Div } from "./RegistrationPage.styled";
+
 const RegistrationPage = () => {
-    return <h1>sdfsdfsdfsdfsdf</h1>
+    return (<Div><RegistrationForm/></Div>)
 }
  
 export default RegistrationPage;

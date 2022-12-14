@@ -1,8 +1,11 @@
+
+// import LoginPage from 'pages/LoginPage/LoginPage';
+import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
 import { Navigate, Route, Routes} from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 
 const Test = () => {
-  return(<h1>Insert there your Component for testing</h1>)
+  return(<RegistrationPage/>)
 }
 
 
