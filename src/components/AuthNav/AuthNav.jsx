@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
-export const AuthNav = () => {
+export const AuthNav = ({toggleMenu}) => {
     return(
-        <div>
-            <Link to='/register'>RegisterPage</Link>
-            <Link to='/login'>LoginPage</Link>
+        <div style={{textAlign: "center"}}>
+            <NavLink to='/register' onClick={toggleMenu}>RegisterPage</NavLink > 
+            <NavLink to='/login' onClick={toggleMenu}>LoginPage</NavLink>
         </div>
     )
 }

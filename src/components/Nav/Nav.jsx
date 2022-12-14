@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom"
-export const Nav = () => {
-    return (<div>
-        <Link to='/news'>NewsPage</Link>
-        <Link to='/notices'>NoticesPage</Link>
-        <Link to='/friends'>OurFriendsPage</Link>
+import { NavLink } from "react-router-dom"
+export const Nav = ({toggleMenu}) => {
+    return (<div style={{textAlign: "center"}}>
+        <NavLink to='/news' style={{display: 'block'}} onClick={toggleMenu}>NewsPage</NavLink>
+        <NavLink to='/notices' style={{display: 'block'}} onClick={toggleMenu}>NoticesPage</NavLink>
+        <NavLink to='/friends' style={{display: 'block'}} onClick={toggleMenu}>OurFriendsPage</NavLink>
     </div>)
 } 
