@@ -23,7 +23,7 @@ export const getAllNotices = createAsyncThunk(
   'notice/getAllNotices',
   async (_, thunkApi) => {
     try {
-      const response = await axios.get('api/notices');
+      const response = await axios.get('/api/notices');
       console.log('getAllNotices', response);
       return response.data;
     } catch (error) {
@@ -37,7 +37,7 @@ export const getNoticeDetails = createAsyncThunk(
   'notice/getNoticeDetails',
   async (item, thunkApi) => {
     try {
-      const response = await axios.get(`api/notices/${item.id}`);
+      const response = await axios.get(`/api/notices/${item.id}`);
       console.log('notice/getNoticeDetails', response);
       return response.data; // TODO
     } catch (error) {
@@ -51,7 +51,7 @@ export const deleteNotices = createAsyncThunk(
   'notice/deleteNotices',
   async (item, thunkApi) => {
     try {
-      const response = await axios.delete(`api/notices/${item.id}`);
+      const response = await axios.delete(`/api/notices/${item.id}`);
       console.log('notice/deleteNotices', response);
       return response.data; // TODO
     } catch (error) {
@@ -69,7 +69,7 @@ export const getFavoriteNotices = createAsyncThunk(
     setAuthHeader(persistedToken);
 
     try {
-      const response = await axios.get(`api/notices/favorites`);
+      const response = await axios.get(`/api/notices/favorites`);
       console.log('notice/getFavoriteNotices', response);
       return response.data; // TODO
     } catch (error) {
@@ -87,7 +87,7 @@ export const getUserNotices = createAsyncThunk(
     setAuthHeader(persistedToken);
 
     try {
-      const response = await axios.get(`api/notices/personal`);
+      const response = await axios.get(`/api/notices/personal`);
       console.log('notice/getUserNotices', response);
       return response.data; // TODO
     } catch (error) {
@@ -104,7 +104,7 @@ export const deleteFavorites = createAsyncThunk(
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
-      const response = await axios.delete(`api/notices/favorites/${item.id}`);
+      const response = await axios.delete(`/api/notices/favorites/${item.id}`);
       console.log('notice/deleteFavorites', response);
       return response.data; // TODO
     } catch (error) {
@@ -121,7 +121,7 @@ export const addFavorites = createAsyncThunk(
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
-      const response = await axios.get(`api/notices/favorites/${item.id}`);
+      const response = await axios.get(`/api/notices/favorites/${item.id}`);
       console.log('notice/addFavorites', response);
       return response.data; // TODO
     } catch (error) {
@@ -138,7 +138,7 @@ export const getByCategory = createAsyncThunk(
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
-      const response = await axios.get(`api/notices/category/${category}`);
+      const response = await axios.get(`/api/notices/category/${category}`);
       console.log('notice/getByCategory', response);
       return response.data; // TODO
     } catch (error) {
