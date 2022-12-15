@@ -2,7 +2,17 @@ import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { parse } from 'date-fns';
-import s from './index.module.css';
+import {
+  Text,
+  RadioWrapper,
+  RadioBtn,
+  FieldWrapper,
+  Label,
+  SubmitBtnWrapper,
+  SubmitBtn,
+  RadioStyle,
+  InputStyle,
+} from './ModalAddNotice.styled';
 
 const today = new Date();
 
@@ -59,129 +69,123 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
 
   return (
     <div>
-      <p className={s.text}>Write some information about your notice.</p>
+      <Text>Write some information about your notice.</Text>
       <Formik
         validationSchema={validationSchema}
         initialValues={formData}
         onSubmit={onSubmit}
       >
         <Form>
-          <div
-            role="group"
-            aria-labelledby="my-radio-group"
-            className={s.radioWrapper}
-          >
-            <label className={s.wrapperInput} htmlFor="lost/found">
+          <RadioWrapper role="group" aria-labelledby="my-radio-group">
+            <label htmlFor="lost/found">
               <Field
-                className={s.inputRadio}
+                style={RadioStyle}
                 type="radio"
                 name="category"
                 value="lost/found"
                 id="lost/found"
               />
-              <div className={s.radioBtn}>lost/found</div>
+              <RadioBtn>lost/found</RadioBtn>
             </label>
-            <label className={s.wrapperInput} htmlFor="in_good_hands">
+            <label htmlFor="in_good_hands">
               <Field
-                className={s.inputRadio}
+                style={RadioStyle}
                 type="radio"
                 name="category"
                 value="in_good_hands"
                 id="in_good_hands"
               />
-              <div className={s.radioBtn}>in_good_hands</div>
+              <RadioBtn>in_good_hands</RadioBtn>
             </label>
-            <label className={s.wrapperInput} htmlFor="sell">
+            <label htmlFor="sell">
               <Field
-                className={s.inputRadio}
+                style={RadioStyle}
                 type="radio"
                 name="category"
                 value="sell"
                 id="sell"
               />
-              <div className={s.radioBtn}>sell</div>
+              <RadioBtn>sell</RadioBtn>
             </label>
             <ErrorMessage
               name="category"
-              render={msg => <div className={s.errorMsg}>{msg}</div>}
+              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
             />
-          </div>
+          </RadioWrapper>
 
-          <div className={s.textFieldWrap}>
-            <label htmlFor="titleOfAd" type="text" className={s.label}>
+          <FieldWrapper>
+            <Label htmlFor="titleOfAd" type="text">
               Title of ad*:
-            </label>
+            </Label>
             <Field
               name="titleOfAd"
               id="titleOfAd"
               placeholder="Type title of ad"
-              className={s.inputText}
+              style={InputStyle}
             />
             <ErrorMessage
               name="titleOfAd"
-              render={msg => <div className={s.errorMsg}>{msg}</div>}
+              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
             />
-          </div>
+          </FieldWrapper>
 
-          <div className={s.textFieldWrap}>
-            <label htmlFor="namePet" type="text" className={s.label}>
+          <FieldWrapper>
+            <Label htmlFor="namePet" type="text">
               Name pet*:
-            </label>
+            </Label>
             <Field
               name="namePet"
               id="namePet"
               placeholder="Type name of pet"
-              className={s.inputText}
+              style={InputStyle}
             />
             <ErrorMessage
               name="namePet"
-              render={msg => <div className={s.errorMsg}>{msg}</div>}
+              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
             />
-          </div>
+          </FieldWrapper>
 
-          <div className={s.textFieldWrap}>
-            <label htmlFor="dateOfBirth" type="text" className={s.label}>
+          <FieldWrapper>
+            <Label htmlFor="dateOfBirth" type="text">
               Date of birth*:
-            </label>
+            </Label>
             <Field
               name="dateOfBirth"
               id="dateOfBirth"
               placeholder="Type date of birth"
-              className={s.inputText}
+              style={InputStyle}
               data-pattern="**.**.****"
             />
             <ErrorMessage
               name="dateOfBirth"
-              render={msg => <div className={s.errorMsg}>{msg}</div>}
+              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
             />
-          </div>
+          </FieldWrapper>
 
-          <div className={s.textFieldWrap}>
-            <label htmlFor="breed" type="text" className={s.label}>
+          <FieldWrapper>
+            <Label htmlFor="breed" type="text">
               Breed*:
-            </label>
+            </Label>
             <Field
               name="breed"
               id="breed"
               placeholder="Type breed"
-              className={s.inputText}
+              style={InputStyle}
               value={breedValue}
               onInput={changeInputBreed}
             />
             <ErrorMessage
               name="breed"
-              render={msg => <div className={s.errorMsg}>{msg}</div>}
+              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
             />
-          </div>
+          </FieldWrapper>
 
-          <div className={s.submitBtnWrapper}>
-            <button type="submit" className={s.submitBtn}>
-              Next
-            </button>
-            <button type="button" className={s.submitBtn} onClick={onClose}>
+          <SubmitBtnWrapper>
+            <SubmitBtn type="submit">Next</SubmitBtn>
+            <SubmitBtn type="button" onClick={onClose}>
               Cancel
-            </button>
-          </div>
+            </SubmitBtn>
+          </SubmitBtnWrapper>
         </Form>
       </Formik>
     </div>

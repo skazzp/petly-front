@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ModalPage1 from './ModalPage1';
 import ModalPage2 from './ModalPage2';
-import s from './index.module.css';
+import { Wrapper, Header } from './ModalAddNotice.styled';
 
 const ModalAddNotice = ({ onClose }) => {
   const [step, setStep] = useState(1);
@@ -29,27 +29,27 @@ const ModalAddNotice = ({ onClose }) => {
   switch (step) {
     case 1:
       return (
-        <div className={s.Wrapper}>
-          <h1 className={s.header}>Add pet</h1>
+        <Wrapper>
+          <Header>Add pet</Header>
           <ModalPage1
             formData={formData}
             setFormData={setFormData}
             nextStep={nextStep}
             onClose={onClose}
           />
-        </div>
+        </Wrapper>
       );
     case 2:
       return (
-        <div className={s.Wrapper}>
-          <h1 className={s.header}>Add pet</h1>
+        <Wrapper>
+          <Header>Add pet</Header>
           <ModalPage2
             formData={formData}
             setFormData={setFormData}
             prevStep={prevStep}
             onClose={onClose}
           />
-        </div>
+        </Wrapper>
       );
     default:
       return <div></div>;

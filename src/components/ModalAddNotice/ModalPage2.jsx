@@ -1,12 +1,29 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import icons from '../../assets/images/icons.svg';
-import { selectToken } from '../../redux/auth/authSelectors';
 import { createNotice } from '../../redux/notice/noticeOperations';
-import s from './index.module.css';
+import {
+  FieldWrapper,
+  Label,
+  SubmitBtnWrapper,
+  SubmitBtn,
+  SexWrapper,
+  SexTitle,
+  SexLabel,
+  SexIcon,
+  SexText,
+  AvatarLabel,
+  AvatarWrapper,
+  AvatarImg,
+  AvatarInput,
+  FieldWrapperStyle,
+  InputStyle,
+  InputTextareaStyle,
+  SexInputStyle,
+} from './ModalAddNotice.styled';
 
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
 
@@ -46,7 +63,6 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
   const [fileInput, setFileInput] = useState(formData.image);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const token = useSelector(selectToken);
 
   const selectFile = (e, setFieldValue) => {
     const [file] = e.target.files;
@@ -67,7 +83,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
       prevStep();
     }
     if (direction === 'forward') {
-      dispatch(createNotice({ values, token })).unwrap();
+      dispatch(createNotice({ values })).unwrap();
       navigate('/notices/own');
       onClose();
     }
@@ -81,82 +97,87 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
         onSubmit={onSubmit}
       >
         {({ setFieldValue }) => (
-          <Form className={s.textFieldWrap}>
-            <fieldset className={s.sexWrapper}>
-              <legend className={s.sexM}>The sex*:</legend>
-              <label className={s.sexLabel} htmlFor="male">
+          <Form style={FieldWrapperStyle}>
+            <SexWrapper>
+              <SexTitle>The sex*:</SexTitle>
+              <SexLabel htmlFor="male">
                 <Field
-                  className={s.inputSex}
+                  style={SexInputStyle}
                   type="radio"
                   id="male"
                   name="sex"
                   alt="male"
                   value="male"
                 />
-                <span className={s.sexIcon}></span>
-                <span className={s.sexText}>Male</span>
-              </label>
+                <SexIcon>
+                  <svg>
+                    <use href={`${icons}#male-icon`}></use>
+                  </svg>
+                </SexIcon>
+                <SexText>Male</SexText>
+              </SexLabel>
 
-              <label className={s.sexLabel} htmlFor="female">
+              <SexLabel htmlFor="female">
                 <Field
-                  className={s.inputSex}
+                  style={SexInputStyle}
                   type="radio"
                   id="female"
                   name="sex"
                   alt="female"
                   value="female"
                 />
-                <span className={s.sexIconFemale}></span>
-                <span className={s.sexText}>Female</span>
-              </label>
-            </fieldset>
+                <SexIcon>
+                  <svg>
+                    <use href={`${icons}#female-icon`}></use>
+                  </svg>
+                </SexIcon>
+                <span>Female</span>
+              </SexLabel>
+            </SexWrapper>
             <ErrorMessage
               name="sex"
-              render={msg => <div className={s.errorMsg}>{msg}</div>}
+              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
             />
 
-            <div className={s.textFieldWrap}>
-              <label htmlFor="location" type="text" className={s.label}>
+            <FieldWrapper>
+              <Label htmlFor="location" type="text">
                 Location*:
-              </label>
+              </Label>
               <Field
                 name="location"
                 id="location"
                 placeholder="Type location"
-                className={s.inputText}
+                style={InputStyle}
               />
               <ErrorMessage
                 name="location"
-                render={msg => <div className={s.errorMsg}>{msg}</div>}
+                render={msg => <div style={{ color: 'red' }}>{msg}</div>}
               />
-            </div>
+            </FieldWrapper>
 
             {formData.category === 'sell' && (
-              <div className={s.textFieldWrap}>
-                <label htmlFor="price" type="text" className={s.label}>
+              <FieldWrapper>
+                <Label htmlFor="price" type="text">
                   Price*:
-                </label>
+                </Label>
                 <Field
                   name="price"
                   id="price"
                   placeholder="Type price"
-                  className={s.inputText}
+                  style={InputStyle}
                 />
                 <ErrorMessage
                   name="price"
-                  render={msg => <div className={s.errorMsg}>{msg}</div>}
+                  render={msg => <div style={{ color: 'red' }}>{msg}</div>}
                 />
-              </div>
+              </FieldWrapper>
             )}
 
-            <label htmlFor="image" className={s.avatarLabel}>
-              Load the pet's image*:
-            </label>
-            <div className={s.addImage}>
+            <AvatarLabel htmlFor="image">Load the pet's image*:</AvatarLabel>
+            <AvatarWrapper>
               {fileInput ? (
-                <img
+                <AvatarImg
                   id="image"
-                  className={s.selectedAvatar}
                   src={URL.createObjectURL(fileInput)}
                   alt={fileInput.name}
                 />
@@ -165,8 +186,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
                   <use href={`${icons}#icon-plus`}></use>
                 </svg>
               )}
-              <input
-                className={s.inputFile}
+              <AvatarInput
                 type="file"
                 id="image"
                 name="image"
@@ -175,44 +195,34 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
               />
               <ErrorMessage
                 name="image"
-                render={msg => <div className={s.errorMsg}>{msg}</div>}
+                render={msg => <div style={{ color: 'red' }}>{msg}</div>}
               />
-            </div>
+            </AvatarWrapper>
 
-            <div className={s.textFieldWrap}>
-              <label htmlFor="comments" className={s.label}>
-                Comments*:
-              </label>
+            <FieldWrapper>
+              <Label htmlFor="comments">Comments*:</Label>
               <Field
                 component="textarea"
                 name="comments"
                 id="comments"
                 rows="3"
                 placeholder="Type comments"
-                className={s.inputTextarea}
+                style={InputTextareaStyle}
               />
               <ErrorMessage
                 name="comments"
-                render={msg => <div className={s.errorMsg}>{msg}</div>}
+                render={msg => <div style={{ color: 'red' }}>{msg}</div>}
               />
-            </div>
+            </FieldWrapper>
 
-            <div className={s.submitBtnWrap}>
-              <button
-                type="submit"
-                className={s.submitBtn}
-                onClick={() => setDirection('forward')}
-              >
+            <SubmitBtnWrapper>
+              <SubmitBtn type="submit" onClick={() => setDirection('forward')}>
                 Done
-              </button>
-              <button
-                type="button"
-                className={s.submitBtn}
-                onClick={() => setDirection('back')}
-              >
+              </SubmitBtn>
+              <SubmitBtn type="button" onClick={() => setDirection('back')}>
                 Back
-              </button>
-            </div>
+              </SubmitBtn>
+            </SubmitBtnWrapper>
           </Form>
         )}
       </Formik>
