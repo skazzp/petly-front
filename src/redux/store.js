@@ -28,15 +28,10 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
-const petsPersistConfig = {
-  key: 'userPets',
-  storage,
-  whitelist: ['token'],
-};
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    userPets: persistReducer(petsPersistConfig, petsReducer),
+    userPets: petsReducer,
     notice: noticeReducer,
   },
   middleware,
