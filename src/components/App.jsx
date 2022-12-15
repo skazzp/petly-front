@@ -7,6 +7,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout/SharedLayout';
+import NewPage from 'pages/newPage';
 
 const Test = () => {
   return <h1>Insert there your Component for testing</h1>;
