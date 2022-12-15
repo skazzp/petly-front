@@ -5,11 +5,16 @@ import {
   getAllNotices,
   getNoticeDetails,
   deleteNotices,
+  getFavoriteNotices,
+  getUserNotices,
+  deleteFavorites,
+  addFavorites,
+  getByCategory,
 } from './noticeOperations';
 
 const userInitialState = {
   notices: [],
-  categories: [],
+  // categories: [],
   isLoading: false,
   error: null,
   isModalAddNoticeOpen: false,
@@ -49,11 +54,21 @@ const noticeSlice = createSlice({
     builder.addCase(getAllNotices.pending, pendingHandlerAuth);
     builder.addCase(getNoticeDetails.pending, pendingHandlerAuth);
     builder.addCase(deleteNotices.pending, pendingHandlerAuth);
+    builder.addCase(getFavoriteNotices.pending, pendingHandlerAuth);
+    builder.addCase(getUserNotices.pending, pendingHandlerAuth);
+    builder.addCase(deleteFavorites.pending, pendingHandlerAuth);
+    builder.addCase(addFavorites.pending, pendingHandlerAuth);
+    builder.addCase(getByCategory.pending, pendingHandlerAuth);
 
     builder.addCase(createNotice.rejected, rejectedHandler);
     builder.addCase(getAllNotices.rejected, rejectedHandler);
     builder.addCase(getNoticeDetails.rejected, rejectedHandler);
     builder.addCase(deleteNotices.rejected, rejectedHandler);
+    builder.addCase(getFavoriteNotices.rejected, rejectedHandler);
+    builder.addCase(getUserNotices.rejected, rejectedHandler);
+    builder.addCase(deleteFavorites.rejected, rejectedHandler);
+    builder.addCase(addFavorites.rejected, rejectedHandler);
+    builder.addCase(getByCategory.rejected, rejectedHandler);
 
     builder.addCase(createNotice.fulfilled, (state, action) => {
       state.error = null;
@@ -78,6 +93,31 @@ const noticeSlice = createSlice({
       state.notices = state.notices.filter(
         notice => notice.id !== action.payload.id
       );
+    });
+    builder.addCase(getFavoriteNotices.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.notices = action.payload;
+    });
+    builder.addCase(getUserNotices.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.notices = action.payload;
+    });
+    builder.addCase(deleteFavorites.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      // TODO: редактировать нужный нотис в стейте или юзера ?
+    });
+    builder.addCase(addFavorites.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      // TODO: редактировать нужный нотис в стейте или юзера ?
+    });
+    builder.addCase(getByCategory.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.notices = action.payload;
     });
   },
 });
