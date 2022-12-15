@@ -18,6 +18,7 @@ const userInitialState = {
   isLoading: false,
   error: null,
   isModalAddNoticeOpen: false,
+  isLearnMoreModalOpen: false,
   modalData: {},
 };
 
@@ -43,6 +44,13 @@ const noticeSlice = createSlice({
     },
     closeModal(state, action) {
       state.isModalAddNoticeOpen = false;
+      state.modalData = {};
+    },
+    openLearnMoreModal(state, action) {
+      state.isLearnMoreModalOpen = true;
+    },
+    closeLearnMoreModal(state, action) {
+      state.isLearnMoreModalOpen = false;
       state.modalData = {};
     },
     addModalData(state, action) {
