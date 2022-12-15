@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
      color: ${props => props.theme.colors.black};
      margin: ${props => props.theme.space[0]}px;
      padding: ${props => props.theme.space[0]}px;
- 
+    background-color: #FDF7F2;
   }
 `;
 

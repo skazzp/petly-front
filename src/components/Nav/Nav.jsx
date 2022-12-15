@@ -1,8 +1,9 @@
-import { NavLink } from "react-router-dom"
-export const Nav = ({toggleMenu}) => {
-    return (<div style={{textAlign: "center"}}>
-        <NavLink to='/news' style={{display: 'block'}} onClick={toggleMenu}>NewsPage</NavLink>
-        <NavLink to='/notices' style={{display: 'block'}} onClick={toggleMenu}>NoticesPage</NavLink>
-        <NavLink to='/friends' style={{display: 'block'}} onClick={toggleMenu}>OurFriendsPage</NavLink>
-    </div>)
+import { NavTitleBox, NavTitleItem, NavTitle } from "components/Nav/Nav.styled"
+
+export const Nav = ({toggleMenu = null}) => {
+    return (<NavTitleBox>
+        <NavTitleItem><NavTitle to='/news' onClick={toggleMenu}>News</NavTitle></NavTitleItem>
+        <NavTitleItem><NavTitle to='/notices' onClick={toggleMenu}>Find pet</NavTitle></NavTitleItem>
+        <NavTitleItem><NavTitle to='/friends' onClick={toggleMenu}>Our friend</NavTitle></NavTitleItem>
+    </NavTitleBox>)
 } 
