@@ -62,6 +62,7 @@ export const Form = styled.form`
 export const Label = styled.label`
   display: flex;
   background: none;
+  height: 40px;
   border: 1px solid rgba(245, 146, 86, 0.5);
   align-items: center;
   justify-content: center;
@@ -77,7 +78,7 @@ export const Label = styled.label`
   @media screen and (min-width: 768px) {
     max-width: 100%;
 
-    height: 22px;
+    height: 52px;
 
     background: #fdf7f2;
     padding: 14px 32px;
@@ -93,6 +94,7 @@ export const Input = styled.input`
   background: none;
   border: none;
   box-shadow: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   font-family: 'Manrope';
@@ -272,6 +274,18 @@ export const Validation = styled.p`
   :focus,
   :hover {
   }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
+`;
+
+export const SelectContainer = styled.div`
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
   @media screen and (min-width: 768px) {
   }
