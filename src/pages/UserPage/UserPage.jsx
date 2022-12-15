@@ -1,5 +1,7 @@
+import UserData from 'components/UserData/UserData';
+
 const UserPage = () => {
-  return <h1>User Page</h1>;
+  return <UserData />;
 };
 
 export default UserPage;
