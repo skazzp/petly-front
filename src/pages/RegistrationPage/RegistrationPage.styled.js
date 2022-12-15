@@ -14,4 +14,11 @@ export const Div = styled.div`
 
   @media screen and (min-width: 1280px) {
   }
+
+  svg {
+    use {
+      height: 1000px;
+      width: 1500px;
+    }
+  }
 `;

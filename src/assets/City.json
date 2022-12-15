@@ -1,0 +1,4002 @@
+[
+ {
+  "City": "Kyiv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kharkiv",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Odesa",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Dnipro",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Donetsk",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Zaporizhzhia",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Lviv",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Kryvyi Rih",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Mykolaiv",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Mariupol",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Sevastopol",
+  "District": "Sevastopol’, Misto"
+ },
+ {
+  "City": "Luhansk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Vinnytsia",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Makiivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Simferopol",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Poltava",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Chernihiv",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Kherson",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Cherkasy",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Khmelnytskyi",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Zhytomyr",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Chernivtsi",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Sumy",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Horlivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Rivne",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Ivano-Frankivsk",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Kamianske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Kremenchuk",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Kropyvnytskyi",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Ternopil",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Lutsk",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Bila Tserkva",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kramatorsk",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Melitopol",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Sievierodonetsk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Drohobych",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Khrustalnyi",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Uzhhorod",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Berdiansk",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Sloviansk",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Nikopol",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Yevpatoriia",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Pavlohrad",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Alchevsk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Konotop",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Brovary",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kamianets-Podilskyi",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Lysychansk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Dovzhansk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Mukacheve",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Uman",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Yalta",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Yenakiieve",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Shostka",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Berdychiv",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Bakhmut",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Stakhanov",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Nizhyn",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Kostiantynivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Izmail",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Novomoskovsk",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Nova Kakhovka",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Kovel",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Smila",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Kalush",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Korosten",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Pokrovsk",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Boryspil",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kolomyia",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Rubizhne",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Chornomorsk",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Khartsyzk",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Druzhkivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Stryi",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Bilhorod-Dnistrovskyi",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Irpin",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Novohrad-Volynskyi",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Lozova",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Antratsyt",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Enerhodar",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Pryluky",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Novovolynsk",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Horishni Plavni",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Myrnohrad",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Shakhtarsk",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Okhtyrka",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Brianka",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Snizhne",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Marhanets",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Rovenky",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Fastiv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Lubny",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Svitlovodsk",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Zhovti Vody",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Krasnodon",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Shepetivka",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Vyshneve",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Romny",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Myrhorod",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Podilsk",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Pokrov",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Volodymyr-Volynskyi",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Pervomaisk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Dzhankoi",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Vasylkiv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Dubno",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Boryslav",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Netishyn",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Holubivske",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Kakhovka",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Boyarka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Yasynuvata",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Voznesensk",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Bucha",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Sambir",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Avdiivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Zhmerynka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Toretsk",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Hlukhiv",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Obukhiv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Chuhuiv",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Yuzhne",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Kostopil",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Tokmak",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Mohyliv-Podilskyi",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Synelnykove",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Novoyavorovskoye",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Pervomaiskyi",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Alushta",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Chortkiv",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Balakliia",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Truskavets",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Novyi Rozdil",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Khust",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Pershotravensk",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Khrestivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Khmilnyk",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Ternivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Zolotonosha",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Vyshhorod",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Bakhchysarai",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Pereyaslav-Khmel’nyts’kyy",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Sofiyivs’ka Borshchahivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Malyn",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Perevalsk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Yany Kapu",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Haisyn",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Korostyshiv",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Vynohradiv",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Slavutych",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Saky",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Kaniv",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Zolochiv",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Selydove",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Brody",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Berehove",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Koziatyn",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Vilnohirsk",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Molodohvardiisk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Znamianka",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Ladyzhyn",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Nadvirna",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Lyman",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Bilohorodka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Sukhodilsk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Sokal",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Liubotyn",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Kremenets",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Dolyna",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Henichesk",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Yahotyn",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Pidhorodne",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Balta",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Dolynska",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Kalynivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Polohy",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Piatykhatky",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Starobilsk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Vovchansk",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Skadovsk",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Dniprorudne",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Svatove",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Amvrosiivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Korsun-Shevchenkivskyi",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Bolhrad",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Svalyava",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Zvenyhorodka",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Iziaslav",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Vatutine",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Sudak",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Horodok",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Berezan",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Bilohirsk",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Verkhivtseve",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Kotsyubyns’ke",
+  "District": "Kyyiv, Misto"
+ },
+ {
+  "City": "Hostomel",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Bar",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Ukrainka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Horodok",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Skvyra",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Yuvileine",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Ovruch",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Putyvl",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Vynnyky",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Ostroh",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Rakhiv",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Bohodukhiv",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Bilopillya",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Tulchyn",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Vil’nyans’k",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Burshtyn",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Zmiiv",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Ochakiv",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Hulyaypole",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Radomyshl",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Stanytsia Luhanska",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Orikhiv",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Hola Prystan",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Zolote",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Lebedyn",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Kivertsi",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Nyzhnia Krynka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Zhashkiv",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Zhovkva",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Horodyshche",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Apostolove",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Talne",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Kaharlyk",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Zelenodolsk",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Nosivka",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Borodyanka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Slobozhanske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Vasylivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Izium",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Yavoriv",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Velykodolynske",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Tetiiv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Rozhyshche",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Novhorod-Siverskyi",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Bershad",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Perehinske",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Kamianka-Dniprovska",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Shchastia",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Koriukivka",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Buchach",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Kamin-Kashyrskyi",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Hnivan",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Beryslav",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Vakhrusheve",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Uzyn",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Bilovodsk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Mykhailivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Horodnia",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Ukrainsk",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Baranivka",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Ovidiopol",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Vasylkivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Nemyriv",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Prymorsk",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Mena",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Mala Vyska",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Kalmiuske",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Lokhvytsya",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Yakymivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Myronivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Snovsk",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Hirnyk",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Illintsi",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Sosnivka",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Zhydachiv",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Rokytne",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Bobrynets",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Bobrovytsia",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Manevychi",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Hrebinka",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Baryshivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Khrystynivka",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Ichnia",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Bolekhiv",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Lyuboml’",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Olevsk",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Ivankiv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Krasnoilsk",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Letychiv",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Verkhnodniprovsk",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Oster",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Novgorodskoye",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Borzna",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Shyroke",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Inkerman",
+  "District": "Sevastopol’, Misto"
+ },
+ {
+  "City": "Tarashcha",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Radyvyliv",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Korolevo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Teplodar",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Ratne",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Sniatyn",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Dubove",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Pereshchepyne",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Pokrovske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Zinkiv",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Berezivka",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Kobeliaky",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Makariv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Vesele",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Khodoriv",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Sofiivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Mizhhiria",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Bilozerka",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Velyka Dymerka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Pohrebyshche",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Nyzhnohirskyi",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Bezliudivka",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Dubrovytsya",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Tysmenytsia",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Irshava",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Khotyn",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Velykyi Bychkiv",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Valky",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Kalanchak",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Obukhivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Stryzhavka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Bilenke",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Horokhiv",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Hurzuf",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Horodenka",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Velyki Luchky",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Tiachiv",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Pomichna",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Kozova",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Uspenka",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Chyhyryn",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Monastyryshche",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Chop",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Tlumach",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Ilarionove",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Kryzhopil",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Barvynkove",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Rava-Rus’ka",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Solotvyno",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Busk",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Andrushivka",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Yasinia",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Masandra",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Bushtyno",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Nerubaiske",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Kosiv",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Lypovets",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Lanivtsi",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Deliatyn",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Vyshkovo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Ivanivka",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Mala Danylivka",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Bohorodchany",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Zavodske",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Novi Sanzhary",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Krasnopillya",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Lysianka",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Manhush",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Tarutyne",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Kvasyliv",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Yaremche",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Ananiv",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Semenivka",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Yasnohirka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Kushuhum",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Pidvolochysk",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Kozelets",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Lanchyn",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Rohatyn",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Nemishayeve",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kryve Ozero",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Pivdenne",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Dykanka",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Trostianets",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Velykyi Dalnyk",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Khoroshiv",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Solone",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Vapniarka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Teresva",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Novoselytsia",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Velykyy Bereznyy",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Romaniv",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Artemivsk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Krasnokutsk",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Tsarychanka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Mezhova",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Rzhyshchiv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Borova",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Lymanske",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Shyriaieve",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Rudno",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Poninka",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Isliam-Terek",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Molochansk",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Petropavlivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Sharhorod",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Sosnytsia",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Vorozhba",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Pryvillya",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Shevchenkove",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Tomakivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Piskivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kupiansk",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Vilshany",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Dobroslav",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Chynadiyovo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Nova Maiachka",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Bilmak",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Dovhe",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Velyki Komiaty",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Sofiivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Hornostaivka",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Rozsoshentsi",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Lozuvatka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Irshansk",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Oleksandrivsk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Perechyn",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Lityn",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Svesa",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Karnaukhivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Staryi Sambir",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Yemilchyne",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Pryazovske",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Voronovytsia",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Bilokurakyne",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Ivanychi",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Tsuman",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Kubei",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Sudova Vyshnya",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Bile",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Slatyne",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Dobrotvir",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Drabiv",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Vorzel",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Chervonohryhorivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Stavyshche",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Mahdalynivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Vinkivtsi",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Turbiv",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Velyki Mosty",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Teplyk",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Fontanka",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Blahovishchenske",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Hvardiys’ke",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Halych",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Petropavlivs’ka Borshchahivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kushnytsia",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Kehychivka",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Partenit",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Sutysky",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Ahrarne",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Balabyne",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Volodarka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Murovani Kurylivtsi",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Ozerne",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Morshyn",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Verkhovyna",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Chernihivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Veselynove",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Dobrovelychkivka",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Lyubeshiv",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Hrebinky",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Sokilnyky",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Turiys’k",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Oleksandriiske",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Horonda",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Dniprovske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Chudniv",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Dymer",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Savyntsi",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Broshniv-Osada",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Korop",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Zoria",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Tomashpil",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Nova Borova",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Nedryhayliv",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Hubynykha",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Rivne",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Stara Syniava",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Stepanivka",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Koreiz",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Otyniia",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Pulyny",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Bryukhovychi",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Horenka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Horodnytsia",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Pishchanka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Shatsk",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Hoshcha",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Mykolayivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Bratske",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Opishnya",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Komyshuvakha",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Pechenihy",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Pechenizhyn",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Stara Vyzhivka",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Bratslav",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Novomykolayivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Novohuivynske",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Chemerivtsi",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Kalynivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Yalta",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Volovets",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Kyrnasivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Z·hurivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Klavdiyevo-Tarasove",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kolochava",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Bohdanivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Chechelnyk",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Novoozerne",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Brusyliv",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Prosyana",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Dobromyl",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Miusynsk",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Moshny",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Petropavlivka",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Kalyta",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Talalaivka",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Khotiv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Blahodatne",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Chabany",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Torchyn",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Myropil",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Brailiv",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Petrykivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Dubivskyi",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Olenivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Velykyi Rakovets",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Lyublynets’",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Velykyi Liubin",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Krynychky",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Novooleksandrivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Boromlya",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Boikivske",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Stepnohirsk",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Zabolottya",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Znamenivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Svyatohirs’k",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Bytkiv",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Krynychne",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Shyshaky",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Brylivka",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Zaozerne",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Mliiv",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Almazna",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Dovbysh",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Kolchyno",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Shabelkivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Sursko-Lytovske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Serednye",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Novyi Kalyniv",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Cherkaske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Vorokhta",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Mykolaivka",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Obroshino",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Lyman",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Krynychky",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Lazeshchyna",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Hryshkivtsi",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Ustynivka",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Melioratyvne",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Berezanka",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Auly",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Volodkova Divytsia",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Novomykolaivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Luhyny",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Nova Ushytsia",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Oleksandrivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Kuty",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Hołoby",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Kolky",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Velyki Sorochyntsi",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Novopillia",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Krynychne",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Tyvriv",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Zabolotiv",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Vyzhnytsia",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Yerky",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Suprunivka",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Skalat",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Dzhulynka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Rubanivka",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Matviyivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Simeiz",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Dashiv",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Bohuslav",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Rozhniativ",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Radushne",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Lokachi",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Onufriivka",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Solotvyn",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Klembivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Prymorske",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Holubivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Verbky",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Bibrka",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Kalynivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Lazy",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Pavlivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Komarno",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Vendychany",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Chaplyne",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Velykyi Burluk",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Dmytrivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Lypcha",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Novosilky",
+  "District": "Kyyiv, Misto"
+ },
+ {
+  "City": "Medvyn",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Nyzhnya Syrovatka",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Preobrazhenka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Losynivka",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Kuchurhan",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Myhove",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Kashperivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Zhvyrka",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Kamiani Potoky",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Voskresenka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Oleksiivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Tsybuliv",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Osiy",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Zatyshshia",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Verbivka",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Kryukivshchyna",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kobyletska Poliana",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Makhnivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Kyrylivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Hora",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Pershotravensk",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Shchebetovka",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Novopavlivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Solonka",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Kozyn",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Medenychi",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Machukhy",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Ropcha",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Mykolayivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Hlukhivtsi",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Malokaterynivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Staryi Saltiv",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Pluzhnoye",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Koropets",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Ivanivtsi",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Khymchyn",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Sholokhove",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Chervonyy Oskil",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Vil’khivtsi-Lazy",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Vylok",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Rudnyky",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Lysychovo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Shpykiv",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Kopashnovo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Ivanopil",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Spaske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Rozivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Lazurne",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Novi Bilokorovychi",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Pryshyb",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Krasnyi Kut",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Hlyniany",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Novoekonomichne",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Orilka",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Lukiv",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Malyy Rakovets’",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Olyka",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Horinchovo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Koviahy",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Nyzhnie Selyshche",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Obertyn",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Mykhailo-Kotsiubynske",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Bila Tserkva",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Holovne",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Batovo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Novyi Yarychiv",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Berezovo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Stari Petrivtsi",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Hozhuly",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Myrne",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Sadky",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Lysets",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Polovynkyne",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Urzuf",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Staryi Mizun",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Myropillya",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Chervone",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Pervomaiskyi",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Lychkove",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Stanislavchyk",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Babyntsi",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Yezupil",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Koktebel",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Orativ",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Oleksandrivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Dertsen",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Holubyne",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Blyzhnie",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Narodychi",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Voinyliv",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Andriivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Poliana",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Sheludkivka",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Askaniia-Nova",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Imstychovo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Chernivtsi",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Hlodosy",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Sernyky",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Shramkivka",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Kotovka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Khroly",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Petrushiv",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Smyha",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Popeli",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Molodkiv",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Lyubymivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Ustia",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Delen",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Saksahan",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Partyzanske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Kurylivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Kaihador",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Barturyn",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Sursko-Mykhailivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Kyinka",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Lypetska Poliana",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Trushki",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Novoselytsia",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Bilokorovychi",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Ivana Franka",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Chornukhy",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Tomashhorod",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Babche",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Khomutets",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Bilousivka",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Nikita",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Stari Kryvotuly",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Nahiryanka",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Vovkovyntsi",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Pershotravneve",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Korytne",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Tereshky",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Prydniprovske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Zarichany",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Yelizavetivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Aviatorske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Chyshky",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Parafiivka",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Zalukva",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Morske",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Satanov",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Vyrishal’ne",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Strilky",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Mykhailivka",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Chornivka",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Shalyhyne",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Sharovechka",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Vyshneve",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Izobilne",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Verkhnosadove",
+  "District": "Sevastopol’, Misto"
+ },
+ {
+  "City": "Aeroflotskyi",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Lenkivtsi",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Drachyntsi",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Zhovte",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Belz",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Slov”yanka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Verbka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Perebykivtsi",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Vyhoda",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Nyzhnii Bystryi",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Matroska",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Velyki Korovyntsi",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Novovasylivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Zhniatyno",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Kosari",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Zavorychi",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Osynove",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Topchyno",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Vyshcheolchedaiv",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Sytkivtsi",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Chornotysiv",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Takhtaulove",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Pidhorodna",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Stari Troiany",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Utoropy",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Bilokrynnytsia",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Fedorivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Slavhorod",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Borki",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Nova Haleshchyna",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Yur”yivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Vysunsk",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Komysh-Zoria",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Velykyi Khutir",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Obolon",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Mykhaylivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Ustyluh",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Nelypivtsi",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Voinivka",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Khomenky",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Novopetrivka",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Rotmistrivka",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Liubar",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Piilo",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Skhidnytsia",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Mali Kopani",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Babyn",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Sokolivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Kovalivka",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Pryshyb",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Bulakhivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Berezyna",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Rososhany",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Stare Selo",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Hertsa",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Preslav",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Kornyn",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Lisovi Hrynivtsi",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Malomykolaivka",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Stinka",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Tynytsia",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Liubech",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Berezhynka",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Bilyne",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Svyatets",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Yabluniv",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Klenovyi",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Maidanetske",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Tartak",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Dubivtsi",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Hubnyk",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Vilne",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Kapulivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Potoky",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Uhroyidy",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Moshoryne",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Belobozhnitsa",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Barashi",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Tiudiv",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Kozhanka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Prykolotne",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Borozenske",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Piatyhory",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Viitivtsi",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Andrushky",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Dovzhok",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Mazurivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Mostove",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Ploske",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Chkalove",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Vilne",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Velyka Kyriivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Lykhivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Prybuzhzhia",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Ozaryntsi",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Yablunytsia",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Sheshory",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Opytne",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Dobrovlyany",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Zelena",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Bandurove",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Krasnosilka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Chaplynka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Chumaky",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Lypne",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "V”yazivok",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Berezova Rudka",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Chemer",
+  "District": "Chernihivs’ka Oblast’"
+ },
+ {
+  "City": "Kvitneve",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Velyka Burimka",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Velykomykhaylivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Dubyshche",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Vysokopillia",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Ivanivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Lativka",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Semykozivka",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Vakulenchuk",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Bilshivtsi",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Poberezhzhia",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Semenivka",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Repuzhyntsi",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Troianiv",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Priadivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Serby",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Serdyte",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Mala Petrykivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Borovytsia",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Sukha",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Kumachove",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Hvizdets",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Nemyriv",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Vyshnivchyk",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Pishchane",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Velyka Byihan",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Monastyrets",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Horoshova",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Chopovychi",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Mykhailivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Doslidnytske",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Pristromy",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Samhorodok",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Shamraivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Kniazhdvir",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Zelenky",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Holovyne",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Pryvitne",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Shcherbani",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Vilkhivka",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Simer",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Ostriv",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Ternivka",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Piatkivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Pysarivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Bohdanivka",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Pysarivka",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Staryy Chortoryys’k",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Vakhnivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Zinkiv",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Belogorodka",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Vovche",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Velyka Pavlivka",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Novopokrovka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Komariv",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Svitlohirske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Severynivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Tsybuleve",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Ostapovo",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Horodyshche",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Stavchany",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Ternivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Vil’bivne",
+  "District": "Rivnens’ka Oblast’"
+ },
+ {
+  "City": "Baibuzy",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Bilozirka",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Shepit",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Novotaromske",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Kolybaivka",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Hirne",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Razdory",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Chervone",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Vynohradne",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Bykivka",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Byrlivka",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Hrabiv",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Ivankov",
+  "District": "Ternopil’s’ka Oblast’"
+ },
+ {
+  "City": "Maidan",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Deleva",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Havryshivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Berestechko",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Syniukhyn Brid",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Karpylivka",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Krylos",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Huta",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Andriievo-Ivanivka",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Bokhonyky",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Novozarivka",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Bilche",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Samchyky",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Veryn",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Abazivka",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Bochechky",
+  "District": "Sums’ka Oblast’"
+ },
+ {
+  "City": "Chernyatin",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Sharivka",
+  "District": "Kharkivs’ka Oblast’"
+ },
+ {
+  "City": "Imeni Shevchenko",
+  "District": "Donets’ka Oblast’"
+ },
+ {
+  "City": "Polianka",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Tavrychanka",
+  "District": "Khersons’ka Oblast’"
+ },
+ {
+  "City": "Kocherezhky",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Kyslychuvata",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Iltsi",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Velyka Andrusivka",
+  "District": "Kirovohrads’ka Oblast’"
+ },
+ {
+  "City": "Kovalivka",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Volosianka",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Buzovytsia",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Vilshanka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Rybakivka",
+  "District": "Mykolayivs’ka Oblast’"
+ },
+ {
+  "City": "Holma",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Krasnopilka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Troiandove",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Stari Kodaky",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Palanka",
+  "District": "Cherkas’ka Oblast’"
+ },
+ {
+  "City": "Kuchakiv",
+  "District": "Kyyivs’ka Oblast’"
+ },
+ {
+  "City": "Borivtsi",
+  "District": "Chernivets’ka Oblast’"
+ },
+ {
+  "City": "Holovy",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Birky",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Verchany",
+  "District": "L’vivs’ka Oblast’"
+ },
+ {
+  "City": "Sviatylivka",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Mykolaivka",
+  "District": "Dnipropetrovs’ka Oblast’"
+ },
+ {
+  "City": "Zarichchia",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Vladychen",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Huiva",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Velykyi Zhvanchyk",
+  "District": "Khmel’nyts’ka Oblast’"
+ },
+ {
+  "City": "Nasypne",
+  "District": "Krym, Avtonomna Respublika"
+ },
+ {
+  "City": "Plodorodne",
+  "District": "Zaporiz’ka Oblast’"
+ },
+ {
+  "City": "Radisne",
+  "District": "Odes’ka Oblast’"
+ },
+ {
+  "City": "Cherepashyntsi",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Mankivka",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Chernelytsya",
+  "District": "Ivano-Frankivs’ka Oblast’"
+ },
+ {
+  "City": "Lyutens’ki Budyshcha",
+  "District": "Poltavs’ka Oblast’"
+ },
+ {
+  "City": "Ust-Chorna",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Lukovo",
+  "District": "Zakarpats’ka Oblast’"
+ },
+ {
+  "City": "Bystryk",
+  "District": "Zhytomyrs’ka Oblast’"
+ },
+ {
+  "City": "Hrechyshkyne",
+  "District": "Luhans’ka Oblast’"
+ },
+ {
+  "City": "Rokyni",
+  "District": "Volyns’ka Oblast’"
+ },
+ {
+  "City": "Trostianets",
+  "District": "Vinnyts’ka Oblast’"
+ },
+ {
+  "City": "Baranykivka",
+  "District": "Luhans’ka Oblast’"
+ }
+]
