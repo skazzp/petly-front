@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { BiSearchAlt2 } from 'react-icons/bi';
+
 import {
   HesderSearchbar,
+  IconSearch,
   SearchForm,
   SearchFormButton,
   SearchFormButtonLabel,
@@ -14,6 +15,7 @@ export const Searchbar = ({ submitForm }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    // Эта функция которая отвечает за отправку запроса. Приходит в пропсе. Нужно обраьотать напильником
     submitForm(input);
     setInput('');
   };
@@ -35,7 +37,7 @@ export const Searchbar = ({ submitForm }) => {
         />
         <SearchFormButton type="submit">
           <SearchFormButtonLabel>Search</SearchFormButtonLabel>
-          <BiSearchAlt2 />
+          <IconSearch />
         </SearchFormButton>
       </SearchForm>
     </HesderSearchbar>

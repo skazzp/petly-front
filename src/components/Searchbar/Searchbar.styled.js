@@ -1,40 +1,46 @@
 import styled from 'styled-components';
+import { BiSearchAlt2 } from 'react-icons/bi';
 
-export const HesderSearchbar = styled.header`
+export const HesderSearchbar = styled.div`
   top: 0;
   left: 0;
   position: sticky;
-  z-index: 1100;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 64px;
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  color: ${props => props.theme.colors.background.white};
   background-color: ${props => props.theme.colors.background.main};
-  /* box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); */
+
+  ${props => props.theme.breakpoints.tab} {
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
 `;
 
 export const SearchForm = styled.form`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 608px;
+  max-width: 280px;
   background-color: ${props => props.theme.colors.background.white};
-  border-radius: 40px;
+  border-radius: ${props => props.theme.radii.lg};
   overflow: hidden;
+
+  ${props => props.theme.breakpoints.tab} {
+    max-width: 608px;
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
 `;
 
 export const SearchFormButton = styled.button`
   display: flex;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border: 0;
-  
+
   background-color: ${props => props.theme.colors.background.white};
   background-size: 40%;
   background-repeat: no-repeat;
@@ -46,6 +52,14 @@ export const SearchFormButton = styled.button`
   :hover {
     opacity: 1;
   }
+
+  ${props => props.theme.breakpoints.tab} {
+    width: 44px;
+    height: 44px;
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
 `;
 
 export const SearchFormButtonLabel = styled.span`
@@ -53,24 +67,63 @@ export const SearchFormButtonLabel = styled.span`
   width: 1px;
   height: 1px;
   padding: 0;
+  border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   clip-path: inset(50%);
-  border: 0;
+
+  ${props => props.theme.breakpoints.tab} {
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
 `;
 
 export const SearchFormInput = styled.input`
   display: inline-block;
   width: 100%;
   font: inherit;
-  font-size: ${props => props.theme.space[4]}px;
+  font-size: ${props => props.theme.fontSizes.m};
+  line-height: ${props => props.theme.lineHeights.main};
   border: none;
   outline: none;
-  padding-left: ${props => props.theme.space[4]}px;
-  padding-right: ${props => props.theme.space[4]}px;
+  padding-left: ${props => props.theme.space[2]}px;
+  padding-right: ${props => props.theme.space[2]}px;
+  padding-top: ${props => props.theme.space[1]}px;
+  padding-bottom: ${props => props.theme.space[1]}px;
   ::placeholder {
     font: inherit;
-    font-size: 18px;
+    font-size: ${props => props.theme.fontSizes.ml};
+    line-height: ${props => props.theme.lineHeights.main};
+  }
+
+  ${props => props.theme.breakpoints.tab} {
+    font-size: ${props => props.theme.fontSizes.ml};
+    line-height: ${props => props.theme.lineHeights.main};
+    padding-left: ${props => props.theme.space[4]}px;
+    padding-right: ${props => props.theme.space[4]}px;
+    ::placeholder {
+      font: inherit;
+      font-size: ${props => props.theme.fontSizes.m};
+      line-height: ${props => props.theme.lineHeights.main};
+    }
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
+`;
+
+export const IconSearch = styled(BiSearchAlt2)`
+  width: 20px;
+  height: 20px;
+  margin: auto;
+
+  ${props => props.theme.breakpoints.tab} {
+    width: 24px;
+    height: 24px;
+  }
+
+  ${props => props.theme.breakpoints.desc} {
   }
 `;
