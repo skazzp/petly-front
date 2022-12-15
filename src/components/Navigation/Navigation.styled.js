@@ -2,12 +2,15 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-/* display: flex;
-flex-direction: column;
-justify-content: start;
+display: flex;
+
+justify-content: flex-end; 
 align-items: center;
-height: 100vw;
-margin: 30px; */
+width: 100%;
+@media screen and (min-width: 1280px) {
+    justify-content: space-between;
+}
+
 `
 
 export const Box =styled.div`

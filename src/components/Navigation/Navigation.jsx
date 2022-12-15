@@ -36,10 +36,10 @@ export const Navigation = () => {
     const toggleMenu = () => setMenuOpen(!MenuOpen)
 
     return(
-    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}> 
+    <Container> 
         {useIsDesktop() && <><Nav/> {isLoggedIn ? <AuthNav/> : <UserNav/>}</>}
         {useIsTablet() && <>{isLoggedIn ? <AuthNav/> : <UserNav/>}<h3 onClick={toggleMenu}>SVG</h3></>}
         {useIsMobile() &&<h3 onClick={toggleMenu}>SVG</h3>}
         {MenuOpen && <ModalNav/>}
-    </div>)
+    </Container>)
 }

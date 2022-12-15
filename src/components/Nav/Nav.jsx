@@ -1,4 +1,5 @@
-import { NavTitleBox, NavTitleItem, NavTitle } from "components/Navigation/Navigation.styled"
+import { NavTitleBox, NavTitleItem, NavTitle } from "components/Nav/Nav.styled"
+
 export const Nav = ({toggleMenu}) => {
     return (<NavTitleBox>
         <NavTitleItem style={{marginRight: '80px'}}><NavTitle to='/news' style={{display: 'block'}} onClick={toggleMenu}>News</NavTitle></NavTitleItem>
