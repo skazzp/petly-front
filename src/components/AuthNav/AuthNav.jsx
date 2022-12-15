@@ -1,10 +1,9 @@
-import { Link, NavLink } from "react-router-dom"
+import {Link, LinkInversion, AuthItem, AuthBox} from './AuthNav.styled'
 
 export const AuthNav = ({toggleMenu}) => {
-    return(
-        <div style={{textAlign: "center"}}>
-            <NavLink to='/register' onClick={toggleMenu}>RegisterPage</NavLink > 
-            <NavLink to='/login' onClick={toggleMenu}>LoginPage</NavLink>
-        </div>
-    )
+return(<AuthBox>
+    <AuthItem><Link to="/login" onClick={toggleMenu}>Login</Link></AuthItem>
+    <AuthItem><LinkInversion to="/register" onClick={toggleMenu}>Registrations</LinkInversion></AuthItem>
+</AuthBox>)
+
 }

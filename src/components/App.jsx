@@ -26,21 +26,20 @@ export const App = () => {
   ) : (
     <>
       <Routes>
-        <Route path="/" element={<SharedLayout />}></Route>
-        <Route path="/user" element={<UserPage />} />
-
-        <Route path="/test" element={<Test />} />
-
-        <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/friends" element={<Test />} />
-        <Route path="/news" element={<Test />} />
-        <Route path="/notice" element={<NoticesPage />}>
+        <Route path="/" element={<SharedLayout />}>
+        <Route path="user" element={<UserPage />} />
+        <Route path="test" element={<Test />} />
+        <Route path="register" element={<RegistrationPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="friends" element={<Test />} />
+        <Route path="news" element={<Test />} />
+        <Route path="notice" element={<NoticesPage/>}>
           <Route path="lost-found" element={<p>lost</p>} />
           <Route path="for-free" element={<p>free</p>} />
           <Route path="sell" element={<p>sell</p>} />
           <Route path="favorite" element={<p>favorite</p>} />
           <Route path="own" element={<p>own</p>} />
+        </Route>
         </Route>
         <Route path="*" element={<Navigate to={'/'} />} />
       </Routes>
