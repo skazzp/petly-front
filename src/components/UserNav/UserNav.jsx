@@ -1,23 +1,12 @@
 import icon from '../../assets/images/icons.svg'
-import { UserNavLink, UserSvg } from "../Navigation/Navigation.styled";
-
-// export const UserNav = ({toggleMenu}) => {
-//     return(<div>
-// <UserNavLink to="/user" onClick={toggleMenu}>
-//     <UserSvg>
-//         <use href={icon + `#avatar-account`}></use>
-//     </UserSvg>
-//     <span>Account</span>
-// </UserNavLink>
-//     </div>)
-// }
+import { Link, UserSvg } from "../UserNav/UserNav.styled";
 
 export const UserNav = ({toggleMenu}) => {
-    return(<><UserNavLink to="/user" onClick={toggleMenu}>
+    return(<><Link to="/user" onClick={toggleMenu}>
         <UserSvg>
             <use href={icon + `#avatar-account`}></use>
         </UserSvg>
         <span>Account</span>
-    </UserNavLink></>
+    </Link></>
     )
 }

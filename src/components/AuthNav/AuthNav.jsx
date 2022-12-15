@@ -1,5 +1,4 @@
-// import { AuthInversionNavigationLink, AuthNavLink, Box } from "components/Navigation/Navigation.styled"
-// import { Link, NavLink } from "react-router-dom"
+import {Link, LinkInversion, AuthItem, AuthBox} from './AuthNav.styled'
 
 // export const AuthNav = ({toggleMenu}) => {
 //     return(
@@ -11,9 +10,9 @@
 // }
 
 export const AuthNav = () => {
-return(<ul style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', listStyle: 'none'}}>
-    <li style={{marginRight: '20px'}}><button>Login</button></li>
-    <li><button>Registrations</button></li>
-</ul>)
+return(<AuthBox>
+    <AuthItem style={{marginRight: '20px'}}><Link>Login</Link></AuthItem>
+    <AuthItem><LinkInversion>Registrations</LinkInversion></AuthItem>
+</AuthBox>)
 
 }

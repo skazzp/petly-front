@@ -3,8 +3,8 @@ import { ModalNav } from "components/ModalNav/ModalNav";
 import { Nav } from "components/Nav/Nav";
 import { UserNav } from "components/UserNav/UserNav";
 import { useState } from "react";
-import { Container } from "./Navigation.styled";
-
+import { Container, MenuIcon } from "./Navigation.styled";
+import icon from '../../assets/images/icons.svg'
 import { useMediaQuery } from 'react-responsive';
 
 
@@ -37,9 +37,13 @@ export const Navigation = () => {
 
     return(
     <Container> 
-        {useIsDesktop() && <><Nav/> {isLoggedIn ? <AuthNav/> : <UserNav/>}</>}
-        {useIsTablet() && <>{isLoggedIn ? <AuthNav/> : <UserNav/>}<h3 onClick={toggleMenu}>SVG</h3></>}
-        {useIsMobile() &&<h3 onClick={toggleMenu}>SVG</h3>}
+        {useIsDesktop() && <><Nav/> {isLoggedIn ? <UserNav/> : <AuthNav/>}</>}
+        {useIsTablet() && <>{isLoggedIn ? <UserNav/> : <AuthNav/>}<MenuIcon onClick={toggleMenu}>
+                <use href={icon + `#burger-menu-mobile`}></use>
+            </MenuIcon></>}
+        {useIsMobile() &&<MenuIcon onClick={toggleMenu}>
+                <use href={icon + `#burger-menu-mobile`}></use>
+            </MenuIcon>}
         {MenuOpen && <ModalNav/>}
     </Container>)
 }
