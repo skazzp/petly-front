@@ -25,7 +25,7 @@ margin-top: 40px;
 export const Titles=styled.div`
 display: flex;
 justify-content: space-between;
-align-items: center;
+align-items: flex-end;
 
 
 `
@@ -45,7 +45,7 @@ font-size: 28px;
 }
 `
 export const Button =styled.button`
-text-align: center;
+
 border-radius: 50%;
 width: 40px;
 height: 40px;
@@ -55,7 +55,8 @@ margin-left: 15px;
 border:none;
 margin-bottom:25px;
 cursor: pointer;
-
+padding:8px;
+padding-top: 10px;
 &:hover,
 &:focus {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.2);
@@ -78,5 +79,11 @@ export const TitleAdd = styled.span`
 `
 export const Add =styled.div`
 display: flex;
-align-items: center;
+align-items: flex-end;
+`
+
+export const Icon= styled.svg`
+width: 16px;
+  height: 16px;
+  color: rgba(17, 17, 17, 0.6);
 `

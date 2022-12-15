@@ -69,8 +69,6 @@ export const ButtonDel = styled.button`
 position: absolute;
 right: 0;
 top: 0;
-/* color: #000678; */
-/* background-color: #ffffff; */
 padding: 0;
 width: 20px;
   height: 20px;
@@ -79,20 +77,25 @@ display: flex;
   justify-content: center;
   align-items: center;
   border: none;
+  fill: rgba(17, 17, 17, 0.6);
+  background-color: transparent;
+  padding: 10px;
   &:hover svg{
-    background-color: red;
+    fill: #F59256;
   }
+  @media (min-width: 768px) {
+    width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0px solid ;
+  background: #FDF7F2;
+backdrop-filter: blur(2px);
+}
 
 `
 
 export const Icon= styled.svg`
 width: 20px;
   height: 20px;
-  /* fill: rgba(17, 17, 17, 0.6); */
-  fill: red;
-  &:hover{
-    fill: red;
-
-  }
-
+  color: rgba(17, 17, 17, 0.6);
 `

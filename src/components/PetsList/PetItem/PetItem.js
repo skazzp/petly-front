@@ -1,5 +1,6 @@
 import {Img, Card, Li, Ul, ButtonDel, Icon} from './PetItem.styled'
 import dogDefault from './dogDefault.png';
+import sprite from '../../../assets/images/icons.svg'
 
 
 
@@ -14,7 +15,7 @@ const PetItem = () => {
           <Li>Breed: <span>22.04.2018</span></Li>
           <Li>Comments: <span>Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur  Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur </span></Li>
           <ButtonDel>
-          <Icon><use href="" >
+          <Icon><use href={`${sprite}#delete`} >
             </use></Icon>
         </ButtonDel>
         </Ul>
