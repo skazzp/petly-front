@@ -15,7 +15,10 @@ height: 20px;
 `
 export const Box = styled(Container)`
 justify-content: space-between;
-margin-bottom: 46px;`
+margin-bottom: 46px;
+@media screen and (min-width: 768px) {
+    margin-bottom: 88px;
+}`
 
 export const CloseIcon = styled.svg`
 width: 40px;

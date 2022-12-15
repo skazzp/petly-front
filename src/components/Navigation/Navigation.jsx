@@ -32,10 +32,11 @@ export const Navigation = () => {
     const useIsMobile = () => useMediaQuery({ maxWidth: 767.98 });
     const useIsTablet = () => useMediaQuery({minWidth: 768, maxWidth: 1279.98 });
     const useIsDesktop = () => useMediaQuery({ minWidth: 1280 });
-
+    const useIsMobileOrDesktop = () => useMediaQuery({ maxWidth: 1279.98})
     const isMobile = useIsMobile();
     const isTablet = useIsTablet();
     const isDesktop = useIsDesktop();
+    const isMobileOrDesktop = useIsMobileOrDesktop()
 
 
     const [MenuOpen, setMenuOpen] = useState(false)
@@ -50,7 +51,7 @@ export const Navigation = () => {
         {isMobile &&<MenuIcon onClick={toggleMenu}>
                 <use href={icon + `#burger-menu-mobile`}></use>
             </MenuIcon>}
-        {MenuOpen && 
+        {(MenuOpen && isMobileOrDesktop) &&
             <ModalNav>
                 <Box>
                     <Logo/>
@@ -58,8 +59,9 @@ export const Navigation = () => {
                         <use href={icon + `#closeModal-button-mobile`}></use>
                     </CloseIcon>
                 </Box>
-                {isTablet && <Nav/>}
-                {isMobile && <>{isLoggedIn ? <UserNav/> : <AuthNav/>} <Nav/></>}
+                {isMobile && <>{isLoggedIn ? <UserNav/> : <AuthNav/>}</>}
+                <Nav/>
+                
             </ModalNav>}
     </Container>)
 }
