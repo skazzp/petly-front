@@ -1,18 +1,9 @@
 import {Link, LinkInversion, AuthItem, AuthBox} from './AuthNav.styled'
 
-// export const AuthNav = ({toggleMenu}) => {
-//     return(
-//         <Box>
-//             <AuthNavLink to='/login' onClick={toggleMenu}>Login</AuthNavLink > 
-//             <AuthInversionNavigationLink to='/register' onClick={toggleMenu}>Registration</AuthInversionNavigationLink>
-//         </Box>
-//     )
-// }
-
-export const AuthNav = () => {
+export const AuthNav = ({toggleMenu}) => {
 return(<AuthBox>
-    <AuthItem style={{marginRight: '20px'}}><Link>Login</Link></AuthItem>
-    <AuthItem><LinkInversion>Registrations</LinkInversion></AuthItem>
+    <AuthItem><Link to="/login" onClick={toggleMenu}>Login</Link></AuthItem>
+    <AuthItem><LinkInversion to="/register" onClick={toggleMenu}>Registrations</LinkInversion></AuthItem>
 </AuthBox>)
 
 }
