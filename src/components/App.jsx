@@ -1,6 +1,7 @@
 import LoginPage from 'pages/LoginPage/LoginPage';
 import NoticesPage from 'pages/NoticesPage/NoticesPage';
 import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
+import UserPage from 'pages/UserPage/UserPage';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -26,14 +27,13 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/user" element={<h1>UserPage</h1>} />
+          <Route path="/user" element={<UserPage />} />
         </Route>
 
         <Route path="/test" element={<Test />} />
 
         <Route path="/register" element={<RegistrationPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<Test />} />
         <Route path="/friends" element={<Test />} />
         <Route path="/news" element={<Test />} />
         <Route path="/notice" element={<NoticesPage />}>
