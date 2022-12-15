@@ -1,7 +1,8 @@
 import { LogoNormal, LogoAccent } from "./Logo.styled"
 
 export const Logo = () => {
-    return (
+    return (<div>
         <LogoNormal>pe<LogoAccent>t</LogoAccent>ly</LogoNormal>
+        </div>
     )
 }

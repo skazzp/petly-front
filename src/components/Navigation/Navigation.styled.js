@@ -13,3 +13,11 @@ export const MenuIcon = styled.svg`
 width: 30px;
 height: 20px;
 `
+export const Box = styled(Container)`
+justify-content: space-between;
+margin-bottom: 46px;`
+
+export const CloseIcon = styled.svg`
+width: 40px;
+height: 40px;
+`

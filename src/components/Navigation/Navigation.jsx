@@ -3,9 +3,10 @@ import { ModalNav } from "components/ModalNav/ModalNav";
 import { Nav } from "components/Nav/Nav";
 import { UserNav } from "components/UserNav/UserNav";
 import { useState } from "react";
-import { Container, MenuIcon } from "./Navigation.styled";
+import { Container, MenuIcon, CloseIcon, Box } from "./Navigation.styled";
 import icon from '../../assets/images/icons.svg'
 import { useMediaQuery } from 'react-responsive';
+import { Logo } from "components/Logo/Logo";
 
 
 
@@ -32,18 +33,33 @@ export const Navigation = () => {
     const useIsTablet = () => useMediaQuery({minWidth: 768, maxWidth: 1279.98 });
     const useIsDesktop = () => useMediaQuery({ minWidth: 1280 });
 
+    const isMobile = useIsMobile();
+    const isTablet = useIsTablet();
+    const isDesktop = useIsDesktop();
+
+
     const [MenuOpen, setMenuOpen] = useState(false)
     const toggleMenu = () => setMenuOpen(!MenuOpen)
 
     return(
     <Container> 
-        {useIsDesktop() && <><Nav/> {isLoggedIn ? <UserNav/> : <AuthNav/>}</>}
-        {useIsTablet() && <>{isLoggedIn ? <UserNav/> : <AuthNav/>}<MenuIcon onClick={toggleMenu}>
+        {isDesktop && <><Nav/> {isLoggedIn ? <UserNav/> : <AuthNav/>}</>}
+        {isTablet && <>{isLoggedIn ? <UserNav/> : <AuthNav/>}<MenuIcon onClick={toggleMenu}>
                 <use href={icon + `#burger-menu-mobile`}></use>
             </MenuIcon></>}
-        {useIsMobile() &&<MenuIcon onClick={toggleMenu}>
+        {isMobile &&<MenuIcon onClick={toggleMenu}>
                 <use href={icon + `#burger-menu-mobile`}></use>
             </MenuIcon>}
-        {MenuOpen && <ModalNav/>}
+        {MenuOpen && 
+            <ModalNav>
+                <Box>
+                    <Logo/>
+                    <CloseIcon onClick={toggleMenu}>
+                        <use href={icon + `#closeModal-button-mobile`}></use>
+                    </CloseIcon>
+                </Box>
+                {isTablet && <Nav/>}
+                {isMobile && <>{isLoggedIn ? <UserNav/> : <AuthNav/>} <Nav/></>}
+            </ModalNav>}
     </Container>)
 }
