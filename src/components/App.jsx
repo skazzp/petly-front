@@ -8,10 +8,10 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import NewPage from 'pages/newPage';
+// import NewPage from 'pages/newPage';
 
 const Test = () => {
-  return <ModalAddNotice />;
+  return <h1>123</h1>;
 };
 
 export const App = () => {
