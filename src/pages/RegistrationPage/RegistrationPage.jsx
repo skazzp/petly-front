@@ -6,9 +6,6 @@ const RegistrationPage = () => {
   return (
     <Div>
       <RegistrationForm />
-      <svg>
-        <use href='../../assets/images/bg/bgSvg.svg'></use>
-      </svg>
     </Div>
   );
 };
