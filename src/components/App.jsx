@@ -10,7 +10,7 @@ import { SharedLayout } from './SharedLayout/SharedLayout';
 import NewPage from 'pages/newPage';
 
 const Test = () => {
-  return <h1>Insert there your Component for testing</h1>;
+  return <ModalAddNotice />;
 };
 
 export const App = () => {
