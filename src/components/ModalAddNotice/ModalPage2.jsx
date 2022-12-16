@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import icons from '../../assets/images/icons.svg';
 import { createNotice } from '../../redux/notice/noticeOperations';
 import {
+  FormStyled,
+  InputStyled,
+  InputTextareaStyled,
+  SexInputStyled,
   FieldWrapper,
   Label,
   SubmitBtnWrapper,
@@ -19,10 +23,6 @@ import {
   AvatarWrapper,
   AvatarImg,
   AvatarInput,
-  FieldWrapperStyle,
-  InputStyle,
-  InputTextareaStyle,
-  SexInputStyle,
 } from './ModalAddNotice.styled';
 
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
@@ -50,12 +50,7 @@ const validationSchema = yup.object({
       value =>
         value === null || (value && SUPPORTED_FORMATS.includes(value.type))
     ),
-  comments: yup
-    .string()
-    .min(4)
-    .max(200)
-    .matches(/^\D*$/g, 'Only alphabetic characters and symbols are allowed')
-    .required('Field is required!'),
+  comments: yup.string().min(4).max(200).required('Field is required!'),
 });
 
 const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
@@ -97,12 +92,11 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
         onSubmit={onSubmit}
       >
         {({ setFieldValue }) => (
-          <Form style={FieldWrapperStyle}>
+          <FormStyled>
             <SexWrapper>
               <SexTitle>The sex*:</SexTitle>
               <SexLabel htmlFor="male">
-                <Field
-                  style={SexInputStyle}
+                <SexInputStyled
                   type="radio"
                   id="male"
                   name="sex"
@@ -118,8 +112,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
               </SexLabel>
 
               <SexLabel htmlFor="female">
-                <Field
-                  style={SexInputStyle}
+                <SexInputStyled
                   type="radio"
                   id="female"
                   name="sex"
@@ -143,11 +136,10 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
               <Label htmlFor="location" type="text">
                 Location*:
               </Label>
-              <Field
+              <InputStyled
                 name="location"
                 id="location"
                 placeholder="Type location"
-                style={InputStyle}
               />
               <ErrorMessage
                 name="location"
@@ -160,12 +152,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
                 <Label htmlFor="price" type="text">
                   Price*:
                 </Label>
-                <Field
-                  name="price"
-                  id="price"
-                  placeholder="Type price"
-                  style={InputStyle}
-                />
+                <InputStyled name="price" id="price" placeholder="Type price" />
                 <ErrorMessage
                   name="price"
                   render={msg => <div style={{ color: 'red' }}>{msg}</div>}
@@ -183,7 +170,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
                 />
               ) : (
                 <svg>
-                  <use href={`${icons}#icon-plus`}></use>
+                  <use href={`${icons}#plus-add-pet`}></use>
                 </svg>
               )}
               <AvatarInput
@@ -201,13 +188,12 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
 
             <FieldWrapper>
               <Label htmlFor="comments">Comments*:</Label>
-              <Field
+              <InputTextareaStyled
                 component="textarea"
                 name="comments"
                 id="comments"
                 rows="3"
                 placeholder="Type comments"
-                style={InputTextareaStyle}
               />
               <ErrorMessage
                 name="comments"
@@ -223,7 +209,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
                 Back
               </SubmitBtn>
             </SubmitBtnWrapper>
-          </Form>
+          </FormStyled>
         )}
       </Formik>
     </div>

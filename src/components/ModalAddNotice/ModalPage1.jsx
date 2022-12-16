@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { parse } from 'date-fns';
 import {
+  FormStyled,
+  RadioStyled,
+  InputStyled,
   Text,
   RadioWrapper,
   RadioBtn,
@@ -10,8 +13,6 @@ import {
   Label,
   SubmitBtnWrapper,
   SubmitBtn,
-  RadioStyle,
-  InputStyle,
 } from './ModalAddNotice.styled';
 
 const today = new Date();
@@ -75,11 +76,10 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
         initialValues={formData}
         onSubmit={onSubmit}
       >
-        <Form>
+        <FormStyled>
           <RadioWrapper role="group" aria-labelledby="my-radio-group">
             <label htmlFor="lost/found">
-              <Field
-                style={RadioStyle}
+              <RadioStyled
                 type="radio"
                 name="category"
                 value="lost/found"
@@ -88,8 +88,7 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
               <RadioBtn>lost/found</RadioBtn>
             </label>
             <label htmlFor="in_good_hands">
-              <Field
-                style={RadioStyle}
+              <RadioStyled
                 type="radio"
                 name="category"
                 value="in_good_hands"
@@ -98,8 +97,7 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
               <RadioBtn>in_good_hands</RadioBtn>
             </label>
             <label htmlFor="sell">
-              <Field
-                style={RadioStyle}
+              <RadioStyled
                 type="radio"
                 name="category"
                 value="sell"
@@ -117,11 +115,10 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
             <Label htmlFor="titleOfAd" type="text">
               Title of ad*:
             </Label>
-            <Field
+            <InputStyled
               name="titleOfAd"
               id="titleOfAd"
               placeholder="Type title of ad"
-              style={InputStyle}
             />
             <ErrorMessage
               name="titleOfAd"
@@ -133,11 +130,10 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
             <Label htmlFor="namePet" type="text">
               Name pet*:
             </Label>
-            <Field
+            <InputStyled
               name="namePet"
               id="namePet"
               placeholder="Type name of pet"
-              style={InputStyle}
             />
             <ErrorMessage
               name="namePet"
@@ -149,11 +145,10 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
             <Label htmlFor="dateOfBirth" type="text">
               Date of birth*:
             </Label>
-            <Field
+            <InputStyled
               name="dateOfBirth"
               id="dateOfBirth"
               placeholder="Type date of birth"
-              style={InputStyle}
               data-pattern="**.**.****"
             />
             <ErrorMessage
@@ -166,11 +161,10 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
             <Label htmlFor="breed" type="text">
               Breed*:
             </Label>
-            <Field
+            <InputStyled
               name="breed"
               id="breed"
               placeholder="Type breed"
-              style={InputStyle}
               value={breedValue}
               onInput={changeInputBreed}
             />
@@ -186,7 +180,7 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
               Cancel
             </SubmitBtn>
           </SubmitBtnWrapper>
-        </Form>
+        </FormStyled>
       </Formik>
     </div>
   );
