@@ -8,6 +8,12 @@ padding-bottom: 60px;
 margin-left: auto;
 margin-right: auto;
 max-width: 280px;
+@media screen and (min-width: 768px) {
+max-width: 588px;
+padding-top: 94px;
+padding-bottom: 100px;
+margin-left: 0;
+}
 `
 
 export const Title = styled.h1`
