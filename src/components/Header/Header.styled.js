@@ -3,6 +3,7 @@ export const Container  = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
+
 /* @media screen and (min-width: 1280px) {
 margin-right: 80px;
 justify-content: flex-start} */
