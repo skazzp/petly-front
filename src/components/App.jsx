@@ -9,10 +9,12 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout';
+import ModalNotice from './ModalNotice/ModalNotice';
 // import NewPage from 'pages/newPage';
 
 const Test = () => {
-  return <h1>123</h1>;
+ return <h1>123</h1>;
+
 };
 
 export const App = () => {
