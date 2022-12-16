@@ -166,6 +166,9 @@
 <symbol id="heart-button" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M5.167 1c-1.84 0-3.333 1.477-3.333 3.3 0 1.471.583 4.963 6.325 8.493a.657.657 0 0 0 .682 0c5.743-3.53 6.326-7.022 6.326-8.493 0-1.823-1.493-3.3-3.333-3.3C9.993 1 8.5 3 8.5 3S7.008 1 5.167 1Z" fill="#F59256" stroke="#F59256" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
+<symbol id="close-small-modal-mobile" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="m9.097 8 6.447-6.448A.778.778 0 0 0 14.448.455L8 6.903 1.552.447A.78.78 0 1 0 .448 1.552L6.903 8 .448 14.447a.777.777 0 1 0 1.096 1.097L8 9.096l6.448 6.448a.778.778 0 0 0 1.096-1.097L9.097 8Z" fill="#000"/>
+</symbol>
   </defs>
 
   <svg id="delete" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">

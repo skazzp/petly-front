@@ -1,3 +1,4 @@
+import ModalNotice from 'components/ModalNotice/ModalNotice';
 import NoticeCategoryItem from 'components/NoticeCategoryItem/NoticeCategoryItem';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +13,7 @@ const NoticeCategoryList = () => {
   useEffect(() => {
     dispatch(getAllNotices());
   }, [dispatch]);
-
+  const isModalOpen = useSelector(state => state.notice.isLearnMoreModalOpen);
   return (
     <Wrapper>
       <List>
@@ -48,6 +49,7 @@ const NoticeCategoryList = () => {
           )
         )}
       </List>
+      {isModalOpen && <ModalNotice />}
     </Wrapper>
   );
 };

@@ -130,5 +130,11 @@ const noticeSlice = createSlice({
   },
 });
 
-export const { openModal, closeModal, addModalData } = noticeSlice.actions;
+export const {
+  openModal,
+  closeModal,
+  addModalData,
+  closeLearnMoreModal,
+  openLearnMoreModal,
+} = noticeSlice.actions;
 export const noticeReducer = noticeSlice.reducer;
