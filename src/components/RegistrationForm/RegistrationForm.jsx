@@ -10,18 +10,26 @@ import {
   ButtonBack,
   ButtonRegister,
   Validation,
+  SelectContainer,
 } from './RegistrationForm.styled';
+import { selectStyles } from './selectStyles';
+import Select from 'react-select';
 import { useFormik } from 'formik';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { schema } from './Validation';
 import { useState } from 'react';
 import { registerUser } from 'redux/auth/authOperation';
-
+import { selectError, selectToken } from 'redux/auth/authSelectors';
+import { useWindowSize } from '@react-hook/window-size';
+import Confetti from 'react-confetti';
+import Data from '../../assets/City.json';
 
 const RegistrationForm = () => {
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [formChenge, SetFormChenge] = useState(false);
-
+  const errorDB = useSelector(selectError);
+  const token = useSelector(selectToken);
+  const { width, height } = useWindowSize();
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -33,18 +41,24 @@ const RegistrationForm = () => {
     },
     validationSchema: schema,
 
-    onSubmit: async values  => {
+    onSubmit: async values => {
       const user = {
         email: values.email,
         password: values.password,
         name: values.name,
         city: values.city,
         phone: values.phone,
-      }
-      const res = await dispatch(registerUser(user));
-      console.log(res);
+      };
+      await dispatch(registerUser(user));
     },
   });
+  const setCity = city => {
+    formik.setValues(prev => ({
+      ...prev,
+      city: city,
+    }));
+  };
+
   const onClickNext = e => {
     e.preventDefault();
     if (
@@ -60,6 +74,10 @@ const RegistrationForm = () => {
     )
       SetFormChenge(true);
   };
+  const Selectoptions = Data.map(i => ({
+    value: `${i.City},${i.District}`,
+    label: `${i.City}, ${i.District}`,
+  }));
   return (
     <Div>
       <Title>Registration</Title>
@@ -120,22 +138,27 @@ const RegistrationForm = () => {
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
               value={formik.values.name}
-              ></Input>
-              {formik.errors.name && formik.touched.name ? (
+            ></Input>
+            {formik.errors.name && formik.touched.name ? (
               <Validation>{formik.errors.name}</Validation>
             ) : null}
           </Label>
           <Label>
-            <Input
-              placeholder="City"
-              id="city"
-              name="city"
-              type="text"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              value={formik.values.city}
-              ></Input>
-              {formik.errors.city && formik.touched.city ? (
+            <SelectContainer>
+              <Select
+                placeholder="City"
+                defaultValue={() => formik.values.city}
+                id="city"
+                name="city"
+                styles={selectStyles()}
+                options={Selectoptions}
+                onChange={e => setCity(e.value)}
+                // onBlur={formik.handleBlur}
+                values={() => formik.values.city}
+              ></Select>
+            </SelectContainer>
+
+            {formik.errors.city && formik.touched.city ? (
               <Validation>{formik.errors.city}</Validation>
             ) : null}
           </Label>
@@ -162,6 +185,10 @@ const RegistrationForm = () => {
           >
             Back
           </ButtonBack>
+          {errorDB ? <p>{errorDB}</p> : null}
+          {token ? (
+            <Confetti recycle={false} width={width} height={height} />
+          ) : null}
         </Form>
       )}
 

@@ -63,9 +63,24 @@ export const refreshUser = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get('/api/users/current');
-      // console.log('getUser', response);
+      const response = await axios.get('/api/usersinfo');
+      console.log('getUser', response.data);
 
+      return response.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);
+
+export const editUser = createAsyncThunk(
+  'auth/editUser',
+  async (user, thunkApi) => {
+    try {
+      console.log(user);
+      const response = await axios.patch(`/api/usersinfo/update`, user);
+      console.log('editUser', response.data);
+      // setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
