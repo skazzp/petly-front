@@ -13,8 +13,8 @@ import ModalNotice from './ModalNotice/ModalNotice';
 // import NewPage from 'pages/newPage';
 
 const Test = () => {
-  // return <h1>123</h1>;
-  return <ModalNotice />;
+ return <h1>123</h1>;
+
 };
 
 export const App = () => {
