@@ -6,6 +6,7 @@ export const Item = styled.li`
   display: flex;
   flex-direction: column;
   padding-bottom: 12px;
+  margin-bottom: 32px;
 
   background: ${props => props.theme.colors.white};
 
