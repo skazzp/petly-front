@@ -54,7 +54,6 @@ const validationSchema = yup.object({
 });
 
 const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
-  const [direction, setDirection] = useState('back');
   const [fileInput, setFileInput] = useState(formData.image);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -74,14 +73,9 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
       image: fileInput,
       price: values.category !== 'sell' ? '1$' : values.price,
     });
-    if (direction === 'back') {
-      prevStep();
-    }
-    if (direction === 'forward') {
-      dispatch(createNotice({ values })).unwrap();
-      navigate('/notices/own');
-      onClose();
-    }
+    dispatch(createNotice({ values })).unwrap();
+    navigate('/notices/own');
+    onClose();
   };
 
   return (
@@ -124,7 +118,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
                     <use href={`${icons}#female-icon`}></use>
                   </svg>
                 </SexIcon>
-                <span>Female</span>
+                <SexText>Female</SexText>
               </SexLabel>
             </SexWrapper>
             <ErrorMessage
@@ -202,10 +196,10 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
             </FieldWrapper>
 
             <SubmitBtnWrapper>
-              <SubmitBtn type="submit" onClick={() => setDirection('forward')}>
+              <SubmitBtn type="submit" onSubmit={onSubmit}>
                 Done
               </SubmitBtn>
-              <SubmitBtn type="button" onClick={() => setDirection('back')}>
+              <SubmitBtn type="button" onClick={() => prevStep()}>
                 Back
               </SubmitBtn>
             </SubmitBtnWrapper>

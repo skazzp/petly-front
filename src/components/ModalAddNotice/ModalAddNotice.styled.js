@@ -14,13 +14,8 @@ export const FormStyled = styled(Form)`
 
 export const RadioStyled = styled(Field)`
   position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
   opacity: 0;
-  width: 100%;
-  height: 100%;
   appearance: none;
   cursor: pointer;
 `;
@@ -55,15 +50,9 @@ export const InputTextareaStyled = styled(Field)`
 
 export const SexInputStyled = styled(Field)`
   position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  appearance: none;
-  cursor: pointer;
+  opacity: 1;
+  /* appearance: none; */
 `;
 
 export const Overlay = styled.div`
@@ -201,6 +190,7 @@ export const SubmitBtn = styled.button`
 
 export const SexWrapper = styled.fieldset`
   display: flex;
+  gap: 40px;
   margin-bottom: 32px;
   font-size: 18px;
 `;
@@ -218,10 +208,7 @@ export const SexLabel = styled.label`
   display: flex;
   flex-direction: column;
   position: relative;
-
-  &:not(:last-child) {
-    margin-right: 40px;
-  }
+  cursor: pointer;
 `;
 
 export const SexIcon = styled.span`
@@ -237,7 +224,9 @@ export const SexText = styled.span`
     font-size: 20px;
   }
 
-  ${SexLabel} > ${SexInputStyled}:checked ~ & {
+  ${SexInputStyled}:checked ~ &,
+  ${SexInputStyled}:hover ~ &,
+  ${SexInputStyled}:focus ~ & {
     color: ${p => p.theme.colors.accent};
   }
 `;

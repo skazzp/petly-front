@@ -22,15 +22,17 @@ const AddNoticeButton = () => {
 
   return (
     <>
-      <BtnWrapper onClick={handleClick}>
-        {!isMobile && text}
-        <AddBtn type="button">
-          <Plus>
-            <use href={`${icons}#plus-add-pet`}></use>
-          </Plus>
-          {isMobile && text}
-        </AddBtn>
-      </BtnWrapper>
+      {!isOpen && (
+        <BtnWrapper onClick={handleClick}>
+          {!isMobile && text}
+          <AddBtn type="button">
+            <Plus>
+              <use href={`${icons}#plus-add-pet`}></use>
+            </Plus>
+            {isMobile && text}
+          </AddBtn>
+        </BtnWrapper>
+      )}
       {isOpen && (
         <ModalAddNotice
           onClose={() => {
