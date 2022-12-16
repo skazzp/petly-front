@@ -18,7 +18,7 @@ const userInitialState = {
   },
   token: null,
   isLoading: false,
-  error: null,
+  error: '',
 };
 
 const pendingHandlerAuth = (state, action) => {

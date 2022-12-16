@@ -19,15 +19,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { schema } from './Validation';
 import { useState } from 'react';
 import { registerUser } from 'redux/auth/authOperation';
-import { selectError, selectToken } from 'redux/auth/authSelectors';
+import { selectToken } from 'redux/auth/authSelectors';
 import { useWindowSize } from '@react-hook/window-size';
 import Confetti from 'react-confetti';
 import Data from '../../assets/City.json';
+import ErrorModal from './ErrorModal';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
   const [formChenge, SetFormChenge] = useState(false);
-  const errorDB = useSelector(selectError);
   const token = useSelector(selectToken);
   const { width, height } = useWindowSize();
   const formik = useFormik({
@@ -52,6 +52,7 @@ const RegistrationForm = () => {
       await dispatch(registerUser(user));
     },
   });
+  const city = formik.values.city;
   const setCity = city => {
     formik.setValues(prev => ({
       ...prev,
@@ -78,6 +79,7 @@ const RegistrationForm = () => {
     value: `${i.City},${i.District}`,
     label: `${i.City}, ${i.District}`,
   }));
+
   return (
     <Div>
       <Title>Registration</Title>
@@ -147,14 +149,13 @@ const RegistrationForm = () => {
             <SelectContainer>
               <Select
                 placeholder="City"
-                defaultValue={() => formik.values.city}
+                defaultValue={city}
                 id="city"
                 name="city"
                 styles={selectStyles()}
                 options={Selectoptions}
                 onChange={e => setCity(e.value)}
-                // onBlur={formik.handleBlur}
-                values={() => formik.values.city}
+                defaultInputValue={city}
               ></Select>
             </SelectContainer>
 
@@ -176,6 +177,7 @@ const RegistrationForm = () => {
               <Validation>{formik.errors.phone}</Validation>
             ) : null}
           </Label>
+          <ErrorModal />
           <ButtonRegister type="submit">Registration</ButtonRegister>
           <ButtonBack
             onClick={e => {
@@ -185,7 +187,7 @@ const RegistrationForm = () => {
           >
             Back
           </ButtonBack>
-          {errorDB ? <p>{errorDB}</p> : null}
+
           {token ? (
             <Confetti recycle={false} width={width} height={height} />
           ) : null}

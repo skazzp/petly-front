@@ -22,7 +22,7 @@ export const Div = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    width: 458px;
+    width: 608px;
     z-index: 1;
   }
 `;
@@ -51,6 +51,7 @@ export const Form = styled.form`
   min-width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media screen and (min-width: 768px) {
   }
@@ -205,7 +206,7 @@ export const ButtonRegister = styled.button`
   border: none;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
+  margin-top: 15px;
 
   :focus,
   :hover {
