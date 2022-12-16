@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   background-color: ${props => props.theme.colors.background.main};
-  width: 320 px;
-  padding-bottom: 100px; */
+  /* width: 320 px; */
+  padding-bottom: 100px; 
 
   ${props => props.theme.breakpoints.tab} {
   }
 
   ${props => props.theme.breakpoints.desc} {
+    padding-bottom: 200px; 
   }
 `;
 

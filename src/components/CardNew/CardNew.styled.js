@@ -1,18 +1,26 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  display: block;
+  /* display: block; */
   width: 280px;
-  outline: 1px solid red;
   margin-left: auto;
   margin-right: auto;
 
+  /*; */
+
   ${props => props.theme.breakpoints.tab} {
     width: 335px;
+
+    /* &:nth-first(2n+1) {
+      margin-left: auto;
+    } */
+    /* &:nth-child(2n){
+      margin-right: auto;
+    } */
   }
 
   ${props => props.theme.breakpoints.desc} {
-    width: 395px;
+    width: 392px;
   }
 `;
 
@@ -27,6 +35,7 @@ export const Strip = styled.div`
   ${props => props.theme.breakpoints.tab} {
     width: 280px;
     height: 8px;
+    margin-top: 0px;
   }
 
   ${props => props.theme.breakpoints.desc} {
@@ -55,9 +64,10 @@ export const Content = styled.div`
   font-size: ${props => props.theme.fontSizes.m};
   line-height: ${props => props.theme.lineHeights.secondary};
 
-  color: ${props => props.theme.colors.background.content};;
+  color: ${props => props.theme.colors.background.content};
 
   ${props => props.theme.breakpoints.tab} {
+    margin-top: ${props => props.theme.space[0]}px;
   }
 
   ${props => props.theme.breakpoints.desc} {
@@ -89,17 +99,47 @@ export const Data = styled.div`
 `;
 
 export const Link = styled.a`
-font-weight: ${props => props.theme.fontWeights.semiBold};
-font-size: ${props => props.theme.fontSizes.m};
-line-height: ${props => props.theme.lineHeights.main};
-/* identical to box height */
-
-text-align: right;
-text-decoration-line: underline;
-color: ${props => props.theme.colors.accent};
+  font-weight: ${props => props.theme.fontWeights.semiBold};
+  font-size: ${props => props.theme.fontSizes.m};
+  line-height: ${props => props.theme.lineHeights.main};
+  text-align: right;
+  text-decoration-line: underline;
+  color: ${props => props.theme.colors.accent};
   ${props => props.theme.breakpoints.tab} {
   }
 
   ${props => props.theme.breakpoints.desc} {
+  }
+`;
+
+export const ListCard = styled.ul`
+  list-style: none;
+  padding: 0px;
+  margin:0px ;
+
+  ${props => props.theme.breakpoints.tab} {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px ;
+    /* padding-bottom: 60px; */
+
+    row-gap: 60px;
+    column-gap: 32px;
+    /* margin-top: 20px; */
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
+`;
+
+export const ItemCard = styled.li`
+
+  ${props => props.theme.breakpoints.tab} {
+    flex-basis: calc((100%-40px-32px) / 3);
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+    flex-basis: calc((100%-40px-32px-32px)/4);
   }
 `;
