@@ -38,7 +38,7 @@ background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-rep
 background-size: 624px auto, 1091px 826px, 1068px 685px, 550px auto, 92px 89px, 63px 63px;
 background-position: bottom right, -50% -730%, 5% 430%, 110% 105%, 58% 25%, 33% 70%;
 }
-
+/* right 30px bottom 20px; */
 
 
 `
