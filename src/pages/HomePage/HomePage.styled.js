@@ -14,6 +14,9 @@ padding-top: 94px;
 padding-bottom: 100px;
 margin-left: 0;
 }
+@media screen and (min-width: 1280px) {
+padding-top: 92px;
+}
 `
 
 export const Title = styled.h1`
