@@ -8,7 +8,7 @@ import { List, Wrapper } from './NoticeCategoryList.styled';
 const NoticeCategoryList = () => {
   const notices = useSelector(selectNotices);
   const dispatch = useDispatch();
-
+  console.log(notices);
   useEffect(() => {
     dispatch(getAllNotices());
   }, [dispatch]);
@@ -16,7 +16,7 @@ const NoticeCategoryList = () => {
   return (
     <Wrapper>
       <List>
-        {notices.data?.map(
+        {notices?.map(
           ({
             birthday,
             breed,
