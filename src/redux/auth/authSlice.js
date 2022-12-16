@@ -5,6 +5,7 @@ import {
   loginUser,
   logOutUser,
   registerUser,
+  editUser,
 } from './authOperation';
 
 const userInitialState = {
@@ -36,7 +37,11 @@ const authSlice = createSlice({
 
   initialState: userInitialState,
 
-  reducers: {},
+  reducers: {
+    changeUserData(state, action) {
+      state.user = { ...state.user, ...action.payload };
+    },
+  },
   extraReducers: builder => {
     builder.addCase(registerUser.pending, pendingHandlerAuth);
     builder.addCase(registerUser.rejected, rejectedHandler);
@@ -68,11 +73,22 @@ const authSlice = createSlice({
     builder.addCase(refreshUser.pending, pendingHandlerAuth);
     builder.addCase(refreshUser.rejected, rejectedHandler);
     builder.addCase(refreshUser.fulfilled, (state, action) => {
+      // console.log(action.payload);
       state.user = action.payload;
       state.error = null;
       state.isLoading = false;
     });
+
+    builder.addCase(editUser.pending, pendingHandlerAuth);
+    builder.addCase(editUser.rejected, rejectedHandler);
+    builder.addCase(editUser.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      // state.user = {};
+      state.token = null;
+    });
   },
 });
 
+export const { changeUserData } = authSlice.actions;
 export const authReducer = authSlice.reducer;
