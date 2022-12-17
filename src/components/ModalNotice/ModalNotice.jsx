@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeLearnMoreModal, closeModal } from 'redux/notice/noticeSlice';
-// import { openLearnMoreModal } from 'redux/notice/noticeSlice';
+import { closeLearnMoreModal } from 'redux/notice/noticeSlice';
 import modalClose from '../../assets/images/icons.svg';
 import heart from '../../assets/images/icons.svg';
 import dog from '../../assets/images/mobile.png';
@@ -40,7 +39,9 @@ const ModalNotice = () => {
 
   const modalRoot = document.querySelector('#modal-root');
   const isModalOpen = useSelector(state => state.notice.isLearnMoreModalOpen);
+  const data = useSelector(state => state.notice.modalData);
 
+  // console.log(data);
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -55,18 +56,24 @@ const ModalNotice = () => {
       document.body.style.overflow = 'auto';
     };
   }, [isModalOpen, dispatch]);
+  const backDropCloseModal = e => {
+    if (e.target === e.currentTarget) {
+      dispatch(closeLearnMoreModal());
+    }
+  };
+
   return createPortal(
-    <Overlay>
+    <Overlay onClick={backDropCloseModal}>
       <Div>
         <WrapperForDesc>
           <ImageWrapper>
             <Status>
-              <StatusText>Sell</StatusText>
+              <StatusText>{data.category}</StatusText>
             </Status>
-            <Img src={dog} alt="Animal"></Img>
+            <Img src={!data.photoURL && dog} alt="Animal"></Img>
           </ImageWrapper>
           <div>
-            <Title>Сute dog looking for a home</Title>
+            <Title>{data.title}</Title>
             <ListWrapper>
               <FirstList>
                 <Items>
@@ -79,7 +86,7 @@ const ModalNotice = () => {
                   <Text>Breed:</Text>
                 </Items>
                 <Items>
-                  <Text>Lovation:</Text>
+                  <Text>Location:</Text>
                 </Items>
                 <Items>
                   <Text>The sex:</Text>
@@ -96,19 +103,19 @@ const ModalNotice = () => {
               </FirstList>
               <SecondList>
                 <Items>
-                  <TextSecond>Rich</TextSecond>
+                  <TextSecond>{data.name}</TextSecond>
                 </Items>
                 <Items>
-                  <TextSecond>21.09.2020</TextSecond>
+                  <TextSecond>{data.birthday.slice(0, 10)}</TextSecond>
                 </Items>
                 <Items>
-                  <TextSecond>Pomeranian</TextSecond>
+                  <TextSecond>{data.breed}</TextSecond>
                 </Items>
                 <Items>
-                  <TextSecond>Lviv</TextSecond>
+                  <TextSecond>{data.location}</TextSecond>
                 </Items>
                 <Items>
-                  <TextSecond>male</TextSecond>
+                  <TextSecond>{data.sex}</TextSecond>
                 </Items>
                 <Items>
                   <TextSecond>user@mail.com</TextSecond>
@@ -116,9 +123,11 @@ const ModalNotice = () => {
                 <Items>
                   <TextSecond>+380971234567</TextSecond>
                 </Items>
-                <Items>
-                  <TextSecond>150$</TextSecond>
-                </Items>
+                {data.price && (
+                  <Items>
+                    <TextSecond>{data.price}$</TextSecond>
+                  </Items>
+                )}
               </SecondList>
             </ListWrapper>
           </div>
@@ -126,9 +135,7 @@ const ModalNotice = () => {
 
         <div>
           <P>
-            <Span>Comments:</Span> Lorem ipsum dolor sit amet, consectetur Lorem
-            ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet,
-            consectetur Lorem
+            <Span>Comments:</Span> {data.comments}
           </P>
         </div>
         <ListButtons>
