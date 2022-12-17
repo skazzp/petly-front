@@ -16,9 +16,11 @@ import {
   Title,
   Wrapper,
 } from './NoticeCategoryItem.styled';
-import ModalNotice from 'components/ModalNotice/ModalNotice';
 import { useDispatch, useSelector } from 'react-redux';
 import { addModalData, openLearnMoreModal } from 'redux/notice/noticeSlice';
+import { selectUser } from '../../redux/auth/authSelectors';
+import { deleteNotices } from '../../redux/notice/noticeOperations';
+
 const NoticeCategoryItem = ({
   birthday,
   breed,
@@ -34,6 +36,9 @@ const NoticeCategoryItem = ({
   _id,
 }) => {
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  const isOwner = user.email !== owner?.email; // TODO replace !== to === and check it with _id
+
   const openModal = e => {
     dispatch(
       addModalData({
@@ -88,12 +93,19 @@ const NoticeCategoryItem = ({
           <BtnLearnMore type="button" onClick={openModal}>
             Learn more
           </BtnLearnMore>
-          <BtnDlt type="button">
-            <Span>Delete</Span>
-            <svg width="17" height="17">
-              <use href={icon + '#delete-button'}></use>
-            </svg>
-          </BtnDlt>
+          {isOwner && (
+            <BtnDlt
+              type="button"
+              onClick={() => {
+                window.confirm('Are you sure?') && dispatch(deleteNotices(_id));
+              }}
+            >
+              <Span>Delete</Span>
+              <svg width="17" height="17">
+                <use href={icon + '#delete-button'}></use>
+              </svg>
+            </BtnDlt>
+          )}
         </BtnBox>
       </Item>
     </>
