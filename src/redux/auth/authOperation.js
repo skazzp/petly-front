@@ -77,11 +77,11 @@ export const editUser = createAsyncThunk(
   'auth/editUser',
   async (user, thunkApi) => {
     try {
-      console.log(user);
+      // console.log(user);
       const response = await axios.patch(`/api/usersinfo/update`, user);
       console.log('editUser', response.data);
       // setAuthHeader(response.data.token);
-      return response.data;
+      return response.data.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
