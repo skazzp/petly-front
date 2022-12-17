@@ -85,3 +85,10 @@ export const BtnIcon = styled.svg`
   width: 13px;
   height: 13px;
 `;
+
+export const LogoutIcon = styled.svg`
+  width: 18px;
+  height: 18px;
+
+  fill: red;
+`;

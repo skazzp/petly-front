@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { editUser, loginUser } from 'redux/auth/authOperation';
+import { editUser, loginUser, logOutUser } from 'redux/auth/authOperation';
 import { selectUser } from 'redux/auth/authSelectors';
 // import { changeUserData } from 'redux/auth/authSlice';
 import icons from '../../assets/images/icons.svg';
@@ -17,6 +17,7 @@ import {
   Input,
   Label,
   LabelText,
+  LogoutIcon,
 } from './UserDataItem.styled';
 
 const UserDataItem = () => {
@@ -217,6 +218,17 @@ const UserDataItem = () => {
             </Btn>
           )}
         </Label>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(logOutUser());
+          }}
+        >
+          <LogoutIcon>
+            <use href={icons + '#icon-logout'}></use>
+          </LogoutIcon>
+          LOGOUT
+        </button>
       </Form>
     </Container>
   );
