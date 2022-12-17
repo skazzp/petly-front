@@ -9,11 +9,13 @@ import { List, Wrapper } from './NoticeCategoryList.styled';
 const NoticeCategoryList = () => {
   const notices = useSelector(selectNotices);
   const dispatch = useDispatch();
-  console.log(notices);
+
   useEffect(() => {
     dispatch(getAllNotices());
   }, [dispatch]);
+
   const isModalOpen = useSelector(state => state.notice.isLearnMoreModalOpen);
+
   return (
     <Wrapper>
       <List>
