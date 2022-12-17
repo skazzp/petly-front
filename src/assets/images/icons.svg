@@ -163,10 +163,10 @@
 <symbol id="avatar-account" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M14 2.333C7.56 2.333 2.333 7.56 2.333 14c0 6.44 5.227 11.667 11.667 11.667 6.44 0 11.666-5.227 11.666-11.667C25.666 7.56 20.44 2.333 14 2.333ZM14 7a4.088 4.088 0 0 1 4.083 4.083A4.088 4.088 0 0 1 14 15.167a4.088 4.088 0 0 1-4.084-4.084A4.088 4.088 0 0 1 14 7Zm0 16.333c-2.369 0-5.169-.956-7.164-3.36a11.604 11.604 0 0 1 14.327 0c-1.995 2.404-4.795 3.36-7.163 3.36Z" fill="#fff"/>
 </symbol>
-<symbol id="heart-button" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="heart-button" width="16" height="16" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M5.167 1c-1.84 0-3.333 1.477-3.333 3.3 0 1.471.583 4.963 6.325 8.493a.657.657 0 0 0 .682 0c5.743-3.53 6.326-7.022 6.326-8.493 0-1.823-1.493-3.3-3.333-3.3C9.993 1 8.5 3 8.5 3S7.008 1 5.167 1Z" fill="#F59256" stroke="#F59256" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
-<symbol id="close-small-modal-mobile" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="close-small-modal-mobile"  viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="m9.097 8 6.447-6.448A.778.778 0 0 0 14.448.455L8 6.903 1.552.447A.78.78 0 1 0 .448 1.552L6.903 8 .448 14.447a.777.777 0 1 0 1.096 1.097L8 9.096l6.448 6.448a.778.778 0 0 0 1.096-1.097L9.097 8Z" fill="#000"/>
 </symbol>
   </defs>
