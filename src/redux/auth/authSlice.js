@@ -88,8 +88,9 @@ const authSlice = createSlice({
     builder.addCase(editUser.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      // state.user = {};
-      state.token = null;
+      console.log(action.payload);
+      // state.user = { ...state.user, ...action.payload };
+      // state.token = null;
     });
 
     builder.addCase(addFavorites.pending, pendingHandlerAuth);
