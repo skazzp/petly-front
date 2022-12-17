@@ -39,7 +39,7 @@
     </filter>
   </defs>
 </symbol>
-<symbol id="femaile-icon" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="female-icon" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M20 0C9.357 0 .727 8.63.727 19.273c0 8.813 5.919 16.246 13.997 18.542.922.262 1.606 1.075 1.606 2.033v2.553a2 2 0 0 1-2 2h-4.266a2 2 0 0 0-2 2v3.337a2 2 0 0 0 2 2h4.266a2 2 0 0 1 2 2V58a2 2 0 0 0 2 2h3.337a2 2 0 0 0 2-2v-4.262a2 2 0 0 1 2-2h4.265a2 2 0 0 0 2-2v-3.337a2 2 0 0 0-2-2h-4.265a2 2 0 0 1-2-2v-4.204c8.889-1.713 15.606-9.535 15.606-18.924C39.273 8.63 30.643 0 20 0Zm0 7.664c6.412 0 11.61 5.197 11.61 11.61 0 6.41-5.198 11.608-11.61 11.608-6.412 0-11.61-5.197-11.61-11.609S13.589 7.663 20 7.663Z" fill="#FF8787"/>
 </symbol>
 <symbol id="button-load-pets-image" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
