@@ -86,9 +86,29 @@ export const BtnIcon = styled.svg`
   height: 13px;
 `;
 
+export const LogoutBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-top: 42px;
+`;
+
+export const LogoutBtn = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px;
+  border: 0;
+  font-size: ${p => p.theme.fontSizes.m};
+  font-family: ${p => p.theme.fonts.main};
+  font-weight: ${p => p.theme.fontWeights.semiBold};
+  color: ${p => p.theme.colors.grey};
+  background-color: transparent;
+  /* padding: 0; */
+`;
+
 export const LogoutIcon = styled.svg`
   width: 18px;
   height: 18px;
-
-  fill: red;
+  fill: ${p => p.theme.colors.accent};
 `;

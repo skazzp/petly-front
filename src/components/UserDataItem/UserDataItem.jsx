@@ -17,6 +17,8 @@ import {
   Input,
   Label,
   LabelText,
+  LogoutBox,
+  LogoutBtn,
   LogoutIcon,
 } from './UserDataItem.styled';
 
@@ -218,17 +220,19 @@ const UserDataItem = () => {
             </Btn>
           )}
         </Label>
-        <button
-          type="button"
-          onClick={() => {
-            dispatch(logOutUser());
-          }}
-        >
-          <LogoutIcon>
-            <use href={icons + '#icon-logout'}></use>
-          </LogoutIcon>
-          LOGOUT
-        </button>
+        <LogoutBox>
+          <LogoutBtn
+            type="button"
+            onClick={() => {
+              dispatch(logOutUser());
+            }}
+          >
+            <LogoutIcon>
+              <use href={icons + '#icon-logout'}></use>
+            </LogoutIcon>
+            Log Out
+          </LogoutBtn>
+        </LogoutBox>
       </Form>
     </Container>
   );
