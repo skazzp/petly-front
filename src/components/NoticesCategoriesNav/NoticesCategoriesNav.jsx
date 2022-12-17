@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../../redux/auth/authSelectors';
+import AddNoticeButton from '../AddNoticeButton';
 import { Wrapper, LinkStyled, BtnStyled } from './NoticesCategoriesNav.styled';
 
 const buttonText = [
@@ -43,6 +44,7 @@ const NoticesCategoriesNav = () => {
           <BtnStyled active={active}>{text}</BtnStyled>
         </LinkStyled>
       ))}
+      <AddNoticeButton />
     </Wrapper>
   );
 };
