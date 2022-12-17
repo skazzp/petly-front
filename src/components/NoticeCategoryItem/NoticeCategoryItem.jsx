@@ -22,20 +22,22 @@ import {
 } from './NoticeCategoryItem.styled';
 import { addFavorites } from 'redux/notice/noticeOperations';
 
-const NoticeCategoryItem = ({
-  birthday,
-  breed,
-  category,
-  comments,
-  location,
-  name,
-  owner,
-  photoURL,
-  price,
-  sex,
-  title,
-  id,
-}) => {
+const NoticeCategoryItem = ({ notice }) => {
+  const {
+    birthday,
+    breed,
+    category,
+    comments,
+    location,
+    name,
+    owner,
+    photoURL,
+    price,
+    sex,
+    title,
+    id,
+  } = notice;
+
   const dispatch = useDispatch();
 
   const addToFav = id => {
@@ -47,22 +49,7 @@ const NoticeCategoryItem = ({
   // };
 
   const openModal = e => {
-    dispatch(
-      addModalData({
-        birthday,
-        breed,
-        category,
-        comments,
-        location,
-        name,
-        owner,
-        photoURL,
-        price,
-        sex,
-        title,
-        id,
-      })
-    );
+    dispatch(addModalData(notice));
     dispatch(openLearnMoreModal());
   };
 
