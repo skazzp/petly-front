@@ -49,9 +49,9 @@ export const getNoticeDetails = createAsyncThunk(
 // Remove notice
 export const deleteNotices = createAsyncThunk(
   'notice/deleteNotices',
-  async (item, thunkApi) => {
+  async (id, thunkApi) => {
     try {
-      const response = await axios.delete(`/api/notices/${item.id}`);
+      const response = await axios.delete(`/api/notices/${id}`);
       console.log('notice/deleteNotices', response);
       return response.data; // TODO
     } catch (error) {

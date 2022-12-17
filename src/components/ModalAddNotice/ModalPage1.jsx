@@ -23,13 +23,13 @@ const validationSchema = yup.object({
   namePet: yup
     .string()
     .min(2)
-    .max(20)
+    .max(16)
     .matches(/^[a-zA-Z, ]*$/g, 'Only alphabetic characters are allowed')
     .required('Field is required!'),
   breed: yup
     .string()
     .min(2)
-    .max(36)
+    .max(24)
     .matches(/^[a-zA-Z, ]*$/g, 'Only alphabetic characters are allowed')
     .required('Field is required!'),
   dateOfBirth: yup

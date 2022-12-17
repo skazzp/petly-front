@@ -34,13 +34,13 @@ const validationSchema = yup.object({
     .min(2)
     .max(48)
     .matches(/\D/g, 'Only alphabetic characters are allowed')
-    .required('Field is required!'),
+    .required('Field is required!'), // TODO строка в форматі Місто, Область. Наприклад: Brovary, Kyiv або Akhtyrka, Sumy
   price: yup
     .string()
     .min(2)
     .max(10)
     .matches(/^[1-9]+[0-9]*\$$/g, 'Only number characters and $ are allowed')
-    .required('Field is required!'),
+    .required('Field is required!'), // TODO число, не повинно починатися 0
   image: yup
     .mixed()
     .required('Image is required! (jpg, jpeg, png)')
@@ -50,7 +50,7 @@ const validationSchema = yup.object({
       value =>
         value === null || (value && SUPPORTED_FORMATS.includes(value.type))
     ),
-  comments: yup.string().min(4).max(200).required('Field is required!'),
+  comments: yup.string().min(8).max(120).required('Field is required!'),
 });
 
 const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {

@@ -1,7 +1,10 @@
 import icon from '../../assets/images/icons.svg';
 import defaultImage from '../../assets/images/default-pets.jpg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addModalData, openLearnMoreModal } from 'redux/notice/noticeSlice';
+import { selectUser } from '../../redux/auth/authSelectors';
+import { deleteNotices } from '../../redux/notice/noticeOperations';
+import { addFavorites } from 'redux/notice/noticeOperations';
 
 import {
   BtnAddFavorite,
@@ -16,29 +19,30 @@ import {
   InfoTitle,
   Item,
   Span,
-  Svg,
+  // Svg,
   Title,
   Wrapper,
 } from './NoticeCategoryItem.styled';
-import { addFavorites } from 'redux/notice/noticeOperations';
 
 const NoticeCategoryItem = ({ notice }) => {
   const {
     birthday,
     breed,
     category,
-    comments,
+    // comments,
     location,
-    name,
+    // name,
     owner,
     photoURL,
     price,
-    sex,
+    // sex,
     title,
     id,
   } = notice;
 
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  const isOwner = user.email !== owner?.email; // TODO replace !== to === and check it with id
 
   const addToFav = id => {
     dispatch(addFavorites(id));
@@ -93,12 +97,20 @@ const NoticeCategoryItem = ({ notice }) => {
           <BtnLearnMore type="button" onClick={openModal}>
             Learn more
           </BtnLearnMore>
-          <BtnDlt type="button">
-            <Span>Delete</Span>
-            <Svg width="17" height="17">
-              <use href={icon + '#delete-button'}></use>
-            </Svg>
-          </BtnDlt>
+
+          {isOwner && (
+            <BtnDlt
+              type="button"
+              onClick={() => {
+                window.confirm('Are you sure?') && dispatch(deleteNotices(id));
+              }}
+            >
+              <Span>Delete</Span>
+              <svg width="17" height="17">
+                <use href={icon + '#delete-button'}></use>
+              </svg>
+            </BtnDlt>
+          )}
         </BtnBox>
       </Item>
     </>

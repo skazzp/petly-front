@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeLearnMoreModal } from 'redux/notice/noticeSlice';
+// import { openLearnMoreModal } from 'redux/notice/noticeSlice';
 import modalClose from '../../assets/images/icons.svg';
 import heart from '../../assets/images/icons.svg';
 import dog from '../../assets/images/mobile.png';
@@ -156,7 +157,12 @@ const ModalNotice = () => {
           </li>
         </ListButtons>
 
-        <CloseBtn type="button" onClick={() => dispatch(closeLearnMoreModal())}>
+        <CloseBtn
+          type="button"
+          onClick={() => {
+            dispatch(closeLearnMoreModal());
+          }}
+        >
           <Svg>
             <use href={modalClose + '#close-small-modal-mobile'}></use>
           </Svg>
