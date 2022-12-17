@@ -10,6 +10,7 @@ import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout';
 import ModalNotice from './ModalNotice/ModalNotice';
+import NewPage from 'pages/newPage';
 // import NewPage from 'pages/newPage';
 
 const Test = () => {
@@ -36,7 +37,7 @@ export const App = () => {
           <Route path="register" element={<RegistrationPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="friends" element={<Test />} />
-          <Route path="news" element={<Test />} />
+          <Route path="news" element={<NewPage />} />
           <Route path="notices" element={<NoticesPage />}>
             <Route path="lost-found" element={<p>lost</p>} />
             <Route path="for-free" element={<p>free</p>} />
