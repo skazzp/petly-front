@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { addFavorites, deleteFavorites } from 'redux/notice/noticeOperations';
 
 import {
   refreshUser,
@@ -16,6 +17,9 @@ const userInitialState = {
     name: '',
     city: '',
     phone: '',
+    _id: null,
+    avatarURL: '',
+    favorites: [],
   },
   token: null,
   isLoading: false,
@@ -86,6 +90,26 @@ const authSlice = createSlice({
       state.isLoading = false;
       // state.user = {};
       state.token = null;
+    });
+
+    builder.addCase(addFavorites.pending, pendingHandlerAuth);
+    builder.addCase(addFavorites.rejected, rejectedHandler);
+    builder.addCase(addFavorites.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.user.favorites.push(action.payload);
+      // TODO: редактировать нужный нотис в стейте или юзера ?
+    });
+
+    builder.addCase(deleteFavorites.pending, pendingHandlerAuth);
+    builder.addCase(deleteFavorites.rejected, rejectedHandler);
+    builder.addCase(deleteFavorites.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.user.favorites = state.user.favorites.filter(
+        fav => fav.id !== action.payload
+      );
+      // TODO: редактировать нужный нотис в стейте или юзера ?
     });
   },
 });
