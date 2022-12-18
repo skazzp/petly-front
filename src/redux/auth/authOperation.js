@@ -19,7 +19,14 @@ export const registerUser = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.response.status);
+      // console.log({
+      //   error: error.response.data.details.message,
+      //   massege: error.response.data.message,
+      // });
+      console.log(error);
+      return thunkApi.rejectWithValue(
+        error.response.data?.message || error.response.data?.details[0].message
+      );
     }
   }
 );
@@ -32,7 +39,7 @@ export const loginUser = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.response.status);
+      return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -46,7 +53,7 @@ export const logOutUser = createAsyncThunk(
       console.log('LOGOUT', response.data);
       return response.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.response.status);
+      return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -69,7 +76,7 @@ export const refreshUser = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.response.status);
+      return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
 );

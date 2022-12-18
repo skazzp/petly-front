@@ -9,7 +9,7 @@ export const createNotice = createAsyncThunk(
   'notice/createNotice',
   async (notice, thunkApi) => {
     try {
-      const response = await axios.post('/api/notices', notice);
+      const response = await axios.post('/api/notices/create', notice);
       console.log('createNotice', response.data);
       return response.data;
     } catch (error) {
@@ -130,7 +130,7 @@ export const addFavorites = createAsyncThunk(
   }
 );
 
-// Add to favorites
+// Get by category
 export const getByCategory = createAsyncThunk(
   'notice/getByCategory',
   async (category, thunkApi) => {

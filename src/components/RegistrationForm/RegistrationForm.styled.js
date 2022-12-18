@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import InputMask from 'react-input-mask';
 
 export const Div = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ export const Div = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    width: 458px;
+    width: 608px;
     z-index: 1;
   }
 `;
@@ -51,6 +52,7 @@ export const Form = styled.form`
   min-width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media screen and (min-width: 768px) {
   }
@@ -205,7 +207,7 @@ export const ButtonRegister = styled.button`
   border: none;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
+  margin-top: 15px;
 
   :focus,
   :hover {
@@ -287,6 +289,31 @@ export const SelectContainer = styled.div`
   margin: 0;
   padding: 0;
 
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
+`;
+
+export const InputPhoneMask = styled(InputMask)`
+  outline: none;
+  background: none;
+  border: none;
+  box-shadow: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Manrope';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  ::placeholder {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+  }
   @media screen and (min-width: 768px) {
   }
 
