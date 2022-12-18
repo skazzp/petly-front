@@ -30,7 +30,6 @@ const UserDataItem = () => {
     birthday: true,
     city: true,
     phone: true,
-    favorites: [],
   };
   const [disabled, setDisabled] = useState(INITIAL_DISABLED);
   const user = useSelector(selectUser);
@@ -72,11 +71,11 @@ const UserDataItem = () => {
   }, [user, setFieldValue]);
 
   const handleEditInput = e => {
-    console.log(e.target);
-    // console.log(user);
-    console.log(e.target.parentNode.htmlFor);
-    // console.log(formik.values);
-    console.log(e.currentTarget);
+    // console.log(e.target);
+    // // console.log(user);
+    // console.log(e.target.parentNode.htmlFor);
+    // // console.log(formik.values);
+    // console.log(e.currentTarget);
     setDisabled({
       ...INITIAL_DISABLED,
       [e.currentTarget.parentNode.htmlFor]: false,
