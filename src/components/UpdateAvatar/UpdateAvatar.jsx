@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Input, Label, LabelIcon, LabelText } from './UpdateAvatar.styled';
+import icons from '../../assets/images/icons.svg';
 
 const UpdateAvatar = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const dispatch = useDispatch();
   return (
     <div>
-      <label htmlFor="avatar">FILE</label>
-      <input
+      <Label htmlFor="avatar">
+        <LabelIcon>
+          <use href={icons + '#edit-button-desk'}></use>
+        </LabelIcon>
+        <LabelText>Edit photo</LabelText>
+      </Label>
+      <Input
         type="file"
         name="avatar"
         id="avatar"
-        // disabled={true}
         onChange={event => {
           console.dir(event.target);
           console.log(event.target.files[0]);

@@ -56,10 +56,17 @@ const UserDataItem = () => {
     if (!user.email) return;
     setFieldValue('name', user.name);
     setFieldValue('email', user.email);
-    setFieldValue(
-      'birthday',
-      new Date(user.birthday).toISOString().split('T')[0]
-    );
+    if (user.birthday) {
+      setFieldValue(
+        'birthday',
+        new Date(user.birthday).toISOString().split('T')[0]
+      );
+    }
+    // else
+    //   setFieldValue(
+    //     'birthday',
+    //     new Date('0000-00-00').toISOString().split('T')[0]
+    //   );
     setFieldValue('city', user.city);
     setFieldValue('phone', user.phone);
   }, [user, setFieldValue]);
@@ -152,6 +159,7 @@ const UserDataItem = () => {
             id="birthday"
             name="birthday"
             type="date"
+            placeholder="00.00.0000"
             disabled={disabled.birthday}
             onChange={formik.handleChange}
             value={formik.values.birthday}
