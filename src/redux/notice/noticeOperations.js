@@ -99,16 +99,16 @@ export const getUserNotices = createAsyncThunk(
 // Remove from favorites
 export const deleteFavorites = createAsyncThunk(
   'notice/deleteFavorites',
-  async (item, thunkApi) => {
+  async (id, thunkApi) => {
     try {
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
       const response = await axios.delete(
-        `/api/notices/favorites/delete/${item.id}`
+        `/api/notices/favorites/delete/${id}`
       );
       console.log('notice/deleteFavorites', response);
-      return response.data; // TODO
+      return id; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
