@@ -104,7 +104,9 @@ export const deleteFavorites = createAsyncThunk(
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
-      const response = await axios.delete(`/api/notices/favorites/${item.id}`);
+      const response = await axios.delete(
+        `/api/notices/favorites/delete/${item.id}`
+      );
       console.log('notice/deleteFavorites', response);
       return response.data; // TODO
     } catch (error) {
