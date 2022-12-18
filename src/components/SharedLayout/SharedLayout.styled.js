@@ -5,7 +5,6 @@ padding: 16px 20px 0 20px;
 height: 100vh;
 width: 100vw;
 position: relative;
-overflow: hidden;
 @media screen and (min-width: 768px) {
 padding: 24px 32px 0 32px;
 }
