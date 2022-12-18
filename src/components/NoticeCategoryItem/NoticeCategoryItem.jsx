@@ -1,5 +1,11 @@
 import icon from '../../assets/images/icons.svg';
 import defaultImage from '../../assets/images/default-pets.jpg';
+import { useDispatch, useSelector } from 'react-redux';
+import { addModalData, openLearnMoreModal } from 'redux/notice/noticeSlice';
+import { selectUser } from '../../redux/auth/authSelectors';
+import { deleteNotices } from '../../redux/notice/noticeOperations';
+import { addFavorites } from 'redux/notice/noticeOperations';
+
 import {
   BtnAddFavorite,
   BtnBox,
@@ -13,52 +19,55 @@ import {
   InfoTitle,
   Item,
   Span,
+  // Svg,
   Title,
   Wrapper,
 } from './NoticeCategoryItem.styled';
-import ModalNotice from 'components/ModalNotice/ModalNotice';
-import { useDispatch, useSelector } from 'react-redux';
-import { addModalData, openLearnMoreModal } from 'redux/notice/noticeSlice';
-const NoticeCategoryItem = ({
-  birthday,
-  breed,
-  category,
-  comments,
-  location,
-  name,
-  owner,
-  photoURL,
-  price,
-  sex,
-  title,
-  _id,
-}) => {
+
+const NoticeCategoryItem = ({ notice }) => {
+  const {
+    birthday,
+    breed,
+    category,
+    // comments,
+    location,
+    // name,
+    owner,
+    photoURL,
+    price,
+    // sex,
+    title,
+    id,
+  } = notice;
+
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  const isOwner = user.email !== owner?.email; // TODO replace !== to === and check it with id
+
+  const addToFav = id => {
+    dispatch(addFavorites(id));
+  };
+
+  // const removeFav = id => {
+  //   dispatch(deleteFavorites(id));
+  // };
+
   const openModal = e => {
-    dispatch(
-      addModalData({
-        birthday,
-        breed,
-        category,
-        comments,
-        location,
-        name,
-        owner,
-        photoURL,
-        price,
-        sex,
-        title,
-        _id,
-      })
-    );
+    dispatch(addModalData(notice));
     dispatch(openLearnMoreModal());
   };
+
   return (
     <>
       <Item>
         <Image src={photoURL ? photoURL : defaultImage} alt={breed} />
         <Category>{category}</Category>
-        <BtnAddFavorite type="button">
+        <BtnAddFavorite
+          type="button"
+          onClick={() => {
+            addToFav(id);
+          }}
+        >
           <svg width="24" height="22">
             <use href={icon + '#heart'}></use>
           </svg>
@@ -88,12 +97,20 @@ const NoticeCategoryItem = ({
           <BtnLearnMore type="button" onClick={openModal}>
             Learn more
           </BtnLearnMore>
-          <BtnDlt type="button">
-            <Span>Delete</Span>
-            <svg width="17" height="17">
-              <use href={icon + '#delete-button'}></use>
-            </svg>
-          </BtnDlt>
+
+          {isOwner && (
+            <BtnDlt
+              type="button"
+              onClick={() => {
+                window.confirm('Are you sure?') && dispatch(deleteNotices(id));
+              }}
+            >
+              <Span>Delete</Span>
+              <svg width="17" height="17">
+                <use href={icon + '#delete-button'}></use>
+              </svg>
+            </BtnDlt>
+          )}
         </BtnBox>
       </Item>
     </>

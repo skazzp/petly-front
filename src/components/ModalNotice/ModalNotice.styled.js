@@ -26,6 +26,7 @@ export const Div = styled.div`
     max-height: 550px;
     padding: 32px 40px 32px 20px;
     top: 10%;
+    border-radius: ${p => p.theme.space[6]}px;
   }
 `;
 export const WrapperForDesc = styled.div`
@@ -225,30 +226,44 @@ export const TextBtn = styled.p`
   font-weight: ${p => p.theme.fontWeights.semiBold};
   line-height: ${p => p.theme.lineHeights.main};
   font-size: ${p => p.theme.fontSizes.m};
+  padding-right: 10px;
 `;
 
 export const SvgHeart = styled.svg`
   width: 16px;
   height: 16px;
-  padding-left: 10px;
   @media screen and (min-width: 768px) {
     align-items: center;
   }
 `;
 export const CloseBtn = styled.button`
-  background: transparent;
+  /* background: transparent;
+  border: none; */
+  padding: 8px 8px 4px 8px;
+
+  border-radius: ${p => p.theme.radii.round};
+
+  background: ${p => p.theme.colors.background.main};
+  backdrop-filter: blur(2px);
+  position: absolute;
+  right: 18px;
+  top: 19px;
+  cursor: pointer;
   border: none;
-  /* @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 768px) {
     &:hover {
       transition-delay: 150ms, 2s;
-      transform: translate(-5%, -5%);
+      transform: translate(-2%, -2%);
       box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
         -8px -8px 12px rgba(255, 255, 255, 0.3);
     }
-  } */
+  }
 `;
 export const Svg = styled.svg`
-  padding: 10px;
+  width: 16px;
+  height: 16px;
+  /* padding: 10px;
   width: 20px;
   height: 20px;
   border-radius: ${p => p.theme.radii.round};
@@ -266,5 +281,5 @@ export const Svg = styled.svg`
       box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
         -8px -8px 12px rgba(255, 255, 255, 0.3);
     }
-  }
+  } */
 `;
