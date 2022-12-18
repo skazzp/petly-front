@@ -108,7 +108,7 @@ const authSlice = createSlice({
       state.error = null;
       state.isLoading = false;
       state.user.favorites = state.user.favorites.filter(
-        fav => fav.id !== action.payload
+        fav => fav !== action.payload
       );
       // TODO: редактировать нужный нотис в стейте или юзера ?
     });
