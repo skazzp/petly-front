@@ -6,17 +6,18 @@ const UpdateAvatar = () => {
   const dispatch = useDispatch();
   return (
     <div>
-      <label htmlFor="avatar">
-        <input
-          type="file"
-          name="avatar"
-          onChange={event => {
-            console.dir(event.target);
-            console.log(event.target.files[0]);
-            setSelectedImage(event.target.files[0]);
-          }}
-        />
-      </label>
+      <label htmlFor="avatar">FILE</label>
+      <input
+        type="file"
+        name="avatar"
+        id="avatar"
+        // disabled={true}
+        onChange={event => {
+          console.dir(event.target);
+          console.log(event.target.files[0]);
+          setSelectedImage(event.target.files[0]);
+        }}
+      />
       {selectedImage && (
         <div>
           <img
