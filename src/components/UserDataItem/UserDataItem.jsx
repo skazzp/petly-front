@@ -1,3 +1,4 @@
+import UpdateAvatar from 'components/UpdateAvatar/UpdateAvatar';
 import { useFormik } from 'formik';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -91,12 +92,12 @@ const UserDataItem = () => {
       <AvatarBox>
         <Avatar src={`http:${user.avatarURL}`} alt="avatar" />
       </AvatarBox>
-
+      <UpdateAvatar />
       <Form onSubmit={formik.handleSubmit}>
         {/* test login func */}
 
         <Label name="name" htmlFor="name">
-          <LabelText>Name</LabelText>
+          <LabelText>Name:</LabelText>
           <Input
             id="name"
             name="name"
@@ -115,13 +116,13 @@ const UserDataItem = () => {
           {!disabled.name && (
             <Btn type="submit">
               <BtnIcon>
-                <use href={`${icons}#icon-edit_check`}></use>
+                <use href={`${icons}#icon-ci_edit`}></use>
               </BtnIcon>
             </Btn>
           )}
         </Label>
         <Label name="email" htmlFor="email">
-          <LabelText>Email</LabelText>
+          <LabelText>Email:</LabelText>
           <Input
             id="email"
             name="email"
@@ -146,7 +147,7 @@ const UserDataItem = () => {
           )}
         </Label>
         <Label htmlFor="birthday">
-          <LabelText>Birthday</LabelText>
+          <LabelText>Birthday:</LabelText>
           <Input
             id="birthday"
             name="birthday"
@@ -171,7 +172,7 @@ const UserDataItem = () => {
           )}
         </Label>
         <Label htmlFor="phone">
-          <LabelText>Phone</LabelText>
+          <LabelText>Phone:</LabelText>
           <Input
             id="phone"
             name="phone"
@@ -196,7 +197,7 @@ const UserDataItem = () => {
           )}
         </Label>
         <Label htmlFor="city">
-          <LabelText>City</LabelText>
+          <LabelText>City:</LabelText>
           <Input
             id="city"
             name="city"

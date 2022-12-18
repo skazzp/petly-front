@@ -18,6 +18,7 @@ export const Form = styled.form`
   align-items: center;
   padding-left: 16px;
   padding-right: 12px;
+  gap: 8px;
 `;
 
 export const Label = styled.label`
