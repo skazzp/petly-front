@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import InputMask from 'react-input-mask';
 
 export const Div = styled.div`
   display: flex;
@@ -288,6 +289,31 @@ export const SelectContainer = styled.div`
   margin: 0;
   padding: 0;
 
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
+`;
+
+export const InputPhoneMask = styled(InputMask)`
+  outline: none;
+  background: none;
+  border: none;
+  box-shadow: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Manrope';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  ::placeholder {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+  }
   @media screen and (min-width: 768px) {
   }
 
