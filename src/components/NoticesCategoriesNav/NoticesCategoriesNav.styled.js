@@ -2,6 +2,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
+  ${p => p.theme.breakpoints.tab} {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
+export const NavWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -11,7 +18,7 @@ export const Wrapper = styled.div`
   }
 
   ${p => p.theme.breakpoints.desc} {
-    max-width: none;
+    max-width: 1000px;
   }
 `;
 

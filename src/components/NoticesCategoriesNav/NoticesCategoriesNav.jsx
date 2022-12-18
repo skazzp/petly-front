@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../../redux/auth/authSelectors';
-import { Wrapper, LinkStyled, BtnStyled } from './NoticesCategoriesNav.styled';
+import AddNoticeButton from '../AddNoticeButton';
+import {
+  Wrapper,
+  NavWrapper,
+  LinkStyled,
+  BtnStyled,
+} from './NoticesCategoriesNav.styled';
 
 const buttonText = [
   { id: 'sell', text: 'sell', active: false },
@@ -10,8 +16,8 @@ const buttonText = [
   { id: 'for-free', text: 'in good hands', active: false },
 ];
 const authBtnText = [
-  { id: 'favorite', text: 'Favorite ads', active: false },
-  { id: 'own', text: 'My ads', active: false },
+  { id: 'favorite', text: 'favorite ads', active: false },
+  { id: 'own', text: 'my ads', active: false },
 ];
 
 const NoticesCategoriesNav = () => {
@@ -38,11 +44,14 @@ const NoticesCategoriesNav = () => {
 
   return (
     <Wrapper>
-      {btnList.map(({ id, text, active }) => (
-        <LinkStyled key={id} to={`/notices/${id}`}>
-          <BtnStyled active={active}>{text}</BtnStyled>
-        </LinkStyled>
-      ))}
+      <NavWrapper>
+        {btnList.map(({ id, text, active }) => (
+          <LinkStyled key={id} to={`/notices/${id}`}>
+            <BtnStyled active={active}>{text}</BtnStyled>
+          </LinkStyled>
+        ))}
+      </NavWrapper>
+      <AddNoticeButton />
     </Wrapper>
   );
 };
