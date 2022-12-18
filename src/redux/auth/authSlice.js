@@ -23,7 +23,7 @@ const userInitialState = {
   },
   token: null,
   isLoading: false,
-  error: null,
+  error: '',
 };
 
 const pendingHandlerAuth = (state, action) => {
@@ -88,8 +88,9 @@ const authSlice = createSlice({
     builder.addCase(editUser.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      // state.user = {};
-      state.token = null;
+      console.log(action.payload);
+      // state.user = { ...state.user, ...action.payload };
+      // state.token = null;
     });
 
     builder.addCase(addFavorites.pending, pendingHandlerAuth);
@@ -107,7 +108,7 @@ const authSlice = createSlice({
       state.error = null;
       state.isLoading = false;
       state.user.favorites = state.user.favorites.filter(
-        fav => fav.id !== action.payload
+        fav => fav !== action.payload
       );
       // TODO: редактировать нужный нотис в стейте или юзера ?
     });

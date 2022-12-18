@@ -17,19 +17,25 @@ import Select from 'react-select';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { schema } from './Validation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { registerUser } from 'redux/auth/authOperation';
 import { selectError, selectToken } from 'redux/auth/authSelectors';
 import { useWindowSize } from '@react-hook/window-size';
 import Confetti from 'react-confetti';
 import Data from '../../assets/City.json';
+import InputMask from 'react-input-mask';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
   const [formChenge, SetFormChenge] = useState(false);
-  const errorDB = useSelector(selectError);
+  const [emailErrorMassege, setEmailErrorMassege] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [emailErrorFixed, setEmailErrorFixed] = useState(false);
+
   const token = useSelector(selectToken);
   const { width, height } = useWindowSize();
+  const errorDB = useSelector(selectError);
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -52,6 +58,7 @@ const RegistrationForm = () => {
       await dispatch(registerUser(user));
     },
   });
+  const city = formik.values.city;
   const setCity = city => {
     formik.setValues(prev => ({
       ...prev,
@@ -68,20 +75,49 @@ const RegistrationForm = () => {
     )
       return;
     if (
-      !formik.errors.email &&
-      !formik.errors.password &&
-      !formik.errors.confirmPassword
+      formik.errors.email ||
+      formik.errors.password ||
+      formik.errors.confirmPassword
     )
-      SetFormChenge(true);
+      return;
+    if (emailError !== formik.values.email) {
+      setEmailErrorFixed(false);
+    }
+    SetFormChenge(true);
   };
   const Selectoptions = Data.map(i => ({
     value: `${i.City},${i.District}`,
     label: `${i.City}, ${i.District}`,
   }));
+
+  // const inputPhoneMask = () => {
+  //   document.querySelector('#phone').mask("+7(999) 999-9999");
+  // }
+  // inputPhoneMask()
+
+  useEffect(() => {
+    if (errorDB === 'Email in use') {
+      setEmailErrorMassege('Email in use');
+      setEmailError(formik.values.email);
+      setEmailErrorFixed(true);
+    }
+    if (errorDB === '"email" must be a valid email') {
+      setEmailErrorMassege('Email must be a valid');
+      setEmailError(formik.values.email);
+      setEmailErrorFixed(true);
+    }
+    if (!errorDB) {
+      setEmailErrorMassege('');
+      setEmailError('');
+      setEmailErrorFixed('');
+    }
+    // details[0].message
+  }, [errorDB]);
+
   return (
     <Div>
       <Title>Registration</Title>
-      {!formChenge ? (
+      {!formChenge || emailErrorFixed ? (
         <Form>
           <Label>
             <Input
@@ -93,8 +129,10 @@ const RegistrationForm = () => {
               onChange={formik.handleChange}
               value={formik.values.email}
             ></Input>
-            {formik.errors.email && formik.touched.email ? (
-              <Validation>{formik.errors.email}</Validation>
+            {(formik.errors.email && formik.touched.email) || emailError ? (
+              <Validation>
+                {formik.errors.email || emailErrorMassege}
+              </Validation>
             ) : null}
           </Label>
           <Label>
@@ -147,14 +185,13 @@ const RegistrationForm = () => {
             <SelectContainer>
               <Select
                 placeholder="City"
-                defaultValue={() => formik.values.city}
+                defaultValue={city}
                 id="city"
                 name="city"
                 styles={selectStyles()}
                 options={Selectoptions}
                 onChange={e => setCity(e.value)}
-                // onBlur={formik.handleBlur}
-                values={() => formik.values.city}
+                defaultInputValue={city}
               ></Select>
             </SelectContainer>
 
@@ -162,8 +199,29 @@ const RegistrationForm = () => {
               <Validation>{formik.errors.city}</Validation>
             ) : null}
           </Label>
-          <Label>
-            <Input
+            <Label>
+              <InputMask
+              Placeholder="Phone"
+              name="phone"
+              id="phone"
+              mask="+38(099)999-99-99"
+              style={{
+                background: 'none',
+                border: 0,
+                width: '100%',
+                height: '100%',
+                fontFamily: 'Manrope',
+                fontWeight: 400,
+                 outline: "none",
+                fontSize: 18,
+                lineHeight: 25,
+              }}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.phone}
+            />
+            {/* <Input
+                defaultValue="+380"
               placeholder="Phone"
               id="phone"
               name="phone"
@@ -171,7 +229,7 @@ const RegistrationForm = () => {
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
               value={formik.values.phone}
-            ></Input>
+            ></Input> */}
             {formik.errors.phone && formik.touched.phone ? (
               <Validation>{formik.errors.phone}</Validation>
             ) : null}
@@ -185,7 +243,7 @@ const RegistrationForm = () => {
           >
             Back
           </ButtonBack>
-          {errorDB ? <p>{errorDB}</p> : null}
+
           {token ? (
             <Confetti recycle={false} width={width} height={height} />
           ) : null}

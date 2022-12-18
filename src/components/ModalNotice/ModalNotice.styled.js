@@ -5,7 +5,7 @@ export const Overlay = styled.div`
   backdrop-filter: blur(10px);
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   left: 0;
   top: 0;
   display: flex;
@@ -16,7 +16,7 @@ export const Overlay = styled.div`
 export const Div = styled.div`
   background-color: ${p => p.theme.colors.background.white};
   z-index: ${p => p.theme.space[3]};
-  max-width: 280px;
+  min-width: 280px;
   padding: 60px 20px 40px;
   border-radius: ${p => p.theme.space[4]}px;
   position: relative;

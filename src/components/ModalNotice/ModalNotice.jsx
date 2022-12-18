@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { addFavorites, deleteFavorites } from 'redux/notice/noticeOperations';
 import { closeLearnMoreModal } from 'redux/notice/noticeSlice';
+// import { openLearnMoreModal } from 'redux/notice/noticeSlice';
 import modalClose from '../../assets/images/icons.svg';
 import heart from '../../assets/images/icons.svg';
-import dog from '../../assets/images/mobile.png';
+// import dog from '../../assets/images/mobile.png';
 import {
   Btn,
   CloseBtn,
@@ -40,8 +43,11 @@ const ModalNotice = () => {
   const modalRoot = document.querySelector('#modal-root');
   const isModalOpen = useSelector(state => state.notice.isLearnMoreModalOpen);
   const data = useSelector(state => state.notice.modalData);
+  const favoriteNotice = useSelector(state => state.auth.user.favorites);
 
-  // console.log(data);
+  const [isFavorite, setIsFavorite] = useState(null);
+  console.log(favoriteNotice);
+  // console.log(data._id);
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -62,15 +68,27 @@ const ModalNotice = () => {
     }
   };
 
+  const findFavoriteNotice = noticeId => {
+    const finedNotice = favoriteNotice.find(el => el === noticeId);
+    return finedNotice;
+  };
+  let finedNotice = findFavoriteNotice(data._id);
+  useEffect(() => {
+    setIsFavorite(findFavoriteNotice(data._id));
+    // eslint-disable-next-line
+  }, [favoriteNotice, data._id]);
+  console.log(finedNotice);
   return createPortal(
     <Overlay onClick={backDropCloseModal}>
       <Div>
         <WrapperForDesc>
           <ImageWrapper>
             <Status>
-              <StatusText>{data.category}</StatusText>
+              <StatusText>
+                {data.category[0].toUpperCase() + data.category.slice(1)}
+              </StatusText>
             </Status>
-            <Img src={!data.photoURL && dog} alt="Animal"></Img>
+            <Img src={data.photoURL} alt="Animal"></Img>
           </ImageWrapper>
           <div>
             <Title>{data.title}</Title>
@@ -97,9 +115,11 @@ const ModalNotice = () => {
                 <Items>
                   <Text>Phone:</Text>
                 </Items>
-                <Items>
-                  <Text>Sell:</Text>
-                </Items>
+                {data.price && (
+                  <Items>
+                    <Text>Sell:</Text>
+                  </Items>
+                )}
               </FirstList>
               <SecondList>
                 <Items>
@@ -118,10 +138,10 @@ const ModalNotice = () => {
                   <TextSecond>{data.sex}</TextSecond>
                 </Items>
                 <Items>
-                  <TextSecond>user@mail.com</TextSecond>
+                  <TextSecond>{data.owner.email}</TextSecond>
                 </Items>
                 <Items>
-                  <TextSecond>+380971234567</TextSecond>
+                  <TextSecond>{data.owner.phone}</TextSecond>
                 </Items>
                 {data.price && (
                   <Items>
@@ -140,23 +160,49 @@ const ModalNotice = () => {
         </div>
         <ListButtons>
           <ItemContact>
-            <Link href="tel:+380971234567">
+            <Link href={data.owner.phone}>
               <ContactText>Contact</ContactText>
             </Link>
           </ItemContact>
           <li>
-            <Btn>
-              <TxtWrapper>
-                <TextBtn>Add to</TextBtn>
-                <SvgHeart>
-                  <use href={heart + '#heart-button'}></use>
-                </SvgHeart>
-              </TxtWrapper>
-            </Btn>
+            {isFavorite ? (
+              <Btn
+                type="button"
+                onClick={() => {
+                  console.log(data._id);
+                  dispatch(deleteFavorites(data._id));
+                  setIsFavorite(null);
+                }}
+              >
+                <TxtWrapper>
+                  <TextBtn>Remove from </TextBtn>
+                  <SvgHeart>
+                    <use href={heart + '#heart-button'}></use>
+                  </SvgHeart>
+                </TxtWrapper>
+              </Btn>
+            ) : (
+              <Btn
+                type="button"
+                onClick={() => dispatch(addFavorites(data._id))}
+              >
+                <TxtWrapper>
+                  <TextBtn>Add to</TextBtn>
+                  <SvgHeart>
+                    <use href={heart + '#heart-button'}></use>
+                  </SvgHeart>
+                </TxtWrapper>
+              </Btn>
+            )}
           </li>
         </ListButtons>
 
-        <CloseBtn type="button" onClick={() => dispatch(closeLearnMoreModal())}>
+        <CloseBtn
+          type="button"
+          onClick={() => {
+            dispatch(closeLearnMoreModal());
+          }}
+        >
           <Svg>
             <use href={modalClose + '#close-small-modal-mobile'}></use>
           </Svg>
