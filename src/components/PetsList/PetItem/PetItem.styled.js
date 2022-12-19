@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-
+// ${props => props.theme.radii.md};
 export const Card = styled.div`
 box-sizing: border-box;
 
 box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
 min-width: 280px;
 height: auto;
-border-radius: 20px;
+border-radius: ${props => props.theme.radii.md};
 padding: 16px 20px;
-background-color: white;
+background-color: ${props => props.theme.colors.background.white};
 margin-bottom: 20px;
 @media (min-width: 768px) {
     min-width: 704px;
@@ -25,7 +25,7 @@ margin-bottom: 20px;
 export const Img = styled.img`
 width: 240px;
 height: 240px;
-border-radius: 20px;
+border-radius: ${props => props.theme.radii.md};
 margin-left: auto;
 margin-right: auto;
 object-fit: cover;
@@ -39,15 +39,15 @@ height: 161px;
 
 
 export const Li = styled.li`
-font-weight: 500;
-font-size: 14px;
-line-height: 1.35;
+font-weight: ${props => props.theme.fontWeights.semiBold};
+font-size: ${props => props.theme.fontSizes.s};
+line-height: ${props => props.theme.lineHeights.secondary};
 color: #000000;
 &:not(:last-child){
     margin-bottom:12px;
 }
 @media (min-width: 768px) {
-    font-size: 16px;
+    font-size: ${props => props.theme.fontSizes.m};
 }
 
 `;
@@ -76,7 +76,7 @@ cursor: pointer;
 display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
+  border: ${props => props.theme.borders.none};
   fill: rgba(17, 17, 17, 0.6);
   background-color: transparent;
   padding: 10px;
@@ -86,8 +86,8 @@ display: flex;
   @media (min-width: 768px) {
     width: 44px;
   height: 44px;
-  border-radius: 50%;
-  border: 0px solid ;
+  border-radius: ${props => props.theme.radii.round};
+  border: ${props => props.theme.borders.none};
   background: #FDF7F2;
 backdrop-filter: blur(2px);
 }
@@ -97,5 +97,5 @@ backdrop-filter: blur(2px);
 export const Icon= styled.svg`
 width: 20px;
   height: 20px;
-  color: rgba(17, 17, 17, 0.6);
+  color: ${props => props.theme.colors.background.backdrop};
 `
