@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Item = styled.li`
   position: relative;
   width: 280px;
+  height: 606px;
   display: flex;
   flex-direction: column;
   padding-bottom: 12px;
@@ -102,6 +103,7 @@ export const InfoList = styled.ul`
   padding: ${props => props.theme.space[0]}px;
   margin: ${props => props.theme.space[0]}px;
   list-style: none;
+  /* height: 112px; */
 `;
 
 export const InfoItem = styled.li`
