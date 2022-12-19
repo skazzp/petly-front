@@ -55,8 +55,8 @@ export const Plus = styled.svg`
     margin-bottom: 0;
   }
 
-  &:hover,
-  &:focus {
+  ${BtnWrapper}:hover &,
+  ${BtnWrapper}:focus & {
     transform: scale(1.4);
   }
 `;
