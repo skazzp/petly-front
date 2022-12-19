@@ -9,13 +9,13 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout';
-import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
-import NewPage from 'pages/newPage';
-import Friends from './Friends/Friends';
-// import NewPage from 'pages/newPage';
+import OurFriend from 'pages/OurFriend/OurFriend';
+import NewPage from 'pages/newPage/NewPage';
+// import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 
 const Test = () => {
-  return <NoticesCategoriesNav />;
+  // return <NoticesCategoriesNav />;
+  return <h1>123</h1>;
 };
 
 export const App = () => {
@@ -37,13 +37,14 @@ export const App = () => {
           <Route path="register" element={<RegistrationPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="friends" element={<Friends />} />
+          <Route path="friends" element={<OurFriend />} />
           <Route path="news" element={<NewPage />} />
           <Route path="notices" element={<NoticesPage />}>
-            <Route path="lost-found" element={<p>lost</p>} />
-            <Route path="for-free" element={<p>free</p>} />
-            <Route path="sell" element={<p>sell</p>} />
-            <Route path="favorite" element={<p>favorite</p>} />
-            <Route path="own" element={<p>own</p>} />
+            <Route path="lost-found" element={<></>} />
+            <Route path="for-free" element={<></>} />
+            <Route path="sell" element={<></>} />
+            <Route path="favorites" element={<></>} />
+            <Route path="personal" element={<></>} />
           </Route>
         </Route>
         <Route path="*" element={<Navigate to={'/'} />} />

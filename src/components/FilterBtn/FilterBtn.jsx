@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectToken } from 'redux/auth/authSelectors';
+import { getByCategory } from 'redux/notice/noticeOperations';
 import { v4 as uuidv4 } from 'uuid';
 import { Button, FilterList } from './FilterBtn.styled';
 
@@ -20,28 +23,38 @@ const buttons = [
 const authButtons = [
   {
     btn: 'favorite ads',
-    link: 'favorite',
+    link: 'favorites',
   },
   {
     btn: 'my ads',
-    link: 'own',
+    link: 'personal',
   },
 ];
 
 function FilterBtn() {
-  const auth = true;
+  const token = useSelector(selectToken);
+  const dispatch = useDispatch();
+
+  const handleClick = e => {
+    dispatch(getByCategory(e.target.name));
+  };
+
   return (
     <>
       <FilterList>
         {buttons.map(b => (
           <li key={uuidv4()}>
-            <Button to={b.link}>{b.btn}</Button>
+            <Button to={b.link} name={b.link} onClick={handleClick}>
+              {b.btn}
+            </Button>
           </li>
         ))}
-        {auth &&
+        {token &&
           authButtons.map(b => (
             <li key={uuidv4()}>
-              <Button to={b.link}>{b.btn}</Button>
+              <Button to={b.link} name={b.link} onClick={handleClick}>
+                {b.btn}
+              </Button>
             </li>
           ))}
       </FilterList>
