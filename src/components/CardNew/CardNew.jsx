@@ -1,20 +1,26 @@
 import { Content, Data, Footer, Link, Main, Strip, Title, Wrapper } from './CardNew.styled';
 
-export const CardNew = () => {
+
+
+
+  
+
+export const CardNew = ({news}) => {
+  const {title, url, description, date} = news
+  
   return (
     <>
       <Wrapper>
+        <div>
           <Strip />
-          <Title>Обережно, кліщі! Як уберегти улюбленця </Title>
+          <Title>{title ||"not title"}</Title>
           <Content>
-            Травневі прогулянки з улюбленцем не лише приємні, але й потребують
-            пильності. З початком теплої пори року активізуються кліщі, і треба
-            бути уважним, щоб уберегти свого песика чи котика від дуже серйозних
-            неприємностей зі здоров`ям.
+          {description ||"not description"}
           </Content>
+          </div>
         <Footer>
-          <Data>20/02/2021</Data>
-          <Link href="#" target="_blank">Read more</Link>
+          <Data>{date||"no data"}</Data>
+          <Link href={url} target="_blank">Read more</Link>
         </Footer>
       </Wrapper>
     </>
