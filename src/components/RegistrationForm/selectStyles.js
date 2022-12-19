@@ -36,10 +36,12 @@ export const selectStyles = transactionType => {
     singleValue: provided => ({
       ...provided,
       color: '#000000',
+      testContent: 'City',
       margin: 0,
+      fontFamily: 'Manrope',
+      fontWeight: 400,
       fontSize: 18,
       lineHeight: 1,
-      fontFamily: 'Circe, sans-serif',
     }),
 
     dropdownIndicator: provided => ({
@@ -77,11 +79,14 @@ export const selectStyles = transactionType => {
     option: (provided, { isFocused, isSelected }) => ({
       ...provided,
       background: isFocused || isSelected ? '#ffffff' : 'transparent',
-      color: isFocused || isSelected ? '#000000' : '#000000',
+      color: isFocused || isSelected ? 'rgba(17, 17, 17, 0.6)' : '#000000',
       cursor: 'pointer',
+      testContent: 'City',
+      margin: 0,
+      fontFamily: 'Manrope',
+      fontWeight: 400,
       fontSize: 18,
       lineHeight: 1,
-      fontFamily: 'Circe, sans-serif',
     }),
   };
 };

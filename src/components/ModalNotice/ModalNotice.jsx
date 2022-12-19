@@ -1,17 +1,30 @@
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorites, deleteFavorites } from 'redux/notice/noticeOperations';
+import { closeLearnMoreModal } from 'redux/notice/noticeSlice';
+// import { openLearnMoreModal } from 'redux/notice/noticeSlice';
 import modalClose from '../../assets/images/icons.svg';
 import heart from '../../assets/images/icons.svg';
-import dog from '../../assets/images/mobile.png';
+// import dog from '../../assets/images/mobile.png';
 import {
   Btn,
+  CloseBtn,
+  ContactText,
   Div,
-  FirstItems,
   FirstList,
   ImageWrapper,
+  Img,
+  ItemContact,
+  Items,
+  Link,
   ListButtons,
   ListWrapper,
   Overlay,
   P,
   SecondList,
+  Span,
   Status,
   StatusText,
   Svg,
@@ -21,103 +34,183 @@ import {
   TextSecond,
   Title,
   TxtWrapper,
+  WrapperForDesc,
 } from './ModalNotice.styled';
 
 const ModalNotice = () => {
-  return (
-    <Overlay>
+  const dispatch = useDispatch();
+
+  const modalRoot = document.querySelector('#modal-root');
+  const isModalOpen = useSelector(state => state.notice.isLearnMoreModalOpen);
+  const data = useSelector(state => state.notice.modalData);
+  const favoriteNotice = useSelector(state => state.auth.user.favorites);
+
+  const [isFavorite, setIsFavorite] = useState(null);
+  console.log(favoriteNotice);
+  // console.log(data._id);
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    const handleClose = e => {
+      if (e.code === 'Escape') {
+        dispatch(closeLearnMoreModal());
+      }
+    };
+    window.addEventListener('keydown', handleClose);
+    return () => {
+      window.removeEventListener('keydown', handleClose);
+      document.body.style.overflow = 'auto';
+    };
+  }, [isModalOpen, dispatch]);
+  const backDropCloseModal = e => {
+    if (e.target === e.currentTarget) {
+      dispatch(closeLearnMoreModal());
+    }
+  };
+
+  const findFavoriteNotice = noticeId => {
+    const finedNotice = favoriteNotice.find(el => el === noticeId);
+    return finedNotice;
+  };
+  let finedNotice = findFavoriteNotice(data._id);
+  useEffect(() => {
+    setIsFavorite(findFavoriteNotice(data._id));
+    // eslint-disable-next-line
+  }, [favoriteNotice, data._id]);
+  console.log(finedNotice);
+  return createPortal(
+    <Overlay onClick={backDropCloseModal}>
       <Div>
-        <ImageWrapper>
-          <Status>
-            <StatusText>Sell</StatusText>
-          </Status>
-          <img src={dog} alt="animal" width="240"></img>
-          <Title>Сute dog looking for a home</Title>
-        </ImageWrapper>
-        <ListWrapper>
-          <FirstList>
-            <FirstItems>
-              <Text>Name:</Text>
-            </FirstItems>
-            <FirstItems>
-              <Text>Birthday:</Text>
-            </FirstItems>
-            <FirstItems>
-              <Text>Breed:</Text>
-            </FirstItems>
-            <FirstItems>
-              <Text>Lovation:</Text>
-            </FirstItems>
-            <FirstItems>
-              <Text>The sex:</Text>
-            </FirstItems>
-            <FirstItems>
-              <Text>Email:</Text>
-            </FirstItems>
-            <FirstItems>
-              <Text>Phone:</Text>
-            </FirstItems>
-            <FirstItems>
-              <Text>Sell:</Text>
-            </FirstItems>
-          </FirstList>
-          <SecondList>
-            <li>
-              <TextSecond>Rich</TextSecond>
-            </li>
-            <li>
-              <TextSecond>21.09.2020</TextSecond>
-            </li>
-            <li>
-              <TextSecond>Pomeranian</TextSecond>
-            </li>
-            <li>
-              <TextSecond>Lviv</TextSecond>
-            </li>
-            <li>
-              <TextSecond>male</TextSecond>
-            </li>
-            <li>
-              <TextSecond>user@mail.com</TextSecond>
-            </li>
-            <li>
-              <TextSecond>+380971234567</TextSecond>
-            </li>
-            <li>
-              <TextSecond>150$</TextSecond>
-            </li>
-          </SecondList>
-        </ListWrapper>
+        <WrapperForDesc>
+          <ImageWrapper>
+            <Status>
+              <StatusText>
+                {data.category[0].toUpperCase() + data.category.slice(1)}
+              </StatusText>
+            </Status>
+            <Img src={data.photoURL} alt="Animal"></Img>
+          </ImageWrapper>
+          <div>
+            <Title>{data.title}</Title>
+            <ListWrapper>
+              <FirstList>
+                <Items>
+                  <Text>Name:</Text>
+                </Items>
+                <Items>
+                  <Text>Birthday:</Text>
+                </Items>
+                <Items>
+                  <Text>Breed:</Text>
+                </Items>
+                <Items>
+                  <Text>Location:</Text>
+                </Items>
+                <Items>
+                  <Text>The sex:</Text>
+                </Items>
+                <Items>
+                  <Text>Email:</Text>
+                </Items>
+                <Items>
+                  <Text>Phone:</Text>
+                </Items>
+                {data.price && (
+                  <Items>
+                    <Text>Sell:</Text>
+                  </Items>
+                )}
+              </FirstList>
+              <SecondList>
+                <Items>
+                  <TextSecond>{data.name}</TextSecond>
+                </Items>
+                <Items>
+                  <TextSecond>{data.birthday.slice(0, 10)}</TextSecond>
+                </Items>
+                <Items>
+                  <TextSecond>{data.breed}</TextSecond>
+                </Items>
+                <Items>
+                  <TextSecond>{data.location}</TextSecond>
+                </Items>
+                <Items>
+                  <TextSecond>{data.sex}</TextSecond>
+                </Items>
+                <Items>
+                  <TextSecond>{data.owner.email}</TextSecond>
+                </Items>
+                <Items>
+                  <TextSecond>{data.owner.phone}</TextSecond>
+                </Items>
+                {data.price && (
+                  <Items>
+                    <TextSecond>{data.price}$</TextSecond>
+                  </Items>
+                )}
+              </SecondList>
+            </ListWrapper>
+          </div>
+        </WrapperForDesc>
+
         <div>
           <P>
-            <b>Comments:</b> Lorem ipsum dolor sit amet, consectetur Lorem ipsum
-            dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-            Lorem
+            <Span>Comments:</Span> {data.comments}
           </P>
         </div>
         <ListButtons>
+          <ItemContact>
+            <Link href={data.owner.phone}>
+              <ContactText>Contact</ContactText>
+            </Link>
+          </ItemContact>
           <li>
-            <Btn>Contact</Btn>
-          </li>
-          <li>
-            <Btn>
-              <TxtWrapper>
-                <TextBtn>Add to</TextBtn>
-                <SvgHeart>
-                  <use href={heart + '#heart-button'}></use>
-                </SvgHeart>
-              </TxtWrapper>
-            </Btn>
+            {isFavorite ? (
+              <Btn
+                type="button"
+                onClick={() => {
+                  console.log(data._id);
+                  dispatch(deleteFavorites(data._id));
+                  setIsFavorite(null);
+                }}
+              >
+                <TxtWrapper>
+                  <TextBtn>Remove from </TextBtn>
+                  <SvgHeart>
+                    <use href={heart + '#heart-button'}></use>
+                  </SvgHeart>
+                </TxtWrapper>
+              </Btn>
+            ) : (
+              <Btn
+                type="button"
+                onClick={() => dispatch(addFavorites(data._id))}
+              >
+                <TxtWrapper>
+                  <TextBtn>Add to</TextBtn>
+                  <SvgHeart>
+                    <use href={heart + '#heart-button'}></use>
+                  </SvgHeart>
+                </TxtWrapper>
+              </Btn>
+            )}
           </li>
         </ListButtons>
 
-        <div type="button">
+        <CloseBtn
+          type="button"
+          onClick={() => {
+            dispatch(closeLearnMoreModal());
+          }}
+        >
           <Svg>
-            <use href={modalClose + '#closeModal-button-mobile'}></use>
+            <use href={modalClose + '#close-small-modal-mobile'}></use>
           </Svg>
-        </div>
+        </CloseBtn>
       </Div>
-    </Overlay>
+    </Overlay>,
+
+    modalRoot
   );
 };
 

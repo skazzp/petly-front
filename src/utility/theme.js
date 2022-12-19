@@ -4,6 +4,7 @@ export const theme = {
     white: '#ffffff',
     accent: '#F59256',
     orange: '#FF6101',
+    grey: 'rgba(17, 17, 17, 0.6)',
 
     background: {
       white: '#FFFFFF',
@@ -11,6 +12,7 @@ export const theme = {
       backdrop: 'rgba(17, 17, 17, 0.6)',
       modalInput: 'rgba(245, 146, 86, 0.5)',
       popup: 'rgba(255, 255, 255, 0.6)',
+      content: '#111321',
     },
   },
   space: [0, 8, 12, 16, 20, 32, 40, 50, 80, 110],
@@ -22,7 +24,7 @@ export const theme = {
     xs: '12px',
     s: '14px',
     m: '16px',
-    ml: "20px",
+    ml: '20px',
     l: '24px',
     xl: '28px',
     xxl: '48px',

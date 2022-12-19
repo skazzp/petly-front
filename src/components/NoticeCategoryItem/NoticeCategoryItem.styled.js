@@ -6,6 +6,7 @@ export const Item = styled.li`
   display: flex;
   flex-direction: column;
   padding-bottom: 12px;
+  /* margin-bottom: 32px; */
 
   background: ${props => props.theme.colors.white};
 
@@ -173,13 +174,20 @@ export const BtnDlt = styled.button`
   border: 2px solid #f59256;
   border-radius: ${props => props.theme.space[6]}px;
 
+  fill: #f59256;
+
   :hover,
   :focus {
     border: 2px solid #ff6101;
     color: ${props => props.theme.colors.orange};
+    fill: #ff6101;
   }
 `;
 
 export const Span = styled.span`
   padding-right: 15px;
+`;
+
+export const Svg = styled.svg`
+  fill: inherit;
 `;

@@ -1,49 +1,52 @@
-// import { useSelector } from 'react-redux';
-// import { useState } from 'react';
-// import { toast } from 'react-toastify';
-// import { selectToken } from '../../redux/auth/authSelectors';
-// import ModalPage from '../../pages';
-// import ModalAddNotice from '../ModalAddNotice';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { selectToken } from '../../redux/auth/authSelectors';
+import { useIsMobile } from '../../hooks/mediaQuery';
+import ModalAddNotice from '../ModalAddNotice';
 import icons from '../../assets/images/icons.svg';
 import { BtnWrapper, AddBtn, Plus } from './AddNoticeButton.styled';
 
-export default function AddNoticeButton() {
-  const isMobile = false;
+const AddNoticeButton = () => {
+  const isMobile = useIsMobile();
   const text = 'Add pet';
-  // const isLoggedIn = useSelector(selectToken);
-  // const [isOpen, setIsOpen] = useState(false);
+  const isLoggedIn = useSelector(selectToken);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
-    // if (!isLoggedIn) {
-    // return toast.info('You must be logged in!');
-    // }
-    // setIsOpen(true);
+    if (!isLoggedIn) {
+      toast.error('You must be logged in!');
+      return;
+    }
+    setIsOpen(true);
   };
 
   return (
     <>
-      <BtnWrapper onClick={handleClick}>
-        {!isMobile && text}
-        <AddBtn type="button">
-          <Plus>
-            <use href={`${icons}#icon-plus`}></use>
-          </Plus>
-          {isMobile && text}
-        </AddBtn>
-      </BtnWrapper>
-      {/* {isOpen && (
-        <ModalPage
+      {!isOpen && (
+        <>
+          <ToastContainer />
+          <BtnWrapper onClick={handleClick}>
+            {!isMobile && text}
+            <AddBtn type="button">
+              <Plus>
+                <use href={`${icons}#plus-add-pet`}></use>
+              </Plus>
+              {isMobile && text}
+            </AddBtn>
+          </BtnWrapper>
+        </>
+      )}
+      {isOpen && (
+        <ModalAddNotice
           onClose={() => {
             setIsOpen(false);
           }}
-        >
-          <ModalAddNotice
-            onClose={() => {
-              setIsOpen(false);
-            }}
-          />
-        </ModalPage>
-      )} */}
+        />
+      )}
     </>
   );
-}
+};
+
+export default AddNoticeButton;

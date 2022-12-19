@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { addFavorites, deleteFavorites } from 'redux/notice/noticeOperations';
 
 import {
   refreshUser,
   loginUser,
   logOutUser,
   registerUser,
+  editUser,
 } from './authOperation';
 
 const userInitialState = {
@@ -15,10 +17,13 @@ const userInitialState = {
     name: '',
     city: '',
     phone: '',
+    _id: null,
+    avatarURL: '',
+    favorites: [],
   },
   token: null,
   isLoading: false,
-  error: null,
+  error: '',
 };
 
 const pendingHandlerAuth = (state, action) => {
@@ -36,7 +41,11 @@ const authSlice = createSlice({
 
   initialState: userInitialState,
 
-  reducers: {},
+  reducers: {
+    changeUserData(state, action) {
+      state.user = { ...state.user, ...action.payload };
+    },
+  },
   extraReducers: builder => {
     builder.addCase(registerUser.pending, pendingHandlerAuth);
     builder.addCase(registerUser.rejected, rejectedHandler);
@@ -68,11 +77,43 @@ const authSlice = createSlice({
     builder.addCase(refreshUser.pending, pendingHandlerAuth);
     builder.addCase(refreshUser.rejected, rejectedHandler);
     builder.addCase(refreshUser.fulfilled, (state, action) => {
+      // console.log(action.payload);
       state.user = action.payload;
       state.error = null;
       state.isLoading = false;
     });
+
+    builder.addCase(editUser.pending, pendingHandlerAuth);
+    builder.addCase(editUser.rejected, rejectedHandler);
+    builder.addCase(editUser.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      console.log(action.payload);
+      // state.user = { ...state.user, ...action.payload };
+      // state.token = null;
+    });
+
+    builder.addCase(addFavorites.pending, pendingHandlerAuth);
+    builder.addCase(addFavorites.rejected, rejectedHandler);
+    builder.addCase(addFavorites.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.user.favorites.push(action.payload);
+      // TODO: редактировать нужный нотис в стейте или юзера ?
+    });
+
+    builder.addCase(deleteFavorites.pending, pendingHandlerAuth);
+    builder.addCase(deleteFavorites.rejected, rejectedHandler);
+    builder.addCase(deleteFavorites.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.user.favorites = state.user.favorites.filter(
+        fav => fav !== action.payload
+      );
+      // TODO: редактировать нужный нотис в стейте или юзера ?
+    });
   },
 });
 
+export const { changeUserData } = authSlice.actions;
 export const authReducer = authSlice.reducer;

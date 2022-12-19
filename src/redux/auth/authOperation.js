@@ -19,7 +19,10 @@ export const registerUser = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.response.status);
+      console.log(error);
+      return thunkApi.rejectWithValue(
+        error.response.data?.message || error.response.data?.details[0].message
+      );
     }
   }
 );
@@ -32,7 +35,7 @@ export const loginUser = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.response.status);
+      return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -41,11 +44,12 @@ export const logOutUser = createAsyncThunk(
   'auth/logOutUser',
   async (_, thunkApi) => {
     try {
-      const response = await axios.delete('/api/users/logout');
+      const response = await axios.post('/api/users/logout');
       clearAuthHeader();
+      console.log('LOGOUT', response.data);
       return response.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.response.status);
+      return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -63,10 +67,40 @@ export const refreshUser = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get('/api/users/current');
-      // console.log('getUser', response);
+      const response = await axios.get('/api/usersinfo');
+      console.log('getUser', response.data);
 
       return response.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
+export const editUser = createAsyncThunk(
+  'auth/editUser',
+  async (user, thunkApi) => {
+    try {
+      // console.log(user);
+      const response = await axios.patch(`/api/usersinfo/update`, user);
+      console.log('editUser', response.data);
+      // setAuthHeader(response.data.token);
+      return response.data.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);
+
+export const editAvatar = createAsyncThunk(
+  'auth/editAvatar',
+  async (user, thunkApi) => {
+    try {
+      // console.log(user);
+      const response = await axios.patch(`/api/usersinfo/update`, user);
+      console.log('editAvatar', response.data);
+      // setAuthHeader(response.data.token);
+      return response.data.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
