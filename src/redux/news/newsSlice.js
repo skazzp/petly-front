@@ -1,6 +1,3 @@
-// import { createSlice } from '@reduxjs/toolkit';
-
-// import { getUserPet, addUserPet, deleteUserPet } from './petsOperations';
 import { createSlice } from '@reduxjs/toolkit';
 
 import { getNews } from './newsOperations';

@@ -1,6 +1,5 @@
 import * as yup from 'yup';
 require('yup-phone');
-const phoneRegExp = /^([+]?[0-9\s-\(\)]{3,25})*$/i;
 export const schema = yup.object().shape({
   email: yup.string().email().required('enter your E-mail, please'),
   password: yup
@@ -20,7 +19,7 @@ export const schema = yup.object().shape({
   city: yup.string().required('chenge your city, please'),
   phone: yup
     .string()
-    .matches(phoneRegExp, 'Phone number is not valid')
+    .phone()
     .typeError('not Valid phone')
     .required('enter your phone, please'),
 });

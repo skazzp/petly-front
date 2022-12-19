@@ -17,8 +17,8 @@ export const Title = styled.h2`
   font-size: ${props => props.theme.fontSizes.l};
   line-height: ${props => props.theme.lineHeights.main};
   text-align: center;
-  margin-top: 14px;
-  margin-bottom: 36px;
+  margin-top: 34px;
+  margin-bottom: 28px;
 
   ${props => props.theme.breakpoints.tab} {
     font-size: ${props => props.theme.fontSizes.xxl}px;
@@ -31,3 +31,31 @@ export const Title = styled.h2`
   }
 `;
 
+export const ListCard = styled.ul`
+  list-style: none;
+  padding: 0px;
+  margin:0px ;
+
+  ${props => props.theme.breakpoints.tab} {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px ;
+    row-gap: 60px;
+    column-gap: 32px;
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
+`;
+
+export const ItemCard = styled.li`
+
+  ${props => props.theme.breakpoints.tab} {
+    flex-basis: calc((100%-40px-32px) / 3);
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+    flex-basis: calc((100%-40px-32px-32px)/4);
+  }
+`;

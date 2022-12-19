@@ -7,6 +7,7 @@ import {
   logOutUser,
   registerUser,
   editUser,
+  editAvatar,
 } from './authOperation';
 
 const userInitialState = {
@@ -88,9 +89,21 @@ const authSlice = createSlice({
     builder.addCase(editUser.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      console.log(action.payload);
-      // state.user = { ...state.user, ...action.payload };
+      // console.log(123, action.payload);
+      // state.user = { ...state.user, ...action.payload.avatarURL };
       // state.token = null;
+      // state.user.avatarURL = action.payload.avatarURL;
+    });
+
+    builder.addCase(editAvatar.pending, pendingHandlerAuth);
+    builder.addCase(editAvatar.rejected, rejectedHandler);
+    builder.addCase(editAvatar.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      // console.log(123, action.payload);
+      // state.user = { ...state.user, ...action.payload.avatarURL };
+      // state.token = null;
+      state.user.avatarURL = action.payload.avatarURL;
     });
 
     builder.addCase(addFavorites.pending, pendingHandlerAuth);

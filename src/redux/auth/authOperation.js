@@ -2,6 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://petly-bc26.cyclic.app/';
+// axios.defaults.baseURL = 'http://localhost:3030/';
 
 export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -19,7 +20,6 @@ export const registerUser = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      console.log(error);
       return thunkApi.rejectWithValue(
         error.response.data?.message || error.response.data?.details[0].message
       );
@@ -85,7 +85,7 @@ export const editUser = createAsyncThunk(
       const response = await axios.patch(`/api/usersinfo/update`, user);
       console.log('editUser', response.data);
       // setAuthHeader(response.data.token);
-      return response.data.data;
+      return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
@@ -94,13 +94,25 @@ export const editUser = createAsyncThunk(
 
 export const editAvatar = createAsyncThunk(
   'auth/editAvatar',
-  async (user, thunkApi) => {
+  async (file, thunkApi) => {
+    console.log(file);
+    const formData = new FormData();
+    formData.append('image', file);
+
+    const config = {
+      // method: 'patch',
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    };
     try {
-      // console.log(user);
-      const response = await axios.patch(`/api/usersinfo/update`, user);
+      const response = await axios.patch(
+        `/api/usersinfo/update`,
+        formData,
+        config
+      );
       console.log('editAvatar', response.data);
-      // setAuthHeader(response.data.token);
-      return response.data.data;
+      return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
