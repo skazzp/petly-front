@@ -36,7 +36,7 @@ export const store = configureStore({
     userPets: petsReducer,
     notice: noticeReducer,
     news: newsReducer,
-    friend: ourFriendReducer,
+    friends: ourFriendReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

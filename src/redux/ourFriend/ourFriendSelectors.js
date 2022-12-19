@@ -1,1 +1,1 @@
-export const selectOurFriends = state => state.friend.friends;
+export const selectOurFriends = state => state.friends.friends;

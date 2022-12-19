@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getOurFriends = createAsyncThunk('friends', async thunkApi => {
   try {
-    const response = await axios.get('/api/info/partnership');
+    const response = await axios.get('/api/info/friends');
   
     return response.data;
   } catch (error) {
