@@ -85,7 +85,7 @@ export const editUser = createAsyncThunk(
       const response = await axios.patch(`/api/usersinfo/update`, user);
       console.log('editUser', response.data);
       // setAuthHeader(response.data.token);
-      return response.data.data;
+      return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
@@ -98,8 +98,9 @@ export const editAvatar = createAsyncThunk(
     console.log(file);
     const formData = new FormData();
     formData.append('image', file);
+
     const config = {
-      method: 'patch',
+      // method: 'patch',
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -111,7 +112,7 @@ export const editAvatar = createAsyncThunk(
         config
       );
       console.log('editAvatar', response.data);
-      // return response.data.data;
+      return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
