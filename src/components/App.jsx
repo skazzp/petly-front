@@ -9,8 +9,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout';
-import NewPage from 'pages/NewPage/NewPage';
 import OurFriend from 'pages/OurFriend/OurFriend';
+import NewPage from 'pages/newPage/NewPage';
 // import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 
 const Test = () => {
