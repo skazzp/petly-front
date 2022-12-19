@@ -67,7 +67,7 @@ export const refreshUser = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get('/api/info/news');
+      const response = await axios.get('/api/usersinfo');
       console.log('getUser', response.data);
 
       return response.data;
