@@ -22,6 +22,7 @@ import {
   AvatarLabel,
   AvatarWrapper,
   AvatarImg,
+  AvatarIcon,
   AvatarInput,
 } from './ModalAddNotice.styled';
 
@@ -163,9 +164,9 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
                   alt={fileInput.name}
                 />
               ) : (
-                <svg>
-                  <use href={`${icons}#plus-add-pet`}></use>
-                </svg>
+                <AvatarIcon>
+                  <use href={`${icons}#plusImg`}></use>
+                </AvatarIcon>
               )}
               <AvatarInput
                 type="file"
@@ -187,7 +188,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
                 name="comments"
                 id="comments"
                 rows="3"
-                placeholder="Type comments"
+                placeholder="Type comment"
               />
               <ErrorMessage
                 name="comments"

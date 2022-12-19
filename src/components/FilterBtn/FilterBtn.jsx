@@ -1,6 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Button, FilterList } from './FilterBtn.styled';
+import AddNoticeButton from 'components/AddNoticeButton';
+import { Button, FilterList, Wrapper } from './FilterBtn.styled';
 
 const buttons = [
   {
@@ -31,7 +32,7 @@ const authButtons = [
 function FilterBtn() {
   const auth = true;
   return (
-    <>
+    <Wrapper>
       <FilterList>
         {buttons.map(b => (
           <li key={uuidv4()}>
@@ -45,7 +46,8 @@ function FilterBtn() {
             </li>
           ))}
       </FilterList>
-    </>
+      <AddNoticeButton />
+    </Wrapper>
   );
 }
 
