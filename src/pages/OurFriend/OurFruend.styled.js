@@ -18,7 +18,7 @@ export const Title = styled.h2`
   line-height: ${props => props.theme.lineHeights.main};
   text-align: center;
   margin-top: 34px;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 
   ${props => props.theme.breakpoints.tab} {
     font-size: ${props => props.theme.fontSizes.xxl}px;
@@ -59,4 +59,3 @@ export const ItemCard = styled.li`
     flex-basis: calc((100%-40px-32px-32px)/4);
   }
 `;
-
