@@ -71,6 +71,7 @@ export const BtnAddFavorite = styled.button`
   border-radius: ${props => props.theme.space[7]}px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2px);
+  cursor: pointer;
 `;
 
 export const Wrapper = styled.div`
@@ -154,6 +155,8 @@ export const BtnLearnMore = styled.button`
   border: 2px solid #f59256;
   border-radius: ${props => props.theme.space[6]}px;
 
+  cursor: pointer;
+
   :hover,
   :focus {
     border: 2px solid #ff6101;
@@ -177,6 +180,8 @@ export const BtnDlt = styled.button`
   border-radius: ${props => props.theme.space[6]}px;
 
   fill: #f59256;
+
+  cursor: pointer;
 
   :hover,
   :focus {
