@@ -89,12 +89,7 @@ const RegistrationForm = () => {
     value: `${i.City},${i.District}`,
     label: `${i.City}, ${i.District}`,
   }));
-
-  // const inputPhoneMask = () => {
-  //   document.querySelector('#phone').mask("+7(999) 999-9999");
-  // }
-  // inputPhoneMask()
-
+  
   useEffect(() => {
     if (errorDB === 'Email in use') {
       setEmailErrorMassege('Email in use');
@@ -111,8 +106,7 @@ const RegistrationForm = () => {
       setEmailError('');
       setEmailErrorFixed('');
     }
-    // details[0].message
-  }, [errorDB]);
+  }, [errorDB, formik.values.email]);
 
   return (
     <Div>
@@ -220,16 +214,6 @@ const RegistrationForm = () => {
               onBlur={formik.handleBlur}
               value={formik.values.phone}
             />
-            {/* <Input
-                defaultValue="+380"
-              placeholder="Phone"
-              id="phone"
-              name="phone"
-              type="phone"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              value={formik.values.phone}
-            ></Input> */}
             {formik.errors.phone && formik.touched.phone ? (
               <Validation>{formik.errors.phone}</Validation>
             ) : null}
@@ -251,7 +235,7 @@ const RegistrationForm = () => {
       )}
 
       <Span>
-        Don't have an account? <LinkRegistration>Register</LinkRegistration>
+        Don't have an account? <LinkRegistration type="button" to="/login" >Login</LinkRegistration>
       </Span>
     </Div>
   );
