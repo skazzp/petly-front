@@ -3,7 +3,7 @@ import NoticesPage from 'pages/NoticesPage/NoticesPage';
 import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
 import UserPage from 'pages/UserPage/UserPage';
 import { HomePage } from 'pages/HomePage';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
@@ -11,6 +11,11 @@ import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout';
 import NewPage from 'pages/NewPage/NewPage';
 import OurFriend from 'pages/OurFriend/OurFriend';
+<<<<<<< Updated upstream
+=======
+import NewsPage from 'pages/NewsPage/NewsPage';
+
+>>>>>>> Stashed changes
 // import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 
 const Test = () => {
@@ -37,7 +42,7 @@ export const App = () => {
           <Route path="register" element={<RegistrationPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="friends" element={<OurFriend />} />
-          <Route path="news" element={<NewPage />} />
+          <Route path="news" element={<NewsPage />} />
           <Route path="notices" element={<NoticesPage />}>
             <Route path="lost-found" element={<p>lost</p>} />
             <Route path="for-free" element={<p>free</p>} />
