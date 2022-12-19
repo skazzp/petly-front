@@ -22,7 +22,7 @@ export const Div = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    width: 458px;
+    width: 608px;
     z-index: 1;
   }
 `;
@@ -51,6 +51,7 @@ export const Form = styled.form`
   min-width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media screen and (min-width: 768px) {
   }
@@ -60,12 +61,16 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
+  display: flex;
   background: none;
+  height: 40px;
   border: 1px solid rgba(245, 146, 86, 0.5);
-
+  align-items: center;
+  justify-content: center;
   border-radius: 40px;
   margin-bottom: 13px;
   padding: 11px 14px;
+  padding-right: 5px;
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
@@ -74,7 +79,7 @@ export const Label = styled.label`
   @media screen and (min-width: 768px) {
     max-width: 100%;
 
-    height: 22px;
+    height: 52px;
 
     background: #fdf7f2;
     padding: 14px 32px;
@@ -90,12 +95,17 @@ export const Input = styled.input`
   background: none;
   border: none;
   box-shadow: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
+  font-family: 'Manrope';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
   ::placeholder {
     font-family: 'Manrope';
     font-weight: 400;
-    font-size: 1, 3;
+    font-size: 18px;
     line-height: 25px;
   }
 
@@ -169,6 +179,30 @@ export const LinkRegistration = styled(Link)`
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+  :focus,
+  :hover {
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
+`;
+
+export const Validation = styled.p`
+  text-align: center;
+
+  font-family: 'Manrope';
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  margin: 0;
+  padding: 0;
+
+  color: #ff4747;
+
+  width: 100%;
   :focus,
   :hover {
   }

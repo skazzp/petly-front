@@ -99,7 +99,7 @@ const noticeSlice = createSlice({
       state.error = null;
       state.isLoading = false;
       state.notices = state.notices.filter(
-        notice => notice.id !== action.payload.id
+        notice => notice._id !== action.payload
       );
     });
     builder.addCase(getFavoriteNotices.fulfilled, (state, action) => {
