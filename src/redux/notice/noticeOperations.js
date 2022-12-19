@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setAuthHeader } from 'redux/auth/authOperation';
 
-// axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
+axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
 
 // Create new notice for logged in user
 export const createNotice = createAsyncThunk(
