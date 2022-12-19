@@ -24,7 +24,7 @@ export const getAllNotices = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const response = await axios.get('/api/notices');
-      console.log('getAllNotices', response);
+      // console.log('getAllNotices', response);
       return response.data.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -38,7 +38,7 @@ export const getNoticeDetails = createAsyncThunk(
   async (item, thunkApi) => {
     try {
       const response = await axios.get(`/api/notices/${item.id}`);
-      console.log('notice/getNoticeDetails', response);
+      // console.log('notice/getNoticeDetails', response);
       return response.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -70,7 +70,7 @@ export const getFavoriteNotices = createAsyncThunk(
 
     try {
       const response = await axios.get(`/api/notices/favorites`);
-      console.log('notice/getFavoriteNotices', response);
+      // console.log('notice/getFavoriteNotices', response);
       return response.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -88,7 +88,7 @@ export const getUserNotices = createAsyncThunk(
 
     try {
       const response = await axios.get(`/api/notices/personal`);
-      console.log('notice/getUserNotices', response);
+      // console.log('notice/getUserNotices', response);
       return response.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -136,13 +136,18 @@ export const addFavorites = createAsyncThunk(
 export const getByCategory = createAsyncThunk(
   'notice/getByCategory',
   async (category, thunkApi) => {
+    let path;
+    if (category === 'personal' || category === 'favorites') {
+      path = category;
+    } else {
+      path = `category/${category}`;
+    }
     try {
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
-      const response = await axios.get(`/api/notices/category/${category}`);
-      console.log('notice/getByCategory', response);
-      return response.data; // TODO
+      const response = await axios.get(`/api/notices/${path}`);
+      return response.data.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
