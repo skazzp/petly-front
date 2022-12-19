@@ -89,7 +89,7 @@ const RegistrationForm = () => {
     value: `${i.City},${i.District}`,
     label: `${i.City}, ${i.District}`,
   }));
-  
+
   useEffect(() => {
     if (errorDB === 'Email in use') {
       setEmailErrorMassege('Email in use');
@@ -107,6 +107,7 @@ const RegistrationForm = () => {
       setEmailErrorFixed('');
     }
   }, [errorDB, formik.values.email]);
+
 
   return (
     <Div>

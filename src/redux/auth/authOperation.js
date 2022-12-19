@@ -19,11 +19,6 @@ export const registerUser = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      // console.log({
-      //   error: error.response.data.details.message,
-      //   massege: error.response.data.message,
-      // });
-      console.log(error);
       return thunkApi.rejectWithValue(
         error.response.data?.message || error.response.data?.details[0].message
       );
@@ -88,6 +83,21 @@ export const editUser = createAsyncThunk(
       // console.log(user);
       const response = await axios.patch(`/api/usersinfo/update`, user);
       console.log('editUser', response.data);
+      // setAuthHeader(response.data.token);
+      return response.data.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);
+
+export const editAvatar = createAsyncThunk(
+  'auth/editAvatar',
+  async (user, thunkApi) => {
+    try {
+      // console.log(user);
+      const response = await axios.patch(`/api/usersinfo/update`, user);
+      console.log('editAvatar', response.data);
       // setAuthHeader(response.data.token);
       return response.data.data;
     } catch (error) {

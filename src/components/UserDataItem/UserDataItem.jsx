@@ -1,3 +1,4 @@
+import UpdateAvatar from 'components/UpdateAvatar/UpdateAvatar';
 import { useFormik } from 'formik';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -29,7 +30,6 @@ const UserDataItem = () => {
     birthday: true,
     city: true,
     phone: true,
-    favorites: [],
   };
   const [disabled, setDisabled] = useState(INITIAL_DISABLED);
   const user = useSelector(selectUser);
@@ -55,20 +55,27 @@ const UserDataItem = () => {
     if (!user.email) return;
     setFieldValue('name', user.name);
     setFieldValue('email', user.email);
-    setFieldValue(
-      'birthday',
-      new Date(user.birthday).toISOString().split('T')[0]
-    );
+    if (user.birthday) {
+      setFieldValue(
+        'birthday',
+        new Date(user.birthday).toISOString().split('T')[0]
+      );
+    }
+    // else
+    //   setFieldValue(
+    //     'birthday',
+    //     new Date('0000-00-00').toISOString().split('T')[0]
+    //   );
     setFieldValue('city', user.city);
     setFieldValue('phone', user.phone);
   }, [user, setFieldValue]);
 
   const handleEditInput = e => {
-    console.log(e.target);
-    // console.log(user);
-    console.log(e.target.parentNode.htmlFor);
-    // console.log(formik.values);
-    console.log(e.currentTarget);
+    // console.log(e.target);
+    // // console.log(user);
+    // console.log(e.target.parentNode.htmlFor);
+    // // console.log(formik.values);
+    // console.log(e.currentTarget);
     setDisabled({
       ...INITIAL_DISABLED,
       [e.currentTarget.parentNode.htmlFor]: false,
@@ -91,12 +98,12 @@ const UserDataItem = () => {
       <AvatarBox>
         <Avatar src={`http:${user.avatarURL}`} alt="avatar" />
       </AvatarBox>
-
+      <UpdateAvatar />
       <Form onSubmit={formik.handleSubmit}>
         {/* test login func */}
 
         <Label name="name" htmlFor="name">
-          <LabelText>Name</LabelText>
+          <LabelText>Name:</LabelText>
           <Input
             id="name"
             name="name"
@@ -115,13 +122,13 @@ const UserDataItem = () => {
           {!disabled.name && (
             <Btn type="submit">
               <BtnIcon>
-                <use href={`${icons}#icon-edit_check`}></use>
+                <use href={`${icons}#icon-ci_edit`}></use>
               </BtnIcon>
             </Btn>
           )}
         </Label>
         <Label name="email" htmlFor="email">
-          <LabelText>Email</LabelText>
+          <LabelText>Email:</LabelText>
           <Input
             id="email"
             name="email"
@@ -146,11 +153,12 @@ const UserDataItem = () => {
           )}
         </Label>
         <Label htmlFor="birthday">
-          <LabelText>Birthday</LabelText>
+          <LabelText>Birthday:</LabelText>
           <Input
             id="birthday"
             name="birthday"
             type="date"
+            placeholder="00.00.0000"
             disabled={disabled.birthday}
             onChange={formik.handleChange}
             value={formik.values.birthday}
@@ -171,7 +179,7 @@ const UserDataItem = () => {
           )}
         </Label>
         <Label htmlFor="phone">
-          <LabelText>Phone</LabelText>
+          <LabelText>Phone:</LabelText>
           <Input
             id="phone"
             name="phone"
@@ -196,7 +204,7 @@ const UserDataItem = () => {
           )}
         </Label>
         <Label htmlFor="city">
-          <LabelText>City</LabelText>
+          <LabelText>City:</LabelText>
           <Input
             id="city"
             name="city"

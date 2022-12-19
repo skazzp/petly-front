@@ -11,17 +11,15 @@ export const Wrapper = styled.div`
   ${props => props.theme.breakpoints.tab} {
     width: 335px;
 
-    /* &:nth-first(2n+1) {
-      margin-left: auto;
-    } */
-    /* &:nth-child(2n){
-      margin-right: auto;
-    } */
-  }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 
   ${props => props.theme.breakpoints.desc} {
     width: 392px;
   }
+}
 `;
 
 export const Strip = styled.div`
