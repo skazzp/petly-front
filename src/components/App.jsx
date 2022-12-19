@@ -12,7 +12,6 @@ import { SharedLayout } from './SharedLayout';
 import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 import NewPage from 'pages/NewPage';
 import OurFriend from 'pages/OurFriend';
-// import NewPage from 'pages/newPage';
 
 const Test = () => {
   return <NoticesCategoriesNav />;
