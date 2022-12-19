@@ -196,7 +196,7 @@ const RegistrationForm = () => {
           </Label>
             <Label>
               <InputMask
-              Placeholder="Phone"
+              placeholder="Phone"
               name="phone"
               id="phone"
               mask="+38(099)999-99-99"
