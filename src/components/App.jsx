@@ -9,12 +9,13 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout';
-import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
-import NewPage from 'pages/NewPage';
-import OurFriend from 'pages/OurFriend';
+import NewPage from 'pages/NewPage/NewPage';
+import OurFriend from 'pages/OurFriend/OurFriend';
+// import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 
 const Test = () => {
-  return <NoticesCategoriesNav />;
+  // return <NoticesCategoriesNav />;
+  return <h1>123</h1>;
 };
 
 export const App = () => {
