@@ -61,11 +61,6 @@ const UserDataItem = () => {
         new Date(user.birthday).toISOString().split('T')[0]
       );
     }
-    // else
-    //   setFieldValue(
-    //     'birthday',
-    //     new Date('0000-00-00').toISOString().split('T')[0]
-    //   );
     setFieldValue('city', user.city);
     setFieldValue('phone', user.phone);
   }, [user, setFieldValue]);
@@ -96,7 +91,7 @@ const UserDataItem = () => {
         }
       ></button>
       <AvatarBox>
-        <Avatar src={`http:${user.avatarURL}`} alt="avatar" />
+        <Avatar src={`${user.avatarURL}`} alt="avatar" />
       </AvatarBox>
       <UpdateAvatar />
       <Form onSubmit={formik.handleSubmit}>

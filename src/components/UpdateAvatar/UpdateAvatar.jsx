@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Input, Label, LabelIcon, LabelText } from './UpdateAvatar.styled';
 import icons from '../../assets/images/icons.svg';
+import { editAvatar } from 'redux/auth/authOperation';
 
 const UpdateAvatar = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -33,7 +34,10 @@ const UpdateAvatar = () => {
           />
 
           <button onClick={() => setSelectedImage(null)}>Remove</button>
-          <button type="button" onClick={() => dispatch()}>
+          <button
+            type="button"
+            onClick={() => dispatch(editAvatar(selectedImage))}
+          >
             Upload
           </button>
         </div>
