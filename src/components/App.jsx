@@ -9,13 +9,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout';
-import NewPage from 'pages/NewPage/NewPage';
 import OurFriend from 'pages/OurFriend/OurFriend';
-<<<<<<< Updated upstream
-=======
 import NewsPage from 'pages/NewsPage/NewsPage';
-
->>>>>>> Stashed changes
 // import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 
 const Test = () => {
@@ -44,11 +39,11 @@ export const App = () => {
           <Route path="friends" element={<OurFriend />} />
           <Route path="news" element={<NewsPage />} />
           <Route path="notices" element={<NoticesPage />}>
-            <Route path="lost-found" element={<p>lost</p>} />
-            <Route path="for-free" element={<p>free</p>} />
-            <Route path="sell" element={<p>sell</p>} />
-            <Route path="favorite" element={<p>favorite</p>} />
-            <Route path="own" element={<p>own</p>} />
+            <Route path="lost-found" element={<></>} />
+            <Route path="for-free" element={<></>} />
+            <Route path="sell" element={<></>} />
+            <Route path="favorites" element={<></>} />
+            <Route path="personal" element={<></>} />
           </Route>
         </Route>
         <Route path="*" element={<Navigate to={'/'} />} />
