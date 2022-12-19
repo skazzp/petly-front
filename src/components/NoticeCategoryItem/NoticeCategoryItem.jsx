@@ -13,9 +13,6 @@ import {
 } from '../../redux/notice/noticeOperations';
 import { addFavorites } from 'redux/notice/noticeOperations';
 
-import unlike from '../../assets/images/unlike.svg';
-import like from '../../assets/images/like.svg';
-
 import {
   BtnAddFavorite,
   BtnBox,
@@ -34,7 +31,7 @@ import {
   Wrapper,
 } from './NoticeCategoryItem.styled';
 import { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const NoticeCategoryItem = ({ notice }) => {
   const {
@@ -72,6 +69,25 @@ const NoticeCategoryItem = ({ notice }) => {
     }
   };
 
+  const birthdayFunc = () => {
+    if (!birthday) return '-';
+
+    const birthDay = new Date(birthday).getFullYear();
+    const date = new Date().getFullYear();
+    const bD = date - birthDay;
+
+    if (bD > 1) return bD + ' years';
+    if (bD === 1) return bD + ' year';
+    if (bD === 0) {
+      const birthDay = new Date(birthday).getMonth();
+      const date = new Date().getMonth();
+      const bD = date - birthDay;
+      if (bD === 1) return bD + ' month';
+
+      return bD + ' months';
+    }
+  };
+
   const handleClickFavorite = _id => {
     if (!token) {
       toast.warn('You must be logged in!');
@@ -94,6 +110,7 @@ const NoticeCategoryItem = ({ notice }) => {
   return (
     <>
       <Item>
+        <ToastContainer />
         <Image src={photoURL ? photoURL : defaultImage} alt={breed} />
         <Category>{category}</Category>
 
@@ -102,7 +119,15 @@ const NoticeCategoryItem = ({ notice }) => {
           onClick={() => handleClickFavorite(_id)}
           disabled={isLoading}
         >
-          <img src={isFavorite ? like : unlike} alt="unlike" />
+          {isFavorite ? (
+            <svg width="24" height="22">
+              <use href={icon + '#heart-unlike'}></use>
+            </svg>
+          ) : (
+            <svg width="24" height="22">
+              <use href={icon + '#heart'}></use>
+            </svg>
+          )}
         </BtnAddFavorite>
         <Wrapper>
           <Title>{title}</Title>
@@ -117,7 +142,7 @@ const NoticeCategoryItem = ({ notice }) => {
             </InfoItem>
             <InfoItem>
               <InfoTitle>Age:</InfoTitle>
-              <Info>{birthday}</Info>
+              <Info>{birthdayFunc()}</Info>
             </InfoItem>
             <InfoItem>
               {price ? (
