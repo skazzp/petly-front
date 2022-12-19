@@ -24,13 +24,19 @@ const validationSchema = yup.object({
     .string()
     .min(2)
     .max(16)
-    .matches(/^[a-zA-Z, ]*$/g, 'Only alphabetic characters are allowed')
+    .matches(
+      /^([А-Яа-яЁёЇїІіЄєҐґ'\s]+|[a-zA-Z\s]+){2,}$/,
+      'Only alphabetic characters are allowed'
+    )
     .required('Field is required!'),
   breed: yup
     .string()
     .min(2)
     .max(24)
-    .matches(/^[a-zA-Z, ]*$/g, 'Only alphabetic characters are allowed')
+    .matches(
+      /^([А-Яа-яЁёЇїІіЄєҐґ'\s]+|[a-zA-Z\s]+){2,}$/,
+      'Only alphabetic characters are allowed'
+    )
     .required('Field is required!'),
   dateOfBirth: yup
     .date()
@@ -118,7 +124,7 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
             <InputStyled
               name="titleOfAd"
               id="titleOfAd"
-              placeholder="Type title of ad"
+              placeholder="Type name"
             />
             <ErrorMessage
               name="titleOfAd"
@@ -133,7 +139,7 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
             <InputStyled
               name="namePet"
               id="namePet"
-              placeholder="Type name of pet"
+              placeholder="Type name pet"
             />
             <ErrorMessage
               name="namePet"
@@ -148,6 +154,7 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
             <InputStyled
               name="dateOfBirth"
               id="dateOfBirth"
+              // type="date"
               placeholder="Type date of birth"
               data-pattern="**.**.****"
             />
