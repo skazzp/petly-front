@@ -2,9 +2,19 @@ import icon from '../../assets/images/icons.svg';
 import defaultImage from '../../assets/images/default-pets.jpg';
 import { useDispatch, useSelector } from 'react-redux';
 import { addModalData, openLearnMoreModal } from 'redux/notice/noticeSlice';
-import { selectUser } from '../../redux/auth/authSelectors';
-import { deleteNotices } from '../../redux/notice/noticeOperations';
+import {
+  selectIsLoading,
+  selectToken,
+  selectUser,
+} from '../../redux/auth/authSelectors';
+import {
+  deleteFavorites,
+  deleteNotices,
+} from '../../redux/notice/noticeOperations';
 import { addFavorites } from 'redux/notice/noticeOperations';
+
+import unlike from '../../assets/images/unlike.svg';
+import like from '../../assets/images/like.svg';
 
 import {
   BtnAddFavorite,
@@ -19,38 +29,62 @@ import {
   InfoTitle,
   Item,
   Span,
-  // Svg,
+  Svg,
   Title,
   Wrapper,
 } from './NoticeCategoryItem.styled';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const NoticeCategoryItem = ({ notice }) => {
   const {
     birthday,
     breed,
     category,
-    // comments,
     location,
-    // name,
     owner,
     photoURL,
     price,
-    // sex,
     title,
-    id,
+    _id,
   } = notice;
 
   const dispatch = useDispatch();
-  const user = useSelector(selectUser);
-  const isOwner = user.email !== owner?.email; // TODO replace !== to === and check it with id
+  const token = useSelector(selectToken);
+  const isLoading = useSelector(selectIsLoading);
 
-  const addToFav = id => {
-    dispatch(addFavorites(id));
+  const user = useSelector(selectUser);
+  const isOwner = user.email === owner?.email; // TODO replace !== to === and check it with id
+  const favoriteNotice = useSelector(state => state.auth.user.favorites);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    checkFavorite(favoriteNotice, _id);
+  }, [favoriteNotice, _id]);
+
+  const checkFavorite = (favoriteNotice, _id) => {
+    if (!favoriteNotice) {
+      return;
+    }
+    const filterednotice = favoriteNotice.find(notice => notice === _id);
+    if (filterednotice) {
+      setIsFavorite(true);
+    }
   };
 
-  // const removeFav = id => {
-  //   dispatch(deleteFavorites(id));
-  // };
+  const handleClickFavorite = _id => {
+    if (!token) {
+      toast.warn('You must be logged in!');
+      return;
+    }
+    if (isFavorite) {
+      dispatch(deleteFavorites(_id));
+
+      return setIsFavorite(false);
+    }
+    dispatch(addFavorites(_id));
+    return setIsFavorite(true);
+  };
 
   const openModal = e => {
     dispatch(addModalData(notice));
@@ -62,15 +96,13 @@ const NoticeCategoryItem = ({ notice }) => {
       <Item>
         <Image src={photoURL ? photoURL : defaultImage} alt={breed} />
         <Category>{category}</Category>
+
         <BtnAddFavorite
           type="button"
-          onClick={() => {
-            addToFav(id);
-          }}
+          onClick={() => handleClickFavorite(_id)}
+          disabled={isLoading}
         >
-          <svg width="24" height="22">
-            <use href={icon + '#heart'}></use>
-          </svg>
+          <img src={isFavorite ? like : unlike} alt="unlike" />
         </BtnAddFavorite>
         <Wrapper>
           <Title>{title}</Title>
@@ -88,8 +120,12 @@ const NoticeCategoryItem = ({ notice }) => {
               <Info>{birthday}</Info>
             </InfoItem>
             <InfoItem>
-              <InfoTitle>Price:</InfoTitle>
-              <Info>{price}</Info>
+              {price ? (
+                <>
+                  <InfoTitle>Price:</InfoTitle>
+                  <Info>{price}$</Info>
+                </>
+              ) : null}
             </InfoItem>
           </InfoList>
         </Wrapper>
@@ -102,13 +138,13 @@ const NoticeCategoryItem = ({ notice }) => {
             <BtnDlt
               type="button"
               onClick={() => {
-                window.confirm('Are you sure?') && dispatch(deleteNotices(id));
+                window.confirm('Are you sure?') && dispatch(deleteNotices(_id));
               }}
             >
               <Span>Delete</Span>
-              <svg width="17" height="17">
+              <Svg width="17" height="17">
                 <use href={icon + '#delete-button'}></use>
-              </svg>
+              </Svg>
             </BtnDlt>
           )}
         </BtnBox>
