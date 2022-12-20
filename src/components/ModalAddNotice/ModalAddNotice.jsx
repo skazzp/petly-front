@@ -14,16 +14,16 @@ const ModalAddNotice = ({ onClose }) => {
   const [step, setStep] = useState(1);
 
   const [formData, setFormData] = useState({
-    titleOfAd: '',
-    namePet: '',
+    category: '',
+    title: '',
+    name: '',
+    birthday: '',
     breed: '',
     sex: '',
     location: '',
-    price: '1$',
-    category: '',
-    comments: '',
-    dateOfBirth: '',
+    price: '',
     image: '',
+    comments: '',
   });
 
   const nextStep = () => {

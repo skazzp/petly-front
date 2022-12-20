@@ -14,17 +14,15 @@ export const Wrapper = styled.div`
 `;
 
 export const List = styled.ul`
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 320px;
+  width: 280px;
 
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 32px;
-    width: 768px;
+    width: 704px;
     flex-wrap: wrap;
     /* justify-content: center; */
     flex-direction: row;
