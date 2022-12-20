@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
-import OurFriend from 'pages/OurFriend/OurFriend';
+// import OurFriend from 'pages/OurFriend/OurFriend';
 import NewsPage from 'pages/NewsPage/NewsPage';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
@@ -45,9 +45,7 @@ export const App = () => {
             }
           />
           <Route path="test" element={<Test />} />
-        //  <Route path="register" element={<RegistrationPage />} />
-        //  <Route path="login" element={<LoginPage />} />
-        //  <Route path="friends" element={<FriendsPage />} />
+
           <Route
             path="register"
             element={
@@ -63,7 +61,7 @@ export const App = () => {
               <PublicRoute redirectTo="/notices" component={<LoginPage />} />
             }
           />
-          <Route path="friends" element={<OurFriend />} />
+          {/* <Route path="friends" element={<OurFriend />} /> */}
           <Route path="news" element={<NewsPage />} />
           <Route path="notices" element={<NoticesPage />}>
             <Route path="lost-found" element={<></>} />
