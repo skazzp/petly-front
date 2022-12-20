@@ -12,6 +12,7 @@ export const Overlay = styled.div`
   justify-content: center;
   overflow-y: auto;
   align-items: flex-start;
+  z-index: 10;
 `;
 export const Div = styled.div`
   background-color: ${p => p.theme.colors.background.white};
@@ -178,7 +179,7 @@ export const ItemContact = styled.li`
     width: 160px;
     height: ${p => p.theme.space[6]}px;
     &:hover {
-      transition-delay: 150ms, 2s;
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
       transform: translate(-5%, -5%);
       box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
         -8px -8px 12px rgba(255, 255, 255, 0.3);
@@ -200,7 +201,7 @@ export const Btn = styled.button`
     height: ${p => p.theme.space[6]}px;
     cursor: pointer;
     &:hover {
-      transition-delay: 150ms, 2s;
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
       transform: translate(-5%, -5%);
       box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
         -8px -8px 12px rgba(255, 255, 255, 0.3);
@@ -237,8 +238,6 @@ export const SvgHeart = styled.svg`
   }
 `;
 export const CloseBtn = styled.button`
-  /* background: transparent;
-  border: none; */
   padding: 8px 8px 4px 8px;
 
   border-radius: ${p => p.theme.radii.round};
@@ -253,7 +252,7 @@ export const CloseBtn = styled.button`
 
   @media screen and (min-width: 768px) {
     &:hover {
-      transition-delay: 150ms, 2s;
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
       transform: translate(-2%, -2%);
       box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
         -8px -8px 12px rgba(255, 255, 255, 0.3);
@@ -263,23 +262,4 @@ export const CloseBtn = styled.button`
 export const Svg = styled.svg`
   width: 16px;
   height: 16px;
-  /* padding: 10px;
-  width: 20px;
-  height: 20px;
-  border-radius: ${p => p.theme.radii.round};
-
-  background: ${p => p.theme.colors.background.main};
-  backdrop-filter: blur(2px);
-  position: absolute;
-  right: 30px;
-  top: 15px;
-  cursor: pointer;
-  @media screen and (min-width: 768px) {
-    &:hover {
-      transition-delay: 150ms, 2s;
-      transform: translate(-2%, -2%);
-      box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
-        -8px -8px 12px rgba(255, 255, 255, 0.3);
-    }
-  } */
 `;
