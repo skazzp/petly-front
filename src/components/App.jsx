@@ -15,6 +15,7 @@ import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
+import { ToastContainer } from 'react-toastify';
 
 // import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 
@@ -73,6 +74,7 @@ export const App = () => {
         </Route>
         <Route path="*" element={<Navigate to={'/'} />} />
       </Routes>
+      <ToastContainer />
     </Suspense>
   );
 };

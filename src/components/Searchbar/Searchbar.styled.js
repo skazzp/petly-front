@@ -5,7 +5,7 @@ export const HesderSearchbar = styled.div`
   top: 0;
   left: 0;
   /* position: sticky; */
-  z-index: 100;
+  /* z-index: 100; */
   display: flex;
   justify-content: center;
   align-items: center;
