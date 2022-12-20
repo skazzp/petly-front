@@ -31,7 +31,7 @@ const RegistrationForm = () => {
   const [emailErrorMassege, setEmailErrorMassege] = useState('');
   const [emailError, setEmailError] = useState('');
   const [emailErrorFixed, setEmailErrorFixed] = useState(false);
-
+ 
   const token = useSelector(selectToken);
   const { width, height } = useWindowSize();
   const errorDB = useSelector(selectError);
@@ -47,7 +47,7 @@ const RegistrationForm = () => {
     },
     validationSchema: schema,
 
-    onSubmit: async values => {
+    onSubmit: values => {
       const user = {
         email: values.email,
         password: values.password,
@@ -55,7 +55,7 @@ const RegistrationForm = () => {
         city: values.city,
         phone: values.phone,
       };
-      await dispatch(registerUser(user));
+     dispatch(registerUser(user));
     },
   });
   const city = formik.values.city;
@@ -68,6 +68,9 @@ const RegistrationForm = () => {
 
   const onClickNext = e => {
     e.preventDefault();
+     if (emailError !== formik.values.email) {
+      setEmailErrorFixed(false);
+    }
     if (
       !formik.values.email &&
       !formik.values.password &&
@@ -80,9 +83,7 @@ const RegistrationForm = () => {
       formik.errors.confirmPassword
     )
       return;
-    if (emailError !== formik.values.email) {
-      setEmailErrorFixed(false);
-    }
+   
     SetFormChenge(true);
   };
   const Selectoptions = Data.map(i => ({
@@ -90,12 +91,8 @@ const RegistrationForm = () => {
     label: `${i.City}, ${i.District}`,
   }));
 
-  // const inputPhoneMask = () => {
-  //   document.querySelector('#phone').mask("+7(999) 999-9999");
-  // }
-  // inputPhoneMask()
-
   useEffect(() => {
+
     if (errorDB === 'Email in use') {
       setEmailErrorMassege('Email in use');
       setEmailError(formik.values.email);
@@ -109,11 +106,14 @@ const RegistrationForm = () => {
     if (!errorDB) {
       setEmailErrorMassege('');
       setEmailError('');
-      setEmailErrorFixed('');
+      setEmailErrorFixed(false);
     }
-    // details[0].message
+    
   }, [errorDB]);
 
+ console.log(emailErrorFixed);
+  console.log(emailError);
+  console.log(formik.values.email);
   return (
     <Div>
       <Title>Registration</Title>
@@ -201,7 +201,7 @@ const RegistrationForm = () => {
           </Label>
             <Label>
               <InputMask
-              Placeholder="Phone"
+              placeholder="Phone"
               name="phone"
               id="phone"
               mask="+38(099)999-99-99"
@@ -220,16 +220,6 @@ const RegistrationForm = () => {
               onBlur={formik.handleBlur}
               value={formik.values.phone}
             />
-            {/* <Input
-                defaultValue="+380"
-              placeholder="Phone"
-              id="phone"
-              name="phone"
-              type="phone"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              value={formik.values.phone}
-            ></Input> */}
             {formik.errors.phone && formik.touched.phone ? (
               <Validation>{formik.errors.phone}</Validation>
             ) : null}
@@ -251,7 +241,7 @@ const RegistrationForm = () => {
       )}
 
       <Span>
-        Don't have an account? <LinkRegistration>Register</LinkRegistration>
+        Don't have an account? <LinkRegistration type="button" to="/login" >Login</LinkRegistration>
       </Span>
     </Div>
   );

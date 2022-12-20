@@ -22,6 +22,7 @@ import {
   AvatarLabel,
   AvatarWrapper,
   AvatarImg,
+  AvatarIcon,
   AvatarInput,
 } from './ModalAddNotice.styled';
 
@@ -34,13 +35,16 @@ const validationSchema = yup.object({
     .min(2)
     .max(48)
     .matches(/\D/g, 'Only alphabetic characters are allowed')
-    .required('Field is required!'), // TODO строка в форматі Місто, Область. Наприклад: Brovary, Kyiv або Akhtyrka, Sumy
+    .required('Field is required!'),
   price: yup
     .string()
     .min(2)
     .max(10)
-    .matches(/^[1-9]+[0-9]*\$$/g, 'Only number characters and $ are allowed')
-    .required('Field is required!'), // TODO число, не повинно починатися 0
+    .matches(
+      /^[1-9]+[0-9]*\$$/g,
+      'Only number characters and $ are allowed, e.g. 50$'
+    ),
+  // .required('Field is required!')
   image: yup
     .mixed()
     .required('Image is required! (jpg, jpeg, png)')
@@ -71,9 +75,9 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
     setFormData({
       ...values,
       image: fileInput,
-      price: values.category !== 'sell' ? '1$' : values.price,
+      // price: values.category !== 'sell' ? '1$' : values.price,
     });
-    dispatch(createNotice({ values })).unwrap();
+    dispatch(createNotice(values));
     navigate('/notices/own');
     onClose();
   };
@@ -154,7 +158,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
               </FieldWrapper>
             )}
 
-            <AvatarLabel htmlFor="image">Load the pet's image*:</AvatarLabel>
+            <AvatarLabel htmlFor="image">Load the pet's image:</AvatarLabel>
             <AvatarWrapper>
               {fileInput ? (
                 <AvatarImg
@@ -163,9 +167,9 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
                   alt={fileInput.name}
                 />
               ) : (
-                <svg>
-                  <use href={`${icons}#plus-add-pet`}></use>
-                </svg>
+                <AvatarIcon>
+                  <use href={`${icons}#plusImg`}></use>
+                </AvatarIcon>
               )}
               <AvatarInput
                 type="file"
@@ -181,13 +185,13 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
             </AvatarWrapper>
 
             <FieldWrapper>
-              <Label htmlFor="comments">Comments*:</Label>
+              <Label htmlFor="comments">Comments</Label>
               <InputTextareaStyled
                 component="textarea"
                 name="comments"
                 id="comments"
                 rows="3"
-                placeholder="Type comments"
+                placeholder="Type comment"
               />
               <ErrorMessage
                 name="comments"

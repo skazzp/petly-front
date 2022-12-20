@@ -51,8 +51,8 @@ export const InputTextareaStyled = styled(Field)`
 export const SexInputStyled = styled(Field)`
   position: absolute;
   top: 0;
-  opacity: 1;
-  /* appearance: none; */
+  opacity: 0;
+  appearance: none;
 `;
 
 export const Overlay = styled.div`
@@ -70,13 +70,15 @@ export const Overlay = styled.div`
 
 export const Wrapper = styled.div`
   position: relative;
-  z-index: 15;
+  z-index: 1000;
+  width: 280px;
   text-align: center;
   border-radius: 20px;
   padding: 40px 18px;
   background-color: ${p => p.theme.colors.white};
 
   ${p => p.theme.breakpoints.tab} {
+    width: 608px;
     padding: 40px 80px;
   }
 `;
@@ -88,6 +90,39 @@ export const Header = styled.h2`
   ${p => p.theme.breakpoints.tab} {
     font-size: 36px;
   }
+`;
+
+export const CloseBtn = styled.button`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: black;
+  background-color: transparent;
+  padding: 7px;
+
+  border-radius: 50%;
+  border: none;
+  background-color: #fdf7f2;
+  backdrop-filter: blur(2px);
+
+  &:hover,
+  &:focus {
+    color: red;
+  }
+`;
+
+export const Svg = styled.svg`
+  width: 16px;
+  height: 16px;
+  fill: inherit;
 `;
 
 export const Text = styled.p`
@@ -193,6 +228,7 @@ export const SexWrapper = styled.fieldset`
   gap: 40px;
   margin-bottom: 32px;
   font-size: 18px;
+  border: none;
 `;
 
 export const SexTitle = styled.legend`
@@ -274,6 +310,12 @@ export const AvatarImg = styled.img`
     width: 140px;
     height: 140px;
   }
+`;
+
+export const AvatarIcon = styled.svg`
+  width: 48px;
+  height: 48px;
+  color: rgba(17, 17, 17, 0.6);
 `;
 
 export const AvatarInput = styled.input`

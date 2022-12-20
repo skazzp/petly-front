@@ -13,6 +13,8 @@ import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { authReducer } from './auth/authSlice';
 import { petsReducer } from './pets/petsSlice';
 import { noticeReducer } from './notice/noticeSlice';
+import { newsReducer } from './news/newsSlice';
+import { ourFriendReducer } from './ourFriend/ourFriendSlice';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -33,6 +35,8 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     userPets: petsReducer,
     notice: noticeReducer,
+    news: newsReducer,
+    friends: ourFriendReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

@@ -16,6 +16,7 @@ export const BtnWrapper = styled.div`
     position: relative;
     right: 0;
     top: 0;
+    z-index: 0;
   }
 `;
 
@@ -55,8 +56,8 @@ export const Plus = styled.svg`
     margin-bottom: 0;
   }
 
-  &:hover,
-  &:focus {
+  ${BtnWrapper}:hover &,
+  ${BtnWrapper}:focus & {
     transform: scale(1.4);
   }
 `;

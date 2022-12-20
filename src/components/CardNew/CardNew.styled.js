@@ -11,17 +11,15 @@ export const Wrapper = styled.div`
   ${props => props.theme.breakpoints.tab} {
     width: 335px;
 
-    /* &:nth-first(2n+1) {
-      margin-left: auto;
-    } */
-    /* &:nth-child(2n){
-      margin-right: auto;
-    } */
-  }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 
   ${props => props.theme.breakpoints.desc} {
     width: 392px;
   }
+}
 `;
 
 export const Strip = styled.div`
@@ -112,34 +110,3 @@ export const Link = styled.a`
   }
 `;
 
-export const ListCard = styled.ul`
-  list-style: none;
-  padding: 0px;
-  margin:0px ;
-
-  ${props => props.theme.breakpoints.tab} {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 60px ;
-    /* padding-bottom: 60px; */
-
-    row-gap: 60px;
-    column-gap: 32px;
-    /* margin-top: 20px; */
-  }
-
-  ${props => props.theme.breakpoints.desc} {
-  }
-`;
-
-export const ItemCard = styled.li`
-
-  ${props => props.theme.breakpoints.tab} {
-    flex-basis: calc((100%-40px-32px) / 3);
-  }
-
-  ${props => props.theme.breakpoints.desc} {
-    flex-basis: calc((100%-40px-32px-32px)/4);
-  }
-`;

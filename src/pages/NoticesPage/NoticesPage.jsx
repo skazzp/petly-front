@@ -7,8 +7,9 @@ import NoticeCategoryList from 'components/NoticeCategoryList/NoticeCategoryList
 function NoticesPage() {
   return (
     <>
-      <div>NoticesPage</div>
-      <FilterBtn />
+      <div>
+        <FilterBtn />
+      </div>
       <NoticeCategoryList />
       <Outlet />
     </>
