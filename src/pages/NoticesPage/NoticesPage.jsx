@@ -5,16 +5,22 @@ import FilterBtn from 'components/FilterBtn/FilterBtn';
 import NoticeCategoryList from 'components/NoticeCategoryList/NoticeCategoryList';
 import { Searchbar } from 'components/Searchbar';
 import { Box, Title, Wrapper } from './NoticesPage.styled';
+import { useDispatch } from 'react-redux';
+import { getByQuery } from 'redux/notice/noticeOperations';
 
 function NoticesPage() {
-  // const submitForm = () => {};
+  const dispatch = useDispatch();
+
+  const searchPets = query => {
+    dispatch(getByQuery(query));
+  };
 
   return (
     <>
       <Wrapper>
         <Box>
           <Title>Find your favorite pet</Title>
-          <Searchbar />
+          <Searchbar submitForm={searchPets} />
           <FilterBtn />
         </Box>
 
