@@ -1,7 +1,14 @@
 import { useState, useEffect } from 'react';
+import icons from '../../assets/images/icons.svg';
 import ModalPage1 from './ModalPage1';
 import ModalPage2 from './ModalPage2';
-import { Overlay, Wrapper, Header } from './ModalAddNotice.styled';
+import {
+  Overlay,
+  Wrapper,
+  Header,
+  CloseBtn,
+  Svg,
+} from './ModalAddNotice.styled';
 
 const ModalAddNotice = ({ onClose }) => {
   const [step, setStep] = useState(1);
@@ -51,6 +58,11 @@ const ModalAddNotice = ({ onClose }) => {
     <Overlay onClick={onBackdropClick}>
       <Wrapper>
         <Header>Add pet</Header>
+        <CloseBtn type="button" onClick={onClose}>
+          <Svg>
+            <use href={`${icons}#close-small-modal-mobile`}></use>
+          </Svg>
+        </CloseBtn>
         {step === 1 ? (
           <ModalPage1
             formData={formData}

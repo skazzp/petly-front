@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/authSelectors';
 import { getByCategory } from 'redux/notice/noticeOperations';
 import { v4 as uuidv4 } from 'uuid';
-import { Button, FilterList } from './FilterBtn.styled';
+import AddNoticeButton from 'components/AddNoticeButton';
+import { Button, FilterList, Wrapper } from './FilterBtn.styled';
 
 const buttons = [
   {
@@ -40,7 +41,7 @@ function FilterBtn() {
   };
 
   return (
-    <>
+    <Wrapper>
       <FilterList>
         {buttons.map(b => (
           <li key={uuidv4()}>
@@ -58,7 +59,8 @@ function FilterBtn() {
             </li>
           ))}
       </FilterList>
-    </>
+      <AddNoticeButton />
+    </Wrapper>
   );
 }
 
