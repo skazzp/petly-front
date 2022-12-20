@@ -34,15 +34,6 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          {/* <Route
-            path="/diagram"
-            element={
-              <PrivateRoute
-                redirectTo="/auth/login"
-                component={<DiagramPage />}
-              />
-            }
-          /> */}
           <Route index element={<HomePage />} />
           <Route
             path="user"
@@ -51,9 +42,9 @@ export const App = () => {
             }
           />
           <Route path="test" element={<Test />} />
-          <Route path="register" element={<RegistrationPage />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="friends" element={<FriendsPage />} />
+        //  <Route path="register" element={<RegistrationPage />} />
+        //  <Route path="login" element={<LoginPage />} />
+        //  <Route path="friends" element={<FriendsPage />} />
           <Route
             path="register"
             element={
