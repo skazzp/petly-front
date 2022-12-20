@@ -9,7 +9,7 @@ import { UserNav } from "components/UserNav";
 import { Logo } from "components/Logo";
 import { IconButton } from "components/IconButton";
 import { Container, Box } from "./Navigation.styled";
-
+import { Spin as Hamburger } from 'hamburger-react'
 
 export const Navigation = () => {
     let isLoggedIn = useSelector(selectToken);
@@ -20,19 +20,17 @@ export const Navigation = () => {
     const isMobileOrTablet = useIsMobileOrTablet()
 
     const [MenuOpen, setMenuOpen] = useState(false)
-    const toggleMenu = () => setMenuOpen(!MenuOpen)
+    const toggleMenu = () => {
+        setMenuOpen(!MenuOpen)
+    }
 
     return(
     <Container> 
         {isDesktop && <><Nav/>{isLoggedIn ? <UserNav /> : <AuthNav/>}</>}
-        {isTablet && <>{isLoggedIn ? <UserNav/> : <AuthNav/>}<IconButton toggleMenu={toggleMenu} icon={`#burger-menu-mobile`}/></>}
-        {isMobile && <IconButton toggleMenu={toggleMenu} icon={`#burger-menu-mobile`}/>}
+        {isTablet && <>{isLoggedIn ? <UserNav/> : <AuthNav/>}<Hamburger toggled={MenuOpen} toggle={setMenuOpen} /></>}
+        {isMobile && <Hamburger toggled={MenuOpen} toggle={setMenuOpen} />}
         {(MenuOpen && isMobileOrTablet) &&
             <ModalNav>
-                <Box>
-                    <Logo/>
-                    <IconButton toggleMenu={toggleMenu} icon={`#closeModal-button-mobile`}/>
-                </Box>
                 {isMobile && <>{isLoggedIn ? <UserNav toggleMenu={toggleMenu}/> : <AuthNav toggleMenu={toggleMenu}/>}</>}
                 <Nav toggleMenu={toggleMenu}/>
             </ModalNav>}
