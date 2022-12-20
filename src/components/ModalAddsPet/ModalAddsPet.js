@@ -34,11 +34,12 @@ const ModalAddsPet = ({ open, onClose }) => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
   const [firstPage, setFirstPage] = useState(true);
+  if (!open) return null;
   const fileReader = new FileReader();
   fileReader.onloadend = () => {
     setImageURL(fileReader.result);
   };
-  if (!open) return null;
+ 
 
   const handleOnChange = event => {
     event.preventDefault();
@@ -46,18 +47,19 @@ const ModalAddsPet = ({ open, onClose }) => {
       const file = event.target.files[0];
       setImage(file);
       fileReader.readAsDataURL(file);
-      console.log(file, image, imageURL);
+      // console.log(file, image, imageURL);
     }
   };
 
-  const handleDrop = event => {
-    event.preventDefault();
-    event.stopPropagation();
-    if (event.dataTransfer.files && event.dataTransfer.files.length) {
-      setImage(event.dataTransfer.files[0]);
-      fileReader.readAsDataURL(event.dataTransfer.files[0]);
-    }
-  };
+  // const handleDrop = event => {
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  //   if (event.dataTransfer.files && event.dataTransfer.files.length) {
+  //     setImage(event.dataTransfer.files[0]);
+  //     fileReader.readAsDataURL(event.dataTransfer.files[0]);
+  //   }
+  //   console.log( image, imageURL);
+  // };
 
   const handleDragEmpty = event => {
     event.preventDefault();
@@ -128,7 +130,7 @@ const ModalAddsPet = ({ open, onClose }) => {
               name: values.name,
               birthday: values.dateOfBirth,
               breed: values.breed,
-              imageURL: values.image,
+              photoURL: values.image,
               comments: values.comments,
             }
             await dispatch(addUserPet(form))
@@ -219,7 +221,7 @@ const ModalAddsPet = ({ open, onClose }) => {
                       <Img
                         src={imageURL}
                         alt="pet image"
-                         onDrop={handleDrop}
+                      // onDrop={handleDrop}
                         onDragEnter={handleDragEmpty}
                          onDragOver={handleDragEmpty}
                       />

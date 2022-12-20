@@ -13,9 +13,9 @@ const PetsList = () => {
     const dispatch = useDispatch();
     const userPetsList = useSelector(selectUserPetsList);
     
-    // useEffect(() => {
-    //     dispatch(refreshUser());
-    //   }, [dispatch]);
+    useEffect(() => {
+        dispatch(getUserPet());
+      }, [dispatch]);
       
     // console.log(userPetsList);
 

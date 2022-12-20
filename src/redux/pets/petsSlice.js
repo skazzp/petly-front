@@ -36,7 +36,8 @@ const petsSlice = createSlice({
     builder.addCase(addUserPet.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      console.log(action.payload)
+      console.log(state)
+
       state.pets.push(action.payload);
     });
 
@@ -45,9 +46,10 @@ const petsSlice = createSlice({
     builder.addCase(deleteUserPet.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      console.log(state.pets)
-      state.pets = state.pets.filter(
-        pet => pet._id !== action.payload._id)
+      // state.pets = state.pets.filter(
+      //   pet => pet._id !== action.payload)
+      const index = state.pets.findIndex(pet => pet._id === action.meta.arg);
+      state.pets.splice(index, 1);
     });
   },
 });
