@@ -8,11 +8,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
-import { SharedLayout } from './SharedLayout';
 import OurFriend from 'pages/OurFriend/OurFriend';
 import NewsPage from 'pages/NewsPage/NewsPage';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
+import { SharedLayout } from './SharedLayout/SharedLayout';
+import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
 
 // import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 
@@ -22,27 +23,19 @@ const Test = () => {
 };
 
 export const App = () => {
-  const { isLoading } = useSelector(selectIsLoading);
+  const isLoading = useSelector(selectIsLoading);
   const isLoggedIn = useSelector(selectToken);
+  console.log(isLoggedIn);
   const dispatch = useDispatch();
   useEffect(() => {
     isLoggedIn && dispatch(refreshUser());
   }, [dispatch, isLoggedIn]);
   return isLoading ? (
-    <h1>LOADER</h1>
+    <LoaderSpiner />
   ) : (
-    <>
+    <Suspense fallback={<LoaderSpiner />}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          {/* <Route
-            path="/diagram"
-            element={
-              <PrivateRoute
-                redirectTo="/auth/login"
-                component={<DiagramPage />}
-              />
-            }
-          /> */}
           <Route index element={<HomePage />} />
           <Route
             path="user"
@@ -78,6 +71,6 @@ export const App = () => {
         </Route>
         <Route path="*" element={<Navigate to={'/'} />} />
       </Routes>
-    </>
+    </Suspense>
   );
 };
