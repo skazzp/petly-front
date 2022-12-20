@@ -103,12 +103,14 @@ const RegistrationForm = () => {
       setEmailError(formik.values.email);
       setEmailErrorFixed(true);
     }
+         
+
     if (!errorDB) {
       setEmailErrorMassege('');
       setEmailError('');
       setEmailErrorFixed(false);
     }
-    
+    // eslint-disable-next-line
   }, [errorDB]);
 
  console.log(emailErrorFixed);
