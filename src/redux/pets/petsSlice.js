@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { refreshUser } from 'redux/auth/authOperation';
 
 import { getUserPet, addUserPet, deleteUserPet } from './petsOperations';
 
@@ -22,12 +23,12 @@ const petsSlice = createSlice({
   name: 'pets',
   initialState: petsInitialState,
   extraReducers: builder => {
-    builder.addCase(getUserPet.pending, pendingHandler);
-    builder.addCase(getUserPet.rejected, rejectedHandler);
-    builder.addCase(getUserPet.fulfilled, (state, action) => {
+    builder.addCase(refreshUser.pending, pendingHandler);
+    builder.addCase(refreshUser.rejected, rejectedHandler);
+    builder.addCase(refreshUser.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.pets = action.payload;
+      state.pets = action.payload.userPets;
     });
 
     builder.addCase(addUserPet.pending, pendingHandler);
@@ -35,7 +36,9 @@ const petsSlice = createSlice({
     builder.addCase(addUserPet.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.pets = action.payload;
+      console.log(state)
+
+      state.pets.push(action.payload);
     });
 
     builder.addCase(deleteUserPet.pending, pendingHandler);
@@ -43,7 +46,10 @@ const petsSlice = createSlice({
     builder.addCase(deleteUserPet.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.pets = action.payload;
+      // state.pets = state.pets.filter(
+      //   pet => pet._id !== action.payload)
+      const index = state.pets.findIndex(pet => pet._id === action.meta.arg);
+      state.pets.splice(index, 1);
     });
   },
 });

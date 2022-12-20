@@ -166,8 +166,11 @@ export const Comments = styled.textarea`
   }
 `;
 export const Img = styled.img`
-  width: 48px;
-  height: 48px;
+  width: 208px;
+  height: 208px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-left: -5px;
 `;
 
 export const AddList = styled.div`
@@ -261,6 +264,7 @@ export const InputImage = styled.input`
   opacity: 0;
   position: absolute;
   margin-left: -20px;
+  padding:0;
   /* z-index: -1;  */
   @media (min-width: 768px) {
    
