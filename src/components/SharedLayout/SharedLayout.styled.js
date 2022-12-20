@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const GlobalContainer = styled.div`
 padding: 16px 20px 0 20px;
-height: 100vh;
+height: 100%;
 width: 100vw;
 position: relative;
 @media screen and (min-width: 768px) {
