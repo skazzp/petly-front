@@ -6,9 +6,7 @@ import { getNews } from 'redux/news/newsOperations';
 import { selectNews } from 'redux/news/newsSelectors';
 import { ItemCard, ListCard, Title, Wrapper, WrapperList } from './NewPage.styled';
 
-const NewPage = () => {
-
-  
+const NewsPage = () => {
   const news = useSelector(selectNews);
   const dispatch = useDispatch();
 
@@ -23,8 +21,10 @@ const NewPage = () => {
       <Searchbar />
       <WrapperList>
       <ListCard>
-      {news?.map(value => (
-        <ItemCard  key={value?._id}><CardNew news={value} /></ItemCard>
+        {news?.map(value => (
+          <ItemCard key={value?._id}>
+            <CardNew news={value} />
+          </ItemCard>
         ))}
       </ListCard>
       </WrapperList>
@@ -32,4 +32,4 @@ const NewPage = () => {
   );
 };
 
-export default NewPage;
+export default NewsPage;
