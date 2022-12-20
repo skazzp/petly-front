@@ -18,21 +18,27 @@ import {
 const today = new Date();
 
 const validationSchema = yup.object({
-  titleOfAd: yup.string().min(2).max(48).required('Field is required!'),
   category: yup.string().required('Category is required!'),
-  namePet: yup
+  title: yup.string().min(2).max(48).required('Field is required!'),
+  name: yup
     .string()
     .min(2)
     .max(16)
-    .matches(/^[a-zA-Z, ]*$/g, 'Only alphabetic characters are allowed')
+    .matches(
+      /^([А-Яа-яЁёЇїІіЄєҐґ'\s]+|[a-zA-Z\s]+){2,}$/,
+      'Only alphabetic characters are allowed'
+    )
     .required('Field is required!'),
   breed: yup
     .string()
     .min(2)
     .max(24)
-    .matches(/^[a-zA-Z, ]*$/g, 'Only alphabetic characters are allowed')
+    .matches(
+      /^([А-Яа-яЁёЇїІіЄєҐґ'\s]+|[a-zA-Z\s]+){2,}$/,
+      'Only alphabetic characters are allowed'
+    )
     .required('Field is required!'),
-  dateOfBirth: yup
+  birthday: yup
     .date()
     .test('len', 'Must be exactly DD.MM.YYYY', (value, { originalValue }) => {
       if (originalValue) {
@@ -47,7 +53,7 @@ const validationSchema = yup.object({
       return result;
     })
     .typeError('Please enter a valid date')
-    .required()
+    .required('Field is required!')
     .min('1960-01-01', 'Date is too early')
     .max(today),
 });
@@ -94,7 +100,7 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
                 value="in_good_hands"
                 id="in_good_hands"
               />
-              <RadioBtn>in_good_hands</RadioBtn>
+              <RadioBtn>in good hands</RadioBtn>
             </label>
             <label htmlFor="sell">
               <RadioStyled
@@ -112,54 +118,47 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
           </RadioWrapper>
 
           <FieldWrapper>
-            <Label htmlFor="titleOfAd" type="text">
-              Title of ad*:
+            <Label htmlFor="title" type="text">
+              Title of ad<span style={{ color: '#F59256' }}>*</span>
             </Label>
-            <InputStyled
-              name="titleOfAd"
-              id="titleOfAd"
-              placeholder="Type title of ad"
-            />
+            <InputStyled name="title" id="title" placeholder="Type name" />
             <ErrorMessage
-              name="titleOfAd"
+              name="title"
               render={msg => <div style={{ color: 'red' }}>{msg}</div>}
             />
           </FieldWrapper>
 
           <FieldWrapper>
-            <Label htmlFor="namePet" type="text">
-              Name pet*:
+            <Label htmlFor="name" type="text">
+              Name pet
             </Label>
-            <InputStyled
-              name="namePet"
-              id="namePet"
-              placeholder="Type name of pet"
-            />
+            <InputStyled name="name" id="name" placeholder="Type name pet" />
             <ErrorMessage
-              name="namePet"
+              name="name"
               render={msg => <div style={{ color: 'red' }}>{msg}</div>}
             />
           </FieldWrapper>
 
           <FieldWrapper>
-            <Label htmlFor="dateOfBirth" type="text">
-              Date of birth*:
+            <Label htmlFor="birthday" type="text">
+              Date of birth
             </Label>
             <InputStyled
-              name="dateOfBirth"
-              id="dateOfBirth"
+              name="birthday"
+              id="birthday"
+              type="date"
               placeholder="Type date of birth"
               data-pattern="**.**.****"
             />
             <ErrorMessage
-              name="dateOfBirth"
+              name="birthday"
               render={msg => <div style={{ color: 'red' }}>{msg}</div>}
             />
           </FieldWrapper>
 
           <FieldWrapper>
             <Label htmlFor="breed" type="text">
-              Breed*:
+              Breed
             </Label>
             <InputStyled
               name="breed"

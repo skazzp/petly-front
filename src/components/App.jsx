@@ -11,6 +11,9 @@ import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
 import { SharedLayout } from './SharedLayout';
 import NewsPage from 'pages/NewsPage/NewsPage';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { PublicRoute } from './PublicRoute/PublicRoute';
+
 // import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 
 const Test = () => {
@@ -31,12 +34,42 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
+          {/* <Route
+            path="/diagram"
+            element={
+              <PrivateRoute
+                redirectTo="/auth/login"
+                component={<DiagramPage />}
+              />
+            }
+          /> */}
           <Route index element={<HomePage />} />
-          <Route path="user" element={<UserPage />} />
+          <Route
+            path="user"
+            element={
+              <PrivateRoute redirectTo="/login" component={<UserPage />} />
+            }
+          />
           <Route path="test" element={<Test />} />
           <Route path="register" element={<RegistrationPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="friends" element={<FriendsPage />} />
+          <Route
+            path="register"
+            element={
+              <PublicRoute
+                redirectTo="/notices"
+                component={<RegistrationPage />}
+              />
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <PublicRoute redirectTo="/notices" component={<LoginPage />} />
+            }
+          />
+          <Route path="friends" element={<OurFriend />} />
           <Route path="news" element={<NewsPage />} />
           <Route path="notices" element={<NoticesPage />}>
             <Route path="lost-found" element={<></>} />

@@ -23,5 +23,21 @@ export const FilterList = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  row-gap: 12px;
+  column-gap: 16px;
+
+  ${p => p.theme.breakpoints.tab} {
+    max-width: 475px;
+  }
+
+  ${p => p.theme.breakpoints.desc} {
+    max-width: 1000px;
+  }
+`;
+
+export const Wrapper = styled.div`
+  ${p => p.theme.breakpoints.tab} {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
