@@ -16,6 +16,7 @@ export const BtnWrapper = styled.div`
     position: relative;
     right: 0;
     top: 0;
+    z-index: 0;
   }
 `;
 
