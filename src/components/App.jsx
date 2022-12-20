@@ -1,17 +1,18 @@
 import LoginPage from 'pages/LoginPage/LoginPage';
 import NoticesPage from 'pages/NoticesPage/NoticesPage';
 import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
-import FriendsPage from 'pages/FriendsPage/FriendsPage';
 import UserPage from 'pages/UserPage/UserPage';
 import { HomePage } from 'pages/HomePage';
 import {
   useEffect,
-  // lazy, Suspense
+  // lazy,
+  Suspense,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
+// import FriendsPage from 'pages/FriendsPage/FriendsPage';
 // import OurFriend from 'pages/OurFriend/OurFriend';
 import NewsPage from 'pages/NewsPage/NewsPage';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';

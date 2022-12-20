@@ -4,11 +4,10 @@ import UserData from 'components/UserData/UserData';
 const UserPage = () => {
   return (
     <>
-  <UserData />
-  <PetsData/>
-  </>
-  )
-  
+      <UserData />
+      <PetsData />
+    </>
+  );
 };
 
 export default UserPage;

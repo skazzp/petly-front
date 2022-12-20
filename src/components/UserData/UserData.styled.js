@@ -16,4 +16,6 @@ export const Title = styled.h1`
   font-family: ${p => p.theme.fonts.main};
   font-weight: ${p => p.theme.fontWeights.semiBold};
   width: 280px;
+  margin-top: 50px;
+  margin-bottom: 18px;
 `;

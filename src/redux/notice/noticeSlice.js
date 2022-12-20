@@ -12,7 +12,7 @@ import {
   getByCategory,
 } from './noticeOperations';
 
-const userInitialState = {
+const noticeInitialState = {
   notices: [],
   // categories: [],
   isLoading: false,
@@ -36,7 +36,7 @@ const rejectedHandler = (state, action) => {
 const noticeSlice = createSlice({
   name: 'notice',
 
-  initialState: userInitialState,
+  initialState: noticeInitialState,
 
   reducers: {
     openModal(state, action) {

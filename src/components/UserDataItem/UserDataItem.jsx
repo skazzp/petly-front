@@ -95,8 +95,6 @@ const UserDataItem = () => {
       </AvatarBox>
       <UpdateAvatar />
       <Form onSubmit={formik.handleSubmit}>
-        {/* test login func */}
-
         <Label name="name" htmlFor="name">
           <LabelText>Name:</LabelText>
           <Input
@@ -117,7 +115,7 @@ const UserDataItem = () => {
           {!disabled.name && (
             <Btn type="submit">
               <BtnIcon>
-                <use href={`${icons}#icon-ci_edit`}></use>
+                <use href={`${icons}#icon-edit_check`}></use>
               </BtnIcon>
             </Btn>
           )}
@@ -231,7 +229,7 @@ const UserDataItem = () => {
             }}
           >
             <LogoutIcon>
-              <use href={icons + '#icon-logout'}></use>
+              <use href={icons + '#icon-logout-desc'}></use>
             </LogoutIcon>
             Log Out
           </LogoutBtn>
