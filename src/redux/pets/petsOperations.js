@@ -3,9 +3,19 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
 export const getUserPet = createAsyncThunk('pet/getUserPet', async thunkApi => {
+  const state = thunkApi.getState();
+  const persistedToken = state.auth.token;
+  const header = {
+    headers: {
+      Accept: 'application/json',
+      Authorization: `Bearer ${persistedToken}`,
+      'Content-Type': 'multipart/form-data',
+    },
+  };
   try {
-    const { data } = await axios.get('/users/current');
-    return data.user.pets;
+    const { data } = await axios.get('/api/usersinfo', header);
+    console.log(data.userPets);
+    return data.userPets;
   } catch (error) {
     return thunkApi.rejectWithValue(error.response.status);
   }
@@ -13,19 +23,26 @@ export const getUserPet = createAsyncThunk('pet/getUserPet', async thunkApi => {
 
 export const addUserPet = createAsyncThunk(
   'pet/addUserPet',
-  async ({ form, token }, thunkApi) => {
+  async (form , thunkApi) => {
+    const state = thunkApi.getState();
+    const persistedToken = state.auth.token;
+    const formData = new FormData();
+    formData.append('imageUrl', form);
     try {
       const header = {
+        method: 'post',
         headers: {
           Accept: 'application/json',
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${persistedToken}`,
           'Content-Type': 'multipart/form-data',
         },
       };
-      await axios.post('/pet', form, header);
-      const { data } = await axios.get('user/current');
+     const response= await axios.post('/api/pets', formData, header);
+      // const { data } = await axios.get('user/current');
       toast.success('New pet added!');
-      return data.user.pets;
+      // return data.user.pets;
+      console.log(response.data)
+      return response.data
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
@@ -34,12 +51,13 @@ export const addUserPet = createAsyncThunk(
 
 export const deleteUserPet = createAsyncThunk(
   'pet/deleteUserPet',
-  async (petId, thunkApi) => {
+  async (_id, thunkApi) => {
     try {
-      await axios.delete(`/pet/${petId}`);
-      const { data } = await axios.get('/user/current');
+      const response= await axios.delete(`/api/pets/${_id}`);
+      // const { data } = await axios.get('/user/current');
       toast.success('Pet was deleted!');
-      return data.user.pets;
+      console.log(response.data)
+      return response.data._id;
     } catch (error) {
       toast.error(error.response.data.message);
       return thunkApi.rejectWithValue(error.response.status);

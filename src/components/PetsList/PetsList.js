@@ -1,28 +1,37 @@
 
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-import { useSelector } from 'react-redux';
-import {selectUserPetsList} from './../../redux/pets/petsSelectors';
+import PetItemDef from "./PetItem/PetItemDef";
 import PetItem from "./PetItem/PetItem";
 import {Card} from './PetsList.styled'
+import { getUserPet} from 'redux/pets/petsOperations';
+import { selectUserPetsList } from 'redux/pets/petsSelectors';
+import { refreshUser } from 'redux/auth/authOperation';
+
 const PetsList = () => {
+    const dispatch = useDispatch();
     const userPetsList = useSelector(selectUserPetsList);
-    console.log(userPetsList);
+    
+    // useEffect(() => {
+    //     dispatch(refreshUser());
+    //   }, [dispatch]);
+      
+    // console.log(userPetsList);
 
 
 
     return (
       
         <Card>
-           {/* {userPetsList? 
+           {userPetsList.length? 
            <> {userPetsList.map(pet=>{
-            return( <PetItem pet={pet}/>)
+            return( <PetItem pet={pet} key={pet._id}/>)
            
-           })}</>:<> */}
-         <PetItem/>
-         <PetItem/>
-         <PetItem/>
-         <PetItem/>
-         {/* </>}  */}
+           })}</>:<>
+         <PetItemDef/>
+       
+         </>} 
         </Card>
     
     );
