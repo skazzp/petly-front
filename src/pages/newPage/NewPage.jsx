@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNews } from 'redux/news/newsOperations';
 import { selectNews } from 'redux/news/newsSelectors';
-import { ItemCard, ListCard, Title, Wrapper } from './NewPage.styled';
+import { ItemCard, ListCard, Title, Wrapper, WrapperList } from './NewPage.styled';
 
 const NewPage = () => {
 
@@ -21,11 +21,13 @@ const NewPage = () => {
     <Wrapper>
       <Title>News</Title>
       <Searchbar />
+      <WrapperList>
       <ListCard>
       {news?.map(value => (
-        <ItemCard  key={news?._id}><CardNew news={value} /></ItemCard>
+        <ItemCard  key={value?._id}><CardNew news={value} /></ItemCard>
         ))}
       </ListCard>
+      </WrapperList>
     </Wrapper>
   );
 };

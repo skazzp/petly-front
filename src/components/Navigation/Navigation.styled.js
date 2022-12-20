@@ -14,6 +14,7 @@ justify-content: space-between;
 margin-bottom: 46px;
 @media screen and (min-width: 768px) {
     margin-bottom: 88px;
+    padding: 20px 16px 0 16px;
 }`
 
 
