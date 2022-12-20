@@ -33,8 +33,8 @@ export const App = () => {
   return (
     <Suspense fallback={<LoaderSpiner />}>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<HomePage />} />
+        <Route path="/" element={<SharedLayout/>}>
+          <Route index element={<HomePage/>} />
           <Route
             path="user"
             element={
