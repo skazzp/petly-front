@@ -56,7 +56,7 @@ const NoticeCategoryItem = ({ notice }) => {
   const favoriteNotice = useSelector(state => state.auth.user.favorites);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  console.log(isOwner);
+  // console.log(isOwner);
 
   useEffect(() => {
     checkFavorite(favoriteNotice, _id);
