@@ -7,13 +7,22 @@ import {
   Button,
   Span,
   LinkRegistration,
+  Validation,
 } from './LoginForm.styled';
 import { useFormik } from 'formik';
-// import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { schema } from './Valodation';
+import { loginUser } from 'redux/auth/authOperation';
+import { useEffect, useState } from 'react';
+import { selectError } from 'redux/auth/authSelectors';
 
 const LoginForm = () => {
-  //  const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const DbError = useSelector(selectError);
+  const [errorMassege, setErrorMassege] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [errorFixed, setErrorFixed] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -23,14 +32,34 @@ const LoginForm = () => {
     validationSchema: schema,
 
     onSubmit: values => {
-      //   dispatch(logInUser(values));
-    },
+      if (errorFixed) {
+        return;
+      }
+        dispatch(loginUser(formik.values));
+        setErrorMassege('');
+        setEmailError('');
+        setPasswordError('');
+      }
   });
 
+  useEffect(() => {
+    setErrorMassege(DbError);
+    console.log(errorMassege);
+      setEmailError(formik.values.email)
+      setPasswordError(formik.values.password)
+    setErrorFixed(true);
+    console.log(errorMassege);
+    if (
+      emailError !== formik.values.email ||
+      passwordError !== formik.values.password
+    ) { setErrorFixed(false); setErrorMassege('')}
+
+  }, [DbError, formik.values.email, formik.values.password]);
+  
   return (
     <Div>
       <Title>Login</Title>
-      <Form>
+      <Form onSubmit={formik.handleSubmit}>
         <Label>
           <Input
             placeholder="E-mail"
@@ -40,6 +69,9 @@ const LoginForm = () => {
             onChange={formik.handleChange}
             value={formik.values.email}
           ></Input>
+          {(formik.errors.email && formik.touched.email) || errorMassege ? (
+            <Validation>{formik.errors.email || errorMassege}</Validation>
+          ) : null}
         </Label>
         <Label>
           <Input
@@ -50,12 +82,18 @@ const LoginForm = () => {
             onChange={formik.handleChange}
             value={formik.values.confirmPassword}
           ></Input>
+          {formik.errors.password && formik.touched.password ? (
+            <Validation>{formik.errors.password}</Validation>
+          ) : null}
         </Label>
 
-        <Button>Login</Button>
+        <Button type="submit">Login</Button>
       </Form>
       <Span>
-        Don't have an account? <LinkRegistration>Register</LinkRegistration>
+        Don't have an account?{' '}
+        <LinkRegistration type="button" to="/register">
+          Register
+        </LinkRegistration>
       </Span>
     </Div>
   );

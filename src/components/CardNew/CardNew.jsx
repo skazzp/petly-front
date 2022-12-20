@@ -1,26 +1,29 @@
-import { Content, Data, Footer, Link, Main, Strip, Title, Wrapper } from './CardNew.styled';
+import {
+  Content,
+  Data,
+  Footer,
+  Link,
+  Strip,
+  Title,
+  Wrapper,
+} from './CardNew.styled';
 
+export const CardNew = ({ news }) => {
+  const { title, url, description, date } = news;
 
-
-
-  
-
-export const CardNew = ({news}) => {
-  const {title, url, description, date} = news
-  
   return (
     <>
       <Wrapper>
         <div>
           <Strip />
-          <Title>{title ||"not title"}</Title>
-          <Content>
-          {description ||"not description"}
-          </Content>
-          </div>
+          <Title>{title || 'no title'}</Title>
+          <Content>{description || 'no description'}</Content>
+        </div>
         <Footer>
-          <Data>{date||"no data"}</Data>
-          <Link href={url} target="_blank">Read more</Link>
+          <Data>{date || ''}</Data>
+          <Link href={url} target="_blank">
+            Read more
+          </Link>
         </Footer>
       </Wrapper>
     </>
