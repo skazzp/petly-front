@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
-
+import { useDispatch} from 'react-redux';
 import * as yup from 'yup';
+import { addUserPet } from 'redux/pets/petsOperations';
 
 import sprite from '../../assets/images/icons.svg';
 import {
@@ -27,15 +28,18 @@ import {
   IconPlus,
 } from './ModalAddsPet.styled';
 
+
 const ModalAddsPet = ({ open, onClose }) => {
+  const dispatch = useDispatch();
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
   const [firstPage, setFirstPage] = useState(true);
+  if (!open) return null;
   const fileReader = new FileReader();
   fileReader.onloadend = () => {
     setImageURL(fileReader.result);
   };
-  if (!open) return null;
+ 
 
   const handleOnChange = event => {
     event.preventDefault();
@@ -43,24 +47,29 @@ const ModalAddsPet = ({ open, onClose }) => {
       const file = event.target.files[0];
       setImage(file);
       fileReader.readAsDataURL(file);
-      console.log(file, image, imageURL);
+      // console.log(file, image, imageURL);
     }
   };
 
-  const handleDrop = event => {
-    event.preventDefault();
-    event.stopPropagation();
-    if (event.dataTransfer.files && event.dataTransfer.files.length) {
-      setImage(event.dataTransfer.files[0]);
-      fileReader.readAsDataURL(event.dataTransfer.files[0]);
-    }
-  };
+  // const handleDrop = event => {
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  //   if (event.dataTransfer.files && event.dataTransfer.files.length) {
+  //     setImage(event.dataTransfer.files[0]);
+  //     fileReader.readAsDataURL(event.dataTransfer.files[0]);
+  //   }
+  //   console.log( image, imageURL);
+  // };
 
   const handleDragEmpty = event => {
     event.preventDefault();
     event.stopPropagation();
   };
-
+  const onBackdropClick = e => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
   const handleCancle = () => {
     onClose();
     setFirstPage(true);
@@ -97,7 +106,7 @@ const ModalAddsPet = ({ open, onClose }) => {
   });
 
   return (
-    <Modal>
+    <Modal onClick={onBackdropClick}>
       <Card>
         <Title>Add pet</Title>
         <ButtonExit onClick={() => handleCancle()} type="button">
@@ -115,8 +124,19 @@ const ModalAddsPet = ({ open, onClose }) => {
             comments: '',
           }}
           validateOnBlur
-          onSubmit={values => {
+          onSubmit={async(values) => {
             console.log(values);
+            const form ={
+              name: values.name,
+              birthday: values.dateOfBirth,
+              breed: values.breed,
+              photoURL: values.image,
+              comments: values.comments,
+            }
+            await dispatch(addUserPet(form))
+            .then(()=>alert(`Add your pet, ${values.name}`))
+            .catch(()=>alert(`Oops,error`));
+            handleCancle();
           }}
           validationSchema={validationsShema}
         >
@@ -183,7 +203,7 @@ const ModalAddsPet = ({ open, onClose }) => {
                     <ButtonA
                       //  disabled={!isValid.name || !isValid.dateOfBirth || !isValid.breed}
                       onClick={() => setFirstPage(false)}
-                      type="submit"
+                      type="button"
                     >
                       Next
                     </ButtonA>
@@ -197,9 +217,18 @@ const ModalAddsPet = ({ open, onClose }) => {
                   <AddList>
                     <TitleP>Add photo and some comments</TitleP>
                     <LabelImage>
+                    {imageURL ? (
+                      <Img
+                        src={imageURL}
+                        alt="pet image"
+                      // onDrop={handleDrop}
+                        onDragEnter={handleDragEmpty}
+                         onDragOver={handleDragEmpty}
+                      />
+                    ):
                       <IconPlus>
                         <use href={`${sprite}#plusImg`}></use>
-                      </IconPlus>
+                      </IconPlus>}
                     </LabelImage>
                     <InputImage
                       type="file"
@@ -212,7 +241,7 @@ const ModalAddsPet = ({ open, onClose }) => {
                         handleOnChange(e);
                       }}
                     />
-                    {imageURL && (
+                    {/* {imageURL && (
                       <Img
                         src={imageURL ? imageURL : null}
                         alt="pet image"
@@ -220,8 +249,8 @@ const ModalAddsPet = ({ open, onClose }) => {
                         onDragEnter={handleDragEmpty}
                         onDragOver={handleDragEmpty}
                       />
-                    )}
-                    <div>{image ? image.name : ''}</div>
+                    )} */}
+                    {/* <div>{image ? image.name : ''}</div> */}
                   </AddList>
                   <Line>
                     <Label htmlFor="comments">Comments</Label>
