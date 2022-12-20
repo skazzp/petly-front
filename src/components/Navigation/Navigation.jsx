@@ -31,6 +31,7 @@ export const Navigation = () => {
         {isMobile && <Hamburger toggled={MenuOpen} toggle={setMenuOpen} />}
         {(MenuOpen && isMobileOrTablet) &&
             <ModalNav>
+                
                 {isMobile && <>{isLoggedIn ? <UserNav toggleMenu={toggleMenu}/> : <AuthNav toggleMenu={toggleMenu}/>}</>}
                 <Nav toggleMenu={toggleMenu}/>
             </ModalNav>}

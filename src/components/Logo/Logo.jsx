@@ -1,8 +1,8 @@
-import { LogoNormal, LogoAccent } from "./Logo.styled"
+import { LogoNormal, LogoAccent, LogoLink } from "./Logo.styled"
 
 export const Logo = () => {
     return (<div>
-        <LogoNormal>pe<LogoAccent>t</LogoAccent>ly</LogoNormal>
+        <LogoLink to='/'><LogoNormal>pe<LogoAccent>t</LogoAccent>ly</LogoNormal></LogoLink>
         </div>
     )
 }
