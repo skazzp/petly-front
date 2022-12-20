@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { selectToken } from '../../redux/auth/authSelectors';
 import { useIsMobile } from '../../hooks/mediaQuery';
@@ -27,7 +27,6 @@ const AddNoticeButton = () => {
     <>
       {!isOpen && (
         <>
-          <ToastContainer />
           <BtnWrapper onClick={handleClick}>
             {!isMobile && text}
             <AddBtn type="button">
