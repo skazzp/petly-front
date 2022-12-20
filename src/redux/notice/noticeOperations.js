@@ -153,3 +153,17 @@ export const getByCategory = createAsyncThunk(
     }
   }
 );
+
+// Get by query
+export const getByQuery = createAsyncThunk(
+  'notice/getByQuery',
+  async (query, thunkApi) => {
+    try {
+      const response = await axios.get(`/api/notices/search?query=${query}`);
+      console.log('notice/getByQuery', response.data);
+      return response.data.data; // TODO
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);

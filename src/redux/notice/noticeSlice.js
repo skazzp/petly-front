@@ -10,6 +10,7 @@ import {
   deleteFavorites,
   addFavorites,
   getByCategory,
+  getByQuery,
 } from './noticeOperations';
 
 const noticeInitialState = {
@@ -67,6 +68,7 @@ const noticeSlice = createSlice({
     builder.addCase(deleteFavorites.pending, pendingHandlerAuth);
     builder.addCase(addFavorites.pending, pendingHandlerAuth);
     builder.addCase(getByCategory.pending, pendingHandlerAuth);
+    builder.addCase(getByQuery.pending, pendingHandlerAuth);
 
     builder.addCase(createNotice.rejected, rejectedHandler);
     builder.addCase(getAllNotices.rejected, rejectedHandler);
@@ -77,6 +79,7 @@ const noticeSlice = createSlice({
     builder.addCase(deleteFavorites.rejected, rejectedHandler);
     builder.addCase(addFavorites.rejected, rejectedHandler);
     builder.addCase(getByCategory.rejected, rejectedHandler);
+    builder.addCase(getByQuery.rejected, rejectedHandler);
 
     builder.addCase(createNotice.fulfilled, (state, action) => {
       state.error = null;
@@ -123,6 +126,11 @@ const noticeSlice = createSlice({
       // TODO: редактировать нужный нотис в стейте или юзера ?
     });
     builder.addCase(getByCategory.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.notices = action.payload;
+    });
+    builder.addCase(getByQuery.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
       state.notices = action.payload;
