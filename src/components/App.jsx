@@ -1,6 +1,7 @@
 import LoginPage from 'pages/LoginPage/LoginPage';
 import NoticesPage from 'pages/NoticesPage/NoticesPage';
 import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
+import FriendsPage from 'pages/FriendsPage/FriendsPage';
 import UserPage from 'pages/UserPage/UserPage';
 import { HomePage } from 'pages/HomePage';
 import { useEffect, lazy, Suspense } from 'react';
@@ -44,6 +45,9 @@ export const App = () => {
             }
           />
           <Route path="test" element={<Test />} />
+        //  <Route path="register" element={<RegistrationPage />} />
+        //  <Route path="login" element={<LoginPage />} />
+        //  <Route path="friends" element={<FriendsPage />} />
           <Route
             path="register"
             element={

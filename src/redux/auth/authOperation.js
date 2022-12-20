@@ -46,7 +46,7 @@ export const logOutUser = createAsyncThunk(
     try {
       const response = await axios.post('/api/users/logout');
       clearAuthHeader();
-      console.log('LOGOUT', response.data);
+      // console.log('LOGOUT', response.data);
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);
@@ -68,7 +68,7 @@ export const refreshUser = createAsyncThunk(
 
     try {
       const response = await axios.get('/api/usersinfo');
-      console.log('getUser', response.data);
+      // console.log('getUser', response.data);
 
       return response.data;
     } catch (error) {
@@ -83,7 +83,7 @@ export const editUser = createAsyncThunk(
     try {
       // console.log(user);
       const response = await axios.patch(`/api/usersinfo/update`, user);
-      console.log('editUser', response.data);
+      // console.log('editUser', response.data);
       // setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
