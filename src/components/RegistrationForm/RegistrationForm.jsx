@@ -31,7 +31,7 @@ const RegistrationForm = () => {
   const [emailErrorMassege, setEmailErrorMassege] = useState('');
   const [emailError, setEmailError] = useState('');
   const [emailErrorFixed, setEmailErrorFixed] = useState(false);
-
+ 
   const token = useSelector(selectToken);
   const { width, height } = useWindowSize();
   const errorDB = useSelector(selectError);
@@ -47,7 +47,7 @@ const RegistrationForm = () => {
     },
     validationSchema: schema,
 
-    onSubmit: async values => {
+    onSubmit: values => {
       const user = {
         email: values.email,
         password: values.password,
@@ -55,7 +55,7 @@ const RegistrationForm = () => {
         city: values.city,
         phone: values.phone,
       };
-      await dispatch(registerUser(user));
+     dispatch(registerUser(user));
     },
   });
   const city = formik.values.city;
@@ -68,6 +68,9 @@ const RegistrationForm = () => {
 
   const onClickNext = e => {
     e.preventDefault();
+     if (emailError !== formik.values.email) {
+      setEmailErrorFixed(false);
+    }
     if (
       !formik.values.email &&
       !formik.values.password &&
@@ -80,9 +83,7 @@ const RegistrationForm = () => {
       formik.errors.confirmPassword
     )
       return;
-    if (emailError !== formik.values.email) {
-      setEmailErrorFixed(false);
-    }
+   
     SetFormChenge(true);
   };
   const Selectoptions = Data.map(i => ({
@@ -91,6 +92,7 @@ const RegistrationForm = () => {
   }));
 
   useEffect(() => {
+
     if (errorDB === 'Email in use') {
       setEmailErrorMassege('Email in use');
       setEmailError(formik.values.email);
@@ -104,11 +106,14 @@ const RegistrationForm = () => {
     if (!errorDB) {
       setEmailErrorMassege('');
       setEmailError('');
-      setEmailErrorFixed('');
+      setEmailErrorFixed(false);
     }
-  }, [errorDB, formik.values.email]);
+    
+  }, [errorDB]);
 
-
+ console.log(emailErrorFixed);
+  console.log(emailError);
+  console.log(formik.values.email);
   return (
     <Div>
       <Title>Registration</Title>

@@ -7,11 +7,11 @@ import { selectOurFriends } from 'redux/ourFriend/ourFriendSelectors';
 const Friends = () => {
   const dispatch = useDispatch();
   const dataFriends = useSelector(selectOurFriends);
-  console.log(dataFriends);
+  
   useEffect(() => {
-    dispatch(getOurFriends);
+    dispatch(getOurFriends());
   }, [dispatch]);
-
+  
   return (
     <Container>
       {dataFriends.map(
@@ -29,15 +29,15 @@ const Friends = () => {
           <Box key={_id}>
             <Title>{title}</Title>
             <Div>
-              <Img src={imageUrl}></Img>
+              <span><Img src={imageUrl} ></Img></span>
               <List key={_id}>
-                <Item>{email}</Item>
+                <Item>Time:{workDays.map(i =>{return( (<p key={title}>{i.from},{i.to}</p>)|| "---------")})}</Item>
                 <Item>{address}</Item>
                 <Item>{addressUrl}</Item>
                 <Item>{imageUrl}</Item>
                 <Item>{phone}</Item>
                 <Item>{url}</Item>
-                <Item>{workDays}</Item>
+                <Item>{email}</Item>
               </List>
             </Div>
           </Box>
