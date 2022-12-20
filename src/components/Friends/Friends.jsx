@@ -31,7 +31,7 @@ const Friends = () => {
             <Div>
               <span><Img src={imageUrl} ></Img></span>
               <List key={_id}>
-                <Item>Time:{workDays.map(i =>{return( (<p key={title}>{i.from},{i.to}</p>)|| "---------")})}</Item>
+                {/* <Item>`Time:${workDays.toString()}`</Item> */}
                 <Item>{address}</Item>
                 <Item>{addressUrl}</Item>
                 <Item>{imageUrl}</Item>
