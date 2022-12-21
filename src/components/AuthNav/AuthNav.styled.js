@@ -34,7 +34,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 background-color: ${p => p.theme.colors.background.accent};
-color: ${p => p.theme.color.white};
+color: ${p => p.theme.colors.white};
 height: 35px;
 border-radius: ${p => p.theme.space[6]}px;
 font-weight: ${p => p.theme.fontWeights.semiBold};
@@ -50,7 +50,7 @@ ${p => p.theme.breakpoints.tab} {
 export const LinkInversion = styled(Link)`
 background-color: ${p => p.theme.colors.background.white};
 border: ${p => p.theme.borders.normal};
-color: ${p => p.theme.color.black};
+color: ${p => p.theme.colors.black};
 `
 
 
