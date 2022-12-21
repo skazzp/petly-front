@@ -265,8 +265,8 @@ export const Validation = styled.p`
 
   font-family: 'Manrope';
   font-weight: 400;
-  font-size: 15px;
-  line-height: 25px;
+  font-size: 12px;
+  line-height: 22px;
   margin: 0;
   padding: 0;
 
@@ -278,9 +278,17 @@ export const Validation = styled.p`
   }
 
   @media screen and (min-width: 768px) {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
   }
 
   @media screen and (min-width: 1280px) {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
   }
 `;
 

@@ -35,27 +35,37 @@ const LoginForm = () => {
       if (errorFixed) {
         return;
       }
-        dispatch(loginUser(formik.values));
-        setErrorMassege('');
-        setEmailError('');
-        setPasswordError('');
+      if (
+        emailError === formik.values.email ||
+        passwordError === formik.values.password
+      ) {
+       
       }
+      dispatch(loginUser(formik.values));
+      setErrorMassege('');
+      setEmailError('');
+      setPasswordError('');
+    },
+    onChange: values => {
+      if (
+        emailError !== formik.values.email ||
+        passwordError !== formik.values.password
+      ) {setErrorFixed(false);}
+      
+   }
+
   });
 
   useEffect(() => {
-    setErrorMassege(DbError);
-    console.log(errorMassege);
-      setEmailError(formik.values.email)
-      setPasswordError(formik.values.password)
-    setErrorFixed(true);
-    console.log(errorMassege);
-    if (
-      emailError !== formik.values.email ||
-      passwordError !== formik.values.password
-    ) { setErrorFixed(false); setErrorMassege('')}
+    if (DbError) {
+      setErrorMassege(DbError);
+      setEmailError(formik.values.email);
+      setPasswordError(formik.values.password);
+      setErrorFixed(true);
+    }
+     // eslint-disable-next-line
+  }, [DbError]);
 
-  }, [DbError, formik.values.email, formik.values.password]);
-  
   return (
     <Div>
       <Title>Login</Title>
@@ -86,7 +96,6 @@ const LoginForm = () => {
             <Validation>{formik.errors.password}</Validation>
           ) : null}
         </Label>
-
         <Button type="submit">Login</Button>
       </Form>
       <Span>

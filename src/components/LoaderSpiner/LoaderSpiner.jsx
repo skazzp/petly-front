@@ -7,7 +7,7 @@ export const LoaderSpiner = () => {
       color="#F59256"
       wrapperStyle={{
         position: 'fixed',
-        top: '50%',
+        top: '65%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
       }}

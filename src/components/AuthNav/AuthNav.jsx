@@ -1,9 +1,9 @@
 import {Link, LinkInversion, AuthItem, AuthBox} from './AuthNav.styled'
 
-export const AuthNav = ({toggleMenu = null}) => {
+export const AuthNav = ({closeMenu = null}) => {
 return(<AuthBox>
-    <AuthItem><Link to="/login" onClick={toggleMenu}>Login</Link></AuthItem>
-    <AuthItem><LinkInversion to="/register" onClick={toggleMenu}>Registrations</LinkInversion></AuthItem>
+    <AuthItem><Link to="/login" onClick={closeMenu}>Login</Link></AuthItem>
+    <AuthItem><LinkInversion to="/register" onClick={closeMenu}>Registrations</LinkInversion></AuthItem>
 </AuthBox>)
 
 }

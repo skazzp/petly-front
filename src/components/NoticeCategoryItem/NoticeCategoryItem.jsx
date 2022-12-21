@@ -31,7 +31,7 @@ import {
   Wrapper,
 } from './NoticeCategoryItem.styled';
 import { useEffect, useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const NoticeCategoryItem = ({ notice }) => {
   const {
@@ -51,9 +51,12 @@ const NoticeCategoryItem = ({ notice }) => {
   const isLoading = useSelector(selectIsLoading);
 
   const user = useSelector(selectUser);
-  const isOwner = user.email === owner?.email; // TODO replace !== to === and check it with id
+
+  const isOwner = user?._id === owner?._id; // TODO replace !== to === and check it with id
   const favoriteNotice = useSelector(state => state.auth.user.favorites);
   const [isFavorite, setIsFavorite] = useState(false);
+
+  // console.log(isOwner);
 
   useEffect(() => {
     checkFavorite(favoriteNotice, _id);
@@ -107,12 +110,24 @@ const NoticeCategoryItem = ({ notice }) => {
     dispatch(openLearnMoreModal());
   };
 
+  const setCategory = category => {
+    switch (category) {
+      case 'sell':
+        return 'Sell';
+      case 'for-free':
+        return 'In good hands';
+      case 'lost-found':
+        return 'Lost/found';
+      default:
+        return 'No category';
+    }
+  };
+
   return (
     <>
       <Item>
-        <ToastContainer />
         <Image src={photoURL ? photoURL : defaultImage} alt={breed} />
-        <Category>{category}</Category>
+        <Category>{setCategory(category)}</Category>
 
         <BtnAddFavorite
           type="button"

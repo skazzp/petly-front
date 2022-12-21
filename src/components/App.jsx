@@ -8,13 +8,14 @@ import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
-import { selectIsLoading, selectToken } from 'redux/auth/authSelectors';
+import { selectToken } from 'redux/auth/authSelectors';
 // import OurFriend from 'pages/OurFriend/OurFriend';
 import NewsPage from 'pages/NewsPage/NewsPage';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
+import { ToastContainer } from 'react-toastify';
 
 // import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
 
@@ -24,20 +25,16 @@ const Test = () => {
 };
 
 export const App = () => {
-  const isLoading = useSelector(selectIsLoading);
   const isLoggedIn = useSelector(selectToken);
-  console.log(isLoggedIn);
   const dispatch = useDispatch();
   useEffect(() => {
     isLoggedIn && dispatch(refreshUser());
   }, [dispatch, isLoggedIn]);
-  return isLoading ? (
-    <LoaderSpiner />
-  ) : (
+  return (
     <Suspense fallback={<LoaderSpiner />}>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<HomePage />} />
+        <Route path="/" element={<SharedLayout/>}>
+          <Route index element={<HomePage/>} />
           <Route
             path="user"
             element={
@@ -73,6 +70,7 @@ export const App = () => {
         </Route>
         <Route path="*" element={<Navigate to={'/'} />} />
       </Routes>
+      <ToastContainer />
     </Suspense>
   );
 };

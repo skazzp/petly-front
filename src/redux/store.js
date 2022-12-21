@@ -14,6 +14,7 @@ import { authReducer } from './auth/authSlice';
 import { petsReducer } from './pets/petsSlice';
 import { noticeReducer } from './notice/noticeSlice';
 import { newsReducer } from './news/newsSlice';
+import {modalReducer} from './modal/modalSlice';
 import { ourFriendReducer } from './ourFriend/ourFriendSlice';
 
 const middleware = [
@@ -37,6 +38,7 @@ export const store = configureStore({
     notice: noticeReducer,
     news: newsReducer,
     friends: ourFriendReducer,
+    modal: modalReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

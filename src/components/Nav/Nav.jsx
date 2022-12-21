@@ -1,9 +1,9 @@
 import { NavTitleBox, NavTitleItem, NavTitle } from "components/Nav/Nav.styled"
 
-export const Nav = ({toggleMenu = null}) => {
+export const Nav = ({closeMenu = null}) => {
     return (<NavTitleBox>
-        <NavTitleItem><NavTitle to='/news' onClick={toggleMenu}>News</NavTitle></NavTitleItem>
-        <NavTitleItem><NavTitle to='/notices' onClick={toggleMenu}>Find pet</NavTitle></NavTitleItem>
-        <NavTitleItem><NavTitle to='/friends' onClick={toggleMenu}>Our friend</NavTitle></NavTitleItem>
+        <NavTitleItem><NavTitle to='/news' onClick={closeMenu}>News</NavTitle></NavTitleItem>
+        <NavTitleItem><NavTitle to='/notices' onClick={closeMenu}>Find pet</NavTitle></NavTitleItem>
+        <NavTitleItem><NavTitle to='/friends' onClick={closeMenu}>Our friend</NavTitle></NavTitleItem>
     </NavTitleBox>)
 } 
