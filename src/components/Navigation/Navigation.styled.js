@@ -14,6 +14,7 @@ justify-content: space-between;
 margin-bottom: 46px;
 ${p=>p.theme.breakpoints.tab} {
     margin-bottom: 88px;
+    padding: 20px 16px 0 16px;
 }`
 
 
