@@ -12,16 +12,11 @@ import { toggleModal, closeModal } from "redux/modal/modalSlice";
 export const Navigation = () => {
     let isLoggedIn = useSelector(selectToken);
     const modalOpen = useSelector(isModalOpen)
-    // isLoggedIn = true;
     const isMobile = useIsMobile();
     const isTablet = useIsTablet();
     const isDesktop = useIsDesktop();
     const isMobileOrTablet = useIsMobileOrTablet()
     const dispatch = useDispatch();
-    // const [MenuOpen, setMenuOpen] = useState(false)
-    // const toggleMenu = () => {
-    //     setMenuOpen(!MenuOpen)
-    // }
 const modalClosed = ()=> dispatch(closeModal())
 const modalToggled = ()=> dispatch(toggleModal())
     return(
@@ -30,9 +25,9 @@ const modalToggled = ()=> dispatch(toggleModal())
         {isTablet && <>{isLoggedIn ? <UserNav closeMenu={modalClosed}/> : <AuthNav closeMenu={modalClosed}/>}<Hamburger toggled={modalOpen} toggle={modalToggled} /></>}
         {isMobile && <Hamburger toggled={modalOpen} toggle={modalToggled} />}
         {(modalOpen && isMobileOrTablet) &&
-            <ModalNav>
+            <ModalNav><MenuContainer>
                 {isMobile && <>{isLoggedIn ? <UserNav closeMenu={modalClosed}/> : <AuthNav closeMenu={modalClosed}/>}</>}
-                <Nav closeMenu={modalClosed}/>
+                <Nav closeMenu={modalClosed}/></MenuContainer>
             </ModalNav>}
     </Container>)
 }
