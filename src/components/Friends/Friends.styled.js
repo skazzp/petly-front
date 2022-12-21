@@ -1,96 +1,149 @@
 import styled from 'styled-components';
+import { GoLocation } from 'react-icons/go';
 
 export const Container = styled.div`
-  max-width: 1280px;
-  margin: 0px auto;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 32px 20px;
-  justify-content: center;
+margin-top: 12px;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
 
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
-  }
-`;
-
-export const Box = styled.div`
-  background: #ffffff;
+  background: #FFFFFF;
+border-radius: 20px;
   box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
-  border-radius: 40px;
-  @media screen and (min-width: 768px) {
+  ${props => props.theme.breakpoints.tab} {
+    width: 335px;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
   }
 
-  @media screen and (min-width: 1280px) {
-    width: 395px;
+  ${props => props.theme.breakpoints.desc} {
+    width: 392px;
   }
 `;
 
-export const Title = styled.p`
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 27px;
-  align-items: center;
+// export const Box = styled.div`
+
+//   @media screen and (min-width: 768px) {
+//   }
+
+//   @media screen and (min-width: 1280px) {
+//     width: 395px;
+//   }
+// `;
+
+export const Title = styled.a`
+  padding-top: 14px;
+  display: block;
+  font-size: 12px;
+  line-height: ${props => props.theme.lineHeights.main};
   text-align: center;
   text-decoration-line: underline;
-  color: #f59256;
-  padding-bottom: 0px;
-  @media screen and (min-width: 768px) {
+  color: ${props => props.theme.colors.accent};
+
+  ${props => props.theme.breakpoints.tab} {
   }
 
-  @media screen and (min-width: 1280px) {
-    margin: 16px;
+  ${props => props.theme.breakpoints.desc} {
+
   }
 `;
 
-export const Div = styled.div`
+export const Wrapper = styled.div`
+  width: 100%;
   display: flex;
+  flex-flow: row nowrap;
 
-  @media screen and (min-width: 768px) {
+
+`;
+
+export const WrapperIMG = styled.div`
+  flex-grow: 0;
+  ${props => props.theme.breakpoints.tab} {
   }
 
-  @media screen and (min-width: 1280px) {
-    gap: 16px;
-    height: 287px;
-    padding-left: 4px;
-    padding-right: 35px;
+  ${props => props.theme.breakpoints.desc} {
+  }
+`;
+
+export const WrapperContent = styled.div`
+  flex-grow: 1;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: ${props => props.theme.lineHeights.main};
+  color: #111111;
+  ${props => props.theme.breakpoints.tab} {
+  }
+
+  ${props => props.theme.breakpoints.desc} {
   }
 `;
 
 export const Img = styled.img`
-  @media screen and (min-width: 768px) {
+  padding: 0px;
+  width: 110px;
+  height: 78px;
+  margin-top: 10px;
+  margin-left: 4px;
+  margin-right: 14px;
+  ${props => props.theme.breakpoints.tab} {
   }
 
-  @media screen and (min-width: 1280px) {
-  }
-`;
-
-export const List = styled.ul`
-  list-style: none;
-  font-family: 'Manrope';
-  font-style: normal;
-  padding: 0;
-
-  color: #000000;
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1280px) {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
+  ${props => props.theme.breakpoints.desc} {
   }
 `;
 
-export const Item = styled.li`
-  @media screen and (min-width: 768px) {
+export const Data = styled.div`
+  margin-top: 12px;
+
+  ${props => props.theme.breakpoints.tab} {
   }
 
-  @media screen and (min-width: 1280px) {
+  ${props => props.theme.breakpoints.desc} {
   }
 `;
+
+export const Address = styled.div`
+  margin-top: 4px;
+
+  ${props => props.theme.breakpoints.tab} {
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
+`;
+
+export const IconAddress = styled(GoLocation)`
+fill: ${props => props.theme.colors.accent};
+margin-left: 10px ;
+`
+
+export const Email = styled.div`
+  margin-top: 4px;
+
+  ${props => props.theme.breakpoints.tab} {
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
+`;
+export const Phone = styled.div`
+  margin-top: 4px;
+  margin-bottom: 12px;
+
+  ${props => props.theme.breakpoints.tab} {
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
+`;
+
+// ${props => props.theme.breakpoints.tab} {
+
+// }
+
+// ${props => props.theme.breakpoints.desc} {
+
+// }
