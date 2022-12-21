@@ -3,10 +3,7 @@ import styled from 'styled-components';
 
 export const NavTitleBox = styled.ul`
 text-align: center;
-padding: 0;
-list-style: none;
-margin: 0;
-@media screen and (min-width: 1280px) {
+${props => props.theme.breakpoints.desc} {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,39 +11,34 @@ margin: 0;
 
 export const NavTitleItem = styled.li`
 :not(:last-child) {
-    @media screen and (max-width: 767px) {
-        margin-bottom: 40px;
-    }
-    @media screen and (min-width: 768px) {
+    margin-bottom: ${p=>p.theme.space[6]}px;
+
+    ${props => props.theme.breakpoints.tab} {
         margin-bottom: 60px;
     }
-    @media screen and (min-width: 1280px) {
-        margin-bottom: 0;
-        margin-right: 80px;
+    ${props => props.theme.breakpoints.desc} {
+        margin-bottom: ${p=>p.theme.space[0]}px;
+        margin-right: ${p=>p.theme.space[8]}px;
     }
 }
 `
 
 export const NavTitle = styled(NavLink)`
-color: #181C27;
-text-decoration: none;
-font-weight: 500;
-font-size: 32px;
-line-height: 1.37;
-letter-spacing: 0.04em;
+color: ${p=>p.theme.colors.blackLink};
+font-weight: ${p=>p.theme.fontWeights.semiBold};
+font-size: ${p=>p.theme.fontSizes.titleSmall};
 transition: color 300ms linear;
-@media screen and (min-width: 768px) {
-font-size:  48px;
-
+${props => props.theme.breakpoints.tab} {
+font-size: ${p=>p.theme.fontSizes.xxl};
 }
-@media screen and (min-width: 1280px) {
-font-size:  20px;
+${props => props.theme.breakpoints.desc} {
+font-size:  ${p=>p.theme.space[4]}px;
   }
 :hover, :focus {
-    color: #F59256;
+    color: ${props => props.theme.colors.accent};
 };
 &.active {
-    color: #F59256;
+    color: ${props => props.theme.colors.accent};
     text-decoration-line: underline;
     text-decoration-thickness: 0.03em; 
 }
