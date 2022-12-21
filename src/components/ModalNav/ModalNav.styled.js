@@ -9,8 +9,5 @@ top: 82px;
 left: 0;
 background-color: ${p => p.theme.colors.background.main};
 text-align: center;
-padding-top: 46px;
-${p => p.theme.breakpoints.tab} {
-  padding-top: 88px;
-}
+
 `;

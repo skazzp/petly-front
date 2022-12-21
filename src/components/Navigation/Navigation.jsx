@@ -5,7 +5,7 @@ import { AuthNav } from "components/AuthNav";
 import { ModalNav } from "components/ModalNav";
 import { Nav } from "components/Nav";
 import { UserNav } from "components/UserNav";
-import { Container} from "./Navigation.styled";
+import { Container, Box} from "./Navigation.styled";
 import { Spin as Hamburger } from 'hamburger-react'
 import { isModalOpen } from "redux/modal/modalSelectors";
 import { toggleModal, closeModal } from "redux/modal/modalSlice";
@@ -25,9 +25,9 @@ const modalToggled = ()=> dispatch(toggleModal())
         {isTablet && <>{isLoggedIn ? <UserNav closeMenu={modalClosed}/> : <AuthNav closeMenu={modalClosed}/>}<Hamburger toggled={modalOpen} toggle={modalToggled} /></>}
         {isMobile && <Hamburger toggled={modalOpen} toggle={modalToggled} />}
         {(modalOpen && isMobileOrTablet) &&
-            <ModalNav><>
+            <ModalNav><Box>
                 {isMobile && <>{isLoggedIn ? <UserNav closeMenu={modalClosed}/> : <AuthNav closeMenu={modalClosed}/>}</>}
-                <Nav closeMenu={modalClosed}/></>
+                <Nav closeMenu={modalClosed}/></Box>
             </ModalNav>}
     </Container>)
 }
