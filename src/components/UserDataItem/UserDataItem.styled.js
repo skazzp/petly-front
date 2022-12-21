@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  /* max-width: 280px; */
+  width: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,12 +10,18 @@ export const Container = styled.div`
   padding-bottom: ${p => p.theme.space[4]}px;
   border-radius: ${p => p.theme.radii.md};
   box-shadow: 7px 4px 14px 0px #0000001c;
+  ${p => p.theme.breakpoints.tab} {
+    width: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    flex-direction: row-reverse;
+  }
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 280px;
+  /* width: 280px; */
   align-items: center;
   padding-left: 16px;
   padding-right: 12px;
@@ -82,11 +88,19 @@ export const Btn = styled.button`
   border-radius: 50%;
   border-style: none;
   cursor: pointer;
+  ${p => p.theme.breakpoints.tab} {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 export const BtnIcon = styled.svg`
   width: 13px;
   height: 13px;
+  ${p => p.theme.breakpoints.tab} {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const LogoutBox = styled.div`

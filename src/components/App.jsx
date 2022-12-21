@@ -12,18 +12,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectToken } from 'redux/auth/authSelectors';
-// import OurFriend from 'pages/OurFriend/OurFriend';
 import NewsPage from 'pages/NewsPage/NewsPage';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
 import { ToastContainer } from 'react-toastify';
-
-// import NoticesCategoriesNav from './NoticesCategoriesNav/NoticesCategoriesNav';
+import FriendsPage from 'pages/FriendsPage/FriendsPage';
 
 const Test = () => {
-  // return <NoticesCategoriesNav />;
   return <h1>123</h1>;
 };
 

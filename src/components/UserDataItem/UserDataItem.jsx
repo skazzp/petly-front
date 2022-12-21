@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { editUser, loginUser, logOutUser } from 'redux/auth/authOperation';
+import { editUser, logOutUser } from 'redux/auth/authOperation';
 import { selectUser } from 'redux/auth/authSelectors';
 // import { changeUserData } from 'redux/auth/authSlice';
 import icons from '../../assets/images/icons.svg';
@@ -79,10 +79,12 @@ const UserDataItem = () => {
 
   return (
     <Container>
-      <AvatarBox>
-        <Avatar src={`${user.avatarURL}`} alt="avatar" />
-      </AvatarBox>
-      <UpdateAvatar />
+      <div>
+        <AvatarBox>
+          <Avatar src={`${user.avatarURL}`} alt="avatar" />
+        </AvatarBox>
+        <UpdateAvatar />
+      </div>
       <Form onSubmit={formik.handleSubmit}>
         <Label name="name" htmlFor="name">
           <LabelText>Name:</LabelText>
