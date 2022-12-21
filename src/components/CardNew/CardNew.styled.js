@@ -15,11 +15,11 @@ export const Wrapper = styled.div`
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-
+  }
   ${props => props.theme.breakpoints.desc} {
     width: 392px;
   }
-}
+
 `;
 
 export const Strip = styled.div`

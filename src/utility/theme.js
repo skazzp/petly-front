@@ -4,6 +4,7 @@ export const theme = {
     white: '#ffffff',
     accent: '#F59256',
     orange: '#FF6101',
+    fullBlack: '#000000',
     grey: 'rgba(17, 17, 17, 0.6)',
 
     background: {
