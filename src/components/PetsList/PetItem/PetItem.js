@@ -7,19 +7,16 @@ import { useDispatch} from 'react-redux';
 const PetItem = ({pet}) => {
 
   const dispatch = useDispatch();
+  
  const editDateForm=(event)=>{
-  // const date = new Date(event).toISOString().split('T')[0]
 const reversDate =event.split('-').reverse()
   return (reversDate.join("."))
  }
-//  const deletePet = id => {
-//     dispatch(deleteUserPet(id));
-//   };
-  // new Date(user.birthday).toISOString().split('T')[0]
+
     return (
       
       <Card >
-        <Img src={pet.photoURL} alt="Your pet"/>
+        <Img src={pet.photoURL} alt={`Your pet, ${pet.name}`}/>
         <Ul>
           <Li>Name: <span>{pet.name}</span></Li>
           <Li>Date of birth: <span>{editDateForm(pet.birthday)}</span></Li>
