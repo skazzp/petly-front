@@ -13,12 +13,12 @@ ${p=>p.theme.breakpoints.tab} {
     font-size: ${p=>p.theme.fontSizes.titleSmall};
   }
   ${p=>p.theme.breakpoints.desc} {
-    margin-right: ${p=>p.theme.space[8]};
+    margin-right: ${p=>p.theme.space[8]}px;
 }
 `
 export const LogoAccent = styled(LogoNormal)`
 color: ${p => p.theme.colors.accent};
-margin-right: ${p=>p.theme.space[0]};
+margin-right: ${p=>p.theme.space[0]}px;
 `
 
 export const LogoLink = styled(NavLink)`

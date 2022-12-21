@@ -11,14 +11,14 @@ ${props => props.theme.breakpoints.desc} {
 
 export const NavTitleItem = styled.li`
 :not(:last-child) {
-    margin-bottom: ${p=>p.theme.space[6]};
+    margin-bottom: ${p=>p.theme.space[6]}px;
 
     ${props => props.theme.breakpoints.tab} {
         margin-bottom: 60px;
     }
     ${props => props.theme.breakpoints.desc} {
-        margin-bottom: ${p=>p.theme.space[0]};
-        margin-right: ${p=>p.theme.space[8]};
+        margin-bottom: ${p=>p.theme.space[0]}px;
+        margin-right: ${p=>p.theme.space[8]}px;
     }
 }
 `
@@ -32,7 +32,7 @@ ${props => props.theme.breakpoints.tab} {
 font-size: ${p=>p.theme.fontSizes.xxl};
 }
 ${props => props.theme.breakpoints.desc} {
-font-size:  ${p=>p.theme.space[4]};
+font-size:  ${p=>p.theme.space[4]}px;
   }
 :hover, :focus {
     color: ${props => props.theme.colors.accent};

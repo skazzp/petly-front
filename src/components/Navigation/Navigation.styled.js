@@ -5,14 +5,14 @@ display: flex;
 justify-content: flex-end; 
 align-items: center;
 width: 100%;
-${p=>p.theme.breakpoint.desc} {
+${p=>p.theme.breakpoints.desc} {
     justify-content: space-between;
 }
 `
 export const Box = styled(Container)`
 justify-content: space-between;
 margin-bottom: 46px;
-${p=>p.theme.breakpoint.tab} {
+${p=>p.theme.breakpoints.tab} {
     margin-bottom: 88px;
 }`
 

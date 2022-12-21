@@ -5,33 +5,33 @@ export const AuthBox =styled.ul`
 display: flex;
 justify-content: center;
 
-margin: ${p => p.theme.space[0]};
+margin: ${p => p.theme.space[0]}px;
 margin-bottom: 60px;
-padding-left: ${p => p.theme.space[0]};
+padding-left: ${p => p.theme.space[0]}px;
 ${props => props.theme.breakpoints.onlyMob} {
     width: 100%;
 }
 ${props => props.theme.breakpoints.tab} {
-    margin-bottom: ${p => p.theme.space[0]};
+    margin-bottom: ${p => p.theme.space[0]}px;
     justify-content: flex-end;
 }
 `
 
 export const AuthItem = styled.li`
 :not(:last-child) {
-    margin-right: ${p => p.theme.space[2]};
+    margin-right: ${p => p.theme.space[2]}px;
 }
 ${p => p.theme.breakpoints.tab} {
 :last-child {
-    margin-right: ${p => p.theme.space[4]};
+    margin-right: ${p => p.theme.space[4]}px;
 }}
 
 ${p => p.theme.breakpoints.desk} {
 :not(:last-child) {
-    margin-right: ${p => p.theme.space[4]};
+    margin-right: ${p => p.theme.space[4]}px;
 }
     :last-child {
-    margin-right: ${p => p.theme.space[0]};
+    margin-right: ${p => p.theme.space[0]}px;
 }
 }
 `
@@ -42,7 +42,7 @@ justify-content: center;
 background-color: ${p => p.theme.colors.background.accent};
 color: ${p => p.theme.color.white};
 height: 35px;
-border-radius: ${p => p.theme.space[6]};
+border-radius: ${p => p.theme.space[6]}px;
 font-weight: ${p => p.theme.fontWeights.semiBold};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.lineHeights.secondary};

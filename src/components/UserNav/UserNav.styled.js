@@ -14,23 +14,23 @@ font-size: ${p=>p.theme.fontSizes.s};
 padding: 8px 36px;
 margin-bottom: 60px;
 
-${p=>p.theme.breakpoint.tab} {
-    margin-bottom: ${p=>p.theme.space[0]};
-    margin-right: ${p=>p.theme.space[4]};
+${p=>p.theme.breakpoints.tab} {
+    margin-bottom: ${p=>p.theme.space[0]}px;
+    margin-right: ${p=>p.theme.space[4]}px;
     height: 44px;
     padding: 8px 28px;
     font-size: ${p=>p.theme.fontSizes.m};
 }
-${p=>p.theme.breakpoint.desc} {
-    margin-right: ${p=>p.theme.space[0]};
+${p=>p.theme.breakpoints.desc} {
+    margin-right: ${p=>p.theme.space[0]}px;
 }
 `
 
 export const UserSvg = styled.svg`
-width: ${p=>p.theme.space[4]};
-height: ${p=>p.theme.space[4]};
-margin-right: ${p=>p.theme.space[2]};
-${p=>p.theme.breakpoint.tab} {
+width: ${p=>p.theme.space[4]}px;
+height: ${p=>p.theme.space[4]}px;
+margin-right: ${p=>p.theme.space[2]}px;
+${p=>p.theme.breakpoints.tab} {
     width: 28px;
     height: 28px;
 }
