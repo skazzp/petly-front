@@ -115,6 +115,13 @@ export const CloseBtn = styled.button`
   border: none;
   background-color: #fdf7f2;
   backdrop-filter: blur(2px);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translate(-2%, -2%);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
+      -8px -8px 12px rgba(255, 255, 255, 0.3);
+  }
 `;
 
 export const Svg = styled.svg`
@@ -213,21 +220,24 @@ export const SubmitBtn = styled.button`
   line-height: 1.37;
   letter-spacing: 0.04em;
   cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:nth-child(odd) {
+    color: ${p => p.theme.colors.white};
+    background-color: ${p => p.theme.colors.accent};
+  }
 
   &:hover,
   &:focus {
     color: ${p => p.theme.colors.white};
     background-color: ${p => p.theme.colors.accent};
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
+      -8px -8px 12px rgba(255, 255, 255, 0.3);
   }
 
   ${p => p.theme.breakpoints.tab} {
     width: 180px;
     height: 44px;
-  }
-
-  &:nth-child(odd) {
-    color: ${p => p.theme.colors.white};
-    background-color: ${p => p.theme.colors.accent};
   }
 `;
 
