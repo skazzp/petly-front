@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { refreshUser } from 'redux/auth/authOperation';
 
-import { getUserPet, addUserPet, deleteUserPet } from './petsOperations';
+import { addUserPet, deleteUserPet } from './petsOperations';
 
 const petsInitialState = {
   pets: [],
@@ -36,7 +36,7 @@ const petsSlice = createSlice({
     builder.addCase(addUserPet.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      console.log(state)
+      console.log(state);
 
       state.pets.push(action.payload);
     });
