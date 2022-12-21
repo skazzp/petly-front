@@ -35,7 +35,9 @@ const ModalAddsPet = ({ open, onClose }) => {
   const [imageURL, setImageURL] = useState();
   const [firstPage, setFirstPage] = useState(true);
   if (!open) return null;
+
   const fileReader = new FileReader();
+
   fileReader.onloadend = () => {
     setImageURL(fileReader.result);
   };
@@ -45,6 +47,8 @@ const ModalAddsPet = ({ open, onClose }) => {
     event.preventDefault();
     if (event.target.files && event.target.files.length) {
       const file = event.target.files[0];
+      const formData = new FormData();
+      formData.append("image", file );
       setImage(file);
       fileReader.readAsDataURL(file);
       // console.log(file, image, imageURL);
@@ -74,7 +78,13 @@ const ModalAddsPet = ({ open, onClose }) => {
     onClose();
     setFirstPage(true);
   };
-
+  // const handleChangePhoto = event => {
+  //   const fileUploaded = event.target.files[0];
+  //   const file = new FormData();
+  //   file.append('image', fileUploaded);
+  //   console.log(fileUploaded)
+  //   setImageURL(file);
+  // };
   const validationsShema = yup.object().shape({
     name: yup
       .string()
@@ -130,13 +140,14 @@ const ModalAddsPet = ({ open, onClose }) => {
               name: values.name,
               birthday: values.dateOfBirth,
               breed: values.breed,
-              photoURL: values.image,
+              photoURL: image,
               comments: values.comments,
             }
+            console.log(form);
             await dispatch(addUserPet(form))
-            .then(()=>alert(`Add your pet, ${values.name}`))
-            .catch(()=>alert(`Oops,error`));
+        
             handleCancle();
+            setImageURL()
           }}
           validationSchema={validationsShema}
         >
@@ -234,7 +245,7 @@ const ModalAddsPet = ({ open, onClose }) => {
                       type="file"
                       name={`image`}
                       defaultValue={values.image}
-                      // onChange={handleOnChange}
+                      //  onChange={handleChangePhoto}
                       accept="image/png, image/gif, image/jpeg"
                       onChange={e => {
                         handleChange(e);
