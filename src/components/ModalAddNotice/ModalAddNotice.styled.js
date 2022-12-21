@@ -83,6 +83,7 @@ export const Wrapper = styled.div`
   ${p => p.theme.breakpoints.tab} {
     width: 608px;
     padding: 40px 80px;
+    border-radius: 40px;
     color: ${p => p.theme.colors.fullBlack};
   }
 `;
@@ -94,6 +95,7 @@ export const Header = styled.h2`
 
   ${p => p.theme.breakpoints.tab} {
     font-size: 36px;
+    font-weight: 600;
   }
 `;
 
