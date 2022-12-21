@@ -66,8 +66,9 @@ export const WrapperList = styled.div`
   
   ${props => props.theme.breakpoints.tab} {
     /* flex-basis: calc((100%-40px-32px) / 3); */
+    width: 702px;
   }
-  width: 716px;
+
   ${props => props.theme.breakpoints.desc} {
     /* width: 1248px; */
     width: 1240px;
