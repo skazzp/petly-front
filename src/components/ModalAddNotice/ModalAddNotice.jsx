@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import icons from '../../assets/images/icons.svg';
 import ModalPage1 from './ModalPage1';
 import ModalPage2 from './ModalPage2';
@@ -11,6 +12,7 @@ import {
 } from './ModalAddNotice.styled';
 
 const ModalAddNotice = ({ onClose }) => {
+  const modalRoot = document.querySelector('#modal-root');
   const [step, setStep] = useState(1);
 
   const [formData, setFormData] = useState({
@@ -54,7 +56,7 @@ const ModalAddNotice = ({ onClose }) => {
     };
   });
 
-  return (
+  return createPortal(
     <Overlay onClick={onBackdropClick}>
       <Wrapper>
         <Header>Add pet</Header>
@@ -79,7 +81,8 @@ const ModalAddNotice = ({ onClose }) => {
           />
         )}
       </Wrapper>
-    </Overlay>
+    </Overlay>,
+    modalRoot
   );
 };
 
