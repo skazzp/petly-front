@@ -25,9 +25,9 @@ const modalToggled = ()=> dispatch(toggleModal())
         {isTablet && <>{isLoggedIn ? <UserNav closeMenu={modalClosed}/> : <AuthNav closeMenu={modalClosed}/>}<Hamburger toggled={modalOpen} toggle={modalToggled} /></>}
         {isMobile && <Hamburger toggled={modalOpen} toggle={modalToggled} />}
         {(modalOpen && isMobileOrTablet) &&
-            <ModalNav><MenuContainer>
+            <ModalNav><>
                 {isMobile && <>{isLoggedIn ? <UserNav closeMenu={modalClosed}/> : <AuthNav closeMenu={modalClosed}/>}</>}
-                <Nav closeMenu={modalClosed}/></MenuContainer>
+                <Nav closeMenu={modalClosed}/></>
             </ModalNav>}
     </Container>)
 }
