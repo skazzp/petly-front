@@ -56,11 +56,13 @@ export const SexInputStyled = styled(Field)`
 `;
 
 export const Overlay = styled.div`
-  background: rgba(17, 17, 17, 0.6);
+  background: ${p => p.theme.colors.background.backdrop};
   backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
 
   display: flex;
   justify-content: center;
