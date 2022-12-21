@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { GoLocation } from 'react-icons/go';
 
 export const Container = styled.div`
-margin-top: 12px;
+  margin-top: 12px;
   width: 280px;
   margin-left: auto;
   margin-right: auto;
 
-  background: #FFFFFF;
-border-radius: 20px;
+  background: #ffffff;
+  border-radius: 20px;
   box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
   ${props => props.theme.breakpoints.tab} {
     width: 335px;
@@ -47,7 +47,6 @@ export const Title = styled.a`
   }
 
   ${props => props.theme.breakpoints.desc} {
-
   }
 `;
 
@@ -56,7 +55,11 @@ export const Wrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
 
+  ${props => props.theme.breakpoints.tab} {
+  }
 
+  ${props => props.theme.breakpoints.desc} {
+  }
 `;
 
 export const WrapperIMG = styled.div`
@@ -95,8 +98,25 @@ export const Img = styled.img`
   }
 `;
 
+export const WrapperTimeHover = styled.div`
+display:none;
+position:absolute;
+top:0;
+left:0;
+`
+
 export const Data = styled.div`
+position:relative;
   margin-top: 12px;
+  div {
+  }
+  &:hover {
+    color: red;
+    div {
+      display: block;
+      
+    }
+  }
 
   ${props => props.theme.breakpoints.tab} {
   }
@@ -104,6 +124,8 @@ export const Data = styled.div`
   ${props => props.theme.breakpoints.desc} {
   }
 `;
+
+
 
 export const Address = styled.div`
   margin-top: 4px;
@@ -116,9 +138,15 @@ export const Address = styled.div`
 `;
 
 export const IconAddress = styled(GoLocation)`
-fill: ${props => props.theme.colors.accent};
-margin-left: 10px ;
-`
+  fill: ${props => props.theme.colors.accent};
+  margin-left: 10px;
+
+  ${props => props.theme.breakpoints.tab} {
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+  }
+`;
 
 export const Email = styled.div`
   margin-top: 4px;
@@ -129,6 +157,7 @@ export const Email = styled.div`
   ${props => props.theme.breakpoints.desc} {
   }
 `;
+
 export const Phone = styled.div`
   margin-top: 4px;
   margin-bottom: 12px;

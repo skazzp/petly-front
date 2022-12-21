@@ -9,6 +9,7 @@ import { ItemCard, ListCard, Title, Wrapper, WrapperList } from './NewsPage.styl
 
 const NewsPage = () => {
   const news = useSelector(selectNews);
+  console.log(news);
   const dispatch = useDispatch();
 
   useEffect(() => {
