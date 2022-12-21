@@ -6,7 +6,6 @@ export const Div = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0px 20px;
   width: 280px;
 
   @media screen and (min-width: 768px) {
@@ -17,12 +16,14 @@ export const Div = styled.div`
     background: #ffffff;
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
     border-radius: 40px;
+    width: 608px;
+    height: 473px;
     padding: 60px 80px 60px 80px;
-    width: 448px;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 608px;
+    width: 618px;
+    height: 473px;
     z-index: 1;
   }
 `;
@@ -35,6 +36,7 @@ export const Title = styled.h2`
   line-height: 33px;
   letter-spacing: 0.04em;
   color: #111111;
+  margin-bottom: 40px;
   @media screen and (min-width: 768px) {
     font-family: 'Manrope';
     font-style: normal;
@@ -64,6 +66,7 @@ export const Label = styled.label`
   display: flex;
   background: none;
   height: 40px;
+  width: 280px;
   border: 1px solid rgba(245, 146, 86, 0.5);
   align-items: center;
   justify-content: center;
@@ -77,8 +80,7 @@ export const Label = styled.label`
   }
 
   @media screen and (min-width: 768px) {
-    max-width: 100%;
-
+    width: 448px;
     height: 52px;
 
     background: #fdf7f2;
@@ -87,6 +89,7 @@ export const Label = styled.label`
 
   @media screen and (min-width: 1280px) {
     margin-bottom: 16px;
+    width: 458px;
   }
 `;
 

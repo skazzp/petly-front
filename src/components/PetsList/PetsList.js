@@ -26,6 +26,7 @@ const PetsList = () => {
         <Card>
            {userPetsList.length? 
            <> {userPetsList.map(pet=>{
+      
             return( <PetItem pet={pet} key={pet._id}/>)
            
            })}</>:<>

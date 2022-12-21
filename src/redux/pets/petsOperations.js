@@ -26,23 +26,27 @@ export const addUserPet = createAsyncThunk(
   async (form , thunkApi) => {
     const state = thunkApi.getState();
     const persistedToken = state.auth.token;
-    // const formData = new FormData();
+
+    //  const formData = new FormData();
     console.log(form)
     // formData.append('image', form);
+    console.log(form)
+    // console.log(formData)
+    const header = {
+      method: 'post',
+     headers: {
+       Accept: 'application/json',
+       Authorization: `Bearer ${persistedToken}`,
+       'Content-Type': 'multipart/form-data',
+     },
+   };
+
     try {
-      const header = {
-        //  method: 'post',
-        headers: {
-          Accept: 'application/json',
-          Authorization: `Bearer ${persistedToken}`,
-          'Content-Type': 'multipart/form-data',
-        },
-      };
      const response= await axios.post('/api/pets/', form, header);
     
       toast.success('New pet added!');
-      // return data.user.pets;
-      console.log(response)
+      
+      console.log(response.data)
       return response.data
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);

@@ -170,7 +170,7 @@ export const Img = styled.img`
   height: 208px;
   object-fit: cover;
   border-radius: 20px;
-  margin-left: -5px;
+  /* margin-left: -5px; */
 `;
 
 export const AddList = styled.div`
