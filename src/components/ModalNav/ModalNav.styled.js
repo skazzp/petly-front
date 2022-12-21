@@ -2,16 +2,15 @@ import styled from 'styled-components';
 
 export const ModalContainer = styled.div`
 
-box-sizing: border-box;
 position: fixed;
-width: 100vw;
+width: 100%;
 height: 100%;
 top: 82px;
 left: 0;
-background-color: #FDF7F2;
+background-color: ${p => p.theme.colors.background.main};
 text-align: center;
 padding-top: 46px;
-@media screen and (min-width: 768x) {
+${p => p.theme.breakpoints.tab} {
   padding-top: 88px;
 }
 `;

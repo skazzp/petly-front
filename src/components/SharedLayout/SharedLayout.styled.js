@@ -5,10 +5,10 @@ padding: 16px 20px 0 20px;
 height: 100%;
 width: 100%;
 position: relative;
-@media screen and (min-width: 768px) {
+${p=>p.theme.breakpoint.tab} {
 padding: 20px 32px 0 32px;
 }
-@media screen and (min-width: 1280px) {
+${p=>p.theme.breakpoint.desc} {
 padding: 20px 16px 0 16px;
 }
 `

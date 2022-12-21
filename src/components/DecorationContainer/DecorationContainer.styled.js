@@ -19,25 +19,18 @@ width: 620px;
 position: fixed;
 bottom: -14px;
 right: -214px;
-
 background-image:  
 url(${Wave});
 background-repeat: no-repeat;
 background-size: cover;
 background-position: bottom;
 
-@media screen and (min-width: 768px) {
+${p => p.theme.breakpoints.tab} {
 height: 1098px;
 width: 1449px;
 transform: rotate(-8deg);
-position: fixed;
 top: 167px;
 right: -550px;
-background-image:  
-url(${Wave});
-background-repeat: no-repeat;
-background-size: cover;
-background-position: bottom;
 }
 `
 export const WaveLight = styled.div`
@@ -112,48 +105,40 @@ width: 320px;
 position: fixed;
 bottom: 0px;
 right: 0px;
-background-image:  
-url(${SmileGirlMobile1x});
-@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    background-image:  
-url(${SmileGirlMobile2x});
-}
 background-repeat: no-repeat;
 background-size: contain;
 background-position: bottom;
+background-image:  
+url(${SmileGirlMobile1x});
+${p => p.theme.retina.double} {
+    background-image:  
+url(${SmileGirlMobile2x});
+}
 
-@media screen and (min-width: 768px) {
-z-index: -1;
+
+${p=>p.theme.breakpoints.tab}{
 height: 733px;
 width: 699px;
-position: fixed;
 bottom: 0px;
 right: 37px;
 background-image:  
 url(${SmileGirlTablet1x});
-@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+${p => p.theme.retina.double} {
     background-image:  
 url(${SmileGirlTablet2x});
 }
-background-repeat: no-repeat;
-background-size: contain;
-background-position: bottom;
+
 }
-@media screen and (min-width: 1280px) {
-z-index: -1;
+${p=>p.theme.breakpoints.desc} {
 height: 655px;
 width: 624px;
-position: fixed;
 bottom: 0px;
 right: 0px;
 background-image:  
 url(${SmileGirlDesk1x});
-@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    background-image:  
-url(${SmileGirlDesk2x});
-}
-background-repeat: no-repeat;
-background-size: contain;
-background-position: bottom;
+    ${p=>p.theme.retina.double} {
+        background-image:  
+    url(${SmileGirlDesk2x});
+    }
 }
 `
