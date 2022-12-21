@@ -32,10 +32,9 @@ const RegistrationForm = () => {
   const [emailError, setEmailError] = useState('');
   const [emailErrorFixed, setEmailErrorFixed] = useState(false);
  
-  const token = useSelector(selectToken);
   const { width, height } = useWindowSize();
   const errorDB = useSelector(selectError);
-
+    const token = useSelector(selectToken);
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -236,16 +235,18 @@ const RegistrationForm = () => {
             Back
           </ButtonBack>
 
-          {token ? (
-            <Confetti recycle={false} width={width} height={height} />
-          ) : null}
+          
         </Form>
       )}
 
       <Span>
         Don't have an account? <LinkRegistration type="button" to="/login" >Login</LinkRegistration>
       </Span>
+      {token ? (
+            <Confetti recycle={false} width={width} height={height} />
+          ) : null}
     </Div>
+    
   );
 };
 
