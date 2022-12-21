@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Wave from '../../assets/images/bg-home-page-mobile.svg'
+import styled from 'styled-components';
+import Wave from '../../assets/images/bg-home-page-mobile.svg';
 import Group1 from '../../assets/images/Group1.svg';
 import Group2 from '../../assets/images/Group2.svg';
 import Frame from '../../assets/images/Frame26.svg';
@@ -13,6 +13,7 @@ import SmileGirlDesk1x from '../../assets/images/bg/Bg-girl-desc-1x.png';
 import SmileGirlDesk2x from '../../assets/images/bg/Bg-girl-desc-2x.png';
 
 export const WaveSmall = styled.div`
+
 z-index: -2;
 height: 470px;
 width: 620px;
@@ -34,44 +35,41 @@ right: -550px;
 }
 `
 export const WaveLight = styled.div`
-z-index: -2;
-height: 826px;
-width: 1091px;
-position: fixed;
-bottom: -491px;
-right: 293px;
-background-image:  
-url(${Group1});
-background-repeat: no-repeat;
-background-size: contain;
-background-position: bottom;
-`
+  z-index: -2;
+  height: 826px;
+  width: 1091px;
+  position: fixed;
+  bottom: -491px;
+  right: 293px;
+  background-image: url(${Group1});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+`;
 export const WaveDark = styled.div`
-z-index: -3;
-height: 685px;
-width: 1068px;
-position: fixed;
-bottom: -282px;
-right: 206px;
-background-image:  
-url(${Group2});
-background-repeat: no-repeat;
-background-size: contain;
-background-position: bottom;
-`
+  z-index: -3;
+  height: 685px;
+  width: 1068px;
+  position: fixed;
+  bottom: -282px;
+  right: 206px;
+  background-image: url(${Group2});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+`;
 export const WaveCircle = styled.div`
-z-index: -3;
-height: 63px;
-width: 63px;
-position: fixed;
-bottom: 223px;
-right: 830px;
-background-image:  
-url(${Circle});
-background-repeat: no-repeat;
-background-size: contain;
-background-position: bottom;
-`
+  z-index: -3;
+  height: 63px;
+  width: 63px;
+  position: fixed;
+  bottom: 223px;
+  right: 830px;
+  background-image: url(${Circle});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+`;
 export const WaveHeart = styled.div`
 z-index: -3;
 height: 89px;

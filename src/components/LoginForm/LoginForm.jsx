@@ -14,7 +14,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { schema } from './Valodation';
 import { loginUser } from 'redux/auth/authOperation';
 import { useEffect, useState } from 'react';
-import { selectError } from 'redux/auth/authSelectors';
+import { selectError, selectToken } from 'redux/auth/authSelectors';
+import { useWindowSize } from '@react-hook/window-size';
+import Confetti from 'react-confetti';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -23,6 +25,8 @@ const LoginForm = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [errorFixed, setErrorFixed] = useState(false);
+  const token = useSelector(selectToken);
+  const { width, height } = useWindowSize();
 
   const formik = useFormik({
     initialValues: {
@@ -46,16 +50,11 @@ const LoginForm = () => {
       setEmailError('');
       setPasswordError('');
     },
-    onChange: values => {
-      if (
-        emailError !== formik.values.email ||
-        passwordError !== formik.values.password
-      ) {setErrorFixed(false);}
-      
-   }
-
+    
   });
-
+  
+  console.log(emailError); console.log(formik.values.email);
+  
   useEffect(() => {
     if (DbError) {
       setErrorMassege(DbError);
@@ -63,6 +62,7 @@ const LoginForm = () => {
       setPasswordError(formik.values.password);
       setErrorFixed(true);
     }
+    (emailError !== formik.values.email || passwordError !== formik.values.password ) && setErrorFixed(false)
      // eslint-disable-next-line
   }, [DbError]);
 
@@ -104,6 +104,9 @@ const LoginForm = () => {
           Register
         </LinkRegistration>
       </Span>
+      {token ? (
+            <Confetti recycle={false} width={width} height={height} />
+          ) : null}
     </Div>
   );
 };
