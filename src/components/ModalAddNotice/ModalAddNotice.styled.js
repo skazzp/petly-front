@@ -56,11 +56,13 @@ export const SexInputStyled = styled(Field)`
 `;
 
 export const Overlay = styled.div`
-  background: rgba(17, 17, 17, 0.6);
+  background: ${p => p.theme.colors.background.backdrop};
   backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
 
   display: flex;
   justify-content: center;
@@ -81,6 +83,7 @@ export const Wrapper = styled.div`
   ${p => p.theme.breakpoints.tab} {
     width: 608px;
     padding: 40px 80px;
+    border-radius: 40px;
     color: ${p => p.theme.colors.fullBlack};
   }
 `;
@@ -92,6 +95,7 @@ export const Header = styled.h2`
 
   ${p => p.theme.breakpoints.tab} {
     font-size: 36px;
+    font-weight: 600;
   }
 `;
 
