@@ -10,13 +10,11 @@ ${p=>p.theme.breakpoints.tab} {
 max-width: 588px;
 padding-top: 94px;
 padding-bottom: 100px;
-margin-left: ${p=>p.theme.space[0]}px;
 }
 ${p=>p.theme.breakpoints.desc} {
 padding-top: 92px;
 }
 `
-
 export const Title = styled.h1`
 color: ${p=>p.theme.colors.fullBlack};
 font-size: ${p=>p.theme.fontSizes.titleSmall};

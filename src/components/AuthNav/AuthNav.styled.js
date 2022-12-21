@@ -5,14 +5,11 @@ export const AuthBox =styled.ul`
 display: flex;
 justify-content: center;
 
-margin: ${p => p.theme.space[0]}px;
-margin-bottom: 60px;
-padding-left: ${p => p.theme.space[0]}px;
 ${props => props.theme.breakpoints.onlyMob} {
     width: 100%;
+    margin-bottom: 60px;
 }
 ${props => props.theme.breakpoints.tab} {
-    margin-bottom: ${p => p.theme.space[0]}px;
     justify-content: flex-end;
 }
 `
@@ -21,7 +18,7 @@ export const AuthItem = styled.li`
 :not(:last-child) {
     margin-right: ${p => p.theme.space[2]}px;
 }
-${p => p.theme.breakpoints.tab} {
+${p => p.theme.breakpoints.onlyTab} {
 :last-child {
     margin-right: ${p => p.theme.space[4]}px;
 }}
@@ -29,9 +26,6 @@ ${p => p.theme.breakpoints.tab} {
 ${p => p.theme.breakpoints.desk} {
 :not(:last-child) {
     margin-right: ${p => p.theme.space[4]}px;
-}
-    :last-child {
-    margin-right: ${p => p.theme.space[0]}px;
 }
 }
 `
@@ -47,7 +41,6 @@ font-weight: ${p => p.theme.fontWeights.semiBold};
 font-size: ${p => p.theme.fontSizes.s};
 line-height: ${p => p.theme.lineHeights.secondary};
 padding: 8px 28px;
-box-sizing: border-box;
 ${p => p.theme.breakpoints.tab} {
     height: 44px;
     padding: 10px 28px;
