@@ -15,17 +15,21 @@ export const Container = styled.div`
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     flex-direction: row-reverse;
+    padding-right: 40px;
+    justify-content: space-between;
   }
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  /* width: 280px; */
   align-items: center;
   padding-left: 16px;
   padding-right: 12px;
   gap: 8px;
+  ${p => p.theme.breakpoints.tab} {
+    padding-left: 32px;
+  }
 `;
 
 export const Label = styled.label`
@@ -34,6 +38,9 @@ export const Label = styled.label`
   width: 100%;
   gap: 10px;
   align-items: center;
+  ${p => p.theme.breakpoints.tab} {
+    gap: 30px;
+  }
 `;
 
 export const LabelText = styled.p`
@@ -41,7 +48,11 @@ export const LabelText = styled.p`
   margin-right: auto;
   font-size: ${p => p.theme.fontSizes.xs};
   font-family: ${p => p.theme.fonts.main};
-  font-weight: ${p => p.theme.fontWeights.normal};
+  font-weight: ${p => p.theme.fontWeights.semiBold};
+  line-height: ${p => p.theme.lineHeights.secondary};
+  ${p => p.theme.breakpoints.tab} {
+    font-size: 18px;
+  }
 `;
 
 export const AvatarBox = styled.div`
@@ -67,6 +78,7 @@ export const Input = styled.input`
   font-size: ${p => p.theme.fontSizes.xs};
   font-family: ${p => p.theme.fonts.main};
   font-weight: ${p => p.theme.fontWeights.normal};
+  line-height: ${p => p.theme.lineHeights.secondary};
   border: ${p => p.theme.borders.input};
   outline: 0;
   background-color: ${p => p.theme.colors.background.modalInput};
@@ -75,6 +87,10 @@ export const Input = styled.input`
   &:disabled {
     background-color: ${p => p.theme.colors.background.white};
     border: transparent;
+  }
+  ${p => p.theme.breakpoints.tab} {
+    font-size: 18px;
+    width: 210px;
   }
 `;
 

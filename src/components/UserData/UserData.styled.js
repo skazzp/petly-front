@@ -7,8 +7,9 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  /* margin-left: 20px; */
-  /* margin-right: 20px; */
+  ${p => p.theme.breakpoints.tab} {
+    padding-right: 32px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -24,5 +25,6 @@ export const Title = styled.h1`
     font-size: ${p => p.theme.fontSizes.xl};
     width: 100%;
     text-align: start;
+    padding-left: 32px;
   }
 `;
