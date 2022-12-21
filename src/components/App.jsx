@@ -61,7 +61,7 @@ export const App = () => {
               <PublicRoute redirectTo="/notices" component={<LoginPage />} />
             }
           />
-          {/* <Route path="friends" element={<OurFriend />} /> */}
+          <Route path="friends" element={<FriendsPage />} />
           <Route path="news" element={<NewsPage />} />
           <Route path="notices" element={<NoticesPage />}>
             <Route path="lost-found" element={<></>} />

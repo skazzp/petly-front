@@ -7,8 +7,8 @@ export const FormStyled = styled(Form)`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  margin-bottom: 16px;
   font-size: 18px;
+  font-weight: 500;
   line-height: 1.44;
 `;
 
@@ -70,21 +70,24 @@ export const Overlay = styled.div`
 
 export const Wrapper = styled.div`
   position: relative;
-  z-index: 1000;
+  z-index: 10;
   width: 280px;
   text-align: center;
   border-radius: 20px;
   padding: 40px 18px;
+  margin: 50px auto;
   background-color: ${p => p.theme.colors.white};
 
   ${p => p.theme.breakpoints.tab} {
     width: 608px;
     padding: 40px 80px;
+    color: ${p => p.theme.colors.fullBlack};
   }
 `;
 
 export const Header = styled.h2`
   font-size: 24px;
+  font-weight: 500;
   margin-bottom: 20px;
 
   ${p => p.theme.breakpoints.tab} {
@@ -112,11 +115,6 @@ export const CloseBtn = styled.button`
   border: none;
   background-color: #fdf7f2;
   backdrop-filter: blur(2px);
-
-  &:hover,
-  &:focus {
-    color: red;
-  }
 `;
 
 export const Svg = styled.svg`
@@ -126,9 +124,11 @@ export const Svg = styled.svg`
 `;
 
 export const Text = styled.p`
+  font-weight: 500;
   margin-bottom: 20px;
 
   ${p => p.theme.breakpoints.tab} {
+    margin-bottom: 28px;
     font-size: 20px;
   }
 `;
@@ -160,6 +160,7 @@ export const RadioBtn = styled.div`
   ${RadioStyled}:focus + & {
     color: ${p => p.theme.colors.black};
     background-color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.white};
   }
 `;
 
@@ -178,6 +179,7 @@ export const Label = styled.label`
   margin-bottom: 8px;
 
   ${p => p.theme.breakpoints.tab} {
+    margin-bottom: 12px;
     font-size: 24px;
   }
 `;
@@ -191,6 +193,7 @@ export const SubmitBtnWrapper = styled.div`
   ${p => p.theme.breakpoints.tab} {
     flex-direction: row-reverse;
     justify-content: center;
+    gap: 20px;
     width: 100%;
   }
 `;
@@ -221,6 +224,11 @@ export const SubmitBtn = styled.button`
     width: 180px;
     height: 44px;
   }
+
+  &:nth-child(odd) {
+    color: ${p => p.theme.colors.white};
+    background-color: ${p => p.theme.colors.accent};
+  }
 `;
 
 export const SexWrapper = styled.fieldset`
@@ -236,6 +244,7 @@ export const SexTitle = styled.legend`
   margin-right: auto;
 
   ${p => p.theme.breakpoints.tab} {
+    margin-bottom: 28px;
     font-size: 24px;
   }
 `;
@@ -253,6 +262,11 @@ export const SexIcon = styled.span`
   width: 40px;
   height: 40px;
   margin: 0 auto 12px;
+
+  ${p => p.theme.breakpoints.tab} {
+    width: 54px;
+    height: 54px;
+  }
 `;
 
 export const SexText = styled.span`
