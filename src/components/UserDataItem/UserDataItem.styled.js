@@ -9,6 +9,7 @@ export const Container = styled.div`
   padding-top: ${p => p.theme.space[4]}px;
   padding-bottom: ${p => p.theme.space[4]}px;
   border-radius: ${p => p.theme.radii.md};
+  box-shadow: 7px 4px 14px 0px #0000001c;
 `;
 
 export const Form = styled.form`
@@ -43,6 +44,7 @@ export const AvatarBox = styled.div`
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 36px;
+  box-shadow: 7px 4px 14px 0px #0000001c;
 `;
 
 export const Avatar = styled.img`
@@ -111,5 +113,6 @@ export const LogoutBtn = styled.button`
 export const LogoutIcon = styled.svg`
   width: 18px;
   height: 18px;
-  fill: ${p => p.theme.colors.accent};
+  fill: #f59256;
+  stroke: #f59256;
 `;

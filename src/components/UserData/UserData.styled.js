@@ -18,4 +18,5 @@ export const Title = styled.h1`
   width: 280px;
   margin-top: 50px;
   margin-bottom: 18px;
+  /* ${p => p.theme.} */
 `;

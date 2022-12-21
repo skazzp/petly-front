@@ -79,17 +79,6 @@ const UserDataItem = () => {
 
   return (
     <Container>
-      <button
-        type="click"
-        onClick={() =>
-          dispatch(
-            loginUser({
-              email: 'yatomat2@gmail.com',
-              password: '1231234',
-            })
-          )
-        }
-      ></button>
       <AvatarBox>
         <Avatar src={`${user.avatarURL}`} alt="avatar" />
       </AvatarBox>
@@ -228,8 +217,8 @@ const UserDataItem = () => {
               dispatch(logOutUser());
             }}
           >
-            <LogoutIcon>
-              <use href={icons + '#icon-logout-desc'}></use>
+            <LogoutIcon fill="red">
+              <use href={icons + '#icon-logout'}></use>
             </LogoutIcon>
             Log Out
           </LogoutBtn>
