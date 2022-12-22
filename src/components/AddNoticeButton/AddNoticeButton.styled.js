@@ -6,17 +6,20 @@ export const BtnWrapper = styled.div`
   align-items: center;
 
   position: absolute;
-  right: 20px;
-  top: 455px;
+  right: 0;
+  top: 232px;
   z-index: 10;
+  font-weight: 500;
+  font-size: 12px;
   cursor: pointer;
-  transition: var(--transition);
 
   ${p => p.theme.breakpoints.tab} {
     position: relative;
     right: 0;
     top: 0;
     z-index: 0;
+    height: 44px;
+    font-size: 20px;
   }
 `;
 

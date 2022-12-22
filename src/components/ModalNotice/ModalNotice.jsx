@@ -75,7 +75,7 @@ const ModalNotice = () => {
     const finedNotice = favoriteNotice.find(el => el === noticeId);
     return finedNotice;
   };
-  let finedNotice = findFavoriteNotice(data._id);
+  // let finedNotice = findFavoriteNotice(data._id);
   useEffect(() => {
     setIsFavorite(findFavoriteNotice(data._id));
     // eslint-disable-next-line
