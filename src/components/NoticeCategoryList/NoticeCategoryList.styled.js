@@ -1,5 +1,20 @@
 import styled from 'styled-components';
 
+export const NotFoundBox = styled.div`
+  text-align: center;
+`;
+
+export const Title = styled.h1`
+  font-weight: ${props => props.theme.fontWeights.bold};
+  font-size: ${props => props.theme.fontSizes.ml};
+  line-height: ${props => props.theme.lineHeights.main};
+
+  ${p => p.theme.breakpoints.tab} {
+    font-size: ${props => props.theme.fontSizes.xl};
+    line-height: 1.5;
+  }
+`;
+
 export const Wrapper = styled.div`
   /* width: 320px; */
   margin-left: auto;
@@ -19,7 +34,7 @@ export const List = styled.ul`
   align-items: center;
   width: 280px;
 
-  @media screen and (min-width: 768px) {
+  ${p => p.theme.breakpoints.tab} {
     display: flex;
     gap: 32px;
     width: 704px;
@@ -28,7 +43,18 @@ export const List = styled.ul`
     flex-direction: row;
   }
 
-  @media screen and (min-width: 1280px) {
+  ${p => p.theme.breakpoints.desc} {
     width: 1248px;
+  }
+`;
+
+export const Img = styled.img`
+  width: 280px;
+  ${p => p.theme.breakpoints.tab} {
+    width: 500px;
+  }
+
+  ${p => p.theme.breakpoints.desc} {
+    width: 700px;
   }
 `;
