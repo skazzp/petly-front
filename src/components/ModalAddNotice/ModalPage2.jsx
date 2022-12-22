@@ -60,7 +60,6 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
   const [fileInput, setFileInput] = useState(formData.image);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const selectFile = (e, setFieldValue) => {
     const [file] = e.target.files;
     if (file) {
@@ -70,7 +69,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
     }
   };
 
-  const onSubmit = values => {
+  const onSubmit = async values => {
     setFormData({
       ...values,
       image: fileInput,

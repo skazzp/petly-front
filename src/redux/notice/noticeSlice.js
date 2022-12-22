@@ -13,7 +13,7 @@ import {
   getByQuery,
 } from './noticeOperations';
 
-const userInitialState = {
+const noticeInitialState = {
   notices: [],
   totalPages: 1,
   // categories: [],
@@ -42,7 +42,7 @@ const rejectedHandler = (state, action) => {
 const noticeSlice = createSlice({
   name: 'notice',
 
-  initialState: userInitialState,
+  initialState: noticeInitialState,
 
   reducers: {
     openModal(state, action) {
@@ -89,7 +89,7 @@ const noticeSlice = createSlice({
     builder.addCase(createNotice.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.notices.push(action.payload);
+      state.notices.push(action.payload.data);
       state.isModalAddNoticeOpen = false;
     });
     builder.addCase(getAllNotices.fulfilled, (state, action) => {

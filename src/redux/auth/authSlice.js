@@ -62,7 +62,18 @@ const authSlice = createSlice({
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.user = action.payload.user;
+      const { email, password, name, city, phone, _id, avatarURL, favorites } =
+        action.payload;
+      state.user = {
+        email,
+        password,
+        name,
+        city,
+        phone,
+        _id,
+        avatarURL,
+        favorites,
+      };
       state.token = action.payload.token;
     });
 

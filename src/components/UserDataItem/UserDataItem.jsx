@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { editUser, loginUser, logOutUser } from 'redux/auth/authOperation';
+import { editUser, logOutUser } from 'redux/auth/authOperation';
 import { selectUser } from 'redux/auth/authSelectors';
 // import { changeUserData } from 'redux/auth/authSlice';
 import icons from '../../assets/images/icons.svg';
@@ -79,24 +79,13 @@ const UserDataItem = () => {
 
   return (
     <Container>
-      <button
-        type="click"
-        onClick={() =>
-          dispatch(
-            loginUser({
-              email: 'yatomat2@gmail.com',
-              password: '1231234',
-            })
-          )
-        }
-      ></button>
-      <AvatarBox>
-        <Avatar src={`${user.avatarURL}`} alt="avatar" />
-      </AvatarBox>
-      <UpdateAvatar />
+      <div>
+        <AvatarBox>
+          <Avatar src={`${user.avatarURL}`} alt="avatar" />
+        </AvatarBox>
+        <UpdateAvatar />
+      </div>
       <Form onSubmit={formik.handleSubmit}>
-        {/* test login func */}
-
         <Label name="name" htmlFor="name">
           <LabelText>Name:</LabelText>
           <Input
@@ -117,7 +106,7 @@ const UserDataItem = () => {
           {!disabled.name && (
             <Btn type="submit">
               <BtnIcon>
-                <use href={`${icons}#icon-ci_edit`}></use>
+                <use href={`${icons}#icon-edit_check`}></use>
               </BtnIcon>
             </Btn>
           )}
@@ -230,7 +219,7 @@ const UserDataItem = () => {
               dispatch(logOutUser());
             }}
           >
-            <LogoutIcon>
+            <LogoutIcon fill="red">
               <use href={icons + '#icon-logout'}></use>
             </LogoutIcon>
             Log Out
