@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/authSelectors';
 import { getByCategory } from 'redux/notice/noticeOperations';
 import { v4 as uuidv4 } from 'uuid';
-import AddNoticeButton from 'components/AddNoticeButton';
+
 import { Button, FilterList, Item, Wrapper } from './FilterBtn.styled';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import AddNoticeButton from '../AddNoticeButton/AddNoticeButton';
 
 const buttons = [
   {
@@ -36,9 +39,22 @@ function FilterBtn() {
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
 
+  const [search] = useSearchParams();
+  // const [totalPage, setTotalPage] = useState(1);
+  const page = search.get('page');
+
   const handleClick = e => {
-    dispatch(getByCategory(e.target.name));
+    dispatch(getByCategory({ category: e.target.name, page }));
   };
+  const location = useLocation();
+  console.log(location);
+
+  useEffect(() => {
+    const category = location.pathname.split('/')[2];
+    if (category) {
+      dispatch(getByCategory({ category: category, page }));
+    }
+  }, [dispatch, location.pathname, page]);
 
   return (
     <Wrapper>

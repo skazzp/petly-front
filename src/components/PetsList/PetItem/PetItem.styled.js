@@ -31,6 +31,7 @@ export const Img = styled.img`
   @media (min-width: 768px) {
     width: 161px;
     height: 161px;
+    margin:0;
   }
 `;
 
@@ -44,8 +45,13 @@ export const Li = styled.li`
   }
   @media (min-width: 768px) {
     font-size: ${props => props.theme.fontSizes.m};
+    
   }
 `;
+
+export const Span = styled.span`
+font-weight: ${props => props.theme.fontWeights.normal};
+`
 export const Ul = styled.ul`
   position: relative;
   list-style: none;
@@ -57,7 +63,11 @@ export const Ul = styled.ul`
   margin-bottom: 20px;
   @media (min-width: 768px) {
     margin: 0;
+    min-width: 471px;
   }
+  @media (min-width: 1200px) {
+    min-width: 580px;
+  } 
 `;
 
 export const ButtonDel = styled.button`

@@ -1,4 +1,5 @@
 export const selectNotices = state => state.notice.notices;
+export const selectTotalPages = state => state.notice.totalPages;
 export const selectError = state => state.notice.error;
 export const selectIsLoading = state => state.notice.isLoading;
 export const isModalAddNoticeOpen = state => state.notice.isModalAddNoticeOpen;

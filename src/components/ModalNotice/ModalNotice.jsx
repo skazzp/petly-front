@@ -75,7 +75,6 @@ const ModalNotice = () => {
     const finedNotice = favoriteNotice.find(el => el === noticeId);
     return finedNotice;
   };
-  let finedNotice = findFavoriteNotice(data._id);
   useEffect(() => {
     setIsFavorite(findFavoriteNotice(data._id));
     // eslint-disable-next-line
@@ -189,7 +188,7 @@ const ModalNotice = () => {
         </div>
         <ListButtons>
           <ItemContact>
-            <Link href={data.owner.phone}>
+            <Link href={`tel:${data.owner.phone}`}>
               <ContactText>Contact</ContactText>
             </Link>
           </ItemContact>

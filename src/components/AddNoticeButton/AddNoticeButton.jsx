@@ -4,8 +4,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { selectToken } from '../../redux/auth/authSelectors';
 import { useIsMobile } from '../../hooks/mediaQuery';
-import { ModalNav } from '../ModalNav/ModalNav';
-import ModalAddNotice from '../ModalAddNotice';
+import ModalAddNotice from '../ModalAddNotice/ModalAddNotice.jsx';
 import icons from '../../assets/images/icons.svg';
 import { BtnWrapper, AddBtn, Plus } from './AddNoticeButton.styled';
 
@@ -39,13 +38,11 @@ const AddNoticeButton = () => {
         </>
       )}
       {isOpen && (
-        <ModalNav>
-          <ModalAddNotice
-            onClose={() => {
-              setIsOpen(false);
-            }}
-          />
-        </ModalNav>
+        <ModalAddNotice
+          onClose={() => {
+            setIsOpen(false);
+          }}
+        />
       )}
     </>
   );

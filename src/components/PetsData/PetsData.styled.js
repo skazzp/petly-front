@@ -29,7 +29,10 @@ export const Titles=styled.div`
 display: flex;
 justify-content: space-between;
 align-items: flex-end;
-
+@media (min-width: 1200px) {
+   width: 821px;
+   
+  } 
 
 `
 
