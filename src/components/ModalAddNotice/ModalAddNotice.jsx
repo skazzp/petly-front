@@ -23,7 +23,7 @@ const ModalAddNotice = ({ onClose }) => {
     breed: '',
     sex: '',
     location: '',
-    price: '',
+    price: '1$',
     image: '',
     comments: '',
   });
