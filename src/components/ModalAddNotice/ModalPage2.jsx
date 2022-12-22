@@ -44,7 +44,6 @@ const validationSchema = yup.object({
       /^[1-9]+[0-9]*\$$/g,
       'Only number characters and $ are allowed, e.g. 50$'
     ),
-  // .required('Field is required!')
   image: yup
     .mixed()
     .required('Image is required! (jpg, jpeg, png)')
@@ -75,8 +74,8 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
     setFormData({
       ...values,
       image: fileInput,
-      // price: values.category !== 'sell' ? '1$' : values.price,
     });
+    values.price = values.price.replace('$', '');
     dispatch(createNotice(values));
     navigate('/notices/own');
     onClose();
