@@ -1,11 +1,8 @@
 import {
   Wrapper,
   Container,
-  Div,
   Img,
   Title,
-  Item,
-  List,
   WrapperIMG,
   WrapperContent,
   Data,
@@ -16,10 +13,11 @@ import {
   WrapperTimeHover,
 } from './Friends.styled';
 import no_foto from '../../assets/images/not_found.jpg';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Friends = ({ friends }) => {
   const {
-    _id,
     title,
     address,
     addressUrl,
@@ -35,7 +33,7 @@ const Friends = ({ friends }) => {
       return '';
     }
     return (
-      <a href={addressUrl} target="_blank">
+      <a href={addressUrl} target="_blank" rel="noreferrer">
         <IconAddress />
       </a>
     );
@@ -49,17 +47,21 @@ const Friends = ({ friends }) => {
     const result = arr?.map(item => {
       if (item.isOpen) {
         return (
-          <p key={_id + title}>
+          
+            <li key={uuidv4()}
+          >
             <span>{item.week}</span>
             {item.from}:{item.to}
-          </p>
+          </li>
+          
+          
         );
       }
       return (
-        <p key={_id + title}>
+        <li key={uuidv4()}>
           <span>{item.week}</span>
           --:--
-        </p>
+        </li>
       );
     });
 
@@ -93,8 +95,8 @@ const Friends = ({ friends }) => {
               ? timeOne(newWorkDays)
               : '----------------------------------'}
             <WrapperTimeHover>
-              {fullTime(newWorkDays)
-              }
+             <ul> {fullTime(newWorkDays)
+              }</ul>
             </WrapperTimeHover>
           </Data>
           <Address>
@@ -119,10 +121,3 @@ const Friends = ({ friends }) => {
 
 export default Friends;
 
-// isOpen(pin):true
-// from(pin):"09:00"
-// to(pin):"17:00"
-
-// newWorkDays?newWorkDays?.map(item => findTime(item))
-
-// timeOne(newWorkDays)
