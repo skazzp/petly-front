@@ -46,7 +46,6 @@ const ModalNotice = () => {
   const data = useSelector(state => state.notice.modalData);
   const favoriteNotice = useSelector(state => state.auth.user.favorites);
   const isAuth = useSelector(state => state.auth.token);
-  console.log(isAuth);
 
   const [isFavorite, setIsFavorite] = useState(null);
 
@@ -94,7 +93,7 @@ const ModalNotice = () => {
   };
   const handleClick = () => {
     if (!isAuth) {
-      toast.error('You must be sign up!');
+      toast.error('You must be logged in!');
       return;
     }
   };

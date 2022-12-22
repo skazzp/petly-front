@@ -28,35 +28,22 @@ const NoticeCategoryList = () => {
   const dispatch = useDispatch();
 
   const [search, setSearch] = useSearchParams();
-  // const [totalPage, setTotalPage] = useState(1);
   const page = search.get('page');
 
-  // console.log(notices.totalPages);
-  // useEffect(() => {
-  //   dispatch(getAllNotices());
-  // }, [dispatch]);
   const location = useLocation();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   const f = loc => {
     if (location.pathname === '/notices' || location.pathname === '/notices/') {
-      // setSearch(1);
       return dispatch(getAllNotices(page));
     }
-    // return dispatch(getByCategory());
     return null;
   };
-  // useEffect(() => {
-  //   dispatch(getAllNotices(page));
-  // }, [dispatch, page]);
+
   useEffect(() => {
     f(location);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
   const isModalOpen = useSelector(state => state.notice.isLearnMoreModalOpen);
-  // let reversedNotices;
-  // notices && notices.length > 0
-  //   ? (reversedNotices = [...notices].reverse())
-  //   : (reversedNotices = []);
 
   return !isLoading && notices.length === 0 ? (
     <NotFoundBox>
@@ -72,11 +59,13 @@ const NoticeCategoryList = () => {
               <NoticeCategoryItem key={notice._id} notice={notice} />
             ))}
           </List>
-          <PaginationNotices
-            page={page}
-            setSearch={setSearch}
-            totalPages={selectTotalPage}
-          />
+          {selectTotalPage > 1 && (
+            <PaginationNotices
+              page={page}
+              setSearch={setSearch}
+              totalPages={selectTotalPage}
+            />
+          )}
         </>
       ) : (
         <LoaderSpiner />
