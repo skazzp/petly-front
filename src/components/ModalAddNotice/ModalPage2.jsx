@@ -75,21 +75,15 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
       ...values,
       image: fileInput,
     });
-<<<<<<< Updated upstream
-    values.price = values.price.replace('$', '');
-    dispatch(createNotice(values));
-    navigate('/notices/own');
-=======
 
     if (values.category === 'sell') {
       values.price = values.price.replace('$', '');
     } else {
       delete values.price;
     }
-    
+
     dispatch(createNotice(values));
     navigate('/notices/personal');
->>>>>>> Stashed changes
     onClose();
   };
 
