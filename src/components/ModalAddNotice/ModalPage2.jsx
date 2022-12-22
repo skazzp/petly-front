@@ -74,8 +74,14 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
       ...values,
       image: fileInput,
     });
-    values.price = values.price.replace('$', '');
-    await dispatch(createNotice(values));
+
+    if (values.category === 'sell') {
+      values.price = values.price.replace('$', '');
+    } else {
+      delete values.price;
+    }
+
+    dispatch(createNotice(values));
     navigate('/notices/personal');
     onClose();
   };
