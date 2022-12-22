@@ -75,7 +75,6 @@ export const Label = styled.label`
   border-radius: 40px;
   margin-bottom: 13px;
   padding: 11px 14px;
-  padding-right: 5px;
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
@@ -265,12 +264,12 @@ export const ButtonBack = styled.button`
   }
 `;
 export const Validation = styled.p`
-  text-align: center;
-
+  text-align: end;
+  width: 100%;
   font-family: 'Manrope';
   font-weight: 400;
   font-size: 12px;
-  line-height: 22px;
+  line-height: 18px;
   margin: 0;
   padding: 0;
 
@@ -283,16 +282,16 @@ export const Validation = styled.p`
 
   @media screen and (min-width: 768px) {
     font-family: 'Manrope';
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
   }
 
   @media screen and (min-width: 1280px) {
     font-family: 'Manrope';
     font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 16px;
+    line-height: 22px;
   }
 `;
 
