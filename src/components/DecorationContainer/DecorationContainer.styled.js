@@ -13,31 +13,27 @@ import SmileGirlDesk1x from '../../assets/images/bg/Bg-girl-desc-1x.png';
 import SmileGirlDesk2x from '../../assets/images/bg/Bg-girl-desc-2x.png';
 
 export const WaveSmall = styled.div`
-  z-index: -2;
-  height: 470px;
-  width: 620px;
-  position: fixed;
-  bottom: -14px;
-  right: -214px;
 
-  background-image: url(${Wave});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
+z-index: -2;
+height: 470px;
+width: 620px;
+position: fixed;
+bottom: -14px;
+right: -214px;
+background-image:  
+url(${Wave});
+background-repeat: no-repeat;
+background-size: cover;
+background-position: bottom;
 
-  @media screen and (min-width: 768px) {
-    height: 1098px;
-    width: 1449px;
-    transform: rotate(-8deg);
-    position: fixed;
-    top: 167px;
-    right: -550px;
-    background-image: url(${Wave});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-  }
-`;
+${p => p.theme.breakpoints.tab} {
+height: 1098px;
+width: 1449px;
+transform: rotate(-8deg);
+top: 167px;
+right: -550px;
+}
+`
 export const WaveLight = styled.div`
   z-index: -2;
   height: 826px;
@@ -75,78 +71,72 @@ export const WaveCircle = styled.div`
   background-position: bottom;
 `;
 export const WaveHeart = styled.div`
-  z-index: -3;
-  height: 89px;
-  width: 92px;
-  position: fixed;
-  bottom: 509px;
-  right: 476px;
-  background-image: url(${Heart});
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-`;
-export const WaveFrame = styled.div`
-  z-index: -3;
-  height: 393px;
-  width: 511px;
-  position: fixed;
-  bottom: 0px;
-  right: -49px;
-  background-image: url(${Frame});
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-`;
-export const WaveGirl = styled.div`
-  z-index: -1;
-  height: 337px;
-  width: 320px;
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
-  background-image: url(${SmileGirlMobile1x});
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: url(${SmileGirlMobile2x});
-  }
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
+z-index: -3;
+height: 89px;
+width: 92px;
+position: fixed;
+bottom: 509px;
+right: 476px;
+background-image:  
+url(${Heart});
+background-repeat: no-repeat;
+background-size: contain;
+background-position: bottom;
+`
+export const WaveFrame =styled.div`
+z-index: -3;
+height: 393px;
+width: 511px;
+position: fixed;
+bottom: 0px;
+right: -49px;
+background-image:  
+url(${Frame});
+background-repeat: no-repeat;
+background-size: contain;
+background-position: bottom;
+`
+export const WaveGirl =styled.div`
+z-index: -1;
+height: 337px;
+width: 320px;
+position: fixed;
+bottom: 0px;
+right: 0px;
+background-repeat: no-repeat;
+background-size: contain;
+background-position: bottom;
+background-image:  
+url(${SmileGirlMobile1x});
+${p => p.theme.retina.double} {
+    background-image:  
+url(${SmileGirlMobile2x});
+}
 
-  @media screen and (min-width: 768px) {
-    z-index: -1;
-    height: 733px;
-    width: 699px;
-    position: fixed;
-    bottom: 0px;
-    right: 37px;
-    background-image: url(${SmileGirlTablet1x});
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(${SmileGirlTablet2x});
+
+${p=>p.theme.breakpoints.tab}{
+height: 733px;
+width: 699px;
+bottom: 0px;
+right: 37px;
+background-image:  
+url(${SmileGirlTablet1x});
+${p => p.theme.retina.double} {
+    background-image:  
+url(${SmileGirlTablet2x});
+}
+
+}
+${p=>p.theme.breakpoints.desc} {
+height: 655px;
+width: 624px;
+bottom: 0px;
+right: 0px;
+background-image:  
+url(${SmileGirlDesk1x});
+    ${p=>p.theme.retina.double} {
+        background-image:  
+    url(${SmileGirlDesk2x});
     }
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-  }
-  @media screen and (min-width: 1280px) {
-    z-index: -1;
-    height: 655px;
-    width: 624px;
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    background-image: url(${SmileGirlDesk1x});
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(${SmileGirlDesk2x});
-    }
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-  }
-`;
+}
+`

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.div`
+  position: relative;
   ${p => p.theme.breakpoints.tab} {
     display: flex;
     justify-content: space-between;
@@ -13,11 +14,10 @@ export const FilterList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  /* row-gap: 12px;
-  column-gap: 16px; */
 
   ${p => p.theme.breakpoints.tab} {
-    max-width: 475px;
+    max-width: 500px;
+    row-gap: 16px;
   }
 
   ${p => p.theme.breakpoints.desc} {

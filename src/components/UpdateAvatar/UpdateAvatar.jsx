@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Input, Label, LabelIcon, LabelText } from './UpdateAvatar.styled';
+import {
+  Input,
+  Label,
+  LabelContainer,
+  LabelIcon,
+  LabelText,
+} from './UpdateAvatar.styled';
 import icons from '../../assets/images/icons.svg';
 import { editAvatar } from 'redux/auth/authOperation';
 
@@ -8,7 +14,7 @@ const UpdateAvatar = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const dispatch = useDispatch();
   return (
-    <div>
+    <LabelContainer>
       <Label htmlFor="avatar">
         <LabelIcon>
           <use href={icons + '#edit-button-desk'}></use>
@@ -42,7 +48,7 @@ const UpdateAvatar = () => {
           </button>
         </div>
       )}
-    </div>
+    </LabelContainer>
   );
 };
 

@@ -1,1 +1,1 @@
-export {ModalNav} from './ModalNav';
+export {ModalNav} from './ModalNav'

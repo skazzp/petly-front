@@ -5,35 +5,32 @@ export const Link = styled(NavLink)`
 display: inline-flex;
 align-items: center;
 justify-content: center;
-background-color: #F59256;
-color: white;
+background-color: ${p=>p.theme.colors.background.accent};
+color: ${p=>p.theme.colors.white};
 height: 35px;
-border-radius: 40px;
-font-weight: 500;
-font-size: 14px;
-line-height: 1.36;
-letter-spacing: 0.04em;
-text-decoration: none;
+border-radius: ${p=>p.theme.radii.lg};
+font-weight: ${p=>p.theme.fontWeights.semiBold};
+font-size: ${p=>p.theme.fontSizes.s};
 padding: 8px 36px;
-box-sizing: border-box;
-margin-bottom: 60px;
-@media screen and (min-width: 768px) {
-    margin-bottom: 0;
-    margin-right: 20px;
+${p=>p.theme.breakpoints.onlyMob} {
+    margin-bottom: 60px;
+}
+${p=>p.theme.breakpoints.onlyTab} {
+    margin-right: ${p=>p.theme.space[4]}px;
+}
+${p=>p.theme.breakpoints.tab} {
     height: 44px;
     padding: 8px 28px;
-    font-size: 16px;
+    font-size: ${p=>p.theme.fontSizes.m};
 }
-@media screen and (min-width: 1280px) {
-    margin-right: 0;
-}
+
 `
 
 export const UserSvg = styled.svg`
-width: 20px;
-height: 20px;
-margin-right: 12px;
-@media screen and (min-width: 768px) {
+width: ${p=>p.theme.space[4]}px;
+height: ${p=>p.theme.space[4]}px;
+margin-right: ${p=>p.theme.space[2]}px;
+${p=>p.theme.breakpoints.tab} {
     width: 28px;
     height: 28px;
 }

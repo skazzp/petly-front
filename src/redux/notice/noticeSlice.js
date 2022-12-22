@@ -13,8 +13,9 @@ import {
   getByQuery,
 } from './noticeOperations';
 
-const userInitialState = {
+const noticeInitialState = {
   notices: [],
+  totalPages: 1,
   // categories: [],
   isLoading: false,
   error: null,
@@ -27,6 +28,10 @@ const pendingHandlerAuth = (state, action) => {
   state.isLoading = true;
   state.error = null;
 };
+const pendingHandlerForNoticeDetails = (state, action) => {
+  // state.isLoading = false;
+  state.error = null;
+};
 
 const rejectedHandler = (state, action) => {
   state.isLoading = false;
@@ -37,7 +42,7 @@ const rejectedHandler = (state, action) => {
 const noticeSlice = createSlice({
   name: 'notice',
 
-  initialState: userInitialState,
+  initialState: noticeInitialState,
 
   reducers: {
     openModal(state, action) {
@@ -65,8 +70,8 @@ const noticeSlice = createSlice({
     builder.addCase(deleteNotices.pending, pendingHandlerAuth);
     builder.addCase(getFavoriteNotices.pending, pendingHandlerAuth);
     builder.addCase(getUserNotices.pending, pendingHandlerAuth);
-    builder.addCase(deleteFavorites.pending, pendingHandlerAuth);
-    builder.addCase(addFavorites.pending, pendingHandlerAuth);
+    builder.addCase(deleteFavorites.pending, pendingHandlerForNoticeDetails);
+    builder.addCase(addFavorites.pending, pendingHandlerForNoticeDetails);
     builder.addCase(getByCategory.pending, pendingHandlerAuth);
     builder.addCase(getByQuery.pending, pendingHandlerAuth);
 
@@ -84,13 +89,14 @@ const noticeSlice = createSlice({
     builder.addCase(createNotice.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.notices.push(action.payload);
+      state.notices.push(action.payload.data);
       state.isModalAddNoticeOpen = false;
     });
     builder.addCase(getAllNotices.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.notices = action.payload;
+      state.notices = action.payload.data;
+      state.totalPages = action.payload.totalPages;
     });
     builder.addCase(getNoticeDetails.fulfilled, (state, action) => {
       state.error = null;
@@ -117,18 +123,19 @@ const noticeSlice = createSlice({
     });
     builder.addCase(deleteFavorites.fulfilled, (state, action) => {
       state.error = null;
-      state.isLoading = false;
+      // state.isLoading = false;
       // TODO: редактировать нужный нотис в стейте или юзера ?
     });
     builder.addCase(addFavorites.fulfilled, (state, action) => {
       state.error = null;
-      state.isLoading = false;
+      // state.isLoading = false;
       // TODO: редактировать нужный нотис в стейте или юзера ?
     });
     builder.addCase(getByCategory.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.notices = action.payload;
+      state.notices = action.payload.data;
+      state.totalPages = action.payload.totalPages;
     });
     builder.addCase(getByQuery.fulfilled, (state, action) => {
       state.error = null;

@@ -8,8 +8,15 @@ axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
 export const createNotice = createAsyncThunk(
   'notice/createNotice',
   async (notice, thunkApi) => {
+    // const formData = new FormData();
+    // formData.append('image', notice);
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    };
     try {
-      const response = await axios.post('/api/notices/create', notice);
+      const response = await axios.post('/api/notices/create', notice, config);
       console.log('createNotice', response.data);
       return response.data;
     } catch (error) {
@@ -21,11 +28,14 @@ export const createNotice = createAsyncThunk(
 // Get all notices for logged in user
 export const getAllNotices = createAsyncThunk(
   'notice/getAllNotices',
-  async (_, thunkApi) => {
+  async (page, thunkApi) => {
     try {
-      const response = await axios.get('/api/notices');
+      const response = await axios.get('/api/notices', {
+        params: { page },
+      });
       // console.log('getAllNotices', response);
-      return response.data.data;
+      console.log(response);
+      return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }
@@ -135,7 +145,8 @@ export const addFavorites = createAsyncThunk(
 // Get by category
 export const getByCategory = createAsyncThunk(
   'notice/getByCategory',
-  async (category, thunkApi) => {
+
+  async ({ category, page }, thunkApi) => {
     let path;
     if (category === 'personal' || category === 'favorites') {
       path = category;
@@ -146,8 +157,11 @@ export const getByCategory = createAsyncThunk(
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
-      const response = await axios.get(`/api/notices/${path}`);
-      return response.data.data; // TODO
+      const response = await axios.get(`/api/notices/${path}`, {
+        params: { page },
+      });
+      console.log(response);
+      return response.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }

@@ -56,11 +56,13 @@ export const SexInputStyled = styled(Field)`
 `;
 
 export const Overlay = styled.div`
-  background: rgba(17, 17, 17, 0.6);
+  background: ${p => p.theme.colors.background.backdrop};
   backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
 
   display: flex;
   justify-content: center;
@@ -81,6 +83,7 @@ export const Wrapper = styled.div`
   ${p => p.theme.breakpoints.tab} {
     width: 608px;
     padding: 40px 80px;
+    border-radius: 40px;
     color: ${p => p.theme.colors.fullBlack};
   }
 `;
@@ -92,6 +95,7 @@ export const Header = styled.h2`
 
   ${p => p.theme.breakpoints.tab} {
     font-size: 36px;
+    font-weight: 600;
   }
 `;
 
@@ -115,6 +119,13 @@ export const CloseBtn = styled.button`
   border: none;
   background-color: #fdf7f2;
   backdrop-filter: blur(2px);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translate(-2%, -2%);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
+      -8px -8px 12px rgba(255, 255, 255, 0.3);
+  }
 `;
 
 export const Svg = styled.svg`
@@ -213,21 +224,24 @@ export const SubmitBtn = styled.button`
   line-height: 1.37;
   letter-spacing: 0.04em;
   cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:nth-child(odd) {
+    color: ${p => p.theme.colors.white};
+    background-color: ${p => p.theme.colors.accent};
+  }
 
   &:hover,
   &:focus {
     color: ${p => p.theme.colors.white};
     background-color: ${p => p.theme.colors.accent};
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
+      -8px -8px 12px rgba(255, 255, 255, 0.3);
   }
 
   ${p => p.theme.breakpoints.tab} {
     width: 180px;
     height: 44px;
-  }
-
-  &:nth-child(odd) {
-    color: ${p => p.theme.colors.white};
-    background-color: ${p => p.theme.colors.accent};
   }
 `;
 

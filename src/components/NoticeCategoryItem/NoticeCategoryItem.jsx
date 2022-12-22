@@ -1,5 +1,4 @@
 import icon from '../../assets/images/icons.svg';
-import defaultImage from '../../assets/images/default-pets.jpg';
 import { useDispatch, useSelector } from 'react-redux';
 import { addModalData, openLearnMoreModal } from 'redux/notice/noticeSlice';
 import {
@@ -52,7 +51,7 @@ const NoticeCategoryItem = ({ notice }) => {
 
   const user = useSelector(selectUser);
 
-  const isOwner = user?._id === owner?._id; // TODO replace !== to === and check it with id
+  const isOwner = user?._id === owner?._id || user?._id === owner;
   const favoriteNotice = useSelector(state => state.auth.user.favorites);
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -126,7 +125,7 @@ const NoticeCategoryItem = ({ notice }) => {
   return (
     <>
       <Item>
-        <Image src={photoURL ? photoURL : defaultImage} alt={breed} />
+        <Image src={photoURL} alt={breed} />
         <Category>{setCategory(category)}</Category>
 
         <BtnAddFavorite
@@ -160,7 +159,7 @@ const NoticeCategoryItem = ({ notice }) => {
               <Info>{birthdayFunc()}</Info>
             </InfoItem>
             <InfoItem>
-              {price ? (
+              {price && category === 'sell' ? (
                 <>
                   <InfoTitle>Price:</InfoTitle>
                   <Info>{price}$</Info>
