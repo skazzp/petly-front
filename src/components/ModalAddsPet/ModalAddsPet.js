@@ -140,7 +140,7 @@ const ModalAddsPet = ({ open, onClose }) => {
               name: values.name,
               birthday: values.dateOfBirth,
               breed: values.breed,
-              photoURL: image,
+               image,
               comments: values.comments,
             }
             console.log(form);
