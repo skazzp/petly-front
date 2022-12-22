@@ -8,8 +8,15 @@ axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
 export const createNotice = createAsyncThunk(
   'notice/createNotice',
   async (notice, thunkApi) => {
+    // const formData = new FormData();
+    // formData.append('image', notice);
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    };
     try {
-      const response = await axios.post('/api/notices/create', notice);
+      const response = await axios.post('/api/notices/create', notice, config);
       console.log('createNotice', response.data);
       return response.data;
     } catch (error) {
