@@ -3,15 +3,13 @@ import * as React from 'react';
 import { PaginationNotice } from './PaginationNotice.styled';
 
 const PaginationNotices = ({ page, totalPages, setSearch }) => {
-  // const location = useLocation();
-  // console.log(location);
-  // const f = loc => {
-  //   if (location.pathname === '/notices') {
-  //     return totalPages;
-  //   }
-  //   return null;
-  // };
-  // const t = f(location);
+  const fixPage = () => {
+    if (page === null) {
+      return 1;
+    }
+    return Number(page);
+  };
+  const fixedPage = fixPage();
   return (
     <PaginationNotice
       sx={{
@@ -21,7 +19,7 @@ const PaginationNotices = ({ page, totalPages, setSearch }) => {
         marginBottom: '40px',
       }}
       count={totalPages}
-      page={Number(page)}
+      page={fixedPage}
       onChange={(e, value) => {
         setSearch({ page: value });
       }}
