@@ -40,28 +40,33 @@ function FilterBtn() {
   const dispatch = useDispatch();
 
   const [search] = useSearchParams();
-  // const [totalPage, setTotalPage] = useState(1);
+
   const page = search.get('page');
 
-  const handleClick = e => {
-    dispatch(getByCategory({ category: e.target.name, page }));
-  };
   const location = useLocation();
-  console.log(location);
+  const category = location.pathname.split('/')[2];
 
+  // const handleClick = e => {
+  //   if (e.target.name === category) {
+  //   return dispatch(getByCategory({ category: e.target.name, page }));
+  //   }
+  // };
   useEffect(() => {
-    const category = location.pathname.split('/')[2];
     if (category) {
       dispatch(getByCategory({ category: category, page }));
     }
-  }, [dispatch, location.pathname, page]);
+  }, [category, dispatch, location.pathname, page]);
 
   return (
     <Wrapper>
       <FilterList>
         {buttons.map(b => (
           <Item key={uuidv4()}>
-            <Button to={b.link} name={b.link} onClick={handleClick}>
+            <Button
+              to={b.link === category ? '/notices' : b.link}
+              name={b.link}
+              // onClick={handleClick}
+            >
               {b.btn}
             </Button>
           </Item>
@@ -69,7 +74,11 @@ function FilterBtn() {
         {token &&
           authButtons.map(b => (
             <Item key={uuidv4()}>
-              <Button to={b.link} name={b.link} onClick={handleClick}>
+              <Button
+                to={b.link === category ? '/notices' : b.link}
+                name={b.link}
+                //  onClick={handleClick}
+              >
                 {b.btn}
               </Button>
             </Item>
