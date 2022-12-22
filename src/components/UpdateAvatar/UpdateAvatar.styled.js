@@ -9,11 +9,16 @@ export const Input = styled.input`
   z-index: -1;
 `;
 
+export const LabelContainer = styled.div`
+  width: 100%;
+`;
+
 export const Label = styled.label`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 4px;
+  padding-right: 24px;
 `;
 
 export const LabelIcon = styled.svg`
