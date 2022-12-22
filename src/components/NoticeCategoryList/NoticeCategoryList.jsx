@@ -3,9 +3,12 @@ import ModalNotice from 'components/ModalNotice/ModalNotice';
 import NoticeCategoryItem from 'components/NoticeCategoryItem/NoticeCategoryItem';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoading } from 'redux/auth/authSelectors';
 import { getAllNotices } from 'redux/notice/noticeOperations';
-import { selectNotices, selectTotalPages } from 'redux/notice/noticeSelectors';
+import {
+  selectIsLoading,
+  selectNotices,
+  selectTotalPages,
+} from 'redux/notice/noticeSelectors';
 import defaultCats from '../../assets/images/petss.png';
 import PaginationNotices from 'components/PaginationNotices/PaginationNotices';
 import { useLocation, useSearchParams } from 'react-router-dom';
@@ -27,7 +30,6 @@ const NoticeCategoryList = () => {
   const [search, setSearch] = useSearchParams();
   // const [totalPage, setTotalPage] = useState(1);
   const page = search.get('page');
-  console.log(page);
 
   // console.log(notices.totalPages);
   // useEffect(() => {
