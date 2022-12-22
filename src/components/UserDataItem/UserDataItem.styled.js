@@ -18,6 +18,14 @@ export const Container = styled.div`
     padding-right: 40px;
     justify-content: space-between;
   }
+  ${p => p.theme.breakpoints.desc} {
+    width: 410px;
+    /* border-top-left-radius: 0; */
+    /* border-bottom-left-radius: 0; */
+    flex-direction: column;
+    /* padding-right: 40px; */
+    justify-content: flex-start;
+  }
 `;
 
 export const Form = styled.form`
@@ -124,6 +132,9 @@ export const LogoutBox = styled.div`
   display: flex;
   justify-content: end;
   margin-top: 42px;
+  ${p => p.theme.breakpoints.tab} {
+    justify-content: start;
+  }
 `;
 
 export const LogoutBtn = styled.button`

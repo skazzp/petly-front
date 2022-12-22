@@ -33,7 +33,7 @@ const NoticeCategoryList = () => {
   const location = useLocation();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const f = loc => {
-    if (location.pathname === '/notices') {
+    if (location.pathname === '/notices' || location.pathname === '/notices/') {
       // setSearch(1);
       return dispatch(getAllNotices(page));
     }
@@ -47,16 +47,18 @@ const NoticeCategoryList = () => {
     f(location);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
-
   const isModalOpen = useSelector(state => state.notice.isLearnMoreModalOpen);
-
+  // let reversedNotices;
+  // notices && notices.length > 0
+  //   ? (reversedNotices = [...notices].reverse())
+  //   : (reversedNotices = []);
   return isLoading ? (
     <LoaderSpiner />
   ) : (
     <Wrapper>
       {notices && notices.length > 0 ? (
         <List>
-          {notices?.map(notice => (
+          {notices.map(notice => (
             <NoticeCategoryItem key={notice._id} notice={notice} />
           ))}
         </List>

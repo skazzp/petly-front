@@ -89,7 +89,7 @@ const noticeSlice = createSlice({
     builder.addCase(createNotice.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.notices.push(action.payload);
+      state.notices.push(action.payload.data);
       state.isModalAddNoticeOpen = false;
     });
     builder.addCase(getAllNotices.fulfilled, (state, action) => {

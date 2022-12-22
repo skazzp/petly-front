@@ -10,6 +10,9 @@ export const Container = styled.div`
   ${p => p.theme.breakpoints.tab} {
     padding-right: 32px;
   }
+  ${p => p.theme.breakpoints.desc} {
+    align-items: flex-start;
+  }
 `;
 
 export const Title = styled.h1`
