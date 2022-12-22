@@ -1,24 +1,21 @@
 import { Logo } from "components/Logo"
 import {Navigation} from "components/Navigation"
-import { useState } from "react"
-import { useEffect } from "react"
-import { useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Container} from './Header.styled'
 
 
 export const Header = () => {
-    // const header = useRef(0);
-    // const [height, setHeight] = useState(null);
-    // useEffect(() => {
-    //     if(header) {
-    //         setHeight(header.current.style.height)
-    //     }
+    const header = useRef(0);
+    const [height, setHeight] = useState(null);
+    useEffect(() => {
+        if(header) {
+            setHeight(header.current.clientHeight)
+        }
     
-    // },[header])
-    // console.log(height)
-    return(<Container >
+    },[height])
+    return(<Container ref={header}>
         <Logo/>
-        <Navigation />
+        <Navigation header={height}/>
     </Container>)
 }
 

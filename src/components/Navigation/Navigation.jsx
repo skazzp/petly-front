@@ -9,7 +9,7 @@ import { Container, Box} from "./Navigation.styled";
 import { Spin as Hamburger } from 'hamburger-react'
 import { isModalOpen } from "redux/modal/modalSelectors";
 import { toggleModal, closeModal } from "redux/modal/modalSlice";
-export const Navigation = () => {
+export const Navigation = ({header}) => {
     let isLoggedIn = useSelector(selectToken);
     const modalOpen = useSelector(isModalOpen)
     const isMobile = useIsMobile();
@@ -22,10 +22,10 @@ const modalToggled = ()=> dispatch(toggleModal())
     return(
     <Container> 
         {isDesktop && <><Nav/>{isLoggedIn ? <UserNav /> : <AuthNav/>}</>}
-        {isTablet && <>{isLoggedIn ? <UserNav closeMenu={modalClosed}/> : <AuthNav closeMenu={modalClosed}/>}<Hamburger toggled={modalOpen} toggle={modalToggled} /></>}
-        {isMobile && <Hamburger toggled={modalOpen} toggle={modalToggled} />}
+        {isTablet && <>{isLoggedIn ? <UserNav closeMenu={modalClosed}/> : <AuthNav closeMenu={modalClosed}/>}<Hamburger toggled={modalOpen} toggle={modalToggled} size={30} color="#212121" /></>}
+        {isMobile && <Hamburger toggled={modalOpen} toggle={modalToggled} size={30} color="#212121"/>}
         {(modalOpen && isMobileOrTablet) &&
-            <ModalNav><Box>
+            <ModalNav header={header}><Box>
                 {isMobile && <>{isLoggedIn ? <UserNav closeMenu={modalClosed}/> : <AuthNav closeMenu={modalClosed}/>}</>}
                 <Nav closeMenu={modalClosed}/></Box>
             </ModalNav>}
