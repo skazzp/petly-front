@@ -1,4 +1,4 @@
-import {Img, Card, Li, Ul, ButtonDel, Icon} from './PetItem.styled'
+import {Img, Card, Li, Ul,Span, ButtonDel, Icon} from './PetItem.styled'
 // import dogDefault from './dogDefault.png';
 import sprite from '../../../assets/images/icons.svg'
 import { deleteUserPet } from 'redux/pets/petsOperations';
@@ -18,10 +18,10 @@ const reversDate =event.split('-').reverse()
       <Card >
         <Img src={pet.photoURL} alt={`Your pet, ${pet.name}`}/>
         <Ul>
-          <Li>Name: <span>{pet.name}</span></Li>
-          <Li>Date of birth: <span>{editDateForm(pet.birthday)}</span></Li>
-          <Li>Breed: <span>{pet.breed}</span></Li>
-          <Li>Comments: <span>{pet.comments}</span></Li>
+          <Li>Name: <Span>{pet.name}</Span></Li>
+          <Li>Date of birth: <Span>{editDateForm(pet.birthday)}</Span></Li>
+          <Li>Breed: <Span>{pet.breed}</Span></Li>
+          <Li>Comments: <Span>{pet.comments}</Span></Li>
           <ButtonDel onClick={()=> dispatch(deleteUserPet(pet._id))}>
           <Icon><use href={`${sprite}#delete`} >
             </use></Icon>
