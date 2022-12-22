@@ -39,7 +39,7 @@ function FilterBtn() {
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
 
-  const [search, setSearch] = useSearchParams();
+  const [search] = useSearchParams();
   // const [totalPage, setTotalPage] = useState(1);
   const page = search.get('page');
 
