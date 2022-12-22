@@ -15,7 +15,7 @@ import {
   SubmitBtn,
 } from './ModalAddNotice.styled';
 
-const today = new Date();
+const today = new Date().toLocaleDateString();
 
 const validationSchema = yup.object({
   category: yup.string().required('Category is required!'),
@@ -84,21 +84,21 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
       >
         <FormStyled>
           <RadioWrapper role="group" aria-labelledby="my-radio-group">
-            <label htmlFor="lost/found">
+            <label htmlFor="lost-found">
               <RadioStyled
                 type="radio"
                 name="category"
-                value="lost/found"
-                id="lost/found"
+                value="lost-found"
+                id="lost-found"
               />
               <RadioBtn>lost/found</RadioBtn>
             </label>
-            <label htmlFor="in_good_hands">
+            <label htmlFor="for-free">
               <RadioStyled
                 type="radio"
                 name="category"
-                value="in_good_hands"
-                id="in_good_hands"
+                value="for-free"
+                id="for-free"
               />
               <RadioBtn>in good hands</RadioBtn>
             </label>
