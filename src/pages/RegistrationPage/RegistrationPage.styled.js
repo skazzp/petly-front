@@ -30,6 +30,9 @@ export const Div = styled.div`
 
 export const GlobalStyleRegistration = createGlobalStyle`
 body{
+  position: relative;
+  :nth-child(2){
+  
   /* width: 1780px; */
   /* height: 100%; */
   background-repeat: no-repeat;
@@ -47,10 +50,12 @@ body{
   }
 
   @media screen and (min-width: 1280px) {
-  background-position: center 368px;
+    /* position: fixed; */
+    /* background-position: center bottom -136px; */
+        background-position: center top 368px;
   /* background-size: cover; */
     background-image: url(${BgSvgLg});
    
-  }}
+  }}}
 
 `;
