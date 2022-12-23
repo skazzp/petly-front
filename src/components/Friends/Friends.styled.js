@@ -35,7 +35,7 @@ export const Container = styled.div`
 // `;
 
 export const Title = styled.a`
-  margin-top: 14px;
+  padding-top: 14px;
   display: block;
   font-size: 12px;
   line-height: ${props => props.theme.lineHeights.main};
@@ -45,6 +45,7 @@ export const Title = styled.a`
   overflow-wrap: break-word;
 
   ${props => props.theme.breakpoints.tab} {
+    padding-top: 0px;
     margin-top: 16px;
     font-size: 16px;
   }
@@ -95,9 +96,9 @@ export const Img = styled.img`
   padding: 0px;
   width: 110px;
   height: 78px;
-  margin-top: 10px;
+  margin-top: 40px;
   margin-left: 4px;
-  margin-right: 14px;
+  margin-right: 12px;
   ${props => props.theme.breakpoints.tab} {
     margin-top: 54px;
   margin-left: 4px;
@@ -168,7 +169,7 @@ export const ItemTime = styled.li`
 export const P = styled.p`
   margin-top: 4px;
   &:nth-child(1) {
-    margin-top: 0px;
+    margin-top: 12px;
   }
   ${props => props.theme.breakpoints.tab} {
     font-size: 14px;
