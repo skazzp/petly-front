@@ -31,6 +31,7 @@ const UserDataItem = () => {
     city: true,
     phone: true,
   };
+  const [selectedImage, setSelectedImage] = useState(null);
   const [disabled, setDisabled] = useState(INITIAL_DISABLED);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -50,7 +51,9 @@ const UserDataItem = () => {
     },
   });
   const { setFieldValue } = formik;
-
+  const avatarChange = selectedImage
+    ? URL.createObjectURL(selectedImage)
+    : `${user.avatarURL}`;
   useEffect(() => {
     if (!user.email) return;
     setFieldValue('name', user.name);
@@ -66,11 +69,6 @@ const UserDataItem = () => {
   }, [user, setFieldValue]);
 
   const handleEditInput = e => {
-    // console.log(e.target);
-    // // console.log(user);
-    // console.log(e.target.parentNode.htmlFor);
-    // // console.log(formik.values);
-    // console.log(e.currentTarget);
     setDisabled({
       ...INITIAL_DISABLED,
       [e.currentTarget.parentNode.htmlFor]: false,
@@ -81,9 +79,12 @@ const UserDataItem = () => {
     <Container>
       <div>
         <AvatarBox>
-          <Avatar src={`${user.avatarURL}`} alt="avatar" />
+          <Avatar src={avatarChange} alt="avatar" />
         </AvatarBox>
-        <UpdateAvatar />
+        <UpdateAvatar
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+        />
       </div>
       <Form onSubmit={formik.handleSubmit}>
         <Label name="name" htmlFor="name">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react'; // { useState }
 import { useDispatch } from 'react-redux';
 import {
   Input,
@@ -10,8 +10,8 @@ import {
 import icons from '../../assets/images/icons.svg';
 import { editAvatar } from 'redux/auth/authOperation';
 
-const UpdateAvatar = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+const UpdateAvatar = ({ selectedImage, setSelectedImage }) => {
+  // const [selectedImage, setSelectedImage] = useState(null);
   const dispatch = useDispatch();
   return (
     <LabelContainer>
@@ -33,11 +33,11 @@ const UpdateAvatar = () => {
       />
       {selectedImage && (
         <div>
-          <img
+          {/* <img
             alt="new avatar"
             width={'200px'}
             src={URL.createObjectURL(selectedImage)}
-          />
+          /> */}
 
           <button onClick={() => setSelectedImage(null)}>Remove</button>
           <button
