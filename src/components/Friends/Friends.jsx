@@ -119,11 +119,11 @@ const Friends = ({ friends }) => {
             {address || '-----------------------'}
           </Address>
           <P> Email:</P>
-          <Email href={'mailto:' + email}>
+          <Email href={email?('mailto:' + email):null}>
             {email || '-----------------------'}
           </Email>
           <P>Phone:</P>
-          <Phone href={'tel:' + phone}>
+          <Phone href={phone?('tel:' + phone):null}>
             {phone || '-----------------------'}
           </Phone>
         </WrapperContent>
