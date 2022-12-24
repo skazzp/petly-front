@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/petly-front/static/css/main.1a382bce.css",
-    "main.js": "/petly-front/static/js/main.932ac30e.js",
+    "main.js": "/petly-front/static/js/main.4b1261f4.js",
     "static/media/Bg-girl-tablet-2x.png": "/petly-front/static/media/Bg-girl-tablet-2x.6500f4f40613c60a0661.png",
     "static/media/Bg-girl-desc-2x.png": "/petly-front/static/media/Bg-girl-desc-2x.ae9f2ee5925572cf3c81.png",
     "static/media/Bg-girl-tablet-1x.png": "/petly-front/static/media/Bg-girl-tablet-1x.9fa1149c185138d2ceef.png",
@@ -26,7 +26,7 @@
     "static/media/manrope-v13-latin_cyrillic-regular.woff": "/petly-front/static/media/manrope-v13-latin_cyrillic-regular.e62db8200e37b75a4fcb.woff",
     "static/media/manrope-v13-latin_cyrillic-700.woff": "/petly-front/static/media/manrope-v13-latin_cyrillic-700.91b23c6d19dd1bab28b1.woff",
     "static/media/manrope-v13-latin_cyrillic-500.woff": "/petly-front/static/media/manrope-v13-latin_cyrillic-500.c8721b16e62fa490b861.woff",
-    "static/media/icons.svg": "/petly-front/static/media/icons.1a41481f0be132aebb1297a786ebf340.svg",
+    "static/media/icons.svg": "/petly-front/static/media/icons.293c2d11ea7de8600beb555be58d2e54.svg",
     "static/media/manrope-v13-latin_cyrillic-700.eot": "/petly-front/static/media/manrope-v13-latin_cyrillic-700.d858a4e614808ba4668c.eot",
     "static/media/manrope-v13-latin_cyrillic-regular.eot": "/petly-front/static/media/manrope-v13-latin_cyrillic-regular.c5923229ac1bda888d7f.eot",
     "static/media/manrope-v13-latin_cyrillic-500.eot": "/petly-front/static/media/manrope-v13-latin_cyrillic-500.d21e85592c4f2c02e14a.eot",
@@ -44,10 +44,10 @@
     "static/media/bg-home-page-mobile.svg": "/petly-front/static/media/bg-home-page-mobile.fd6f01f6a38af91a9a5c8fd877e10dec.svg",
     "static/media/Circle.svg": "/petly-front/static/media/Circle.4c1efb0181c53be15351a65943b89755.svg",
     "main.1a382bce.css.map": "/petly-front/static/css/main.1a382bce.css.map",
-    "main.932ac30e.js.map": "/petly-front/static/js/main.932ac30e.js.map"
+    "main.4b1261f4.js.map": "/petly-front/static/js/main.4b1261f4.js.map"
   },
   "entrypoints": [
     "static/css/main.1a382bce.css",
-    "static/js/main.932ac30e.js"
+    "static/js/main.4b1261f4.js"
   ]
 }
