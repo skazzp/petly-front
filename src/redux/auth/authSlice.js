@@ -89,7 +89,9 @@ const authSlice = createSlice({
       state.token = action.payload.token;
     });
 
-    builder.addCase(logOutUser.pending, pendingHandlerAuth);
+    builder.addCase(logOutUser.pending, (state, action) => {
+      state.error = null;
+    });
     builder.addCase(logOutUser.rejected, rejectedHandler);
     builder.addCase(logOutUser.fulfilled, (state, action) => {
       state.error = null;

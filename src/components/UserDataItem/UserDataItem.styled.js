@@ -23,7 +23,7 @@ export const Container = styled.div`
     /* border-top-left-radius: 0; */
     /* border-bottom-left-radius: 0; */
     flex-direction: column;
-    /* padding-right: 40px; */
+    padding-left: 32px;
     justify-content: flex-start;
   }
 `;
@@ -64,11 +64,15 @@ export const LabelText = styled.p`
 `;
 
 export const AvatarBox = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 233px;
   height: 233px;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 36px;
+  margin-bottom: 12px;
   box-shadow: 7px 4px 14px 0px #0000001c;
 `;
 
