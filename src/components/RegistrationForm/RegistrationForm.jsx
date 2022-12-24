@@ -57,6 +57,10 @@ const RegistrationForm = () => {
       dispatch(registerUser(user));
     },
   });
+
+  // const onChangeInputEmail = () => {
+    
+  // }
   const city = formik.values.city;
   const setCity = city => {
     formik.setValues(prev => ({
@@ -64,12 +68,9 @@ const RegistrationForm = () => {
       city: city,
     }));
   };
-
   const onClickNext = e => {
     e.preventDefault();
-    if (emailError !== formik.values.email) {
-      setEmailErrorFixed(false);
-    }
+    
     if (
       !formik.values.email &&
       !formik.values.password &&
@@ -89,23 +90,34 @@ const RegistrationForm = () => {
     value: `${i.City},${i.District}`,
     label: `${i.City}, ${i.District}`,
   }));
+  useEffect(() => {
+    if (emailError !== formik.values.email) {
+      setEmailErrorMassege('');
+      setEmailErrorFixed(false);
 
+    }
+    // eslint-disable-next-line
+  }, [emailErrorFixed, formik.values.email] )
+    
   useEffect(() => {
     if (errorDB === 'Email in use') {
       setEmailErrorMassege('Email in use');
       setEmailError(formik.values.email);
       setEmailErrorFixed(true);
+      SetFormChenge(false)
     }
     if (errorDB === '"email" must be a valid email') {
       setEmailErrorMassege('Email must be a valid');
       setEmailError(formik.values.email);
       setEmailErrorFixed(true);
+      SetFormChenge(false)
     }
 
     if (!errorDB) {
       setEmailErrorMassege('');
       setEmailError('');
       setEmailErrorFixed(false);
+      SetFormChenge(false)
     }
     // eslint-disable-next-line
   }, [errorDB]);
@@ -120,12 +132,15 @@ const RegistrationForm = () => {
         <Form>
           <Label>
             <Input
+              
               placeholder="E-mail"
               id="email"
               name="email"
               type="text"
               onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
+              onChange={(e)=>formik.handleChange(e)}
+              
+            
               value={formik.values.email}
             ></Input>
             {(formik.errors.email && formik.touched.email) || emailError ? (

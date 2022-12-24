@@ -62,9 +62,20 @@ const LoginForm = () => {
       setPasswordError(formik.values.password);
       setErrorFixed(true);
     }
-    (emailError !== formik.values.email || passwordError !== formik.values.password ) && setErrorFixed(false)
      // eslint-disable-next-line
   }, [DbError]);
+
+  useEffect(() => {
+    if(errorFixed){
+    if (emailError !== formik.values.email || passwordError !== formik.values.password) {
+      setErrorMassege('');
+      setEmailError('');
+      setPasswordError('');
+      setErrorFixed(false);
+
+    }}
+    // eslint-disable-next-line
+  }, [errorFixed, formik.values.email,formik.values.password] )
 
   return (
     <Div>

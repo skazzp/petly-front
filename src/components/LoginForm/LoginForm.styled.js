@@ -64,6 +64,8 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   display: flex;
+  position: relative;
+  flex-direction: column;
   background: none;
   height: 40px;
   width: 280px;
@@ -194,33 +196,59 @@ export const LinkRegistration = styled(Link)`
 `;
 
 export const Validation = styled.p`
-  text-align: end;
-
+  text-align: center;
+  position: absolute;
+  top: 75%;
+  border-radius: 20px;
+  border: rgba(245, 146, 86, 0.5) 1px solid;
+  background: #fdf7f2;
   font-family: 'Manrope';
   font-weight: 400;
   font-size: 12px;
-  line-height: 22px;
+  line-height: 16px;
   margin: 0;
   padding: 0;
-
   color: #ff4747;
+  width: 74%;
+  animation: show 1000ms cubic-bezier(0.43, 0.21, 0, 1.03);
+  animation-iteration-count: revert-layer;
+  @keyframes show {
+    0% {
+      transform: translateX(-200px);
+    }
 
-  width: 100%;
+    50% {
+      transform: translateX();
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
   :focus,
   :hover {
+    /* padding: 2px; */
+    text-align: center;
+    /* padding-top: 2px;
+    padding-bottom: 2px; */
+    height: 40%;
+    width: 80%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
   }
 
   @media screen and (min-width: 768px) {
     font-family: 'Manrope';
     font-weight: 400;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 16px;
   }
 
   @media screen and (min-width: 1280px) {
     font-family: 'Manrope';
     font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 12px;
+    line-height: 16px;
   }
 `;
