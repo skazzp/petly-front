@@ -80,6 +80,11 @@ display: none ;
   transition: 0.25s ease;
 `;
 
+export const SpanDots = styled.span`
+display: inline ;
+`
+
+
 export const Label = styled.label`
  color: ${props => props.theme.colors.accent};
   :before {
@@ -92,17 +97,27 @@ export const Label = styled.label`
 export const Checkbox = styled.input`
   display: none;
   :checked ~ ${Span} {
-    display: inherit;
+    display: inline ;
     opacity: 1;
     font-size: inherit;
     max-height: 999em;
   }
+
+  :checked ~ ${SpanDots} {
+    display: none;
+  }
+
   :checked ~ ${Label} {
     :before {
       content: 'Show less';
     }
   }
 `;
+
+export const P = styled.p`
+display: inline-block ;
+text-align: justify;
+`
 
 export const Footer = styled.div`
   display: flex;

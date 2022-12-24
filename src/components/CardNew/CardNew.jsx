@@ -5,7 +5,9 @@ import {
   Footer,
   Label,
   Link,
+  P,
   Span,
+  SpanDots,
   Strip,
   Title,
   Wrapper,
@@ -31,10 +33,11 @@ export const CardNew = ({ news }) => {
           <Strip />
           <Title>{title || 'no title'}</Title>
           <Content>
-            <p><Checkbox type="checkbox" id={id} />
-            {newDescriptionStart || 'no description'}`
+            <P><Checkbox type="checkbox" id={id} />
+            {newDescriptionStart || 'no description'}
+            <SpanDots> ...</SpanDots>
             <Span>{newDescriptionEnd}</Span>
-            <Label for={id} /></p>
+            <Label for={id} /></P>
           </Content>
         </div>
         <Footer>
