@@ -64,6 +64,8 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   display: flex;
+  position: relative;
+  flex-direction: column;
   background: none;
   height: 40px;
   width: 280px;
@@ -190,37 +192,5 @@ export const LinkRegistration = styled(Link)`
   }
 
   @media screen and (min-width: 1280px) {
-  }
-`;
-
-export const Validation = styled.p`
-  text-align: end;
-
-  font-family: 'Manrope';
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 22px;
-  margin: 0;
-  padding: 0;
-
-  color: #ff4747;
-
-  width: 100%;
-  :focus,
-  :hover {
-  }
-
-  @media screen and (min-width: 768px) {
-    font-family: 'Manrope';
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    font-family: 'Manrope';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
   }
 `;

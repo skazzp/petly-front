@@ -66,6 +66,7 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   display: flex;
+  position: relative;
   background: none;
   width: 280px;
   height: 40px;
@@ -261,37 +262,6 @@ export const ButtonBack = styled.button`
 
   @media screen and (min-width: 1280px) {
     height: 48px;
-  }
-`;
-export const Validation = styled.p`
-  text-align: end;
-  width: 100%;
-  font-family: 'Manrope';
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  margin: 0;
-  padding: 0;
-
-  color: #ff4747;
-
-  width: 100%;
-  :focus,
-  :hover {
-  }
-
-  @media screen and (min-width: 768px) {
-    font-family: 'Manrope';
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    font-family: 'Manrope';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
   }
 `;
 
