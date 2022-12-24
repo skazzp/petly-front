@@ -1,8 +1,10 @@
-import React from 'react'; // { useState }
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import {
+  BtnContainer,
   Input,
   Label,
+  LabelBtn,
   LabelContainer,
   LabelIcon,
   LabelText,
@@ -11,7 +13,6 @@ import icons from '../../assets/images/icons.svg';
 import { editAvatar } from 'redux/auth/authOperation';
 
 const UpdateAvatar = ({ selectedImage, setSelectedImage }) => {
-  // const [selectedImage, setSelectedImage] = useState(null);
   const dispatch = useDispatch();
   return (
     <LabelContainer>
@@ -26,27 +27,42 @@ const UpdateAvatar = ({ selectedImage, setSelectedImage }) => {
         name="avatar"
         id="avatar"
         onChange={event => {
-          console.dir(event.target);
-          console.log(event.target.files[0]);
+          // console.dir(event.target);
+          // console.log(event.target.files[0]);
           setSelectedImage(event.target.files[0]);
         }}
       />
       {selectedImage && (
-        <div>
+        <BtnContainer>
           {/* <img
             alt="new avatar"
             width={'200px'}
             src={URL.createObjectURL(selectedImage)}
           /> */}
 
-          <button onClick={() => setSelectedImage(null)}>Remove</button>
-          <button
+          <LabelBtn
             type="button"
-            onClick={() => dispatch(editAvatar(selectedImage))}
+            onClick={() => {
+              dispatch(editAvatar(selectedImage));
+              URL.revokeObjectURL(selectedImage);
+              setSelectedImage(null);
+            }}
           >
-            Upload
-          </button>
-        </div>
+            <LabelIcon>
+              <use href={icons + '#icon-avatar-check'}></use>
+            </LabelIcon>
+          </LabelBtn>
+          <LabelBtn
+            onClick={() => {
+              URL.revokeObjectURL(selectedImage);
+              setSelectedImage(null);
+            }}
+          >
+            <LabelIcon>
+              <use href={icons + '#icon-avatar-close'}></use>
+            </LabelIcon>
+          </LabelBtn>
+        </BtnContainer>
       )}
     </LabelContainer>
   );
