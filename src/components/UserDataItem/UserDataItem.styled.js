@@ -103,7 +103,6 @@ export const Input = styled.input`
   ${p => p.theme.breakpoints.tab} {
     font-size: 18px;
     width: 210px;
-    height: 32px;
   }
 `;
 
@@ -151,21 +150,14 @@ export const LogoutBtn = styled.button`
   font-size: ${p => p.theme.fontSizes.m};
   font-family: ${p => p.theme.fonts.main};
   font-weight: ${p => p.theme.fontWeights.semiBold};
-  background-color: transparent;
   color: ${p => p.theme.colors.grey};
-  cursor: pointer;
-  fill: ${p => p.theme.colors.accent};
-  stroke: ${p => p.theme.colors.accent};
-  &:hover {
-    color: ${p => p.theme.colors.black};
-    fill: ${p => p.theme.colors.orange};
-    stroke: ${p => p.theme.colors.orange};
-  }
+  background-color: transparent;
+  /* padding: 0; */
 `;
 
 export const LogoutIcon = styled.svg`
   width: 18px;
   height: 18px;
-  fill: inherit;
-  stroke: inherit;
+  fill: #f59256;
+  stroke: #f59256;
 `;

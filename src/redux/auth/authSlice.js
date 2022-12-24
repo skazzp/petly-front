@@ -25,7 +25,6 @@ const userInitialState = {
   token: null,
   isLoading: false,
   error: '',
-  avatarLoading: false,
 };
 
 const pendingHandlerAuth = (state, action) => {
@@ -104,6 +103,7 @@ const authSlice = createSlice({
     builder.addCase(refreshUser.pending, pendingHandlerAuth);
     builder.addCase(refreshUser.rejected, rejectedHandler);
     builder.addCase(refreshUser.fulfilled, (state, action) => {
+      // console.log(action.payload);
       state.user = action.payload;
       state.error = null;
       state.isLoading = false;
@@ -120,16 +120,11 @@ const authSlice = createSlice({
       // state.user.avatarURL = action.payload.avatarURL;
     });
 
-    builder.addCase(editAvatar.pending, (state, _) => {
-      state.avatarLoading = true;
-    });
-    builder.addCase(editAvatar.rejected, (state, action) => {
-      state.avatarLoading = false;
-      state.error = action.payload;
-    });
+    builder.addCase(editAvatar.pending, pendingHandlerAuth);
+    builder.addCase(editAvatar.rejected, rejectedHandler);
     builder.addCase(editAvatar.fulfilled, (state, action) => {
       state.error = null;
-      state.avatarLoading = false;
+      state.isLoading = false;
       // console.log(123, action.payload);
       // state.user = { ...state.user, ...action.payload.avatarURL };
       // state.token = null;
