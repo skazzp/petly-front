@@ -7,7 +7,6 @@ import {
   Button,
   Span,
   LinkRegistration,
-  Validation,
 } from './LoginForm.styled';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,6 +16,7 @@ import { useEffect, useState } from 'react';
 import { selectError, selectToken } from 'redux/auth/authSelectors';
 import { useWindowSize } from '@react-hook/window-size';
 import Confetti from 'react-confetti';
+import { Validation } from 'utility/validationStyle';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -88,6 +88,7 @@ const LoginForm = () => {
             name="email"
             type="text"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.email}
           ></Input>
           {(formik.errors.email && formik.touched.email) || errorMassege ? (
@@ -101,6 +102,7 @@ const LoginForm = () => {
             name="password"
             type="password"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.confirmPassword}
           ></Input>
           {formik.errors.password && formik.touched.password ? (

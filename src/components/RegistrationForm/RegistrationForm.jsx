@@ -9,7 +9,6 @@ import {
   LinkRegistration,
   ButtonBack,
   ButtonRegister,
-  Validation,
   SelectContainer,
 } from './RegistrationForm.styled';
 import { selectStyles } from './selectStyles';
@@ -24,6 +23,7 @@ import { useWindowSize } from '@react-hook/window-size';
 import Confetti from 'react-confetti';
 import Data from '../../assets/City.json';
 import InputMask from 'react-input-mask';
+import { Validation } from 'utility/validationStyle';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
