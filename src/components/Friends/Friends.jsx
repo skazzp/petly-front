@@ -11,22 +11,17 @@ import {
   Phone,
   IconAddress,
   WrapperTimeHover,
+  ListFullTime,
+  SpanWeek,
+  ItemTime,
+  P,
 } from './Friends.styled';
 import no_foto from '../../assets/images/not_found.jpg';
 import { v4 as uuidv4 } from 'uuid';
 
-
 const Friends = ({ friends }) => {
-  const {
-    title,
-    address,
-    addressUrl,
-    email,
-    imageUrl,
-    phone,
-    url,
-    workDays,
-  } = friends;
+  const { title, address, addressUrl, email, imageUrl, phone, url, workDays } =
+    friends;
 
   const buttonAddress = () => {
     if (!addressUrl) {
@@ -44,24 +39,45 @@ const Friends = ({ friends }) => {
   });
 
   const fullTime = arr => {
-    const result = arr?.map(item => {
-      if (item.isOpen) {
+    if (!arr.length){
+      arr = week;
+      week.map(item=>{
         return (
-          
-            <li key={uuidv4()}
-          >
-            <span>{item.week}</span>
-            {item.from}:{item.to}
-          </li>
-          
-          
+          <ItemTime key={uuidv4()}>
+            <SpanWeek>{item}</SpanWeek>
+            -------------
+          </ItemTime>
         );
+      })
+    
+    }
+    const result = arr?.map(item => {
+      if (item.week) {
+        if (!item.isOpen) {
+          return (
+            <ItemTime key={uuidv4()}>
+              <SpanWeek>{item.week}</SpanWeek>
+              -------------
+            </ItemTime>
+          );
+        }
+        if (item.isOpen) {
+          return (
+            <ItemTime key={uuidv4()}>
+              <SpanWeek>{item.week}</SpanWeek>
+              {item.from}- {item.to}
+            </ItemTime>
+          );
+        }
       }
+// Доделать!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1й 
+   
+
       return (
-        <li key={uuidv4()}>
-          <span>{item.week}</span>
-          --:--
-        </li>
+        <ItemTime key={uuidv4()}>
+          <SpanWeek>{item}</SpanWeek>
+          -------------
+        </ItemTime>
       );
     });
 
@@ -72,10 +88,10 @@ const Friends = ({ friends }) => {
     const result = arr?.find(item => item.isOpen);
     return result ? (
       <p>
-        {result?.from}:{result?.to}
+        {result?.from}- {result?.to}
       </p>
     ) : (
-      '----------------------------------'
+      '-----------------------'
     );
   };
 
@@ -89,29 +105,26 @@ const Friends = ({ friends }) => {
           <Img src={imageUrl || no_foto}></Img>
         </WrapperIMG>
         <WrapperContent>
+          <P> Time:</P>
           <Data>
-            Time: <br />
-            {newWorkDays
-              ? timeOne(newWorkDays)
-              : '----------------------------------'}
+            {newWorkDays ? timeOne(newWorkDays) : '-----------------------'}
             <WrapperTimeHover>
-             <ul> {fullTime(newWorkDays)
-              }</ul>
+              <ListFullTime>
+                {fullTime(newWorkDays ? newWorkDays : week)}
+              </ListFullTime>
             </WrapperTimeHover>
           </Data>
-          <Address>
-            Adress:{buttonAddress()} <br />
-            {address || '----------------------------------'}
+          <P> Adress:{buttonAddress()} </P>
+          <Address href={addressUrl}>
+            {address || '-----------------------'}
           </Address>
-          <Email>
-            Email:
-            <br />
-            {email || '----------------------------------'}
+          <P> Email:</P>
+          <Email href={email?('mailto:' + email):null}>
+            {email || '-----------------------'}
           </Email>
-          <Phone>
-            Phone:
-            <br />
-            {phone || '----------------------------------'}
+          <P>Phone:</P>
+          <Phone href={phone?('tel:' + phone):null}>
+            {phone || '-----------------------'}
           </Phone>
         </WrapperContent>
       </Wrapper>
@@ -120,4 +133,3 @@ const Friends = ({ friends }) => {
 };
 
 export default Friends;
-

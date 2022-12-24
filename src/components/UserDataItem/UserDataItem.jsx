@@ -1,12 +1,11 @@
+import { NoPositionSpinner } from 'components/LoaderSpiner/NoPositionSpinner';
 import UpdateAvatar from 'components/UpdateAvatar/UpdateAvatar';
 import { useFormik } from 'formik';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { editUser, logOutUser } from 'redux/auth/authOperation';
-import { selectUser } from 'redux/auth/authSelectors';
-// import { changeUserData } from 'redux/auth/authSlice';
+import { selectAvatarLoading, selectUser } from 'redux/auth/authSelectors';
 import icons from '../../assets/images/icons.svg';
 import {
   Avatar,
@@ -31,7 +30,9 @@ const UserDataItem = () => {
     city: true,
     phone: true,
   };
+  const [selectedImage, setSelectedImage] = useState(null);
   const [disabled, setDisabled] = useState(INITIAL_DISABLED);
+  const isLoading = useSelector(selectAvatarLoading);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const formik = useFormik({
@@ -50,7 +51,9 @@ const UserDataItem = () => {
     },
   });
   const { setFieldValue } = formik;
-
+  const avatarChange = selectedImage
+    ? URL.createObjectURL(selectedImage)
+    : `${user.avatarURL}`;
   useEffect(() => {
     if (!user.email) return;
     setFieldValue('name', user.name);
@@ -66,11 +69,6 @@ const UserDataItem = () => {
   }, [user, setFieldValue]);
 
   const handleEditInput = e => {
-    // console.log(e.target);
-    // // console.log(user);
-    // console.log(e.target.parentNode.htmlFor);
-    // // console.log(formik.values);
-    // console.log(e.currentTarget);
     setDisabled({
       ...INITIAL_DISABLED,
       [e.currentTarget.parentNode.htmlFor]: false,
@@ -81,9 +79,16 @@ const UserDataItem = () => {
     <Container>
       <div>
         <AvatarBox>
-          <Avatar src={`${user.avatarURL}`} alt="avatar" />
+          {isLoading ? (
+            <NoPositionSpinner />
+          ) : (
+            <Avatar src={avatarChange} alt="avatar" />
+          )}
         </AvatarBox>
-        <UpdateAvatar />
+        <UpdateAvatar
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+        />
       </div>
       <Form onSubmit={formik.handleSubmit}>
         <Label name="name" htmlFor="name">

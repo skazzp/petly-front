@@ -23,7 +23,7 @@ export const Container = styled.div`
     /* border-top-left-radius: 0; */
     /* border-bottom-left-radius: 0; */
     flex-direction: column;
-    /* padding-right: 40px; */
+    padding-left: 32px;
     justify-content: flex-start;
   }
 `;
@@ -64,11 +64,15 @@ export const LabelText = styled.p`
 `;
 
 export const AvatarBox = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 233px;
   height: 233px;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 36px;
+  margin-bottom: 12px;
   box-shadow: 7px 4px 14px 0px #0000001c;
 `;
 
@@ -99,6 +103,7 @@ export const Input = styled.input`
   ${p => p.theme.breakpoints.tab} {
     font-size: 18px;
     width: 210px;
+    height: 32px;
   }
 `;
 
@@ -146,14 +151,21 @@ export const LogoutBtn = styled.button`
   font-size: ${p => p.theme.fontSizes.m};
   font-family: ${p => p.theme.fonts.main};
   font-weight: ${p => p.theme.fontWeights.semiBold};
-  color: ${p => p.theme.colors.grey};
   background-color: transparent;
-  /* padding: 0; */
+  color: ${p => p.theme.colors.grey};
+  cursor: pointer;
+  fill: ${p => p.theme.colors.accent};
+  stroke: ${p => p.theme.colors.accent};
+  &:hover {
+    color: ${p => p.theme.colors.black};
+    fill: ${p => p.theme.colors.orange};
+    stroke: ${p => p.theme.colors.orange};
+  }
 `;
 
 export const LogoutIcon = styled.svg`
   width: 18px;
   height: 18px;
-  fill: #f59256;
-  stroke: #f59256;
+  fill: inherit;
+  stroke: inherit;
 `;
