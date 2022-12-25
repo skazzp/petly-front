@@ -13,8 +13,9 @@ export const Card = styled.div`
   @media (min-width: 768px) {
     min-width: 704px;
     display: flex;
-    gap: 32px;
+   
     padding: 20px 20px;
+    /* gap: 32px; */
     border-radius: ${props => props.theme.radii.lg};
   }
   @media (min-width: 1200px) {
@@ -49,6 +50,7 @@ export const Img = styled.img`
     width: 161px;
     height: 161px;
     margin:0;
+    margin-right: 32px;
   }
 `;
 export const DefaultImg = styled.img`
