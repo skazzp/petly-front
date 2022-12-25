@@ -14,7 +14,7 @@ export const getUserPet = createAsyncThunk('pet/getUserPet', async thunkApi => {
   };
   try {
     const { data } = await axios.get('/api/usersinfo', header);
-    console.log(data.userPets);
+    
     return data.userPets;
   } catch (error) {
     return thunkApi.rejectWithValue(error.response.status);
@@ -27,11 +27,6 @@ export const addUserPet = createAsyncThunk(
     const state = thunkApi.getState();
     const persistedToken = state.auth.token;
 
-    //  const formData = new FormData();
-    console.log(form)
-    // formData.append('image', form);
-    console.log(form)
-    // console.log(formData)
     const header = {
       method: 'post',
      headers: {
@@ -43,10 +38,8 @@ export const addUserPet = createAsyncThunk(
 
     try {
      const response= await axios.post('/api/pets/', form, header);
-    
       toast.success('New pet added!');
-      
-      console.log(response.data)
+   
       return response.data
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -59,9 +52,9 @@ export const deleteUserPet = createAsyncThunk(
   async (_id, thunkApi) => {
     try {
       const response= await axios.delete(`/api/pets/${_id}`);
-      // const { data } = await axios.get('/user/current');
+  
       toast.success('Pet was deleted!');
-      console.log(response.data)
+   
       return response.data._id;
     } catch (error) {
       toast.error(error.response.data.message);

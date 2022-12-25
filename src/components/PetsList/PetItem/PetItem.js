@@ -22,7 +22,7 @@ const reversDate =event.split('-').reverse()
           <Li>Date of birth: <Span>{editDateForm(pet.birthday)}</Span></Li>
           <Li>Breed: <Span>{pet.breed}</Span></Li>
           <Li>Comments: <Span>{pet.comments}</Span></Li>
-          <ButtonDel onClick={()=> dispatch(deleteUserPet(pet._id))}>
+          <ButtonDel onClick={()=> window.confirm('Are you sure?') && dispatch(deleteUserPet(pet._id))}>
           <Icon><use href={`${sprite}#delete`} >
             </use></Icon>
         </ButtonDel>

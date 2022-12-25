@@ -24,7 +24,7 @@ const PetsData = () => {
             <TitleAdd>Add pet</TitleAdd>
           </Title>
           <Button type="button" onClick={() => setOpenModal(true)}>
-            {' '}
+         
             <Icon>
               <use href={`${sprite}#plus-add-pet`}></use>
             </Icon>

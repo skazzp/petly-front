@@ -68,6 +68,8 @@ const ModalAddsPet = ({ open, onClose }) => {
   const handleCancle = () => {
     onClose();
     setFirstPage(true);
+    setImage()
+    setImageURL()
   };
 
   const validationsShema = yup.object().shape({
@@ -121,7 +123,7 @@ const ModalAddsPet = ({ open, onClose }) => {
           }}
           validateOnBlur
           onSubmit={async(values) => {
-            console.log(values);
+            handleCancle();
             const form ={
               name: values.name,
               birthday: values.dateOfBirth,
@@ -129,11 +131,11 @@ const ModalAddsPet = ({ open, onClose }) => {
                image,
               comments: values.comments,
             }
-            console.log(form);
+           
             await dispatch(addUserPet(form))
         
-            handleCancle();
-            setImageURL()
+            // handleCancle();
+           
           }}
           validationSchema={validationsShema}
         >
@@ -198,8 +200,8 @@ const ModalAddsPet = ({ open, onClose }) => {
                   </Line>
                   <ButtonSet>
                     <ButtonA
-                      //  disabled={!values.breed || !values.name|| !values.dateOfBirth}
-                      disabled={touched.breed ||  errors.breed || touched.dateOfBirth ||  errors.dateOfBirth  || touched.name ||  errors.name}
+                       disabled={!values.breed || !values.name|| !values.dateOfBirth||  errors.breed ||  errors.dateOfBirth ||  errors.name}
+                      // disabled={touched.breed ||  errors.breed ||  errors.dateOfBirth  || touched.name ||  errors.name}
 
                       onClick={() => setFirstPage(false)}
                       type="button"
