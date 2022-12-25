@@ -65,7 +65,8 @@ export const refreshUser = createAsyncThunk(
     const persistedToken = state.auth.token;
 
     setAuthHeader(persistedToken);
-
+    // console.log('tokens', persistedToken, token);
+    // console.log(axios.defaults.headers.common.Authorization);
     if (persistedToken === null) {
       return thunkApi.rejectWithValue(null);
     }
@@ -73,7 +74,6 @@ export const refreshUser = createAsyncThunk(
     try {
       const response = await axios.get('/api/usersinfo');
       // console.log('getUser', response.data);
-
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);
