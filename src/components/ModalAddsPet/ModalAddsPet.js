@@ -41,7 +41,7 @@ const ModalAddsPet = ({ open, onClose }) => {
   fileReader.onloadend = () => {
     setImageURL(fileReader.result);
   };
- 
+  const today = new Date();
 
   const handleOnChange = event => {
     event.preventDefault();
@@ -51,19 +51,10 @@ const ModalAddsPet = ({ open, onClose }) => {
       formData.append("image", file );
       setImage(file);
       fileReader.readAsDataURL(file);
-      // console.log(file, image, imageURL);
+     
     }
   };
 
-  // const handleDrop = event => {
-  //   event.preventDefault();
-  //   event.stopPropagation();
-  //   if (event.dataTransfer.files && event.dataTransfer.files.length) {
-  //     setImage(event.dataTransfer.files[0]);
-  //     fileReader.readAsDataURL(event.dataTransfer.files[0]);
-  //   }
-  //   console.log( image, imageURL);
-  // };
 
   const handleDragEmpty = event => {
     event.preventDefault();
@@ -71,20 +62,16 @@ const ModalAddsPet = ({ open, onClose }) => {
   };
   const onBackdropClick = e => {
     if (e.target === e.currentTarget) {
-      onClose();
+      handleCancle()
     }
   };
   const handleCancle = () => {
     onClose();
     setFirstPage(true);
+    setImage()
+    setImageURL()
   };
-  // const handleChangePhoto = event => {
-  //   const fileUploaded = event.target.files[0];
-  //   const file = new FormData();
-  //   file.append('image', fileUploaded);
-  //   console.log(fileUploaded)
-  //   setImageURL(file);
-  // };
+
   const validationsShema = yup.object().shape({
     name: yup
       .string()
@@ -98,6 +85,7 @@ const ModalAddsPet = ({ open, onClose }) => {
       .max(16, 'Maximum 16 letters required'),
     dateOfBirth: yup
       .date()
+      .max(today, 'The maximum date is today')
       .required(' Date of Birth is required (example: 22.10.2022'),
     breed: yup
       .string()
@@ -135,7 +123,7 @@ const ModalAddsPet = ({ open, onClose }) => {
           }}
           validateOnBlur
           onSubmit={async(values) => {
-            console.log(values);
+            handleCancle();
             const form ={
               name: values.name,
               birthday: values.dateOfBirth,
@@ -143,11 +131,11 @@ const ModalAddsPet = ({ open, onClose }) => {
                image,
               comments: values.comments,
             }
-            console.log(form);
+           
             await dispatch(addUserPet(form))
         
-            handleCancle();
-            setImageURL()
+            // handleCancle();
+           
           }}
           validationSchema={validationsShema}
         >
@@ -212,7 +200,9 @@ const ModalAddsPet = ({ open, onClose }) => {
                   </Line>
                   <ButtonSet>
                     <ButtonA
-                      //  disabled={!isValid.name || !isValid.dateOfBirth || !isValid.breed}
+                       disabled={!values.breed || !values.name|| !values.dateOfBirth||  errors.breed ||  errors.dateOfBirth ||  errors.name}
+                      // disabled={touched.breed ||  errors.breed ||  errors.dateOfBirth  || touched.name ||  errors.name}
+
                       onClick={() => setFirstPage(false)}
                       type="button"
                     >
