@@ -43,18 +43,17 @@ const LoginForm = () => {
         emailError === formik.values.email ||
         passwordError === formik.values.password
       ) {
-       
       }
       dispatch(loginUser(formik.values));
       setErrorMassege('');
       setEmailError('');
       setPasswordError('');
     },
-    
   });
-  
-  console.log(emailError); console.log(formik.values.email);
-  
+
+  console.log(emailError);
+  console.log(formik.values.email);
+
   useEffect(() => {
     if (DbError) {
       setErrorMassege(DbError);
@@ -62,20 +61,23 @@ const LoginForm = () => {
       setPasswordError(formik.values.password);
       setErrorFixed(true);
     }
-     // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [DbError]);
 
   useEffect(() => {
-    if(errorFixed){
-    if (emailError !== formik.values.email || passwordError !== formik.values.password) {
-      setErrorMassege('');
-      setEmailError('');
-      setPasswordError('');
-      setErrorFixed(false);
-
-    }}
+    if (errorFixed) {
+      if (
+        emailError !== formik.values.email ||
+        passwordError !== formik.values.password
+      ) {
+        setErrorMassege('');
+        setEmailError('');
+        setPasswordError('');
+        setErrorFixed(false);
+      }
+    }
     // eslint-disable-next-line
-  }, [errorFixed, formik.values.email,formik.values.password] )
+  }, [errorFixed, formik.values.email, formik.values.password]);
 
   return (
     <Div>
@@ -118,8 +120,8 @@ const LoginForm = () => {
         </LinkRegistration>
       </Span>
       {token ? (
-            <Confetti recycle={false} width={width} height={height} />
-          ) : null}
+        <Confetti recycle={false} width={width} height={height} />
+      ) : null}
     </Div>
   );
 };

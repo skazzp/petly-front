@@ -102,7 +102,11 @@ const authSlice = createSlice({
     });
 
     builder.addCase(refreshUser.pending, pendingHandlerAuth);
-    builder.addCase(refreshUser.rejected, rejectedHandler);
+    builder.addCase(refreshUser.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+      state.token = null;
+    });
     builder.addCase(refreshUser.fulfilled, (state, action) => {
       state.user = action.payload;
       state.error = null;
