@@ -139,7 +139,9 @@ export const Button = styled.button`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
-
+  :active {
+    transform: translateY(2px);
+  }
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
@@ -212,7 +214,9 @@ export const ButtonRegister = styled.button`
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
-
+  :active {
+    transform: translateY(2px);
+  }
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
@@ -247,7 +251,9 @@ export const ButtonBack = styled.button`
   margin-right: auto;
   margin-top: 14px;
   margin-bottom: 40px;
-
+  :active {
+    transform: translateY(2px);
+  }
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
