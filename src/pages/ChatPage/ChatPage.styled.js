@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import InputMask from 'react-input-mask';
 
-export const Div = styled.div`
+export const DivBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 280px;
+  /* padding-top: 42px; */
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -17,13 +19,13 @@ export const Div = styled.div`
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
     border-radius: 40px;
     width: 608px;
-    height: 473px;
+    height: 517px;
     padding: 60px 80px 60px 80px;
   }
 
   @media screen and (min-width: 1280px) {
     width: 618px;
-    height: 473px;
+    height: 541px;
     z-index: 1;
   }
 `;
@@ -65,17 +67,15 @@ export const Form = styled.form`
 export const Label = styled.label`
   display: flex;
   position: relative;
-  flex-direction: column;
   background: none;
-  height: 40px;
   width: 280px;
+  height: 40px;
   border: 1px solid rgba(245, 146, 86, 0.5);
   align-items: center;
   justify-content: center;
   border-radius: 40px;
   margin-bottom: 13px;
   padding: 11px 14px;
-  padding-right: 5px;
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
@@ -197,15 +197,9 @@ export const LinkRegistration = styled(Link)`
   }
 `;
 
-export const ButtonGoogle = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000000;
-  background-color: #ffffff;
-  gap: 10px;
+export const ButtonRegister = styled.button`
   cursor: pointer;
-
+  color: #ffffff;
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
@@ -215,36 +209,101 @@ export const ButtonGoogle = styled.a`
   width: 100%;
   height: 44px;
   border-radius: 20px;
-  border: ${p => p.theme.borders.normal};
-  /* margin-top: 30px; */
+  background: #f59256;
+  border: none;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
-
+  margin-top: 15px;
+  :active {
+    transform: translateY(2px);
+  }
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   }
 
   @media screen and (min-width: 768px) {
     height: 44px;
     font-weight: 600;
     font-size: 18px;
-    /* margin-top: 24px; */
   }
 
   @media screen and (min-width: 1280px) {
     height: 48px;
-    /* margin-top: 24px; */
+  }
+`;
+export const ButtonSend = styled.button`
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+
+  width: 100%;
+  height: 44px;
+  border-radius: 20px;
+  background: #f59256;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 14px;
+  margin-bottom: 40px;
+  :active {
+    transform: translateY(2px);
+  }
+  :focus,
+  :hover {
+    box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 44px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 48px;
   }
 `;
 
-export const GoogleIcon = styled.svg`
-  width: 22px;
-  height: 22px;
+export const SelectContainer = styled.div`
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
   @media screen and (min-width: 768px) {
-    width: 30px;
-    height: 30px;
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
+`;
+
+export const InputPhoneMask = styled(InputMask)`
+  outline: none;
+  background: none;
+  border: none;
+  box-shadow: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Manrope';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  ::placeholder {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1280px) {
   }
 `;

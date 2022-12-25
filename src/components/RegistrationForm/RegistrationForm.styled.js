@@ -66,6 +66,7 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   display: flex;
+  position: relative;
   background: none;
   width: 280px;
   height: 40px;
@@ -138,7 +139,9 @@ export const Button = styled.button`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
-
+  :active {
+    transform: translateY(2px);
+  }
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
@@ -211,7 +214,9 @@ export const ButtonRegister = styled.button`
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
-
+  :active {
+    transform: translateY(2px);
+  }
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
@@ -246,7 +251,9 @@ export const ButtonBack = styled.button`
   margin-right: auto;
   margin-top: 14px;
   margin-bottom: 40px;
-
+  :active {
+    transform: translateY(2px);
+  }
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
@@ -261,37 +268,6 @@ export const ButtonBack = styled.button`
 
   @media screen and (min-width: 1280px) {
     height: 48px;
-  }
-`;
-export const Validation = styled.p`
-  text-align: end;
-  width: 100%;
-  font-family: 'Manrope';
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  margin: 0;
-  padding: 0;
-
-  color: #ff4747;
-
-  width: 100%;
-  :focus,
-  :hover {
-  }
-
-  @media screen and (min-width: 768px) {
-    font-family: 'Manrope';
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    font-family: 'Manrope';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
   }
 `;
 

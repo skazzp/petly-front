@@ -25,6 +25,7 @@ const userInitialState = {
   token: null,
   isLoading: false,
   error: '',
+  avatarLoading: false,
 };
 
 const pendingHandlerAuth = (state, action) => {
@@ -45,6 +46,10 @@ const authSlice = createSlice({
   reducers: {
     changeUserData(state, action) {
       state.user = { ...state.user, ...action.payload };
+    },
+    setTokenFromGAuth(state, action) {
+      console.log('hello', action.payload);
+      state.token = action.payload;
     },
   },
   extraReducers: builder => {
@@ -89,7 +94,9 @@ const authSlice = createSlice({
       state.token = action.payload.token;
     });
 
-    builder.addCase(logOutUser.pending, pendingHandlerAuth);
+    builder.addCase(logOutUser.pending, (state, action) => {
+      state.error = null;
+    });
     builder.addCase(logOutUser.rejected, rejectedHandler);
     builder.addCase(logOutUser.fulfilled, (state, action) => {
       state.error = null;
@@ -99,9 +106,12 @@ const authSlice = createSlice({
     });
 
     builder.addCase(refreshUser.pending, pendingHandlerAuth);
-    builder.addCase(refreshUser.rejected, rejectedHandler);
+    builder.addCase(refreshUser.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+      state.token = null;
+    });
     builder.addCase(refreshUser.fulfilled, (state, action) => {
-      // console.log(action.payload);
       state.user = action.payload;
       state.error = null;
       state.isLoading = false;
@@ -118,11 +128,16 @@ const authSlice = createSlice({
       // state.user.avatarURL = action.payload.avatarURL;
     });
 
-    builder.addCase(editAvatar.pending, pendingHandlerAuth);
-    builder.addCase(editAvatar.rejected, rejectedHandler);
+    builder.addCase(editAvatar.pending, (state, _) => {
+      state.avatarLoading = true;
+    });
+    builder.addCase(editAvatar.rejected, (state, action) => {
+      state.avatarLoading = false;
+      state.error = action.payload;
+    });
     builder.addCase(editAvatar.fulfilled, (state, action) => {
       state.error = null;
-      state.isLoading = false;
+      state.avatarLoading = false;
       // console.log(123, action.payload);
       // state.user = { ...state.user, ...action.payload.avatarURL };
       // state.token = null;
@@ -151,5 +166,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { changeUserData } = authSlice.actions;
+export const { changeUserData, setTokenFromGAuth } = authSlice.actions;
 export const authReducer = authSlice.reducer;

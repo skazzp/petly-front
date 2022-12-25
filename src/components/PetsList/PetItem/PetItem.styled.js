@@ -13,13 +13,31 @@ export const Card = styled.div`
   @media (min-width: 768px) {
     min-width: 704px;
     display: flex;
-    gap: 32px;
+   
     padding: 20px 20px;
+    /* gap: 32px; */
+    border-radius: ${props => props.theme.radii.lg};
   }
   @media (min-width: 1200px) {
     width: 821px;
   }
 `;
+
+export const DefCard = styled.div`
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    min-width: 280px;
+  height: auto;
+
+  @media (min-width: 768px) {
+    min-width: 704px;
+  }
+  @media (min-width: 1200px) {
+    width: 821px;
+  }
+    `
 
 export const Img = styled.img`
   width: 240px;
@@ -32,9 +50,30 @@ export const Img = styled.img`
     width: 161px;
     height: 161px;
     margin:0;
+    margin-right: 32px;
   }
 `;
+export const DefaultImg = styled.img`
+margin: 0;
+padding: 0;
+width: 240px;
+  /* height: 240px; */
+ object-fit: contain;
+ @media (min-width: 768px) {
+    min-width: 704px;
+  }
+  @media (min-width: 1200px) {
+    width: 821px;
+  }
 
+`
+
+export const Title = styled.h3`
+  font-weight: ${props => props.theme.fontWeights.normal};
+  font-size: ${props => props.theme.fontSizes.l};
+  line-height: ${props => props.theme.lineHeights.secondary};
+
+`
 export const Li = styled.li`
   font-weight: ${props => props.theme.fontWeights.semiBold};
   font-size: ${props => props.theme.fontSizes.s};

@@ -1,12 +1,11 @@
+import { NoPositionSpinner } from 'components/LoaderSpiner/NoPositionSpinner';
 import UpdateAvatar from 'components/UpdateAvatar/UpdateAvatar';
 import { useFormik } from 'formik';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { editUser, logOutUser } from 'redux/auth/authOperation';
-import { selectUser } from 'redux/auth/authSelectors';
-// import { changeUserData } from 'redux/auth/authSlice';
+import { selectAvatarLoading, selectUser } from 'redux/auth/authSelectors';
 import icons from '../../assets/images/icons.svg';
 import {
   Avatar,
@@ -33,6 +32,7 @@ const UserDataItem = () => {
   };
   const [selectedImage, setSelectedImage] = useState(null);
   const [disabled, setDisabled] = useState(INITIAL_DISABLED);
+  const isLoading = useSelector(selectAvatarLoading);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const formik = useFormik({
@@ -79,7 +79,11 @@ const UserDataItem = () => {
     <Container>
       <div>
         <AvatarBox>
-          <Avatar src={avatarChange} alt="avatar" />
+          {isLoading ? (
+            <NoPositionSpinner />
+          ) : (
+            <Avatar src={avatarChange} alt="avatar" />
+          )}
         </AvatarBox>
         <UpdateAvatar
           selectedImage={selectedImage}

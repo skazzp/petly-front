@@ -7,7 +7,8 @@ import {
   Button,
   Span,
   LinkRegistration,
-  Validation,
+  ButtonGoogle,
+  GoogleIcon,
 } from './LoginForm.styled';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,6 +18,8 @@ import { useEffect, useState } from 'react';
 import { selectError, selectToken } from 'redux/auth/authSelectors';
 import { useWindowSize } from '@react-hook/window-size';
 import Confetti from 'react-confetti';
+import { Validation } from 'utility/validationStyle';
+import icons from '../../assets/images/icons.svg';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -43,18 +46,17 @@ const LoginForm = () => {
         emailError === formik.values.email ||
         passwordError === formik.values.password
       ) {
-       
       }
       dispatch(loginUser(formik.values));
       setErrorMassege('');
       setEmailError('');
       setPasswordError('');
     },
-    
   });
-  
-  console.log(emailError); console.log(formik.values.email);
-  
+
+  console.log(emailError);
+  console.log(formik.values.email);
+
   useEffect(() => {
     if (DbError) {
       setErrorMassege(DbError);
@@ -62,9 +64,23 @@ const LoginForm = () => {
       setPasswordError(formik.values.password);
       setErrorFixed(true);
     }
-    (emailError !== formik.values.email || passwordError !== formik.values.password ) && setErrorFixed(false)
-     // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [DbError]);
+
+  useEffect(() => {
+    if (errorFixed) {
+      if (
+        emailError !== formik.values.email ||
+        passwordError !== formik.values.password
+      ) {
+        setErrorMassege('');
+        setEmailError('');
+        setPasswordError('');
+        setErrorFixed(false);
+      }
+    }
+    // eslint-disable-next-line
+  }, [errorFixed, formik.values.email, formik.values.password]);
 
   return (
     <Div>
@@ -77,6 +93,7 @@ const LoginForm = () => {
             name="email"
             type="text"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.email}
           ></Input>
           {(formik.errors.email && formik.touched.email) || errorMassege ? (
@@ -90,6 +107,7 @@ const LoginForm = () => {
             name="password"
             type="password"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.confirmPassword}
           ></Input>
           {formik.errors.password && formik.touched.password ? (
@@ -97,6 +115,13 @@ const LoginForm = () => {
           ) : null}
         </Label>
         <Button type="submit">Login</Button>
+        <ButtonGoogle href="https://petly-bc26.cyclic.app/auth/google">
+          <p>Login with </p>
+          <GoogleIcon>
+            <use href={icons + '#icon-google-logo'}></use>
+          </GoogleIcon>
+          <p>Google</p>
+        </ButtonGoogle>
       </Form>
       <Span>
         Don't have an account?{' '}
@@ -105,8 +130,8 @@ const LoginForm = () => {
         </LinkRegistration>
       </Span>
       {token ? (
-            <Confetti recycle={false} width={width} height={height} />
-          ) : null}
+        <Confetti recycle={false} width={width} height={height} />
+      ) : null}
     </Div>
   );
 };

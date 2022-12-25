@@ -90,7 +90,7 @@ display: block ;
 `
 
 export const Span = styled.span`
-display: none ;
+  display: none;
   opacity: 0;
   max-height: 0;
   font-size: 0;
@@ -98,12 +98,11 @@ display: none ;
 `;
 
 export const SpanDots = styled.span`
-display: inline ;
-`
-
+  display: inline;
+`;
 
 export const Label = styled.label`
- color: ${props => props.theme.colors.accent};
+  color: ${props => props.theme.colors.accent};
   :before {
     display: block;
     margin-top: 15px;
@@ -114,7 +113,7 @@ export const Label = styled.label`
 export const Checkbox = styled.input`
   display: none;
   :checked ~ ${Span} {
-    display: inline ;
+    display: inline;
     opacity: 1;
     font-size: inherit;
     max-height: 999em;
@@ -132,9 +131,9 @@ export const Checkbox = styled.input`
 `;
 
 export const P = styled.p`
-display: inline-block ;
-text-align: justify;
-`
+  display: inline-block;
+  text-align: justify;
+`;
 
 export const Footer = styled.div`
   display: flex;

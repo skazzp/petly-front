@@ -24,9 +24,9 @@ export const CardNew = ({ news }) => {
   const newDescriptionStart = description.slice(0, 195);
   const newDescriptionEnd = description.slice(195);
 
-  const more = () => {
-    return <a href="#">more</a>;
-  };
+  // const more = () => {
+  //   return <a href="#">more</a>;
+  // };
 
   return (
     <>
