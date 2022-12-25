@@ -195,13 +195,14 @@ const RegistrationForm = () => {
               <Validation>{formik.errors.name}</Validation>
             ) : null}
           </Label>
-          <Label>
+            <Label>
             <SelectContainer>
               <Select
                 placeholder="City"
                 defaultValue={city}
                 id="city"
-                name="city"
+                  name="city"
+                  onBlur={formik.handleBlur}
                 styles={selectStyles()}
                 options={Selectoptions}
                 onChange={e => setCity(e.value)}
@@ -238,7 +239,7 @@ const RegistrationForm = () => {
               <Validation>{formik.errors.phone}</Validation>
             ) : null}
           </Label>
-          <ButtonRegister type="submit">Registration</ButtonRegister>
+            <ButtonRegister type="submit">Registration</ButtonRegister>
           <ButtonBack
             onClick={e => {
               e.preventDefault();
