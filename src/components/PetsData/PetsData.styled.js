@@ -17,11 +17,12 @@ margin-top: 40px;
     padding-left:  32px;
     padding-right:32px;
   }
-  @media (min-width: 1200px) {
-   width: 821px;
+  @media (min-width: 1280px) {
+   width: 100%;
    padding-left: 16px;
    padding-right: 16px;
- 
+   /* margin-left:0;
+margin-right:0; */
   } 
 `;
 
@@ -30,9 +31,9 @@ export const Titles=styled.div`
 display: flex;
 justify-content: space-between;
 align-items: flex-end;
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
    width: 821px;
-   
+   padding-right: 20px;
   } 
 
 `
@@ -58,7 +59,7 @@ width: 40px;
 height: 40px;
 background:  ${props => props.theme.colors.accent};
 color:  ${props => props.theme.colors.white};
-margin-left: 15px;
+/* margin-left: 15px; */
 border: ${props => props.theme.borders.none};
 margin-bottom:25px;
 cursor: pointer;
@@ -79,6 +80,7 @@ padding-top: 10px;
 
 `
 export const TitleAdd = styled.span`
+padding-right: 15px;
 @media (min-width: 768px) {
        
        font-size: 20px;
@@ -87,6 +89,8 @@ export const TitleAdd = styled.span`
 export const Add =styled.div`
 display: flex;
 align-items: flex-end;
+
+
 `
 
 export const Icon= styled.svg`
