@@ -10,3 +10,16 @@ export const getNews = createAsyncThunk('news', async thunkApi => {
     return thunkApi.rejectWithValue(error.response.status);
   }
 });
+
+export const getByQueryNews = createAsyncThunk(
+  'notice/getByQuery',
+  async (query, thunkApi) => {
+    try {
+      const response = await axios.get(`/api/info/news?query=${query}`);
+      // console.log('notice/getByQuery', response.data);
+      return response.data; // TODO
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);

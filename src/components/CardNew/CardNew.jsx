@@ -2,6 +2,7 @@ import {
   Checkbox,
   Content,
   Data,
+  Div,
   Footer,
   Label,
   Link,
@@ -36,11 +37,13 @@ export const CardNew = ({ news }) => {
           <Title>{title || 'no title'}</Title>
           </div>
           <Content>
+            <Div>
             <P><Checkbox type="checkbox" id={id} />
             {newDescriptionStart || 'no description'}
             <SpanDots> ...</SpanDots>
             <Span>{newDescriptionEnd}</Span>
             <Label for={id} /></P>
+            </Div>
           </Content>
         </WrapperContent>
         <Footer>
