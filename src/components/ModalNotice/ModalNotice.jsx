@@ -46,7 +46,6 @@ const ModalNotice = () => {
   const data = useSelector(state => state.notice.modalData);
   const favoriteNotice = useSelector(state => state.auth.user.favorites);
   const isAuth = useSelector(state => state.auth.token);
-  console.log(isAuth);
 
   const [isFavorite, setIsFavorite] = useState(null);
 
@@ -75,7 +74,6 @@ const ModalNotice = () => {
     const finedNotice = favoriteNotice.find(el => el === noticeId);
     return finedNotice;
   };
-  // let finedNotice = findFavoriteNotice(data._id);
   useEffect(() => {
     setIsFavorite(findFavoriteNotice(data._id));
     // eslint-disable-next-line
@@ -95,7 +93,7 @@ const ModalNotice = () => {
   };
   const handleClick = () => {
     if (!isAuth) {
-      toast.error('You must be sign up!');
+      toast.error('You must be logged in!');
       return;
     }
   };
@@ -189,7 +187,7 @@ const ModalNotice = () => {
         </div>
         <ListButtons>
           <ItemContact>
-            <Link href={data.owner.phone}>
+            <Link href={`tel:${data.owner.phone}`}>
               <ContactText>Contact</ContactText>
             </Link>
           </ItemContact>

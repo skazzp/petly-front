@@ -5,6 +5,8 @@
   "homepage": "https://skazzp.github.io/petly-front/",
   "dependencies": {
     "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.1",
+    "@mui/styled-engine-sc": "^5.11.0",
     "@react-hook/window-size": "^3.1.1",
     "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/jest-dom": "^5.16.3",

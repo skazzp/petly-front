@@ -9,7 +9,6 @@ import {
   LinkRegistration,
   ButtonBack,
   ButtonRegister,
-  Validation,
   SelectContainer,
 } from './RegistrationForm.styled';
 import { selectStyles } from './selectStyles';
@@ -24,6 +23,7 @@ import { useWindowSize } from '@react-hook/window-size';
 import Confetti from 'react-confetti';
 import Data from '../../assets/City.json';
 import InputMask from 'react-input-mask';
+import { Validation } from 'utility/validationStyle';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -31,10 +31,10 @@ const RegistrationForm = () => {
   const [emailErrorMassege, setEmailErrorMassege] = useState('');
   const [emailError, setEmailError] = useState('');
   const [emailErrorFixed, setEmailErrorFixed] = useState(false);
- 
+
   const { width, height } = useWindowSize();
   const errorDB = useSelector(selectError);
-    const token = useSelector(selectToken);
+  const token = useSelector(selectToken);
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -54,9 +54,13 @@ const RegistrationForm = () => {
         city: values.city,
         phone: values.phone,
       };
-     dispatch(registerUser(user));
+      dispatch(registerUser(user));
     },
   });
+
+  // const onChangeInputEmail = () => {
+    
+  // }
   const city = formik.values.city;
   const setCity = city => {
     formik.setValues(prev => ({
@@ -64,12 +68,9 @@ const RegistrationForm = () => {
       city: city,
     }));
   };
-
   const onClickNext = e => {
     e.preventDefault();
-     if (emailError !== formik.values.email) {
-      setEmailErrorFixed(false);
-    }
+    
     if (
       !formik.values.email &&
       !formik.values.password &&
@@ -82,39 +83,48 @@ const RegistrationForm = () => {
       formik.errors.confirmPassword
     )
       return;
-   
+
     SetFormChenge(true);
   };
   const Selectoptions = Data.map(i => ({
     value: `${i.City},${i.District}`,
     label: `${i.City}, ${i.District}`,
   }));
-
   useEffect(() => {
+    if (emailError !== formik.values.email) {
+      setEmailErrorMassege('');
+      setEmailErrorFixed(false);
 
+    }
+    // eslint-disable-next-line
+  }, [emailErrorFixed, formik.values.email] )
+    
+  useEffect(() => {
     if (errorDB === 'Email in use') {
       setEmailErrorMassege('Email in use');
       setEmailError(formik.values.email);
       setEmailErrorFixed(true);
+      SetFormChenge(false)
     }
     if (errorDB === '"email" must be a valid email') {
       setEmailErrorMassege('Email must be a valid');
       setEmailError(formik.values.email);
       setEmailErrorFixed(true);
+      SetFormChenge(false)
     }
-         
 
     if (!errorDB) {
       setEmailErrorMassege('');
       setEmailError('');
       setEmailErrorFixed(false);
+      SetFormChenge(false)
     }
     // eslint-disable-next-line
   }, [errorDB]);
 
- console.log(emailErrorFixed);
-  console.log(emailError);
-  console.log(formik.values.email);
+  //  console.log(emailErrorFixed);
+  //   console.log(emailError);
+  //   console.log(formik.values.email);
   return (
     <Div>
       <Title>Registration</Title>
@@ -122,12 +132,15 @@ const RegistrationForm = () => {
         <Form>
           <Label>
             <Input
+              
               placeholder="E-mail"
               id="email"
               name="email"
               type="text"
               onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
+              onChange={(e)=>formik.handleChange(e)}
+              
+            
               value={formik.values.email}
             ></Input>
             {(formik.errors.email && formik.touched.email) || emailError ? (
@@ -200,8 +213,8 @@ const RegistrationForm = () => {
               <Validation>{formik.errors.city}</Validation>
             ) : null}
           </Label>
-            <Label>
-              <InputMask
+          <Label>
+            <InputMask
               placeholder="Phone"
               name="phone"
               id="phone"
@@ -213,7 +226,7 @@ const RegistrationForm = () => {
                 height: '100%',
                 fontFamily: 'Manrope',
                 fontWeight: 400,
-                 outline: "none",
+                outline: 'none',
                 fontSize: 18,
                 lineHeight: 25,
               }}
@@ -234,19 +247,19 @@ const RegistrationForm = () => {
           >
             Back
           </ButtonBack>
-
-          
         </Form>
       )}
 
       <Span>
-        Don't have an account? <LinkRegistration type="button" to="/login" >Login</LinkRegistration>
+        Don't have an account?{' '}
+        <LinkRegistration type="button" to="/login">
+          Login
+        </LinkRegistration>
       </Span>
       {token ? (
-            <Confetti recycle={false} width={width} height={height} />
-          ) : null}
+        <Confetti recycle={false} width={width} height={height} />
+      ) : null}
     </Div>
-    
   );
 };
 

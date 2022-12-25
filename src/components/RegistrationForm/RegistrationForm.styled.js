@@ -18,13 +18,12 @@ export const Div = styled.div`
     background: #ffffff;
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
     border-radius: 40px;
-    padding: 60px 80px 60px 80px;
     width: 608px;
     height: 517px;
+    padding: 60px 80px 60px 80px;
   }
 
   @media screen and (min-width: 1280px) {
-    padding: 60px 80px 60px 80px;
     width: 618px;
     height: 541px;
     z-index: 1;
@@ -67,6 +66,7 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   display: flex;
+  position: relative;
   background: none;
   width: 280px;
   height: 40px;
@@ -76,7 +76,6 @@ export const Label = styled.label`
   border-radius: 40px;
   margin-bottom: 13px;
   padding: 11px 14px;
-  padding-right: 5px;
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
@@ -263,37 +262,6 @@ export const ButtonBack = styled.button`
 
   @media screen and (min-width: 1280px) {
     height: 48px;
-  }
-`;
-export const Validation = styled.p`
-  text-align: center;
-
-  font-family: 'Manrope';
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 22px;
-  margin: 0;
-  padding: 0;
-
-  color: #ff4747;
-
-  width: 100%;
-  :focus,
-  :hover {
-  }
-
-  @media screen and (min-width: 768px) {
-    font-family: 'Manrope';
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    font-family: 'Manrope';
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
   }
 `;
 

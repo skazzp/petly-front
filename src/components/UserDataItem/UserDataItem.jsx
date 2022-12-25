@@ -1,12 +1,11 @@
+import { NoPositionSpinner } from 'components/LoaderSpiner/NoPositionSpinner';
 import UpdateAvatar from 'components/UpdateAvatar/UpdateAvatar';
 import { useFormik } from 'formik';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
-import { editUser, loginUser, logOutUser } from 'redux/auth/authOperation';
-import { selectUser } from 'redux/auth/authSelectors';
-// import { changeUserData } from 'redux/auth/authSlice';
+import { editUser, logOutUser } from 'redux/auth/authOperation';
+import { selectAvatarLoading, selectUser } from 'redux/auth/authSelectors';
 import icons from '../../assets/images/icons.svg';
 import {
   Avatar,
@@ -31,7 +30,9 @@ const UserDataItem = () => {
     city: true,
     phone: true,
   };
+  const [selectedImage, setSelectedImage] = useState(null);
   const [disabled, setDisabled] = useState(INITIAL_DISABLED);
+  const isLoading = useSelector(selectAvatarLoading);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const formik = useFormik({
@@ -50,7 +51,9 @@ const UserDataItem = () => {
     },
   });
   const { setFieldValue } = formik;
-
+  const avatarChange = selectedImage
+    ? URL.createObjectURL(selectedImage)
+    : `${user.avatarURL}`;
   useEffect(() => {
     if (!user.email) return;
     setFieldValue('name', user.name);
@@ -66,11 +69,6 @@ const UserDataItem = () => {
   }, [user, setFieldValue]);
 
   const handleEditInput = e => {
-    // console.log(e.target);
-    // // console.log(user);
-    // console.log(e.target.parentNode.htmlFor);
-    // // console.log(formik.values);
-    // console.log(e.currentTarget);
     setDisabled({
       ...INITIAL_DISABLED,
       [e.currentTarget.parentNode.htmlFor]: false,
@@ -79,24 +77,20 @@ const UserDataItem = () => {
 
   return (
     <Container>
-      <button
-        type="click"
-        onClick={() =>
-          dispatch(
-            loginUser({
-              email: 'yatomat2@gmail.com',
-              password: '1231234',
-            })
-          )
-        }
-      ></button>
-      <AvatarBox>
-        <Avatar src={`${user.avatarURL}`} alt="avatar" />
-      </AvatarBox>
-      <UpdateAvatar />
+      <div>
+        <AvatarBox>
+          {isLoading ? (
+            <NoPositionSpinner />
+          ) : (
+            <Avatar src={avatarChange} alt="avatar" />
+          )}
+        </AvatarBox>
+        <UpdateAvatar
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+        />
+      </div>
       <Form onSubmit={formik.handleSubmit}>
-        {/* test login func */}
-
         <Label name="name" htmlFor="name">
           <LabelText>Name:</LabelText>
           <Input
@@ -117,7 +111,7 @@ const UserDataItem = () => {
           {!disabled.name && (
             <Btn type="submit">
               <BtnIcon>
-                <use href={`${icons}#icon-ci_edit`}></use>
+                <use href={`${icons}#icon-edit_check`}></use>
               </BtnIcon>
             </Btn>
           )}
@@ -230,7 +224,7 @@ const UserDataItem = () => {
               dispatch(logOutUser());
             }}
           >
-            <LogoutIcon>
+            <LogoutIcon fill="red">
               <use href={icons + '#icon-logout'}></use>
             </LogoutIcon>
             Log Out

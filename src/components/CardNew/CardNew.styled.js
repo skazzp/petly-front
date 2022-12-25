@@ -19,7 +19,6 @@ export const Wrapper = styled.div`
   ${props => props.theme.breakpoints.desc} {
     width: 392px;
   }
-
 `;
 
 export const Strip = styled.div`
@@ -50,6 +49,7 @@ export const Title = styled.h3`
   letter-spacing: -0.01em;
 
   ${props => props.theme.breakpoints.tab} {
+    margin-bottom: 16px;
   }
 
   ${props => props.theme.breakpoints.desc} {
@@ -70,6 +70,52 @@ export const Content = styled.div`
 
   ${props => props.theme.breakpoints.desc} {
   }
+`;
+
+export const Span = styled.span`
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: 0.25s ease;
+`;
+
+export const SpanDots = styled.span`
+  display: inline;
+`;
+
+export const Label = styled.label`
+  color: ${props => props.theme.colors.accent};
+  :before {
+    display: block;
+    margin-top: 15px;
+    content: 'Show more';
+  }
+`;
+
+export const Checkbox = styled.input`
+  display: none;
+  :checked ~ ${Span} {
+    display: inline;
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+  }
+
+  :checked ~ ${SpanDots} {
+    display: none;
+  }
+
+  :checked ~ ${Label} {
+    :before {
+      content: 'Show less';
+    }
+  }
+`;
+
+export const P = styled.p`
+  display: inline-block;
+  text-align: justify;
 `;
 
 export const Footer = styled.div`
@@ -109,4 +155,3 @@ export const Link = styled.a`
   ${props => props.theme.breakpoints.desc} {
   }
 `;
-
