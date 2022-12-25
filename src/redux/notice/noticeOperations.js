@@ -34,7 +34,6 @@ export const getAllNotices = createAsyncThunk(
         params: { page },
       });
       // console.log('getAllNotices', response);
-      console.log(response);
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -114,10 +113,8 @@ export const deleteFavorites = createAsyncThunk(
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
-      const response = await axios.delete(
-        `/api/notices/favorites/delete/${id}`
-      );
-      console.log('notice/deleteFavorites', response);
+      await axios.delete(`/api/notices/favorites/delete/${id}`);
+      // console.log('notice/deleteFavorites', response);
       return id; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
