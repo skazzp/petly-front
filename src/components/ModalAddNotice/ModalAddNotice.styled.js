@@ -77,7 +77,7 @@ export const Wrapper = styled.div`
   text-align: center;
   border-radius: 20px;
   padding: 40px 18px;
-  margin: 50px auto;
+  margin: 5% auto;
   background-color: ${p => p.theme.colors.white};
 
   ${p => p.theme.breakpoints.tab} {

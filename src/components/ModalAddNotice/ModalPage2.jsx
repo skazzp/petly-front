@@ -43,7 +43,8 @@ const validationSchema = yup.object({
     .matches(
       /^[1-9]+[0-9]*\$$/g,
       'Only number characters and $ are allowed, e.g. 50$'
-    ),
+    )
+    .required('Field is required!'),
   image: yup
     .mixed()
     .required('Image is required! (jpg, jpeg, png)')

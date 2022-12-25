@@ -32,7 +32,7 @@ const validationSchema = yup.object({
   breed: yup
     .string()
     .min(2)
-    .max(24)
+    .max(16)
     .matches(
       /^([А-Яа-яЁёЇїІіЄєҐґ'\s]+|[a-zA-Z\s]+){2,}$/,
       'Only alphabetic characters are allowed'
