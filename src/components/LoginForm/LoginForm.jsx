@@ -7,6 +7,8 @@ import {
   Button,
   Span,
   LinkRegistration,
+  ButtonGoogle,
+  GoogleIcon,
 } from './LoginForm.styled';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,6 +19,7 @@ import { selectError, selectToken } from 'redux/auth/authSelectors';
 import { useWindowSize } from '@react-hook/window-size';
 import Confetti from 'react-confetti';
 import { Validation } from 'utility/validationStyle';
+import icons from '../../assets/images/icons.svg';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -112,6 +115,13 @@ const LoginForm = () => {
           ) : null}
         </Label>
         <Button type="submit">Login</Button>
+        <ButtonGoogle href="https://petly-bc26.cyclic.app/auth/google">
+          <p>Login with </p>
+          <GoogleIcon>
+            <use href={icons + '#icon-google-logo'}></use>
+          </GoogleIcon>
+          <p>Google</p>
+        </ButtonGoogle>
       </Form>
       <Span>
         Don't have an account?{' '}

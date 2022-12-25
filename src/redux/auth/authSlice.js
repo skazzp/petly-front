@@ -47,6 +47,10 @@ const authSlice = createSlice({
     changeUserData(state, action) {
       state.user = { ...state.user, ...action.payload };
     },
+    setTokenFromGAuth(state, action) {
+      console.log('hello', action.payload);
+      state.token = action.payload;
+    },
   },
   extraReducers: builder => {
     builder.addCase(registerUser.pending, pendingHandlerAuth);
@@ -162,5 +166,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { changeUserData } = authSlice.actions;
+export const { changeUserData, setTokenFromGAuth } = authSlice.actions;
 export const authReducer = authSlice.reducer;
