@@ -21,6 +21,19 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const WrapperContent = styled.div`
+
+
+  ${props => props.theme.breakpoints.tab} {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+  ${props => props.theme.breakpoints.desc} {
+  }
+`;
+
 export const Strip = styled.div`
   display: block;
   width: 200px;
