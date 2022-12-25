@@ -1,3 +1,4 @@
+import { LoaderSpiner } from 'components/LoaderSpiner/LoaderSpiner';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -16,7 +17,11 @@ const GoogleAuth = () => {
     navigate('/notices');
   }, [dispatch, navigate, token]);
 
-  return <p>Loading User</p>;
+  return (
+    <>
+      <LoaderSpiner />
+    </>
+  );
 };
 
 export default GoogleAuth;

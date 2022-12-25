@@ -115,7 +115,7 @@ const LoginForm = () => {
           ) : null}
         </Label>
         <Button type="submit">Login</Button>
-        <ButtonGoogle type="button">
+        <ButtonGoogle href="http://localhost:3030/auth/google">
           <p>Login with </p>
           <GoogleIcon>
             <use href={icons + '#icon-google-logo'}></use>
