@@ -25,5 +25,3 @@ const GoogleAuth = () => {
 };
 
 export default GoogleAuth;
-
-// http://localhost:3000/petly-front/google-redirect?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzliYThiOTExYTk2Mjg4ZjcyZTNkYTciLCJpYXQiOjE2NzEzOTI0OTMsImV4cCI6MTY3Mzk4NDQ5M30.YkKOj29hWLDFkIIbAdtQRKTldhpg3p1XDhPARDEV1nc
