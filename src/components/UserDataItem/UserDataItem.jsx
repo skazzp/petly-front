@@ -14,8 +14,10 @@ import {
   Btn,
   BtnIcon,
   Container,
+  Error,
   Form,
   Input,
+  InputBox,
   Label,
   LabelText,
   LogoutBox,
@@ -114,7 +116,7 @@ const UserDataItem = () => {
       <Form onSubmit={formik.handleSubmit}>
         <Label name="name" htmlFor="name">
           <LabelText>Name:</LabelText>
-          <span>
+          <InputBox>
             <Input
               id="name"
               name="name"
@@ -124,9 +126,9 @@ const UserDataItem = () => {
               value={formik.values.name}
             />
             {formik.touched.name && formik.errors.name ? (
-              <p>{formik.errors.name}</p>
+              <Error>{formik.errors.name}</Error>
             ) : null}
-          </span>
+          </InputBox>
           {disabled.name && (
             <Btn type="button" onClick={handleEditInput}>
               <BtnIcon>
@@ -144,19 +146,19 @@ const UserDataItem = () => {
         </Label>
         <Label name="email" htmlFor="email">
           <LabelText>Email:</LabelText>
-          <span>
+          <InputBox>
             <Input
               id="email"
               name="email"
-              type="email"
+              type="text"
               disabled={disabled.email}
               onChange={formik.handleChange}
               value={formik.values.email}
             />
             {formik.touched.email && formik.errors.email ? (
-              <p>{formik.errors.email}</p>
+              <Error>{formik.errors.email}</Error>
             ) : null}
-          </span>
+          </InputBox>
           {disabled.email && (
             <Btn type="button" onClick={handleEditInput}>
               <BtnIcon>
@@ -174,7 +176,7 @@ const UserDataItem = () => {
         </Label>
         <Label htmlFor="birthday">
           <LabelText>Birthday:</LabelText>
-          <span>
+          <InputBox>
             <Input
               id="birthday"
               name="birthday"
@@ -185,9 +187,9 @@ const UserDataItem = () => {
               value={formik.values.birthday}
             />
             {formik.touched.birthday && formik.errors.birthday ? (
-              <p>{formik.errors.birthday}</p>
+              <Error>{formik.errors.birthday}</Error>
             ) : null}
-          </span>
+          </InputBox>
           {disabled.birthday && (
             <Btn type="button" onClick={handleEditInput}>
               <BtnIcon>
@@ -205,7 +207,7 @@ const UserDataItem = () => {
         </Label>
         <Label htmlFor="phone">
           <LabelText>Phone:</LabelText>
-          <span>
+          <InputBox>
             <Input
               id="phone"
               name="phone"
@@ -216,9 +218,9 @@ const UserDataItem = () => {
               value={formik.values.phone}
             />
             {formik.touched.phone && formik.errors.phone ? (
-              <p>{formik.errors.phone}</p>
+              <Error>{formik.errors.phone}</Error>
             ) : null}
-          </span>
+          </InputBox>
           {disabled.phone && (
             <Btn type="button" onClick={handleEditInput}>
               <BtnIcon>
@@ -236,7 +238,7 @@ const UserDataItem = () => {
         </Label>
         <Label htmlFor="city">
           <LabelText>City:</LabelText>
-          <span>
+          <InputBox>
             <Input
               id="city"
               name="city"
@@ -246,9 +248,9 @@ const UserDataItem = () => {
               value={formik.values.city}
             />
             {formik.touched.city && formik.errors.city ? (
-              <p>{formik.errors.city}</p>
+              <Error>{formik.errors.city}</Error>
             ) : null}
-          </span>
+          </InputBox>
           {disabled.city && (
             <Btn type="button" onClick={handleEditInput}>
               <BtnIcon>
