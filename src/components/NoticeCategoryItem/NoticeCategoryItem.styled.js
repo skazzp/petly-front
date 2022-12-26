@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Item = styled.li`
   position: relative;
   width: 280px;
-  height: 606px;
+  min-height: 606px;
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
@@ -89,6 +89,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2`
   padding-bottom: 20px;
+  min-width: 231px;
 
   font-weight: ${props => props.theme.fontWeights.bold};
   font-size: ${props => props.theme.fontSizes.xl};
@@ -97,7 +98,7 @@ export const Title = styled.h2`
 
 export const InfoList = styled.ul`
   list-style: none;
-  /* height: 112px; */
+  /* height: 115px; */
 `;
 
 export const InfoItem = styled.li`
@@ -111,6 +112,7 @@ export const InfoTitle = styled.p`
   font-weight: ${props => props.theme.fontWeights.semiBold};
   font-size: ${props => props.theme.fontSizes.m};
   line-height: ${props => props.theme.lineHeights.main};
+  cursor: default;
 `;
 
 export const Info = styled.p`

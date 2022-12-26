@@ -97,7 +97,6 @@ const ModalNotice = () => {
       return;
     }
   };
-  // console.log(data.category);
   const fixedStatus = str => {
     if (str === 'for-free') {
       console.log(str);
@@ -142,11 +141,11 @@ const ModalNotice = () => {
                 <Items>
                   <Text>Phone:</Text>
                 </Items>
-                {data.price && (
+                {data.price ? (
                   <Items>
                     <Text>Sell:</Text>
                   </Items>
-                )}
+                ) : null}
               </FirstList>
               <SecondList>
                 <Items>
@@ -170,11 +169,11 @@ const ModalNotice = () => {
                 <Items>
                   <TextSecond>{data.owner.phone}</TextSecond>
                 </Items>
-                {data.price && (
+                {data.price ? (
                   <Items>
                     <TextSecond>{data.price}$</TextSecond>
                   </Items>
-                )}
+                ) : null}
               </SecondList>
             </ListWrapper>
           </div>

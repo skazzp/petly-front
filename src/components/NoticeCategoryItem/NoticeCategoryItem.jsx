@@ -8,7 +8,6 @@ import {
 } from '../../redux/auth/authSelectors';
 import {
   deleteFavorites,
-  deleteNotices,
 } from '../../redux/notice/noticeOperations';
 import { addFavorites } from 'redux/notice/noticeOperations';
 
@@ -31,6 +30,7 @@ import {
 } from './NoticeCategoryItem.styled';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import ExitAccept from 'components/ExitAccept/ExitAccept';
 
 const NoticeCategoryItem = ({ notice }) => {
   const {
@@ -54,6 +54,7 @@ const NoticeCategoryItem = ({ notice }) => {
   const isOwner = user?._id === owner?._id || user?._id === owner;
   const favoriteNotice = useSelector(state => state.auth.user.favorites);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isAcceptDeleteOwner, setIsAcceptDeleteOwner] = useState(false);
 
   // console.log(isOwner);
 
@@ -176,9 +177,7 @@ const NoticeCategoryItem = ({ notice }) => {
           {isOwner && (
             <BtnDlt
               type="button"
-              onClick={() => {
-                window.confirm('Are you sure?') && dispatch(deleteNotices(_id));
-              }}
+              onClick={() => setIsAcceptDeleteOwner(true)}
             >
               <Span>Delete</Span>
               <Svg width="17" height="17">
@@ -187,6 +186,13 @@ const NoticeCategoryItem = ({ notice }) => {
             </BtnDlt>
           )}
         </BtnBox>
+        {isAcceptDeleteOwner && (
+          <ExitAccept
+            isAcceptDeleteOwner={isAcceptDeleteOwner}
+            setIsAcceptDeleteOwner={setIsAcceptDeleteOwner}
+            id={_id}
+          />
+        )}
       </Item>
     </>
   );
