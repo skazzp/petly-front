@@ -10,6 +10,7 @@ const PaginationNotices = ({ page, totalPages, setSearch }) => {
     return Number(page);
   };
   const fixedPage = fixPage();
+
   return (
     <PaginationNotice
       sx={{
@@ -21,7 +22,13 @@ const PaginationNotices = ({ page, totalPages, setSearch }) => {
       count={totalPages}
       page={fixedPage}
       onChange={(e, value) => {
+        console.log('qqq');
         setSearch({ page: value });
+        // window.scrollTo(0, 0);
+
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 1300);
       }}
       boundaryCount={1}
       // showFirstButton
