@@ -34,7 +34,7 @@ export const Form = styled.form`
   align-items: center;
   padding-left: 16px;
   padding-right: 12px;
-  gap: 8px;
+  gap: 10px;
   ${p => p.theme.breakpoints.tab} {
     padding-left: 32px;
   }
@@ -189,7 +189,7 @@ export const Error = styled.p`
   animation-iteration-count: revert-layer;
   transition: 760ms cubic-bezier(0.43, 0.21, 0, 1.03);
 
-  @keyframes show {
+  /* @keyframes show {
     0% {
       transform: translateX(-200px);
     }
@@ -201,19 +201,23 @@ export const Error = styled.p`
     100% {
       transform: translateX(0);
     }
-  }
-  :focus,
+  } */
+  /* :focus,
   :hover {
-    transform: 500ms cubic-bezier(0.43, 0.21, 0, 1.03);
-    /* transition: 1000ms cubic-bezier(0.43, 0.21, 0, 1.03); */
-    height: 40%;
-    width: 80%;
+    transform: 500ms cubic-bezier(0.43, 0.21, 0, 1.03); */
+  /* transition: 1000ms cubic-bezier(0.43, 0.21, 0, 1.03); */
+  /* height: 40%; */
+  /* width: 80%;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-  }
+  } */
 `;
 
-export const InputBox = styled.span`
+export const InputBox = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
 `;
