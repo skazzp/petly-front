@@ -20,7 +20,6 @@ import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
 import { ToastContainer } from 'react-toastify';
 import FriendsPage from 'pages/FriendsPage/FriendsPage';
 import GoogleAuth from './GoogleAuth/GoogleAuth';
-import ChatPage from '../pages/ChatPage/ChatPage';
 
 const Test = () => {
   return <h1>123</h1>;
