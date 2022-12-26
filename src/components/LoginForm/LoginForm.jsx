@@ -54,8 +54,8 @@ const LoginForm = () => {
     },
   });
 
-  console.log(emailError);
-  console.log(formik.values.email);
+  // console.log(emailError);
+  // console.log(formik.values.email);
 
   useEffect(() => {
     if (DbError) {

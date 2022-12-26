@@ -20,7 +20,6 @@ import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
 import { ToastContainer } from 'react-toastify';
 import FriendsPage from 'pages/FriendsPage/FriendsPage';
 import GoogleAuth from './GoogleAuth/GoogleAuth';
-import ChatPage from '../pages/ChatPage/ChatPage';
 
 const Test = () => {
   return <h1>123</h1>;
@@ -61,7 +60,6 @@ export const App = () => {
             }
           />
           <Route path="friends" element={<FriendsPage />} />
-          <Route path="chat" element={<ChatPage />} />
           <Route path="news" element={<NewsPage />} />
           <Route path="notices" element={<NoticesPage />}>
             <Route path="lost-found" element={<></>} />
