@@ -4,11 +4,11 @@ import {useIsDesktop, useIsMobile, useIsMobileOrTablet, useIsTablet} from '../..
 import { AuthNav } from "components/AuthNav";
 import { ModalNav } from "components/ModalNav";
 import { Nav } from "components/Nav";
-import { UserNav } from "components/UserNav";
 import { Container, Box} from "./Navigation.styled";
 import { Spin as Hamburger } from 'hamburger-react'
 import { isModalOpen } from "redux/modal/modalSelectors";
 import { toggleModal, closeModal } from "redux/modal/modalSlice";
+import UserNav from "components/UserNav/UserNav";
 export const Navigation = ({header}) => {
     let isLoggedIn = useSelector(selectToken);
     const modalOpen = useSelector(isModalOpen)
