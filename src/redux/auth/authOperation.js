@@ -18,7 +18,7 @@ export const registerUser = createAsyncThunk(
     try {
       const response = await axios.post('/api/users/signup', user);
       setAuthHeader(response.data.token);
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(
@@ -34,7 +34,7 @@ export const loginUser = createAsyncThunk(
     try {
       const response = await axios.post('/api/users/login', user);
       setAuthHeader(response.data.token);
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(
@@ -60,20 +60,20 @@ export const logOutUser = createAsyncThunk(
 
 export const refreshUser = createAsyncThunk(
   'auth/refreshUser',
-  async (_, thunkApi) => {
+  async (token, thunkApi) => {
     const state = thunkApi.getState();
     const persistedToken = state.auth.token;
 
-    setAuthHeader(persistedToken);
-
-    if (persistedToken === null) {
+    setAuthHeader(token ? token : persistedToken);
+    // console.log('tokens', persistedToken, token);
+    // console.log(axios.defaults.headers.common.Authorization);
+    if (persistedToken === null && !token) {
       return thunkApi.rejectWithValue(null);
     }
 
     try {
       const response = await axios.get('/api/usersinfo');
       // console.log('getUser', response.data);
-
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);
@@ -99,12 +99,10 @@ export const editUser = createAsyncThunk(
 export const editAvatar = createAsyncThunk(
   'auth/editAvatar',
   async (file, thunkApi) => {
-    console.log(file);
     const formData = new FormData();
     formData.append('image', file);
 
     const config = {
-      // method: 'patch',
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -115,7 +113,7 @@ export const editAvatar = createAsyncThunk(
         formData,
         config
       );
-      console.log('editAvatar', response.data);
+      // console.log('editAvatar', response.data);
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);

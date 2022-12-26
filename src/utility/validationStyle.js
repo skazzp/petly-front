@@ -17,7 +17,9 @@ export const Validation = styled.p`
   color: #ff4747;
   width: 74%;
   animation: show 1000ms cubic-bezier(0.43, 0.21, 0, 1.03);
-  animation-iteration-count: revert-layer;
+  /* animation-iteration-count: revert-layer; */
+  /* transition: 1000ms cubic-bezier(0.43, 0.21, 0, 1.03); */
+
   @keyframes show {
     0% {
       transform: translateX(-200px);
@@ -33,10 +35,8 @@ export const Validation = styled.p`
   }
   :focus,
   :hover {
-    /* padding: 2px; */
-    text-align: center;
-    /* padding-top: 2px;
-    padding-bottom: 2px; */
+    transform: 1000ms cubic-bezier(0.43, 0.21, 0, 1.03);
+    transition: 1000ms cubic-bezier(0.43, 0.21, 0, 1.03);
     height: 40%;
     width: 80%;
     font-weight: 400;

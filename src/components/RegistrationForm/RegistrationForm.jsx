@@ -59,7 +59,7 @@ const RegistrationForm = () => {
   });
 
   // const onChangeInputEmail = () => {
-    
+
   // }
   const city = formik.values.city;
   const setCity = city => {
@@ -70,7 +70,7 @@ const RegistrationForm = () => {
   };
   const onClickNext = e => {
     e.preventDefault();
-    
+
     if (
       !formik.values.email &&
       !formik.values.password &&
@@ -94,30 +94,29 @@ const RegistrationForm = () => {
     if (emailError !== formik.values.email) {
       setEmailErrorMassege('');
       setEmailErrorFixed(false);
-
     }
     // eslint-disable-next-line
-  }, [emailErrorFixed, formik.values.email] )
-    
+  }, [emailErrorFixed, formik.values.email]);
+
   useEffect(() => {
     if (errorDB === 'Email in use') {
       setEmailErrorMassege('Email in use');
       setEmailError(formik.values.email);
       setEmailErrorFixed(true);
-      SetFormChenge(false)
+      SetFormChenge(false);
     }
     if (errorDB === '"email" must be a valid email') {
       setEmailErrorMassege('Email must be a valid');
       setEmailError(formik.values.email);
       setEmailErrorFixed(true);
-      SetFormChenge(false)
+      SetFormChenge(false);
     }
 
     if (!errorDB) {
       setEmailErrorMassege('');
       setEmailError('');
       setEmailErrorFixed(false);
-      SetFormChenge(false)
+      SetFormChenge(false);
     }
     // eslint-disable-next-line
   }, [errorDB]);
@@ -132,15 +131,12 @@ const RegistrationForm = () => {
         <Form>
           <Label>
             <Input
-              
               placeholder="E-mail"
               id="email"
               name="email"
               type="text"
               onBlur={formik.handleBlur}
-              onChange={(e)=>formik.handleChange(e)}
-              
-            
+              onChange={e => formik.handleChange(e)}
               value={formik.values.email}
             ></Input>
             {(formik.errors.email && formik.touched.email) || emailError ? (
@@ -202,6 +198,7 @@ const RegistrationForm = () => {
                 defaultValue={city}
                 id="city"
                 name="city"
+                onBlur={formik.handleBlur}
                 styles={selectStyles()}
                 options={Selectoptions}
                 onChange={e => setCity(e.value)}
