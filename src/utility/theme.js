@@ -1,3 +1,5 @@
+import { keyframes } from "styled-components";
+
 export const theme = {
   colors: {
     black: '#111111',
@@ -76,3 +78,4 @@ export const theme = {
   },
 
 };
+

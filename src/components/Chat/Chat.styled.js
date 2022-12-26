@@ -7,7 +7,7 @@ export const DivBox = styled.div`
 
   top: 0;
   right: 0;
-  display: flex;
+  display: none;
   opacity: ${p => (!p.type ? 0 : 1)};
   margin-left: auto;
   justify-content: center;
