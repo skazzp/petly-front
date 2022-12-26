@@ -22,9 +22,9 @@ import FriendsPage from 'pages/FriendsPage/FriendsPage';
 import GoogleAuth from './GoogleAuth/GoogleAuth';
 import ChatPage from '../pages/ChatPage/ChatPage';
 
-const Test = () => {
-  return <h1>123</h1>;
-};
+// const Test = () => {
+//   return <h1>123</h1>;
+// };
 
 export const App = () => {
   const isLoggedIn = useSelector(selectToken);
@@ -44,7 +44,7 @@ export const App = () => {
             }
           />
           <Route path="google-redirect" element={<GoogleAuth />} />
-          <Route path="test" element={<Test />} />
+          {/* <Route path="test" element={<Test />} /> */}
           <Route
             path="register"
             element={
