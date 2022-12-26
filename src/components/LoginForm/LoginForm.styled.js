@@ -196,3 +196,55 @@ export const LinkRegistration = styled(Link)`
   @media screen and (min-width: 1280px) {
   }
 `;
+
+export const ButtonGoogle = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  background-color: #ffffff;
+  gap: 10px;
+  cursor: pointer;
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+
+  width: 100%;
+  height: 44px;
+  border-radius: 20px;
+  border: ${p => p.theme.borders.normal};
+  /* margin-top: 30px; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+
+  :focus,
+  :hover {
+    box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 44px;
+    font-weight: 600;
+    font-size: 18px;
+    /* margin-top: 24px; */
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 48px;
+    /* margin-top: 24px; */
+  }
+`;
+
+export const GoogleIcon = styled.svg`
+  width: 22px;
+  height: 22px;
+
+  @media screen and (min-width: 768px) {
+    width: 30px;
+    height: 30px;
+  }
+`;

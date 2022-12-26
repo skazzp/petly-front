@@ -47,6 +47,10 @@ const authSlice = createSlice({
     changeUserData(state, action) {
       state.user = { ...state.user, ...action.payload };
     },
+    setTokenFromGAuth(state, action) {
+      console.log('hello', action.payload);
+      state.token = action.payload;
+    },
   },
   extraReducers: builder => {
     builder.addCase(registerUser.pending, pendingHandlerAuth);
@@ -102,7 +106,11 @@ const authSlice = createSlice({
     });
 
     builder.addCase(refreshUser.pending, pendingHandlerAuth);
-    builder.addCase(refreshUser.rejected, rejectedHandler);
+    builder.addCase(refreshUser.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+      state.token = null;
+    });
     builder.addCase(refreshUser.fulfilled, (state, action) => {
       state.user = action.payload;
       state.error = null;
@@ -158,5 +166,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { changeUserData } = authSlice.actions;
+export const { changeUserData, setTokenFromGAuth } = authSlice.actions;
 export const authReducer = authSlice.reducer;
