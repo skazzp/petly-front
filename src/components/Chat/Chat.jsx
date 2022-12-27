@@ -1,6 +1,6 @@
-import { ButtonSend, DivBox, Form, Input, Label, Title } from './Chat.styled';
+import { DivBox, Title } from './Chat.styled';
 
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 
 import axios from 'axios';
 import socket from 'utility/chatSoket';
