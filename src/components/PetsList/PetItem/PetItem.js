@@ -10,7 +10,7 @@ const PetItem = ({ pet }) => {
     const reversDate = event.split('-').reverse();
     return reversDate.join('.');
   };
-
+console.log(pet)
   return (
     <Card>
       <Img src={pet.photoURL} alt={`Your pet, ${pet.name}`} />
