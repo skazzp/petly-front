@@ -42,6 +42,14 @@ export const Button = styled(NavLink)`
   text-decoration: none;
   cursor: pointer;
 
+  :hover,
+  :focus {
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-2%, -2%);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
+      -8px -8px 12px rgba(255, 255, 255, 0.3);
+  }
+
   &.active {
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.white};

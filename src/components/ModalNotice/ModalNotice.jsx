@@ -85,8 +85,7 @@ const ModalNotice = () => {
     const month = new Date(str).getMonth() + 1;
     const year = new Date(str).getFullYear();
     return (
-      data.toString() +
-      '.' +
+      (data < 10 ? '0' + data.toString() + '.' : data.toString() + '.') +
       (month < 10 ? '0' + month.toString() : month.toString()) +
       '.' +
       year.toString()

@@ -26,6 +26,7 @@ const Chat = ({ type }) => {
       payload: obj,
     });
     socket.emit('ROOM:JOIN', obj);
+
     const { data } = await axios.get(
       `https://exemple-chat-back.onrender.com/rooms/${obj.roomId}`
     );
