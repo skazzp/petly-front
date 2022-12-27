@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import socket from 'utility/chatSoket';
-
+const MessageForm = styled.form`
+  max-height: 60%;
+`;
 const ChatContainer = styled.div`
   max-width: 1100px;
   background: #fff;
@@ -139,7 +141,8 @@ export default function MessangerChat({
   const messagesRef = useRef(null);
   console.log(messages);
 
-  const onSendMessage = () => {
+  const onSendMessage = e => {
+    e.preventDefault();
     socket.emit('ROOM:NEW_MESSAGE', {
       userName,
       roomId,
@@ -186,7 +189,7 @@ export default function MessangerChat({
           </main>
 
           <div className="chat-form-container">
-            <form id="chat-form">
+            <MessageForm onSubmit={e => onSendMessage(e)} id="chat-form">
               <input
                 id="msg"
                 type="text"
@@ -196,13 +199,13 @@ export default function MessangerChat({
                 onChange={e => setMessageValue(e.target.value)}
               />
               <button
+                type="submit"
                 className="btn-plane"
-                type="button"
-                onClick={onSendMessage}
+                // onClick={e => onSendMessage(e)}
               >
                 <i className="fas fa-paper-plane"></i>
               </button>
-            </form>
+            </MessageForm>
           </div>
         </ChatContainer>
       </div>

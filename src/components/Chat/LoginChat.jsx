@@ -31,7 +31,7 @@ export default function LoginChat({ onLogin }) {
     <>
       <div className="join-container">
         <main className="join-main">
-          <form action="chat.html">
+          <form>
             <div className="form-control"></div>
             <div className="form-control">
               <label htmlFor="roomId">Chat Channel</label>
@@ -42,7 +42,7 @@ export default function LoginChat({ onLogin }) {
               </select>
             </div>
             <div className="flex">
-              <button type="submit" className="btn" onClick={onEnter}>
+              <button type="button" className="btn" onClick={onEnter}>
                 Login to Chat
               </button>
             </div>
