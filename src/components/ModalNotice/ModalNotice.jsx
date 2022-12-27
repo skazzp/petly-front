@@ -119,17 +119,20 @@ const ModalNotice = () => {
             <Status>
               <StatusText>{fixedStatus(data.category)}</StatusText>
             </Status>
-            <ReactImageGallery
-              items={imgArr}
-              // defaultImage={defaultImage}
-              showBullets={true}
-              showIndex={true}
-              showThumbnails={false}
-              lazyLoad={true}
-              showPlayButton={false}
-              showFullscreenButton={false}
-            />
-            {/* <Img src={data.photoURL} alt="Animal"></Img> */}
+            {!data?.photoURL ? (
+              <ReactImageGallery
+                items={imgArr}
+                // defaultImage={defaultImage}
+                showBullets={true}
+                showIndex={true}
+                showThumbnails={false}
+                lazyLoad={true}
+                showPlayButton={false}
+                showFullscreenButton={false}
+              />
+            ) : (
+              <Img src={data.photoURL} alt="Animal"></Img>
+            )}
           </ImageWrapper>
           <div>
             <Title>{data.title}</Title>
