@@ -74,8 +74,7 @@ export const Label = styled.label`
   justify-content: center;
   border-radius: 40px;
   margin-bottom: 13px;
-  padding: 11px 14px;
-  padding-right: 5px;
+  padding: 5px 14px;
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
@@ -96,13 +95,14 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
+  border-radius: 40px;
   outline: none;
   background: none;
   border: none;
   box-shadow: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   font-family: 'Manrope';
   font-weight: 400;
   font-size: 18px;
