@@ -15,7 +15,7 @@ import {
   BtnDlt,
   BtnLearnMore,
   Category,
-  // Image,
+  Image,
   Info,
   InfoItem,
   InfoList,
@@ -29,7 +29,6 @@ import {
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import ExitAccept from 'components/ExitAccept/ExitAccept';
-// import { Carousel } from 'react-carousel-minimal';
 import ReactImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 
@@ -40,7 +39,7 @@ const NoticeCategoryItem = ({ notice }) => {
     category,
     location,
     owner,
-    // photoURL,
+    photoURL,
     price,
     title,
     _id,
@@ -125,33 +124,27 @@ const NoticeCategoryItem = ({ notice }) => {
     }
   };
 
-  // const slideNumberStyle = {
-  //   fontSize: '10px',
-  //   fontWeight: 'bold',
-  // };
-
   const data = img.map(element => {
-    // console.log(element);
     return { original: element.photoURL, thumbnail: element.photoURL };
   });
-  console.log('data', data);
+  // console.log('data', data);
   return (
     <>
       <Item>
-        {/* {!photoURL ? ( */}
-        <ReactImageGallery
-          items={data}
-          // defaultImage={defaultImage}
-          showBullets={false}
-          showIndex={true}
-          showThumbnails={false}
-          lazyLoad={true}
-          showPlayButton={false}
-          showFullscreenButton={false}
-        />
-        {/* ) : ( */}
-        {/* <Image src={photoURL} alt={breed} /> */}
-        {/* )} */}
+        {!photoURL ? (
+          <ReactImageGallery
+            items={data}
+            // defaultImage={defaultImage}
+            showBullets={false}
+            showIndex={true}
+            showThumbnails={false}
+            lazyLoad={true}
+            showPlayButton={false}
+            showFullscreenButton={false}
+          />
+        ) : (
+          <Image src={photoURL} alt={breed} />
+        )}
         <Category>{setCategory(category)}</Category>
 
         <BtnAddFavorite
