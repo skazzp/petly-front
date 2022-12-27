@@ -42,7 +42,7 @@ export const CardNew = ({ news }) => {
             {newDescriptionStart || 'no description'}
             <SpanDots> ...</SpanDots>
             <Span>{newDescriptionEnd}</Span>
-            <Label for={id} /></P>
+            <Label htmlFor={id} /></P>
             </Div>
           </Content>
         </WrapperContent>

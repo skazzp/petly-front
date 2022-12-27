@@ -36,7 +36,7 @@ const newsSlice = createSlice({
     builder.addCase(getByQueryNews.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.notices = action.payload;
+      state.news = action.payload;
     });
 
   },
