@@ -31,7 +31,7 @@ const validationSchema = yup.object({
     .required('Field is required!'),
   breed: yup
     .string()
-    .min(2)
+    // .min(2)
     .max(16)
     .matches(
       /^([А-Яа-яЁёЇїІіЄєҐґ'\s]+|[a-zA-Z\s]+){2,}$/,
@@ -59,8 +59,8 @@ const validationSchema = yup.object({
 });
 
 const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
-  const [breedValue, setBreedValue] = useState(formData.breed);
-
+  const [breedValue, setBreedValue] = useState();
+  //formData.breed
   const changeInputBreed = e => {
     const breed = e.target.value;
     if (/\d/g.test(breed)) return;
@@ -164,7 +164,8 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
               name="breed"
               id="breed"
               placeholder="Type breed"
-              value={breedValue}
+              // value={breedValue}
+              defaultValue={breedValue}
               onInput={changeInputBreed}
             />
             <ErrorMessage
