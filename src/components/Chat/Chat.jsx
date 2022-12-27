@@ -1,5 +1,7 @@
-import { ButtonSend, DivBox, Form, Input, Label, Title } from './Chat.styled';
-import { useEffect, useReducer, useState } from 'react';
+import { DivBox, Title } from './Chat.styled';
+
+import { useEffect, useReducer } from 'react';
+
 import axios from 'axios';
 import socket from 'utility/chatSoket';
 import reducer from 'redux/ChatReduser';
@@ -17,7 +19,6 @@ const Chat = ({ type }) => {
 
   console.log(state);
 
-
   const onLogin = async obj => {
     console.log(obj);
     dispatch({
@@ -33,7 +34,6 @@ const Chat = ({ type }) => {
     setUsers(data.users);
   };
 
-
   // window.socket = socket;
 
   const setUsers = users => {
@@ -41,7 +41,7 @@ const Chat = ({ type }) => {
       type: 'SET_USERS',
       payload: users,
     });
-
+  };
 
   const addMessage = message => {
     dispatch({
