@@ -116,10 +116,9 @@ const ModalAddsPet = ({ open, onClose }) => {
       .min(8, 'Minimum 8 letters required')
       .max(120, 'Maximum 120 letters required'),
     image: yup.mixed().required('Image is required')
-    .oneOf([true]) 
-    .test(5000000, 'the file is large',  value => {
+    .test(5000000, 'the file is large',  image => {
 
-      return value && image && image.size <= 5000000;
+      return image && image.size <= 5000000;
     }),
     // (value) => value && value.size <=  4 * 1024 * 1024)  // 5MB
   });
