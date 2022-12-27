@@ -101,12 +101,10 @@ const ModalAddsPet = ({ open, onClose }) => {
     image: yup
       .mixed()
       .required('Image is required')
-      .test(5000000, 'the file is large',  value => {
-        console.log(image,value);
-
-        return value && image.size <= 5000000;
+      .test(4194304, 'the file is large',  value => {
+        return value && image&& image.size <= 4 * 1024 * 1024;
       }),
-    // (value) => value && value.size <=  4 * 1024 * 1024)  // 5MB
+    // (value) => value && value.size <=  4 * 1024 * 1024)  // 4MB
   });
   // })
   // });
@@ -247,6 +245,7 @@ const ModalAddsPet = ({ open, onClose }) => {
                       )}
                     </LabelImage>
                     <InputImage
+                    // multiple
                       type="file"
                       name={`image`}
                       defaultValue={values.image}
