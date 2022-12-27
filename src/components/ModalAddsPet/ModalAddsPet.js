@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
 import { addUserPet } from 'redux/pets/petsOperations';
 
@@ -28,7 +28,6 @@ import {
   IconPlus,
 } from './ModalAddsPet.styled';
 
-
 const ModalAddsPet = ({ open, onClose }) => {
   const dispatch = useDispatch();
   const [image, setImage] = useState();
@@ -46,15 +45,17 @@ const ModalAddsPet = ({ open, onClose }) => {
   const handleOnChange = event => {
     event.preventDefault();
     if (event.target.files && event.target.files.length) {
-      const file = event.target.files[0];
+      const file = event.target.files;
       const formData = new FormData();
-      formData.append("image", file );
+      formData.append('image', file);
+      for (let file of event.target.files) {
+      }
       setImage(file);
-      fileReader.readAsDataURL(file);
-     
+      // fileReader.readAsDataURL(file);
+      console.log(formData);
+      console.log(formData);
     }
   };
-
 
   const handleDragEmpty = event => {
     event.preventDefault();
@@ -62,14 +63,14 @@ const ModalAddsPet = ({ open, onClose }) => {
   };
   const onBackdropClick = e => {
     if (e.target === e.currentTarget) {
-      handleCancle()
+      handleCancle();
     }
   };
   const handleCancle = () => {
     onClose();
     setFirstPage(true);
-    setImage()
-    setImageURL()
+    setImage();
+    setImageURL();
   };
 
   const validationsShema = yup.object().shape({
@@ -122,20 +123,19 @@ const ModalAddsPet = ({ open, onClose }) => {
             comments: '',
           }}
           validateOnBlur
-          onSubmit={async(values) => {
+          onSubmit={async values => {
             handleCancle();
-            const form ={
+            const form = {
               name: values.name,
               birthday: values.dateOfBirth,
               breed: values.breed,
-               image,
+              image,
               comments: values.comments,
-            }
-           
-            await dispatch(addUserPet(form))
-        
+            };
+
+            await dispatch(addUserPet(form));
+
             // handleCancle();
-           
           }}
           validationSchema={validationsShema}
         >
@@ -200,7 +200,14 @@ const ModalAddsPet = ({ open, onClose }) => {
                   </Line>
                   <ButtonSet>
                     <ButtonA
-                       disabled={!values.breed || !values.name|| !values.dateOfBirth||  errors.breed ||  errors.dateOfBirth ||  errors.name}
+                      disabled={
+                        !values.breed ||
+                        !values.name ||
+                        !values.dateOfBirth ||
+                        errors.breed ||
+                        errors.dateOfBirth ||
+                        errors.name
+                      }
                       // disabled={touched.breed ||  errors.breed ||  errors.dateOfBirth  || touched.name ||  errors.name}
 
                       onClick={() => setFirstPage(false)}
@@ -218,18 +225,19 @@ const ModalAddsPet = ({ open, onClose }) => {
                   <AddList>
                     <TitleP>Add photo and some comments</TitleP>
                     <LabelImage>
-                    {imageURL ? (
-                      <Img
-                        src={imageURL}
-                        alt="pet image"
-                      // onDrop={handleDrop}
-                        onDragEnter={handleDragEmpty}
-                         onDragOver={handleDragEmpty}
-                      />
-                    ):
-                      <IconPlus>
-                        <use href={`${sprite}#plusImg`}></use>
-                      </IconPlus>}
+                      {imageURL ? (
+                        <Img
+                          src={imageURL}
+                          alt="pet image"
+                          // onDrop={handleDrop}
+                          onDragEnter={handleDragEmpty}
+                          onDragOver={handleDragEmpty}
+                        />
+                      ) : (
+                        <IconPlus>
+                          <use href={`${sprite}#plusImg`}></use>
+                        </IconPlus>
+                      )}
                     </LabelImage>
                     <InputImage
                       type="file"
@@ -241,6 +249,7 @@ const ModalAddsPet = ({ open, onClose }) => {
                         handleChange(e);
                         handleOnChange(e);
                       }}
+                      multiple={true}
                     />
                     {/* {imageURL && (
                       <Img

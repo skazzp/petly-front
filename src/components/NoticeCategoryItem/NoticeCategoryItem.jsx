@@ -32,18 +32,11 @@ import {
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
+import { Carousel } from 'react-carousel-minimal';
+
 const NoticeCategoryItem = ({ notice }) => {
-  const {
-    birthday,
-    breed,
-    category,
-    location,
-    owner,
-    photoURL,
-    price,
-    title,
-    _id,
-  } = notice;
+  const { birthday, breed, category, location, owner, img, price, title, _id } =
+    notice;
 
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
@@ -54,8 +47,6 @@ const NoticeCategoryItem = ({ notice }) => {
   const isOwner = user?._id === owner?._id || user?._id === owner;
   const favoriteNotice = useSelector(state => state.auth.user.favorites);
   const [isFavorite, setIsFavorite] = useState(false);
-
-  // console.log(isOwner);
 
   useEffect(() => {
     checkFavorite(favoriteNotice, _id);
@@ -122,10 +113,83 @@ const NoticeCategoryItem = ({ notice }) => {
     }
   };
 
+  // const listItems = img.map(element => {
+  //   return element.photoURL;
+  // });
+
+  // const data = [
+  //   {
+  //     image:
+  //       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/little-cute-maltipoo-puppy-royalty-free-image-1652926025.jpg?crop=0.444xw:1.00xh;0.129xw,0&resize=980:*',
+  //     // pet.photoURL,
+  //   },
+  //   {
+  //     image:
+  //       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chow-chow-portrait-royalty-free-image-1652926953.jpg?crop=0.44455xw:1xh;center,top&resize=980:*',
+  //   },
+  //   // {
+  //   //   image: listItems,
+  //   // },
+  // ];
+  // console.log(img);
+  const slideNumberStyle = {
+    fontSize: '10px',
+    fontWeight: 'bold',
+  };
+
+  // const width = {
+  //   width: '240px',
+  //    @media (min-width: '768px')
+  // };
+
+  // function RenderingArrayOfObjects() {
+  const data = img.map(element => {
+    return { image: element.photoURL };
+  });
+  //   console.log(listItems);
+  //   return <Image src={listItems} />;
+  // }
+
+  // return (
+  //   <Card>
+
   return (
     <>
       <Item>
-        <Image src={photoURL} alt={breed} />
+        <Carousel
+          data={data}
+          time={2000}
+          width="161px"
+          height="161px"
+          radius="10px"
+          slideNumber={true}
+          slideNumberStyle={slideNumberStyle}
+          captionPosition="bottom"
+          automatic={true}
+          dots={true}
+          pauseIconColor="white"
+          pauseIconSize="40px"
+          slideBackgroundColor="darkgrey"
+          slideImageFit="cover"
+          thumbnails={true}
+          thumbnailWidth="40px"
+          style={{
+            width: '240px',
+            height: '240px',
+            // border: '${props => props.theme.radii.md}',
+            // margin: auto,
+            // margin: auto,
+            // object: cover,
+            // @media (min-width: 768px) {
+            //   width: '161px',
+            //   height: '161px',
+            //   margin:0,
+            //   margin-right: '32px',
+            // }
+          }}
+        />
+        {/* <RenderingArrayOfObjects /> */}
+        {/* <Image src={photoURL} alt={breed} /> */}
         <Category>{setCategory(category)}</Category>
 
         <BtnAddFavorite

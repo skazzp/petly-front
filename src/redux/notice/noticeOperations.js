@@ -2,7 +2,8 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setAuthHeader } from 'redux/auth/authOperation';
 
-axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
+// axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
+axios.defaults.baseURL = 'http://localhost:3030/';
 
 // Create new notice for logged in user
 export const createNotice = createAsyncThunk(
@@ -10,6 +11,7 @@ export const createNotice = createAsyncThunk(
   async (notice, thunkApi) => {
     // const formData = new FormData();
     // formData.append('image', notice);
+    console.log('notice', notice);
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data',
