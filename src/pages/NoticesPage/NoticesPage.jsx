@@ -23,7 +23,6 @@ function NoticesPage() {
           <Searchbar submitForm={searchPets} />
           <FilterBtn />
         </Box>
-
         <NoticeCategoryList />
       </Wrapper>
       <Outlet />

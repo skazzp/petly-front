@@ -18,8 +18,8 @@ export const Card = styled.div`
     /* gap: 32px; */
     border-radius: ${props => props.theme.radii.lg};
   }
-  @media (min-width: 1200px) {
-    width: 821px;
+  @media (min-width: 1280px) {
+    width: 100%;
   }
 `;
 
@@ -34,7 +34,7 @@ display: flex;
   @media (min-width: 768px) {
     min-width: 704px;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     width: 821px;
   }
     `
@@ -62,7 +62,7 @@ width: 240px;
  @media (min-width: 768px) {
     min-width: 704px;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     width: 821px;
   }
 
@@ -104,8 +104,8 @@ export const Ul = styled.ul`
     margin: 0;
     min-width: 471px;
   }
-  @media (min-width: 1200px) {
-    min-width: 580px;
+  @media (min-width: 1280px) {
+    width: 100%;
   } 
 `;
 
@@ -127,7 +127,7 @@ export const ButtonDel = styled.button`
   margin: 0;
   padding: 0; */
   &:hover svg {
-    fill: #f59256;
+    /* fill: #f59256; */
   }
   @media (min-width: 768px) {
     padding: 10px;
@@ -146,4 +146,11 @@ export const Icon = styled.svg`
   fill: ${props => props.theme.colors.background.backdrop};
   margin: 0;
   padding: 0;
+  transform: scale(1);
+  transition: transform 300ms linear;
+  ${ButtonDel}:hover &,
+  ${ButtonDel}:focus & {
+    transform: scale(1.4);
+    fill: ${props => props.theme.colors.accent};
+  }
 `;
