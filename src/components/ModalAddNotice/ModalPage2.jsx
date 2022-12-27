@@ -26,7 +26,7 @@ import {
   AvatarInput,
 } from './ModalAddNotice.styled';
 
-const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
+// const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
 
 const validationSchema = yup.object({
   sex: yup.string().required('Field is required!'),
@@ -45,15 +45,13 @@ const validationSchema = yup.object({
       'Only number characters and $ are allowed, e.g. 50$'
     )
     .required('Field is required!'),
-  image: yup
-    .mixed()
-    .required('Image is required! (jpg, jpeg, png)')
-    .test(
-      'fileFormat',
-      'Unsupported file type',
-      value =>
-        value === null || (value && SUPPORTED_FORMATS.includes(value.type))
-    ),
+  image: yup.mixed().required('Image is required! (jpg, jpeg, png)'),
+  // .test(
+  //   'fileFormat',
+  //   'Unsupported file type',
+  //   value =>
+  //     value === null || (value && SUPPORTED_FORMATS.includes(value.type))
+  // ),
   comments: yup.string().min(8).max(120).required('Field is required!'),
 });
 
