@@ -45,15 +45,14 @@ const validationSchema = yup.object({
       'Only number characters and $ are allowed, e.g. 50$'
     )
     .required('Field is required!'),
-  image: yup
-    .mixed()
-    .required('Image is required! (jpg, jpeg, png)')
-    .test(
-      'fileFormat',
-      'Unsupported file type',
-      value =>
-        value === null || (value && SUPPORTED_FORMATS.includes(value.type))
-    ),
+  image: yup.mixed(),
+  // .required('Image is required! (jpg, jpeg, png)')
+  // .test(
+  //   'fileFormat',
+  //   'Unsupported file type',
+  //   value =>
+  //     value === null || (value && SUPPORTED_FORMATS.includes(value.type))
+  // )
   comments: yup.string().min(8).max(120).required('Field is required!'),
 });
 
@@ -62,7 +61,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const selectFile = (e, setFieldValue) => {
-    const [file] = e.target.files;
+    const file = e.target.files;
     if (file) {
       setFileInput(file);
       setFieldValue('image', file);
@@ -75,7 +74,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
       ...values,
       image: fileInput,
     });
-
+    console.log(123, values);
     if (values.category === 'sell') {
       values.price = values.price.replace('$', '');
     } else {
@@ -168,7 +167,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
               {fileInput ? (
                 <AvatarImg
                   id="image"
-                  src={URL.createObjectURL(fileInput)}
+                  // src={URL.createObjectURL(fileInput)}
                   alt={fileInput.name}
                 />
               ) : (
@@ -182,6 +181,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
                 name="image"
                 accept=".jpg,.png"
                 onChange={e => selectFile(e, setFieldValue)}
+                multiple={true}
               />
               <ErrorMessage
                 name="image"

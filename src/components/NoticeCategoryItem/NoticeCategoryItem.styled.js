@@ -21,6 +21,25 @@ export const Item = styled.li`
   @media screen and (min-width: 1280px) {
     width: 288px;
   }
+
+  & .image-gallery-image {
+    width: 280px;
+    height: 288px;
+    @media screen and (min-width: 768px) {
+      width: 336px;
+      height: 288px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 288px;
+      height: 288px;
+    }
+  }
+
+  & .image-gallery-svg {
+    width: 30px;
+    height: 60px;
+  }
 `;
 
 export const Image = styled.img`
