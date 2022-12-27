@@ -124,13 +124,7 @@ const NoticeCategoryItem = ({ notice }) => {
     }
   };
 
-  // const slideNumberStyle = {
-  //   fontSize: '10px',
-  //   fontWeight: 'bold',
-  // };
-
   const data = img.map(element => {
-    // console.log(element);
     return { original: element.photoURL, thumbnail: element.photoURL };
   });
   // console.log('data', data);
