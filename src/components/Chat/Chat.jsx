@@ -1,7 +1,5 @@
 import { ButtonSend, DivBox, Form, Input, Label, Title } from './Chat.styled';
-
 import { useEffect, useReducer, useState } from 'react';
-
 import axios from 'axios';
 import socket from 'utility/chatSoket';
 import reducer from 'redux/ChatReduser';
@@ -19,6 +17,7 @@ const Chat = ({ type }) => {
 
   console.log(state);
 
+
   const onLogin = async obj => {
     console.log(obj);
     dispatch({
@@ -26,12 +25,14 @@ const Chat = ({ type }) => {
       payload: obj,
     });
     socket.emit('ROOM:JOIN', obj);
+
     const { data } = await axios.get(
       `https://exemple-chat-back.onrender.com/rooms/${obj.roomId}`
     );
     console.log(data);
     setUsers(data.users);
   };
+
 
   // window.socket = socket;
 
@@ -40,7 +41,7 @@ const Chat = ({ type }) => {
       type: 'SET_USERS',
       payload: users,
     });
-  };
+
 
   const addMessage = message => {
     dispatch({
