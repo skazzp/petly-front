@@ -7,7 +7,6 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import { getByQueryNews, getNews } from 'redux/news/newsOperations';
 import {
   selectNews,
-  selectPage,
   selectTotalPages,
 } from 'redux/news/newsSelectors';
 
@@ -18,7 +17,7 @@ import {
   Wrapper,
   WrapperList,
 } from './NewsPage.styled';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const NewsPage = () => {
   const [search, setSearch] = useSearchParams();
@@ -35,10 +34,9 @@ const NewsPage = () => {
   const newss = useSelector(selectNews);
   const totalPages = useSelector(selectTotalPages);
 
-  console.log(newss);
-  // if(!newss){
-  //   toast.error('Not found!');
-  // }
+  if(newss === null){
+    toast.error('Not found!');
+  }
   const dispatch = useDispatch();
 
   const searchNews = query => {
@@ -54,6 +52,7 @@ const NewsPage = () => {
   useEffect(() => {
     f(location);
     console.log('222222222222');
+      // eslint-disable-next-line
   }, [location]);
 
   return (
