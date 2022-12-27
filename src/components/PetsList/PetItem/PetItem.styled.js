@@ -18,8 +18,8 @@ export const Card = styled.div`
     /* gap: 32px; */
     border-radius: ${props => props.theme.radii.lg};
   }
-  @media (min-width: 1200px) {
-    width: 821px;
+  @media (min-width: 1280px) {
+    width: 100%;
   }
 `;
 
@@ -34,7 +34,7 @@ display: flex;
   @media (min-width: 768px) {
     min-width: 704px;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     width: 821px;
   }
     `
@@ -62,7 +62,7 @@ width: 240px;
  @media (min-width: 768px) {
     min-width: 704px;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     width: 821px;
   }
 
@@ -104,8 +104,8 @@ export const Ul = styled.ul`
     margin: 0;
     min-width: 471px;
   }
-  @media (min-width: 1200px) {
-    min-width: 580px;
+  @media (min-width: 1280px) {
+    width: 100%;
   } 
 `;
 

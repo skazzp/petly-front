@@ -32,7 +32,8 @@ display: flex;
 justify-content: space-between;
 align-items: flex-end;
 @media (min-width: 1280px) {
-   width: 821px;
+  min-width: 821px;
+   max-width: 100%;
    padding-right: 20px;
   } 
 
