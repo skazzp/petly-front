@@ -245,7 +245,7 @@ const ModalAddsPet = ({ open, onClose }) => {
                       )}
                     </LabelImage>
                     <InputImage
-                    // multiple
+                    multiple
                       type="file"
                       name={`image`}
                       defaultValue={values.image}
