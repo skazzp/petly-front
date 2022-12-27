@@ -1,10 +1,11 @@
+import ExitAccept from 'components/ExitAccept/ExitAccept';
 import { NoPositionSpinner } from 'components/LoaderSpiner/NoPositionSpinner';
 import UpdateAvatar from 'components/UpdateAvatar/UpdateAvatar';
 import { useFormik } from 'formik';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { editUser, logOutUser } from 'redux/auth/authOperation';
+import { editUser } from 'redux/auth/authOperation';
 import { selectAvatarLoading, selectUser } from 'redux/auth/authSelectors';
 import { validationSchemaUserUpdate } from 'utility/validationSchema';
 import icons from '../../assets/images/icons.svg';
@@ -35,6 +36,7 @@ const UserDataItem = () => {
   };
   const [selectedImage, setSelectedImage] = useState(null);
   const [disabled, setDisabled] = useState(INITIAL_DISABLED);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const isLoading = useSelector(selectAvatarLoading);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -54,6 +56,9 @@ const UserDataItem = () => {
       });
     },
   });
+  const logoutAccept = () => {
+    setIsModalOpen(true);
+  };
   const { setFieldValue } = formik;
   const avatarChange = selectedImage
     ? URL.createObjectURL(selectedImage)
@@ -266,13 +271,14 @@ const UserDataItem = () => {
             </Btn>
           )}
         </Label>
+        {isModalOpen && (
+          <ExitAccept
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+          />
+        )}
         <LogoutBox>
-          <LogoutBtn
-            type="button"
-            onClick={() => {
-              dispatch(logOutUser());
-            }}
-          >
+          <LogoutBtn type="button" onClick={logoutAccept}>
             <LogoutIcon fill="red">
               <use href={icons + '#icon-logout'}></use>
             </LogoutIcon>

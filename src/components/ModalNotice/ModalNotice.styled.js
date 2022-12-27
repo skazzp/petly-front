@@ -38,6 +38,12 @@ export const WrapperForDesc = styled.div`
 `;
 export const ImageWrapper = styled.div`
   position: relative;
+  width: 240px;
+  height: 240px;
+  @media screen and (min-width: 768px) {
+    width: 290px;
+    height: 330px;
+  }
 `;
 export const Img = styled.img`
   width: 240px;
