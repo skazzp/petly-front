@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import InputMask from 'react-input-mask';
+// import InputMask from 'react-input-mask';
 
 export const DivBox = styled.div`
   position: fixed;
