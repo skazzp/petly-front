@@ -14,11 +14,11 @@ export const Item = styled.li`
   box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
   border-radius: 0px 0px 20px 20px;
 
-  @media screen and (min-width: 768px) {
+  ${p => p.theme.breakpoints.tab} {
     width: 336px;
   }
 
-  @media screen and (min-width: 1280px) {
+  ${p => p.theme.breakpoints.desc} {
     width: 288px;
   }
 
@@ -48,12 +48,12 @@ export const Image = styled.img`
 
   padding-bottom: ${props => props.theme.space[4]}px;
 
-  @media screen and (min-width: 768px) {
+  ${p => p.theme.breakpoints.tab} {
     width: 336px;
     height: 288px;
   }
 
-  @media screen and (min-width: 1280px) {
+  ${p => p.theme.breakpoints.desc} {
     width: 288px;
     height: 288px;
   }
@@ -90,6 +90,13 @@ export const BtnAddFavorite = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-2%, -2%);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
+      -8px -8px 12px rgba(255, 255, 255, 0.3);
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -99,10 +106,10 @@ export const Wrapper = styled.div`
   margin-right: auto;
   padding-bottom: ${props => props.theme.space[4]}px;
 
-  @media screen and (min-width: 768px) {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 20px;
+  ${p => p.theme.breakpoints.tab} {
+    margin-left: ${props => props.theme.space[0]}px;
+    margin-right: ${props => props.theme.space[0]}px;
+    padding-left: ${props => props.theme.space[4]}px;
   }
 `;
 
@@ -160,7 +167,7 @@ export const BtnLearnMore = styled.button`
 
   color: ${props => props.theme.colors.accent};
 
-  background: #ffffff;
+  background: ${props => props.theme.colors.white};
   border: 2px solid #f59256;
   border-radius: ${props => props.theme.space[6]}px;
 
@@ -170,6 +177,10 @@ export const BtnLearnMore = styled.button`
   :focus {
     border: 2px solid #ff6101;
     color: ${props => props.theme.colors.orange};
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-2%, -2%);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
+      -8px -8px 12px rgba(255, 255, 255, 0.3);
   }
 `;
 
@@ -187,7 +198,7 @@ export const BtnDlt = styled.button`
   border: 2px solid #f59256;
   border-radius: ${props => props.theme.space[6]}px;
 
-  fill: #f59256;
+  fill: ${props => props.theme.colors.accent};
 
   cursor: pointer;
 
@@ -195,7 +206,11 @@ export const BtnDlt = styled.button`
   :focus {
     border: 2px solid #ff6101;
     color: ${props => props.theme.colors.orange};
-    fill: #ff6101;
+    fill: ${props => props.theme.colors.orange};
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-2%, -2%);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
+      -8px -8px 12px rgba(255, 255, 255, 0.3);
   }
 `;
 
