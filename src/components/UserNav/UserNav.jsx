@@ -4,7 +4,7 @@ import icon from '../../assets/images/icons.svg';
 import { Div, Link, UserSvg, ChatButton } from '../UserNav/UserNav.styled';
 
 const UserNav = ({ closeMenu }) => {
-  const [chatOpen, setChatOpene] = useState(false);
+  const [chatOpen, setChatOpene] = useState(true);
   return (
     <>
       <Div>
@@ -21,7 +21,7 @@ const UserNav = ({ closeMenu }) => {
           <span>Account</span>
         </Link>
       </Div>
-      <Chat type={Boolean(chatOpen)}/>
+     { !chatOpen ? <Chat/> :null}
     </>
   );
 };

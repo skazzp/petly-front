@@ -21,12 +21,14 @@ import {
   SexText,
   AvatarLabel,
   AvatarWrapper,
-  AvatarImg,
+  // AvatarImg,
   AvatarIcon,
   AvatarInput,
 } from './ModalAddNotice.styled';
+import ReactImageGallery from 'react-image-gallery';
+import { useEffect } from 'react';
 
-const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
+// const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
 
 const validationSchema = yup.object({
   sex: yup.string().required('Field is required!'),
@@ -45,15 +47,13 @@ const validationSchema = yup.object({
       'Only number characters and $ are allowed, e.g. 50$'
     )
     .required('Field is required!'),
-  image: yup
-    .mixed()
-    .required('Image is required! (jpg, jpeg, png)')
-    .test(
-      'fileFormat',
-      'Unsupported file type',
-      value =>
-        value === null || (value && SUPPORTED_FORMATS.includes(value.type))
-    ),
+  image: yup.mixed().required('Image is required! (jpg, jpeg, png)'),
+  // .test(
+  //   'fileFormat',
+  //   'Unsupported file type',
+  //   value =>
+  //     value === null || (value && SUPPORTED_FORMATS.includes(value.type))
+  // ),
   comments: yup.string().min(8).max(120).required('Field is required!'),
 });
 
@@ -70,12 +70,33 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
     }
   };
 
+  function checkImg() {
+    let previewData = [];
+    for (let element of fileInput) {
+      console.log(element);
+      previewData.push({
+        original: URL.createObjectURL(element),
+        thumbnail: URL.createObjectURL(element),
+      });
+    }
+    return previewData;
+  }
+  const [fileSrc, setFileSrc] = useState([]);
+
+  useEffect(() => {
+    if (fileInput) {
+      const arr = checkImg();
+      setFileSrc([...arr]);
+    }
+    // eslint-disable-next-line
+  }, [fileInput, setFileSrc]);
+
   const onSubmit = async values => {
     setFormData({
       ...values,
       image: fileInput,
     });
-    console.log(123, values);
+
     if (values.category === 'sell') {
       values.price = values.price.replace('$', '');
     } else {
@@ -166,10 +187,19 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
             <AvatarLabel htmlFor="image">Load the pet's image:</AvatarLabel>
             <AvatarWrapper>
               {fileInput ? (
-                <AvatarImg
-                  id="image"
-                  src={URL.createObjectURL(fileInput[0])}
-                  alt={fileInput.name}
+                // <AvatarImg
+                //   id="image"
+                //   src={URL.createObjectURL(fileInput[0])}
+                //   alt={fileInput.name}
+                // />
+                <ReactImageGallery
+                  items={fileSrc}
+                  showBullets={false}
+                  showIndex={true}
+                  showThumbnails={false}
+                  lazyLoad={true}
+                  showPlayButton={false}
+                  showFullscreenButton={false}
                 />
               ) : (
                 <AvatarIcon>

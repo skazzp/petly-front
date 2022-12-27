@@ -29,7 +29,6 @@ import {
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import ExitAccept from 'components/ExitAccept/ExitAccept';
-// import { Carousel } from 'react-carousel-minimal';
 import ReactImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 
@@ -125,13 +124,7 @@ const NoticeCategoryItem = ({ notice }) => {
     }
   };
 
-  // const slideNumberStyle = {
-  //   fontSize: '10px',
-  //   fontWeight: 'bold',
-  // };
-
   const data = img.map(element => {
-    // console.log(element);
     return { original: element.photoURL, thumbnail: element.photoURL };
   });
   // console.log('data', data);

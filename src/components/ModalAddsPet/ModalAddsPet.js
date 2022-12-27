@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
@@ -33,8 +33,21 @@ const ModalAddsPet = ({ open, onClose }) => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
   const [firstPage, setFirstPage] = useState(true);
+  useEffect(() => {
+    const handleEsc = (event) => {
+       if (event.keyCode === 27) {
+        handleCancle()
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, );
   if (!open) return null;
 
+  
   const fileReader = new FileReader();
 
   fileReader.onloadend = () => {
@@ -62,12 +75,16 @@ const ModalAddsPet = ({ open, onClose }) => {
       handleCancle();
     }
   };
+
+  
   const handleCancle = () => {
     onClose();
     setFirstPage(true);
     setImage();
     setImageURL();
   };
+
+
 
   const validationsShema = yup.object().shape({
     name: yup
@@ -98,18 +115,16 @@ const ModalAddsPet = ({ open, onClose }) => {
       .required('Comments are required')
       .min(8, 'Minimum 8 letters required')
       .max(120, 'Maximum 120 letters required'),
-    image: yup
-      .mixed()
-      .required('Image is required')
-      .test(5000000, 'the file is large',  value => {
-        console.log(image,value);
+    image: yup.mixed().required('Image is required'),
+    // .test(5000000, 'the file is large',  value => {
+    //   console.log(image,value);
 
-        return value && image.size <= 5000000;
-      }),
+    //   return value && image.size <= 5000000;
+    // }),
     // (value) => value && value.size <=  4 * 1024 * 1024)  // 5MB
   });
-  // })
-  // });
+
+ 
 
   return (
     <Modal onClick={onBackdropClick}>
@@ -215,8 +230,7 @@ const ModalAddsPet = ({ open, onClose }) => {
                         errors.dateOfBirth ||
                         errors.name
                       }
-                      // disabled={touched.breed ||  errors.breed ||  errors.dateOfBirth  || touched.name ||  errors.name}
-
+                     
                       onClick={() => setFirstPage(false)}
                       type="button"
                     >
@@ -247,10 +261,12 @@ const ModalAddsPet = ({ open, onClose }) => {
                       )}
                     </LabelImage>
                     <InputImage
+                   
                       type="file"
                       name={`image`}
                       defaultValue={values.image}
                       accept="image/png, image/gif, image/jpeg"
+                      multiple={true}
                       onChange={e => {
                         handleChange(e);
                         handleOnChange(e);

@@ -1,14 +1,11 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import InputMask from 'react-input-mask';
 
 export const DivBox = styled.div`
   position: fixed;
-
   top: 0;
   right: 0;
-  display: none;
-  opacity: ${p => (!p.type ? 0 : 1)};
+  display: flex;
+  /* opacity: ${p => (!p.type ? 0 : 1)}; */
   margin-left: auto;
   justify-content: center;
   align-items: center;
@@ -19,6 +16,7 @@ export const DivBox = styled.div`
     width: 40%;
     min-width: 450px;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     background: #ffffff;
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
@@ -30,7 +28,7 @@ export const DivBox = styled.div`
   @media screen and (min-width: 1280px) {
     min-height: 100vh;
     width: 30%;
-    z-index: 1;
+    z-index: 100000000;
   }
 
   animation: show 1000ms cubic-bezier(0.43, 0.21, 0, 1.03);
@@ -39,8 +37,7 @@ export const DivBox = styled.div`
 
   @keyframes show {
     0% {
-      opacity: 0;
-      transform: translateX(-200px);
+      transform: translateX(300px);
     }
 
     50% {
@@ -48,7 +45,6 @@ export const DivBox = styled.div`
     }
 
     100% {
-      opacity: 1;
       transform: translateX(0);
     }
   }
