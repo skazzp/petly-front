@@ -1,5 +1,4 @@
 import { ButtonSend, DivBox, Form, Input, Label, Title } from './Chat.styled';
-
 import { useEffect, useReducer, useState } from 'react';
 import { selectUser } from 'redux/auth/authSelectors';
 import { useSelector } from 'react-redux';
@@ -12,7 +11,6 @@ const Chat = ({ type }) => {
   const [roomId, setRoomId] = useState('');
   // eslint-disable-next-line
   const [formChat, setFormChat] = useState(true);
-
   console.log(name);
   // eslint-disable-next-line
   const [state, dispatch] = useReducer(reducer, {
@@ -23,8 +21,11 @@ const Chat = ({ type }) => {
     messages: [],
   });
 
+
   axios.defaults.baseURL = 'https://exemple-chat-back.onrender.com';
 
+console.log(setFormChat(state));
+ 
   const setUsers = users => {
     dispatch({
       type: 'SET_USERS',
