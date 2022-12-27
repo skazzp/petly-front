@@ -33,14 +33,14 @@ const chatSlice = createSlice({
     },
   },
   extraReducers: builder => {
-    builder.addCase(addFavorites.pending, pendingHandlerAuth);
-    builder.addCase(addFavorites.rejected, rejectedHandler);
-    builder.addCase(addFavorites.fulfilled, (state, action) => {
-      state.error = null;
-      state.isLoading = false;
-      state.user.favorites.push(action.payload);
-      // TODO: редактировать нужный нотис в стейте или юзера ?
-    });
+    // builder.addCase(addFavorites.pending, pendingHandlerAuth);
+    // builder.addCase(addFavorites.rejected, rejectedHandler);
+    // builder.addCase(addFavorites.fulfilled, (state, action) => {
+    //   state.error = null;
+    //   state.isLoading = false;
+    //   state.user.favorites.push(action.payload);
+    //   // TODO: редактировать нужный нотис в стейте или юзера ?
+    // });
   },
 });
 
