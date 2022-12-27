@@ -15,7 +15,7 @@ export const getByQueryNews = createAsyncThunk(
   'news/getByQuery',
   async (query, thunkApi) => {
     try {
-      const response = await axios.get(`/api/info/news?query=${query}`);
+      const response = await axios.get(`/api/info/news/search?query=${query}`);
       // console.log('notice/getByQuery', response.data);
       return response.data; // TODO
     } catch (error) {
