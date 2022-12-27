@@ -6,9 +6,7 @@ import {
   selectToken,
   selectUser,
 } from '../../redux/auth/authSelectors';
-import {
-  deleteFavorites,
-} from '../../redux/notice/noticeOperations';
+import { deleteFavorites } from '../../redux/notice/noticeOperations';
 import { addFavorites } from 'redux/notice/noticeOperations';
 
 import {
@@ -31,6 +29,9 @@ import {
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import ExitAccept from 'components/ExitAccept/ExitAccept';
+// import { Carousel } from 'react-carousel-minimal';
+import ReactImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 const NoticeCategoryItem = ({ notice }) => {
   const {
@@ -43,6 +44,7 @@ const NoticeCategoryItem = ({ notice }) => {
     price,
     title,
     _id,
+    img,
   } = notice;
 
   const dispatch = useDispatch();
@@ -123,10 +125,33 @@ const NoticeCategoryItem = ({ notice }) => {
     }
   };
 
+  // const slideNumberStyle = {
+  //   fontSize: '10px',
+  //   fontWeight: 'bold',
+  // };
+
+  const data = img.map(element => {
+    // console.log(element);
+    return { original: element.photoURL, thumbnail: element.photoURL };
+  });
+  // console.log('data', data);
   return (
     <>
       <Item>
-        <Image src={photoURL} alt={breed} />
+        {!photoURL ? (
+          <ReactImageGallery
+            items={data}
+            // defaultImage={defaultImage}
+            showBullets={false}
+            showIndex={true}
+            showThumbnails={false}
+            lazyLoad={true}
+            showPlayButton={false}
+            showFullscreenButton={false}
+          />
+        ) : (
+          <Image src={photoURL} alt={breed} />
+        )}
         <Category>{setCategory(category)}</Category>
 
         <BtnAddFavorite
@@ -175,10 +200,7 @@ const NoticeCategoryItem = ({ notice }) => {
           </BtnLearnMore>
 
           {isOwner && (
-            <BtnDlt
-              type="button"
-              onClick={() => setIsAcceptDeleteOwner(true)}
-            >
+            <BtnDlt type="button" onClick={() => setIsAcceptDeleteOwner(true)}>
               <Span>Delete</Span>
               <Svg width="17" height="17">
                 <use href={icon + '#delete-button'}></use>

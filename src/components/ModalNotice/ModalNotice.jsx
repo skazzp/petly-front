@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import ReactImageGallery from 'react-image-gallery';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { addFavorites, deleteFavorites } from 'redux/notice/noticeOperations';
@@ -106,6 +107,10 @@ const ModalNotice = () => {
     }
     return str[0].toUpperCase() + str.slice(1);
   };
+
+  const imgArr = data.img.map(element => {
+    return { original: element.photoURL, thumbnail: element.photoURL };
+  });
   return createPortal(
     <Overlay onClick={backDropCloseModal}>
       <Div>
@@ -114,7 +119,17 @@ const ModalNotice = () => {
             <Status>
               <StatusText>{fixedStatus(data.category)}</StatusText>
             </Status>
-            <Img src={data.photoURL} alt="Animal"></Img>
+            <ReactImageGallery
+              items={imgArr}
+              // defaultImage={defaultImage}
+              showBullets={true}
+              showIndex={true}
+              showThumbnails={false}
+              lazyLoad={true}
+              showPlayButton={false}
+              showFullscreenButton={false}
+            />
+            {/* <Img src={data.photoURL} alt="Animal"></Img> */}
           </ImageWrapper>
           <div>
             <Title>{data.title}</Title>
