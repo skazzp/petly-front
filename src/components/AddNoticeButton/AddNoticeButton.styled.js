@@ -7,11 +7,15 @@ export const BtnWrapper = styled.div`
 
   position: absolute;
   right: 0;
-  top: 232px;
-  z-index: 10;
+  z-index: 9;
   font-weight: 500;
   font-size: 12px;
   cursor: pointer;
+  ${p => p.theme.breakpoints.onlyMob} {
+    position: fixed;
+    bottom: 16px;
+    right: 20px;
+  }
 
   ${p => p.theme.breakpoints.tab} {
     position: relative;
@@ -51,7 +55,7 @@ export const Plus = styled.svg`
   margin-bottom: 5px;
   fill: ${p => p.theme.colors.white};
   transform: scale(1);
-  transition: var(--transition);
+  transition: transform 300ms linear;
 
   ${p => p.theme.breakpoints.tab} {
     width: 16px;

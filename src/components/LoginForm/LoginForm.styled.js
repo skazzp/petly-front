@@ -138,7 +138,7 @@ export const Button = styled.button`
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
+  margin-bottom: 13px;
   :active {
     transform: translateY(2px);
   }
@@ -156,6 +156,7 @@ export const Button = styled.button`
   }
 
   @media screen and (min-width: 1280px) {
+    margin-bottom: 16px;
     height: 48px;
     margin-top: 24px;
   }
