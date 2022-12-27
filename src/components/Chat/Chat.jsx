@@ -17,6 +17,7 @@ const Chat = ({ type }) => {
     messages: [],
   });
 
+
   console.log(state);
 
   const onLogin = async obj => {
