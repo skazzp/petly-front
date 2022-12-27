@@ -1,9 +1,8 @@
-
 import { ButtonSend, DivBox, Form, Input, Label, Title } from './Chat.styled';
 
 import { useEffect, useReducer, useState } from 'react';
 import { selectUser } from 'redux/auth/authSelectors';
-import {  useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 import socket from 'utility/chatSoket';
 import reducer from 'redux/ChatReduser';
@@ -11,9 +10,11 @@ import reducer from 'redux/ChatReduser';
 const Chat = ({ type }) => {
   const { name } = useSelector(selectUser);
   const [roomId, setRoomId] = useState('');
+  // eslint-disable-next-line
   const [formChat, setFormChat] = useState(true);
+
   console.log(name);
-  
+  // eslint-disable-next-line
   const [state, dispatch] = useReducer(reducer, {
     joined: false,
     roomId: null,
@@ -22,7 +23,7 @@ const Chat = ({ type }) => {
     messages: [],
   });
 
-  axios.defaults.baseURL = "https://exemple-chat-back.onrender.com"
+  axios.defaults.baseURL = 'https://exemple-chat-back.onrender.com';
 
   const setUsers = users => {
     dispatch({
@@ -37,8 +38,8 @@ const Chat = ({ type }) => {
       payload: obj,
     });
     socket.emit('ROOM:JOIN', obj);
-     const { data } = await axios.get(`/rooms/${obj.roomId}`);
-     console.log(data);
+    const { data } = await axios.get(`/rooms/${obj.roomId}`);
+    console.log(data);
     setUsers(data.users);
   };
 
@@ -49,7 +50,7 @@ const Chat = ({ type }) => {
     userName: name,
     roomId,
   };
-  const onEnter = async (e) => {
+  const onEnter = async e => {
     e.preventDefault();
     if (!roomId || !name) {
       return alert('не вірні данні');
@@ -57,13 +58,13 @@ const Chat = ({ type }) => {
     await axios.post('/rooms', obj).then(onLogin(obj));
   };
 
-   const addMessage = message => {
+  const addMessage = message => {
     dispatch({
       type: 'NEW_MESSAGE',
       payload: message,
     });
   };
-   useEffect(() => {
+  useEffect(() => {
     socket.on('ROOM:SET_USERS', setUsers);
     socket.on('ROOM:NEW_MESSAGE', addMessage);
   }, []);
@@ -97,4 +98,4 @@ const Chat = ({ type }) => {
   );
 };
 
-export default Chat
+export default Chat;
