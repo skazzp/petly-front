@@ -24,7 +24,7 @@ const Chat = ({ type }) => {
 
   axios.defaults.baseURL = 'https://exemple-chat-back.onrender.com';
 
-console.log(setFormChat(state));
+// console.log(setFormChat(state));
  
   const setUsers = users => {
     dispatch({
