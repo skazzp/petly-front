@@ -127,7 +127,7 @@ export const ButtonDel = styled.button`
   margin: 0;
   padding: 0; */
   &:hover svg {
-    fill: #f59256;
+    /* fill: #f59256; */
   }
   @media (min-width: 768px) {
     padding: 10px;
@@ -146,4 +146,11 @@ export const Icon = styled.svg`
   fill: ${props => props.theme.colors.background.backdrop};
   margin: 0;
   padding: 0;
+  transform: scale(1);
+  transition: transform 300ms linear;
+  ${ButtonDel}:hover &,
+  ${ButtonDel}:focus & {
+    transform: scale(1.4);
+    fill: ${props => props.theme.colors.accent};
+  }
 `;
