@@ -1,3 +1,4 @@
+
 import { ButtonSend, DivBox, Form, Input, Label, Title } from './Chat.styled';
 
 import { useEffect, useReducer, useState } from 'react';
@@ -96,6 +97,4 @@ const Chat = ({ type }) => {
   );
 };
 
-export default Chat;
-
-
+export default Chat

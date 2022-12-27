@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
 import { addUserPet } from 'redux/pets/petsOperations';
 
@@ -28,7 +28,6 @@ import {
   IconPlus,
 } from './ModalAddsPet.styled';
 
-
 const ModalAddsPet = ({ open, onClose }) => {
   const dispatch = useDispatch();
   const [image, setImage] = useState();
@@ -48,13 +47,11 @@ const ModalAddsPet = ({ open, onClose }) => {
     if (event.target.files && event.target.files.length) {
       const file = event.target.files[0];
       const formData = new FormData();
-      formData.append("image", file );
+      formData.append('image', file);
       setImage(file);
       fileReader.readAsDataURL(file);
-     
     }
   };
-
 
   const handleDragEmpty = event => {
     event.preventDefault();
@@ -62,14 +59,14 @@ const ModalAddsPet = ({ open, onClose }) => {
   };
   const onBackdropClick = e => {
     if (e.target === e.currentTarget) {
-      handleCancle()
+      handleCancle();
     }
   };
   const handleCancle = () => {
     onClose();
     setFirstPage(true);
-    setImage()
-    setImageURL()
+    setImage();
+    setImageURL();
   };
 
   const validationsShema = yup.object().shape({
@@ -95,13 +92,22 @@ const ModalAddsPet = ({ open, onClose }) => {
         'Minimum 2 letters required'
       )
       .min(2, 'Minimum 2 letters required')
-      .max(16, 'Maximum 16 letters required'),
+      .max(24, 'Maximum 24 letters required'),
     comments: yup
       .string()
       .required('Comments are required')
       .min(8, 'Minimum 8 letters required')
       .max(120, 'Maximum 120 letters required'),
+    image: yup.mixed().required('Image is required'),
+    // .test(5000000, 'the file is large',  value => {
+    //   console.log(image,value);
+
+    //   return value && image.size <= 5000000;
+    // }),
+    // (value) => value && value.size <=  4 * 1024 * 1024)  // 5MB
   });
+  // })
+  // });
 
   return (
     <Modal onClick={onBackdropClick}>
@@ -122,20 +128,19 @@ const ModalAddsPet = ({ open, onClose }) => {
             comments: '',
           }}
           validateOnBlur
-          onSubmit={async(values) => {
+          onSubmit={async values => {
             handleCancle();
-            const form ={
+            const form = {
               name: values.name,
               birthday: values.dateOfBirth,
               breed: values.breed,
-               image,
+              image,
               comments: values.comments,
-            }
-           
-            await dispatch(addUserPet(form))
-        
+            };
+
+            await dispatch(addUserPet(form));
+
             // handleCancle();
-           
           }}
           validationSchema={validationsShema}
         >
@@ -200,7 +205,14 @@ const ModalAddsPet = ({ open, onClose }) => {
                   </Line>
                   <ButtonSet>
                     <ButtonA
-                       disabled={!values.breed || !values.name|| !values.dateOfBirth||  errors.breed ||  errors.dateOfBirth ||  errors.name}
+                      disabled={
+                        !values.breed ||
+                        !values.name ||
+                        !values.dateOfBirth ||
+                        errors.breed ||
+                        errors.dateOfBirth ||
+                        errors.name
+                      }
                       // disabled={touched.breed ||  errors.breed ||  errors.dateOfBirth  || touched.name ||  errors.name}
 
                       onClick={() => setFirstPage(false)}
@@ -218,30 +230,32 @@ const ModalAddsPet = ({ open, onClose }) => {
                   <AddList>
                     <TitleP>Add photo and some comments</TitleP>
                     <LabelImage>
-                    {imageURL ? (
-                      <Img
-                        src={imageURL}
-                        alt="pet image"
-                      // onDrop={handleDrop}
-                        onDragEnter={handleDragEmpty}
-                         onDragOver={handleDragEmpty}
-                      />
-                    ):
-                      <IconPlus>
-                        <use href={`${sprite}#plusImg`}></use>
-                      </IconPlus>}
+                      {imageURL ? (
+                        <Img
+                          src={imageURL}
+                          alt="pet image"
+                          // onDrop={handleDrop}
+                          onDragEnter={handleDragEmpty}
+                          onDragOver={handleDragEmpty}
+                        />
+                      ) : (
+                        <IconPlus>
+                          <use href={`${sprite}#plusImg`}></use>
+                        </IconPlus>
+                      )}
                     </LabelImage>
                     <InputImage
                       type="file"
                       name={`image`}
                       defaultValue={values.image}
-                      //  onChange={handleChangePhoto}
                       accept="image/png, image/gif, image/jpeg"
                       onChange={e => {
                         handleChange(e);
                         handleOnChange(e);
                       }}
+                      onBlur={handleBlur}
                     />
+                    {errors.image && <ErrorText>{errors.image}</ErrorText>}
                     {/* {imageURL && (
                       <Img
                         src={imageURL ? imageURL : null}
@@ -251,14 +265,12 @@ const ModalAddsPet = ({ open, onClose }) => {
                         onDragOver={handleDragEmpty}
                       />
                     )} */}
-                    {/* <div>{image ? image.name : ''}</div> */}
+                    {/* <div>{image ? image.size : ''}</div> */}
                   </AddList>
                   <Line>
                     <Label htmlFor="comments">Comments</Label>
                     <br />
                     <Comments
-                      maxlength="120"
-                      minlength="8"
                       type={'text'}
                       name={`comments`}
                       defaultValue={values.comments}
@@ -273,7 +285,9 @@ const ModalAddsPet = ({ open, onClose }) => {
                   </Line>
                   <ButtonSet>
                     <ButtonA
-                      disabled={!isValid || !dirty}
+                      disabled={
+                        !values.comments || !values.image || !isValid || !dirty
+                      }
                       onClick={handleSubmit}
                       type="submit"
                     >

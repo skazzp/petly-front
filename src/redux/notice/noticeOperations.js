@@ -3,20 +3,52 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setAuthHeader } from 'redux/auth/authOperation';
 
 axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
-
+// axios.defaults.baseURL = 'http://localhost:3030/';
 // Create new notice for logged in user
 export const createNotice = createAsyncThunk(
   'notice/createNotice',
   async (notice, thunkApi) => {
     // const formData = new FormData();
     // formData.append('image', notice);
+    console.log(notice);
+    const {
+      image,
+      category,
+      title,
+      name,
+      birthday,
+      breed,
+      sex,
+      location,
+      price,
+      comments,
+    } = notice;
+    const formData = new FormData();
+    formData.append('category', category);
+    formData.append('title', title);
+    formData.append('name', name);
+    formData.append('birthday', birthday);
+    formData.append('breed', breed);
+    formData.append('sex', sex);
+    formData.append('location', location);
+    if (price) {
+      formData.append('price', price);
+    }
+    formData.append('comments', comments);
+    for (let elem of image) {
+      formData.append('image', elem);
+    }
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     };
     try {
-      const response = await axios.post('/api/notices/create', notice, config);
+      const response = await axios.post(
+        '/api/notices/create',
+        formData,
+        config
+      );
       console.log('createNotice', response.data);
       return response.data;
     } catch (error) {
