@@ -15,7 +15,7 @@ import {
   BtnDlt,
   BtnLearnMore,
   Category,
-  Image,
+  // Image,
   Info,
   InfoItem,
   InfoList,
@@ -40,7 +40,7 @@ const NoticeCategoryItem = ({ notice }) => {
     category,
     location,
     owner,
-    photoURL,
+    // photoURL,
     price,
     title,
     _id,
@@ -134,24 +134,24 @@ const NoticeCategoryItem = ({ notice }) => {
     // console.log(element);
     return { original: element.photoURL, thumbnail: element.photoURL };
   });
-  // console.log('data', data);
+  console.log('data', data);
   return (
     <>
       <Item>
-        {!photoURL ? (
-          <ReactImageGallery
-            items={data}
-            // defaultImage={defaultImage}
-            showBullets={false}
-            showIndex={true}
-            showThumbnails={false}
-            lazyLoad={true}
-            showPlayButton={false}
-            showFullscreenButton={false}
-          />
-        ) : (
-          <Image src={photoURL} alt={breed} />
-        )}
+        {/* {!photoURL ? ( */}
+        <ReactImageGallery
+          items={data}
+          // defaultImage={defaultImage}
+          showBullets={false}
+          showIndex={true}
+          showThumbnails={false}
+          lazyLoad={true}
+          showPlayButton={false}
+          showFullscreenButton={false}
+        />
+        {/* ) : ( */}
+        {/* <Image src={photoURL} alt={breed} /> */}
+        {/* )} */}
         <Category>{setCategory(category)}</Category>
 
         <BtnAddFavorite
