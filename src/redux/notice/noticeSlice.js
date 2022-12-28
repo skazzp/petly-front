@@ -140,7 +140,8 @@ const noticeSlice = createSlice({
     builder.addCase(getByQuery.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.notices = action.payload;
+      state.notices = action.payload.data;
+      state.totalPages = action.payload.totalPages;
     });
   },
 });
