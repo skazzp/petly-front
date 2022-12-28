@@ -1,6 +1,4 @@
-
 import { DivBox, Title } from './Chat.styled';
-
 
 import { useEffect, useReducer } from 'react';
 
@@ -18,6 +16,9 @@ const Chat = ({ type }) => {
     users: [],
     messages: [],
   });
+
+  console.log(state);
+
   const onLogin = async obj => {
     console.log(obj);
     dispatch({
@@ -32,6 +33,7 @@ const Chat = ({ type }) => {
     console.log(data);
     setUsers(data.users);
   };
+
   // window.socket = socket;
 
   const setUsers = users => {
@@ -59,7 +61,7 @@ const Chat = ({ type }) => {
         <LoginChat onLogin={onLogin} />
       ) : (
         <MessangerChat {...state} onAddMessage={addMessage} />
-        )}
+      )}
     </DivBox>
   );
 };
