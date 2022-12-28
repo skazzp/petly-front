@@ -63,19 +63,19 @@ export const Form = styled.form`
   @media screen and (min-width: 1280px) {
   }
 `;
-
 export const Label = styled.label`
   display: flex;
   position: relative;
+  flex-direction: column;
   background: none;
-  width: 280px;
   height: 40px;
+  width: 280px;
   border: 1px solid rgba(245, 146, 86, 0.5);
   align-items: center;
   justify-content: center;
   border-radius: 40px;
   margin-bottom: 13px;
-  padding: 11px 14px;
+  padding: 5px 14px;
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
@@ -102,7 +102,7 @@ export const Input = styled.input`
   box-shadow: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   font-family: 'Manrope';
   font-weight: 400;
   font-size: 18px;
@@ -120,7 +120,6 @@ export const Input = styled.input`
   @media screen and (min-width: 1280px) {
   }
 `;
-
 export const Button = styled.button`
   cursor: pointer;
   color: #ffffff;
