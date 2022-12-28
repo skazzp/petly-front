@@ -1,83 +1,43 @@
 import styled from 'styled-components';
-
-export const DivBox = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
+export const ChatContainer = styled.div`
+  width: 100%;
+`;
+export const Display = styled.form`
   display: flex;
-  z-index: 10;
-  margin-left: auto;
+  width: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 
   @media screen and (min-width: 768px) {
-    min-height: 100vh;
-    width: 40%;
-    min-width: 450px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
-    border-radius: 40px 0 0 40px;
-    padding: 90px 16px 60px 80px;
-    border-left: 20px solid rgba(245, 146, 86, 0.5);
-  }
-
-  @media screen and (min-width: 1280px) {
-    min-height: 100vh;
-    width: 30%;
-    z-index: 49;
-  }
-
-  animation: show 1000ms cubic-bezier(0.43, 0.21, 0, 1.03);
-  /* animation-iteration-count: revert-layer; */
-  /* transition: 1000ms cubic-bezier(0.43, 0.21, 0, 1.03); */
-
-  @keyframes show {
-    0% {
-      transform: translateX(300px);
-    }
-
-    50% {
-      transform: translateX();
-    }
-
-    100% {
-      transform: translateX(0);
-    }
-  }
-`;
-
-export const Title = styled.h2`
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
-  letter-spacing: 0.04em;
-  color: #111111;
-  margin-bottom: 40px;
-  @media screen and (min-width: 768px) {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 49px;
   }
 
   @media screen and (min-width: 1280px) {
   }
 `;
 
+export const MessageForm = styled.form`
+  display: flex;
+  width: 100%;
+  flex-grow: 2;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
+`;
 export const Form = styled.form`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
   flex-grow: 4;
+  display: flex;
+
+  flex-direction: column;
   justify-content: space-between;
+  /* position: relative; */
 
   @media screen and (min-width: 768px) {
   }
@@ -97,8 +57,6 @@ export const Label = styled.label`
   justify-content: center;
   border-radius: 40px;
 
-  margin-bottom: 13px;
-  padding: 11px 14px;
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
@@ -106,17 +64,16 @@ export const Label = styled.label`
 
   @media screen and (min-width: 768px) {
     height: 52px;
+    padding-left: 14px;
 
     background: #fdf7f2;
-    padding: 14px 32px;
   }
 
   @media screen and (min-width: 1280px) {
-    margin-bottom: 16px;
   }
 `;
 
-export const Input = styled.input`
+export const InputMassege = styled.input`
   outline: none;
   background: none;
   border: none;
@@ -151,15 +108,19 @@ export const ButtonSend = styled.button`
   font-size: 20px;
   line-height: 27px;
 
-  width: 100%;
+  width: 35%;
   height: 44px;
   border-radius: 20px;
   background: #f59256;
   border: none;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 14px;
-  margin-bottom: 40px;
+  :active {
+    transform: translateY(2px);
+  }
+  :focus,
+  :hover {
+    box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  }
   :active {
     transform: translateY(2px);
   }
@@ -176,6 +137,6 @@ export const ButtonSend = styled.button`
   }
 
   @media screen and (min-width: 1280px) {
-    height: 48px;
+    min-height: 100%;
   }
 `;
