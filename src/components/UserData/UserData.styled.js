@@ -13,6 +13,7 @@ export const Container = styled.div`
   ${p => p.theme.breakpoints.desc} {
     align-items: flex-start;
     padding-right: 16px;
+    max-width: 430px;
   }
 `;
 
