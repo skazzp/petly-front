@@ -17,7 +17,7 @@ export const Searchbar = ({ submitForm }) => {
     e.preventDefault();
     // Эта функция которая отвечает за отправку запроса. Приходит в пропсе. Нужно обраьотать напильником
     submitForm(input);
-    setInput('');
+    // setInput('');
   };
 
   const saveInputState = e => {
@@ -44,6 +44,6 @@ export const Searchbar = ({ submitForm }) => {
   );
 };
 
-// Searchbar.propTypes = {
-//   submitForm: PropTypes.func,
-// };
+Searchbar.propTypes = {
+  submitForm: PropTypes.func,
+};

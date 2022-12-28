@@ -34,14 +34,14 @@ export const Title = styled.h2`
   margin-bottom: 28px;
 
   ${props => props.theme.breakpoints.tab} {
-    font-size: ${props => props.theme.fontSizes.xxl}px;
+    font-size: ${props => props.theme.fontSizes.xxl};
     margin-top: 70px;
     margin-bottom: 40px;
   }
 
   ${props => props.theme.breakpoints.desc} {
     margin-top: 60px;
-  margin-bottom: 60px;
+    margin-bottom: 60px;
   }
 `;
 
