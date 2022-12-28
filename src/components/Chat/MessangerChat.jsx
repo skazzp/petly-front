@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-
 import socket from 'utility/chatSoket';
-import { ChatContainer, MessageForm } from './MessangerChat.styled';
+import { ButtonSend, ChatContainer, Display, InputMassege, Label, MessageForm } from './MessangerChat.styled';
 
 export default function MessangerChat({
   users,
@@ -30,12 +29,9 @@ export default function MessangerChat({
   }, [messages]);
 
   return (
-    <>
-      <div>
-        <ChatContainer className="chat-container">
-          <main className="chat-main">
-            <div className="chat-sidebar">
-              <h2 id="room-name">chat: {roomId}</h2>
+    <ChatContainer className="chat-container">
+      <Display>
+        <h2 id="room-name">chat: {roomId}</h2>
               <h3>
                 <i className="fas fa-user"></i> Online ({users.length})
               </h3>
@@ -44,26 +40,23 @@ export default function MessangerChat({
                   <li key={name + index}>{name}</li>
                 ))}
               </ul>
-            </div>
             <div className="chat-messages" ref={messagesRef}>
               {messages.map((message, index) => (
                 <div
                   className="chat-messages message"
                   key={message.userName + index}
                 >
-                  <p className="meta">
+                  <p>
                     {message.userName}
                     <span>1 sec</span>
                   </p>
-                  <p className="text">{message.text} </p>
+                  <p>{message.text} </p>
                 </div>
               ))}
-            </div>
-          </main>
-
-          <div className="chat-form-container">
+            </div></Display>
+              
             <MessageForm onSubmit={e => onSendMessage(e)} id="chat-form">
-              <input
+              <Label><InputMassege
                 id="msg"
                 type="text"
                 placeholder="Type a Message"
@@ -71,17 +64,11 @@ export default function MessangerChat({
                 value={messageValue}
                 onChange={e => setMessageValue(e.target.value)}
               />
-              <button
+              <ButtonSend
                 type="submit"
-                className="btn-plane"
-                // onClick={e => onSendMessage(e)}
-              >
-                <i className="fas fa-paper-plane"></i>
-              </button>
+              >Enter
+              </ButtonSend></Label>
             </MessageForm>
-          </div>
         </ChatContainer>
-      </div>
-    </>
   );
 }

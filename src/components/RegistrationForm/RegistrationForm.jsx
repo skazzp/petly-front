@@ -246,7 +246,6 @@ const RegistrationForm = () => {
           </ButtonBack>
         </Form>
       )}
-
       <Span>
         Don't have an account?{' '}
         <LinkRegistration type="button" to="/login">
