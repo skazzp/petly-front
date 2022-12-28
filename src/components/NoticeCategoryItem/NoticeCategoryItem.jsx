@@ -32,7 +32,7 @@ import ExitAccept from 'components/ExitAccept/ExitAccept';
 import ReactImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 
-const NoticeCategoryItem = ({ notice }) => {
+const NoticeCategoryItem = ({ notice, page }) => {
   const {
     birthday,
     breed,
@@ -206,6 +206,7 @@ const NoticeCategoryItem = ({ notice }) => {
             isAcceptDeleteOwner={isAcceptDeleteOwner}
             setIsAcceptDeleteOwner={setIsAcceptDeleteOwner}
             id={_id}
+            page={page}
           />
         )}
       </Item>
