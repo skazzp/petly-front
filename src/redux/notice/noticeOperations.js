@@ -10,7 +10,7 @@ export const createNotice = createAsyncThunk(
   async (notice, thunkApi) => {
     // const formData = new FormData();
     // formData.append('image', notice);
-    console.log(notice);
+    // console.log(notice);
     const {
       image,
       category,
@@ -49,7 +49,7 @@ export const createNotice = createAsyncThunk(
         formData,
         config
       );
-      console.log('createNotice', response.data);
+      // console.log('createNotice', response.data);
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -92,8 +92,8 @@ export const deleteNotices = createAsyncThunk(
   'notice/deleteNotices',
   async (id, thunkApi) => {
     try {
-      const response = await axios.delete(`/api/notices/delete/${id}`);
-      console.log('notice/deleteNotices', response);
+      await axios.delete(`/api/notices/delete/${id}`);
+      // console.log('notice/deleteNotices', response);
       return id; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -162,8 +162,8 @@ export const addFavorites = createAsyncThunk(
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
-      const response = await axios.get(`/api/notices/favorites/${id}`);
-      console.log('notice/addFavorites', response);
+      await axios.get(`/api/notices/favorites/${id}`);
+      // console.log('notice/addFavorites', response);
       return id; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -189,7 +189,7 @@ export const getByCategory = createAsyncThunk(
       const response = await axios.get(`/api/notices/${path}`, {
         params: { page },
       });
-      console.log(response);
+      // console.log(response);
       return response.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
@@ -202,8 +202,8 @@ export const getByQuery = createAsyncThunk(
   'notice/getByQuery',
   async (query, thunkApi) => {
     try {
-      const response = await axios.get(`/api/notices/search?query=${query}`);
-      console.log('notice/getByQuery', response.data);
+      const response = await axios.get(`/api/notices/search?text=${query}`);
+      // console.log('notice/getByQuery', response.data);
       return response.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);

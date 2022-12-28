@@ -114,7 +114,7 @@ const noticeSlice = createSlice({
     builder.addCase(getFavoriteNotices.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      state.notices = action.payload;
+      state.notices = action.payload.data;
     });
     builder.addCase(getUserNotices.fulfilled, (state, action) => {
       state.error = null;

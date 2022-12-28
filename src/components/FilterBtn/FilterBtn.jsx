@@ -38,6 +38,7 @@ const authButtons = [
 function FilterBtn() {
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
+  const favoriteNotice = useSelector(state => state.auth.user.favorites);
 
   const [search] = useSearchParams();
 
@@ -55,7 +56,7 @@ function FilterBtn() {
     if (category) {
       dispatch(getByCategory({ category: category, page }));
     }
-  }, [category, dispatch, location.pathname, page]);
+  }, [category, dispatch, location.pathname, page, favoriteNotice]);
 
   return (
     <Wrapper>
