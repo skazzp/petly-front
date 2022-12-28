@@ -1,4 +1,6 @@
+
 import { DivBox, Title } from './Chat.styled';
+
 
 import { useEffect, useReducer } from 'react';
 
