@@ -23,6 +23,11 @@ margin-top: 40px;
    padding-right: 16px;
    /* margin-left:0;
 margin-right:0; */
+overflow-y: scroll;
+  /* max-height: 60vh; */
+  &::-webkit-scrollbar {
+    width: 0;
+  }
   } 
 `;
 

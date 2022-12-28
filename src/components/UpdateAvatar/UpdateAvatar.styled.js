@@ -16,6 +16,8 @@ export const LabelContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-bottom: 30px;
+  cursor: pointer;
+ 
 `;
 
 export const Label = styled.label`
@@ -23,6 +25,7 @@ export const Label = styled.label`
   align-items: center;
   justify-content: flex-end;
   gap: 4px;
+ 
 `;
 
 export const LabelIcon = styled.svg`
