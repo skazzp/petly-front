@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const Item = styled.li`
   position: relative;
+  padding-bottom: 12px;
   width: 280px;
   min-height: 606px;
   display: flex;
@@ -14,7 +15,7 @@ export const Item = styled.li`
   background: ${props => props.theme.colors.white};
 
   box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 40px 40px;
 
   ${p => p.theme.breakpoints.tab} {
     width: 336px;
@@ -31,6 +32,7 @@ export const Item = styled.li`
     @media screen and (min-width: 768px) {
       width: 336px;
       height: 288px;
+      object-fit: fill;
     }
 
     @media screen and (min-width: 1280px) {
@@ -56,7 +58,6 @@ export const Item = styled.li`
 export const Image = styled.img`
   width: 280px;
   height: 288px;
-
   padding-bottom: ${props => props.theme.space[4]}px;
 
   ${p => p.theme.breakpoints.tab} {
@@ -111,12 +112,14 @@ export const BtnAddFavorite = styled.button`
 `;
 
 export const Wrapper = styled.div`
-  min-width: 231px;
-  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: auto;
+  height: 200px;
+  padding: 20px 20px ${props => props.theme.space[4]}px 29px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: ${props => props.theme.space[4]}px;
-  padding-right: ${props => props.theme.space[1]}px;
 
   ${p => p.theme.breakpoints.tab} {
     margin-left: ${props => props.theme.space[0]}px;
