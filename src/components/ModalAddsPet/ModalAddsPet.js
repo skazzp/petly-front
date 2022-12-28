@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 
+import {MAX_FILE_SIZE} from '../../utility/constants'
 import { addUserPet } from 'redux/pets/petsOperations';
 import { validationsShema } from '../../utility/validationSchemaUserPet';
 import sprite from '../../assets/images/icons.svg';
@@ -36,7 +37,7 @@ const ModalAddsPet = ({ open, onClose }) => {
   const [errorMsg, setErrorMsg] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const MAX_FILE_SIZE = 4194304; // 4MB
+  // const MAX_FILE_SIZE = 4194304; // 4MB
 
   useEffect(() => {
     const handleEsc = event => {

@@ -52,7 +52,7 @@ const UserDataItem = () => {
     validationSchema: validationSchemaUserUpdate,
     onSubmit: values => {
       setIsActiveEdit(false)
-      console.log(values, user);
+   
       if (
         values.name === user.name &&
         values.email === user.email &&

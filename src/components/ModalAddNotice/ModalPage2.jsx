@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import ReactImageGallery from 'react-image-gallery';
+import { useEffect } from 'react';
+
 import icons from '../../assets/images/icons.svg';
 import { createNotice } from '../../redux/notice/noticeOperations';
 import {
@@ -21,12 +24,13 @@ import {
   SexText,
   AvatarLabel,
   AvatarWrapper,
+  ErrorText,
   // AvatarImg,
   AvatarIcon,
   AvatarInput,
 } from './ModalAddNotice.styled';
-import ReactImageGallery from 'react-image-gallery';
-import { useEffect } from 'react';
+import {MAX_FILE_SIZE} from '../../utility/constants'
+
 
 // const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
 
@@ -61,12 +65,30 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
   const [fileInput, setFileInput] = useState(formData.image);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [errorMsg, setErrorMsg] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const selectFile = (e, setFieldValue) => {
     const file = e.target.files;
     if (file) {
       setFileInput(file);
       setFieldValue('image', file);
       setFormData(values => ({ ...values, image: file }));
+      console.log(file)
+
+
+  if (file[0].size > MAX_FILE_SIZE) {
+    setErrorMsg('File size is greater than maximum limit');
+    setIsSuccess(false);
+    console.log(file[0])
+    return 
+  }
+  
+
+      
+
+      setErrorMsg('');
+      setIsSuccess(true);
     }
   };
 
@@ -216,8 +238,10 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
               />
               <ErrorMessage
                 name="image"
-                render={msg => <div style={{ color: 'red' }}>{msg}</div>}
+                render={msg => <div style={{ color: 'red' }}>{msg} </div>}
+             
               />
+ {errorMsg && <ErrorText>{errorMsg}</ErrorText>}
             </AvatarWrapper>
 
             <FieldWrapper>
@@ -236,7 +260,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
             </FieldWrapper>
 
             <SubmitBtnWrapper>
-              <SubmitBtn type="submit" onSubmit={onSubmit}>
+              <SubmitBtn disabled={!isSuccess} type="submit" onSubmit={onSubmit}>
                 Done
               </SubmitBtn>
               <SubmitBtn type="button" onClick={() => prevStep()}>

@@ -57,3 +57,13 @@ export const BtnContainer = styled.div`
   display: flex;
   gap: 10px;
 `;
+export const ErrorText = styled.span`
+  color: red;
+  font-size: 10px;
+  margin: 0;
+  position: absolute;
+  top: -10px;
+  right: 0;
+
+  /* margin-top: -15px; */
+`;
