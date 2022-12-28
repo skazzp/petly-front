@@ -28,8 +28,6 @@ const UpdateAvatar = ({ selectedImage, setSelectedImage }) => {
         id="avatar"
         accept="image/png, image/gif, image/jpeg"
         onChange={event => {
-          // console.dir(event.target);
-          // console.log(event.target.files[0]);
           setSelectedImage(event.target.files[0]);
         }}
       />

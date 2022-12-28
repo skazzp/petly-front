@@ -1,8 +1,13 @@
 // import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { logOutUser } from 'redux/auth/authOperation';
-import { deleteNotices } from 'redux/notice/noticeOperations';
+import {
+  deleteNotices,
+  getAllNotices,
+  getByCategory,
+} from 'redux/notice/noticeOperations';
 import { deleteUserPet } from 'redux/pets/petsOperations';
 import {
   Box,
@@ -23,10 +28,14 @@ const ExitAccept = ({
   isAcceptDeleteOwner,
   setIsAcceptDeleteOwner,
   id,
+  page,
 }) => {
   const modalRoot = document.querySelector('#modal-root');
-  //   const [closePopup, setClosePopup] = useState(true);
   const dispatch = useDispatch();
+  const location = useLocation();
+  const category = location.pathname.split('/')[2];
+  // console.log(category);
+
   const acceptModal = () => {
     if (isModalOpen) {
       return dispatch(logOutUser());
@@ -35,8 +44,17 @@ const ExitAccept = ({
       dispatch(deleteUserPet(pet._id));
       return setIsModalDeleteAccept(false);
     }
-    if (isAcceptDeleteOwner) {
+    if (
+      isAcceptDeleteOwner &&
+      (location.pathname === '/notices' || location.pathname === '/notices/')
+    ) {
       dispatch(deleteNotices(id));
+      dispatch(getAllNotices(page));
+      return setIsAcceptDeleteOwner(false);
+    }
+    if (isAcceptDeleteOwner && location.pathname === `/notices/${category}`) {
+      dispatch(deleteNotices(id));
+      dispatch(getByCategory({ category: category, page }));
       return setIsAcceptDeleteOwner(false);
     }
     return null;

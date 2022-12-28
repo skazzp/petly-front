@@ -31,22 +31,35 @@ export const Div = styled.div`
   }
 `;
 export const WrapperForDesc = styled.div`
+  width: 240px;
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 20px;
+    width: auto;
   }
 `;
 export const ImageWrapper = styled.div`
   position: relative;
   width: 240px;
   height: 240px;
+  margin: auto;
   @media screen and (min-width: 768px) {
     width: 290px;
     height: 330px;
   }
+
+  & .image-gallery-image {
+    border-radius: 0px 0px 40px 40px;
+    object-fit: fill;
+    @media screen and (min-width: 768px) {
+      width: 290px;
+      height: 330px;
+    }
+  }
 `;
 export const Img = styled.img`
   width: 240px;
+
   @media screen and (min-width: 768px) {
     width: 290px;
     height: 330px;

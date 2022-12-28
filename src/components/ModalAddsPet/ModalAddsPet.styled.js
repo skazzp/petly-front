@@ -18,7 +18,7 @@ export const Card = styled.div`
   padding: 40px 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 160px;
 
   width: 280px;
   height: auto;
@@ -31,7 +31,13 @@ export const Card = styled.div`
     width: 608px;
     height: auto;
     padding: 40px 80px;
+    margin-top: 267px;
   }
+  @media (min-width: 1280px) {
+    /* margin: auto; */
+    margin-top: 99px;
+   
+  } 
 `;
 
 export const CardList = styled.div`

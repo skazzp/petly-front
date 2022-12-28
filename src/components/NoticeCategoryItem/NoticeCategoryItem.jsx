@@ -25,6 +25,7 @@ import {
   Svg,
   Title,
   Wrapper,
+  Wrap,
 } from './NoticeCategoryItem.styled';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -32,7 +33,7 @@ import ExitAccept from 'components/ExitAccept/ExitAccept';
 import ReactImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 
-const NoticeCategoryItem = ({ notice }) => {
+const NoticeCategoryItem = ({ notice, page }) => {
   const {
     birthday,
     breed,
@@ -49,15 +50,11 @@ const NoticeCategoryItem = ({ notice }) => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const isLoading = useSelector(selectIsLoading);
-
   const user = useSelector(selectUser);
-
   const isOwner = user?._id === owner?._id || user?._id === owner;
   const favoriteNotice = useSelector(state => state.auth.user.favorites);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isAcceptDeleteOwner, setIsAcceptDeleteOwner] = useState(false);
-
-  // console.log(isOwner);
 
   useEffect(() => {
     checkFavorite(favoriteNotice, _id);
@@ -127,41 +124,40 @@ const NoticeCategoryItem = ({ notice }) => {
   const data = img.map(element => {
     return { original: element.photoURL, thumbnail: element.photoURL };
   });
-  // console.log('data', data);
-  return (
-    <>
-      <Item>
-        {!photoURL ? (
-          <ReactImageGallery
-            items={data}
-            // defaultImage={defaultImage}
-            showBullets={false}
-            showIndex={true}
-            showThumbnails={false}
-            lazyLoad={true}
-            showPlayButton={false}
-            showFullscreenButton={false}
-          />
-        ) : (
-          <Image src={photoURL} alt={breed} />
-        )}
-        <Category>{setCategory(category)}</Category>
 
-        <BtnAddFavorite
-          type="button"
-          onClick={() => handleClickFavorite(_id)}
-          disabled={isLoading}
-        >
-          {isFavorite ? (
-            <svg width="24" height="22">
-              <use href={icon + '#heart-unlike'}></use>
-            </svg>
-          ) : (
-            <svg width="24" height="22">
-              <use href={icon + '#heart'}></use>
-            </svg>
-          )}
-        </BtnAddFavorite>
+  return (
+    <Item>
+      {!photoURL ? (
+        <ReactImageGallery
+          items={data}
+          showBullets={false}
+          showIndex={true}
+          showThumbnails={false}
+          lazyLoad={true}
+          showPlayButton={false}
+          showFullscreenButton={false}
+        />
+      ) : (
+        <Image src={photoURL} alt={breed} />
+      )}
+      <Category>{setCategory(category)}</Category>
+
+      <BtnAddFavorite
+        type="button"
+        onClick={() => handleClickFavorite(_id)}
+        disabled={isLoading}
+      >
+        {isFavorite ? (
+          <svg width="24" height="22">
+            <use href={icon + '#heart-unlike'}></use>
+          </svg>
+        ) : (
+          <svg width="24" height="22">
+            <use href={icon + '#heart'}></use>
+          </svg>
+        )}
+      </BtnAddFavorite>
+      <Wrap>
         <Wrapper>
           <Title>{title}</Title>
           <InfoList>
@@ -206,10 +202,11 @@ const NoticeCategoryItem = ({ notice }) => {
             isAcceptDeleteOwner={isAcceptDeleteOwner}
             setIsAcceptDeleteOwner={setIsAcceptDeleteOwner}
             id={_id}
+            page={page}
           />
         )}
-      </Item>
-    </>
+      </Wrap>
+    </Item>
   );
 };
 

@@ -37,6 +37,7 @@ const UserDataItem = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [disabled, setDisabled] = useState(INITIAL_DISABLED);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isActiveEdit, setIsActiveEdit] = useState(false);
   const isLoading = useSelector(selectAvatarLoading);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -50,6 +51,20 @@ const UserDataItem = () => {
     },
     validationSchema: validationSchemaUserUpdate,
     onSubmit: values => {
+      setIsActiveEdit(false)
+      console.log(values, user);
+      if (
+        values.name === user.name &&
+        values.email === user.email &&
+        values.birthday === user.birthday &&
+        values.city === user.city &&
+        values.phone === user.phone
+      ) {
+        setDisabled({
+          ...INITIAL_DISABLED,
+        });
+        return;
+      }
       dispatch(editUser(values));
       setDisabled({
         ...INITIAL_DISABLED,
@@ -78,6 +93,8 @@ const UserDataItem = () => {
   }, [user, setFieldValue]);
 
   const handleEditInput = e => {
+    setIsActiveEdit(true)
+   
     setDisabled({
       ...INITIAL_DISABLED,
       [e.currentTarget.parentNode.htmlFor]: false,
@@ -87,6 +104,7 @@ const UserDataItem = () => {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
+       
         setDisabled({
           name: true,
           email: true,
@@ -136,14 +154,14 @@ const UserDataItem = () => {
           </InputBox>
           {disabled.name && (
             <Btn type="button" onClick={handleEditInput}>
-              <BtnIcon>
-                <use href={`${icons}#icon-edit_pencil`}></use>
+              <BtnIcon isActiveEdit={isActiveEdit}>
+                <use href={`${icons}#icon-edit_pencil`} ></use>
               </BtnIcon>
             </Btn>
           )}
           {!disabled.name && (
             <Btn type="submit">
-              <BtnIcon>
+              <BtnIcon >
                 <use href={`${icons}#icon-edit_check`}></use>
               </BtnIcon>
             </Btn>
@@ -166,7 +184,7 @@ const UserDataItem = () => {
           </InputBox>
           {disabled.email && (
             <Btn type="button" onClick={handleEditInput}>
-              <BtnIcon>
+              <BtnIcon isActiveEdit={isActiveEdit}>
                 <use href={`${icons}#icon-edit_pencil`}></use>
               </BtnIcon>
             </Btn>
@@ -197,7 +215,7 @@ const UserDataItem = () => {
           </InputBox>
           {disabled.birthday && (
             <Btn type="button" onClick={handleEditInput}>
-              <BtnIcon>
+              <BtnIcon isActiveEdit={isActiveEdit}>
                 <use href={`${icons}#icon-edit_pencil`}></use>
               </BtnIcon>
             </Btn>
@@ -228,7 +246,7 @@ const UserDataItem = () => {
           </InputBox>
           {disabled.phone && (
             <Btn type="button" onClick={handleEditInput}>
-              <BtnIcon>
+              <BtnIcon isActiveEdit={isActiveEdit}>
                 <use href={`${icons}#icon-edit_pencil`}></use>
               </BtnIcon>
             </Btn>
@@ -258,7 +276,7 @@ const UserDataItem = () => {
           </InputBox>
           {disabled.city && (
             <Btn type="button" onClick={handleEditInput}>
-              <BtnIcon>
+              <BtnIcon isActiveEdit={isActiveEdit}>
                 <use href={`${icons}#icon-edit_pencil`}></use>
               </BtnIcon>
             </Btn>

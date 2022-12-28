@@ -18,11 +18,18 @@ margin-top: 40px;
     padding-right:32px;
   }
   @media (min-width: 1280px) {
-   width: 100%;
+    width: 855px;
    padding-left: 16px;
    padding-right: 16px;
-   /* margin-left:0;
-margin-right:0; */
+   margin: 0;
+   margin-top: 32px;
+ 
+position: sticky;
+overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  } 
   } 
 `;
 
@@ -32,7 +39,7 @@ display: flex;
 justify-content: space-between;
 align-items: flex-end;
 @media (min-width: 1280px) {
-  min-width: 821px;
+  /* min-width: 821px; */
    max-width: 100%;
    padding-right: 20px;
   } 
