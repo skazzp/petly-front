@@ -8,8 +8,7 @@ export const Item = styled.li`
   min-height: 606px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 12px;
-  /* margin-bottom: 32px; */
+  margin-bottom: 32px;
   justify-content: space-between;
 
   background: ${props => props.theme.colors.white};
@@ -19,6 +18,7 @@ export const Item = styled.li`
 
   ${p => p.theme.breakpoints.tab} {
     width: 336px;
+    margin-bottom: auto;
   }
 
   ${p => p.theme.breakpoints.desc} {
@@ -128,8 +128,14 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Wrap = styled.div`
+  min-height: 308px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export const Title = styled.h2`
-  padding-top: 20px;
   padding-bottom: 20px;
   min-width: 231px;
 
@@ -140,7 +146,6 @@ export const Title = styled.h2`
 
 export const InfoList = styled.ul`
   list-style: none;
-  /* height: 115px; */
 `;
 
 export const InfoItem = styled.li`

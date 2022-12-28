@@ -25,6 +25,7 @@ import {
   Svg,
   Title,
   Wrapper,
+  Wrap,
 } from './NoticeCategoryItem.styled';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -162,53 +163,58 @@ const NoticeCategoryItem = ({ notice, page }) => {
             </svg>
           )}
         </BtnAddFavorite>
-        <Wrapper>
-          <Title>{title}</Title>
-          <InfoList>
-            <InfoItem>
-              <InfoTitle>Breed:</InfoTitle>
-              <Info>{breed} </Info>
-            </InfoItem>
-            <InfoItem>
-              <InfoTitle>Place:</InfoTitle>
-              <Info>{location}</Info>
-            </InfoItem>
-            <InfoItem>
-              <InfoTitle>Age:</InfoTitle>
-              <Info>{birthdayFunc()}</Info>
-            </InfoItem>
-            <InfoItem>
-              {price && category === 'sell' ? (
-                <>
-                  <InfoTitle>Price:</InfoTitle>
-                  <Info>{price}$</Info>
-                </>
-              ) : null}
-            </InfoItem>
-          </InfoList>
-        </Wrapper>
-        <BtnBox>
-          <BtnLearnMore type="button" onClick={openModal}>
-            Learn more
-          </BtnLearnMore>
+        <Wrap>
+          <Wrapper>
+            <Title>{title}</Title>
+            <InfoList>
+              <InfoItem>
+                <InfoTitle>Breed:</InfoTitle>
+                <Info>{breed} </Info>
+              </InfoItem>
+              <InfoItem>
+                <InfoTitle>Place:</InfoTitle>
+                <Info>{location}</Info>
+              </InfoItem>
+              <InfoItem>
+                <InfoTitle>Age:</InfoTitle>
+                <Info>{birthdayFunc()}</Info>
+              </InfoItem>
+              <InfoItem>
+                {price && category === 'sell' ? (
+                  <>
+                    <InfoTitle>Price:</InfoTitle>
+                    <Info>{price}$</Info>
+                  </>
+                ) : null}
+              </InfoItem>
+            </InfoList>
+          </Wrapper>
+          <BtnBox>
+            <BtnLearnMore type="button" onClick={openModal}>
+              Learn more
+            </BtnLearnMore>
 
-          {isOwner && (
-            <BtnDlt type="button" onClick={() => setIsAcceptDeleteOwner(true)}>
-              <Span>Delete</Span>
-              <Svg width="17" height="17">
-                <use href={icon + '#delete-button'}></use>
-              </Svg>
-            </BtnDlt>
+            {isOwner && (
+              <BtnDlt
+                type="button"
+                onClick={() => setIsAcceptDeleteOwner(true)}
+              >
+                <Span>Delete</Span>
+                <Svg width="17" height="17">
+                  <use href={icon + '#delete-button'}></use>
+                </Svg>
+              </BtnDlt>
+            )}
+          </BtnBox>
+          {isAcceptDeleteOwner && (
+            <ExitAccept
+              isAcceptDeleteOwner={isAcceptDeleteOwner}
+              setIsAcceptDeleteOwner={setIsAcceptDeleteOwner}
+              id={_id}
+              page={page}
+            />
           )}
-        </BtnBox>
-        {isAcceptDeleteOwner && (
-          <ExitAccept
-            isAcceptDeleteOwner={isAcceptDeleteOwner}
-            setIsAcceptDeleteOwner={setIsAcceptDeleteOwner}
-            id={_id}
-            page={page}
-          />
-        )}
+        </Wrap>
       </Item>
     </>
   );

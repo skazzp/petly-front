@@ -122,10 +122,8 @@ const authSlice = createSlice({
     builder.addCase(editUser.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
-      // console.log(123, action.payload);
-      // state.user = { ...state.user, ...action.payload.avatarURL };
-      // state.token = null;
-      // state.user.avatarURL = action.payload.avatarURL;
+      const { email, password, name, city, phone } = action.payload;
+      state.user = { ...state.user, email, password, name, city, phone };
     });
 
     builder.addCase(editAvatar.pending, (state, _) => {
@@ -138,9 +136,6 @@ const authSlice = createSlice({
     builder.addCase(editAvatar.fulfilled, (state, action) => {
       state.error = null;
       state.avatarLoading = false;
-      // console.log(123, action.payload);
-      // state.user = { ...state.user, ...action.payload.avatarURL };
-      // state.token = null;
       state.user.avatarURL = action.payload.avatarURL;
     });
 
@@ -150,7 +145,6 @@ const authSlice = createSlice({
       state.error = null;
       state.isLoading = false;
       state.user.favorites.push(action.payload);
-      // TODO: редактировать нужный нотис в стейте или юзера ?
     });
 
     builder.addCase(deleteFavorites.pending, pendingHandlerAuth);
@@ -161,7 +155,6 @@ const authSlice = createSlice({
       state.user.favorites = state.user.favorites.filter(
         fav => fav !== action.payload
       );
-      // TODO: редактировать нужный нотис в стейте или юзера ?
     });
   },
 });
