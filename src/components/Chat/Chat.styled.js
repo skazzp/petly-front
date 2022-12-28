@@ -28,7 +28,7 @@ export const DivBox = styled.div`
   @media screen and (min-width: 1280px) {
     min-height: 100vh;
     width: 30%;
-    z-index: 100000000;
+    z-index: 49;
   }
 
   animation: show 1000ms cubic-bezier(0.43, 0.21, 0, 1.03);

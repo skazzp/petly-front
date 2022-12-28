@@ -27,7 +27,7 @@ export const Searchbar = ({ submitForm }) => {
   return (
     <HesderSearchbar>
       <SearchForm onSubmit={handleSubmit}>
-       <SearchFormInput
+        <SearchFormInput
           onChange={saveInputState}
           name="name"
           type="text"

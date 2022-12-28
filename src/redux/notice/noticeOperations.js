@@ -204,7 +204,7 @@ export const getByQuery = createAsyncThunk(
     try {
       const response = await axios.get(`/api/notices/search?query=${query}`);
       console.log('notice/getByQuery', response.data);
-      return response.data.data; // TODO
+      return response.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
     }

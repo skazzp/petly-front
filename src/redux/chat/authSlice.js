@@ -8,15 +8,15 @@ const userInitialState = {
   messages: [],
 };
 
-const pendingHandlerAuth = (state, action) => {
-  state.isLoading = true;
-  state.error = null;
-};
+// const pendingHandlerAuth = (state, action) => {
+//   state.isLoading = true;
+//   state.error = null;
+// };
 
-const rejectedHandler = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
-};
+// const rejectedHandler = (state, action) => {
+//   state.isLoading = false;
+//   state.error = action.payload;
+// };
 
 const chatSlice = createSlice({
   name: 'chat',
