@@ -326,6 +326,29 @@ export const AvatarWrapper = styled.div`
     width: 140px;
     height: 140px;
   }
+  .image-gallery-image {
+   
+    width: 116px;
+  height: 116px;
+    object-fit: cover;
+    border-radius: 20px;
+    ${p => p.theme.breakpoints.tab} {
+    width: 140px;
+    height: 140px;
+  }
+    }
+    .image-gallery-svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  & .image-gallery-index {
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    top: auto;
+    z-index: 0;
+  }
 `;
 
 export const AvatarImg = styled.img`
