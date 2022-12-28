@@ -29,8 +29,7 @@ import {
   AvatarIcon,
   AvatarInput,
 } from './ModalAddNotice.styled';
-import {MAX_FILE_SIZE} from '../../utility/constants'
-
+import { MAX_FILE_SIZE } from '../../utility/constants';
 
 // const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
 
@@ -74,18 +73,15 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
       setFileInput(file);
       setFieldValue('image', file);
       setFormData(values => ({ ...values, image: file }));
-      console.log(file)
+     
 
-
-  if (file[0].size > MAX_FILE_SIZE) {
-    setErrorMsg('File size is greater than maximum limit');
-    setIsSuccess(false);
-    console.log(file[0])
-    return 
-  }
-  
-
-      
+for(let i = 0; i < file.length; i++) {
+      if (file[i].size > MAX_FILE_SIZE) {
+        setErrorMsg('File size is greater than maximum limit');
+        setIsSuccess(false);
+       
+        return;
+      }}
 
       setErrorMsg('');
       setIsSuccess(true);
@@ -95,7 +91,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
   function checkImg() {
     let previewData = [];
     for (let element of fileInput) {
-      // console.log(element);
+    
       previewData.push({
         original: URL.createObjectURL(element),
         thumbnail: URL.createObjectURL(element),
@@ -239,9 +235,8 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
               <ErrorMessage
                 name="image"
                 render={msg => <div style={{ color: 'red' }}>{msg} </div>}
-             
               />
- {errorMsg && <ErrorText>{errorMsg}</ErrorText>}
+              {errorMsg && <ErrorText>{errorMsg}</ErrorText>}
             </AvatarWrapper>
 
             <FieldWrapper>
@@ -260,7 +255,11 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
             </FieldWrapper>
 
             <SubmitBtnWrapper>
-              <SubmitBtn disabled={!isSuccess} type="submit" onSubmit={onSubmit}>
+              <SubmitBtn
+                disabled={!isSuccess}
+                type="submit"
+                onSubmit={onSubmit}
+              >
                 Done
               </SubmitBtn>
               <SubmitBtn type="button" onClick={() => prevStep()}>
