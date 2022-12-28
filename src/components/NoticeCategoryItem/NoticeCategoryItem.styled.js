@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+// import ReactImageGallery from 'react-image-gallery';
 
 export const Item = styled.li`
   position: relative;
@@ -6,8 +7,9 @@ export const Item = styled.li`
   min-height: 606px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 12px;
+  padding-bottom: 12px;
   /* margin-bottom: 32px; */
+  justify-content: space-between;
 
   background: ${props => props.theme.colors.white};
 
@@ -25,6 +27,7 @@ export const Item = styled.li`
   & .image-gallery-image {
     width: 280px;
     height: 288px;
+    bottom: 0;
     @media screen and (min-width: 768px) {
       width: 336px;
       height: 288px;
@@ -39,6 +42,14 @@ export const Item = styled.li`
   & .image-gallery-svg {
     width: 30px;
     height: 60px;
+  }
+
+  & .image-gallery-index {
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    top: auto;
+    z-index: 0;
   }
 `;
 
@@ -100,11 +111,12 @@ export const BtnAddFavorite = styled.button`
 `;
 
 export const Wrapper = styled.div`
-  width: 231px;
-  height: 200px;
+  min-width: 231px;
+  min-height: 200px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: ${props => props.theme.space[4]}px;
+  padding-right: ${props => props.theme.space[1]}px;
 
   ${p => p.theme.breakpoints.tab} {
     margin-left: ${props => props.theme.space[0]}px;
@@ -114,6 +126,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h2`
+  padding-top: 20px;
   padding-bottom: 20px;
   min-width: 231px;
 
