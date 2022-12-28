@@ -85,6 +85,10 @@ export const Content = styled.div`
   }
 `;
 
+export const Div = styled.div`
+display: block ;
+`
+
 export const Span = styled.span`
   display: none;
   opacity: 0;
