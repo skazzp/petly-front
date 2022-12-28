@@ -45,6 +45,16 @@ const NoticeCategoryList = () => {
   }, [location]);
   const isModalOpen = useSelector(state => state.notice.isLearnMoreModalOpen);
 
+  useEffect(() => {
+    if (
+      selectTotalPage > 1 &&
+      page !== selectTotalPage &&
+      notices.length < 12
+    ) {
+      dispatch(getAllNotices(page));
+    }
+  }, [notices, dispatch, page, selectTotalPage]);
+
   return !isLoading && notices.length === 0 ? (
     <NotFoundBox>
       <Title>Nothing found. Please, try again</Title>

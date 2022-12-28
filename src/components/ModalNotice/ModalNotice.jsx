@@ -110,6 +110,7 @@ const ModalNotice = () => {
   const imgArr = data.img.map(element => {
     return { original: element.photoURL, thumbnail: element.photoURL };
   });
+
   return createPortal(
     <Overlay onClick={backDropCloseModal}>
       <Div>
