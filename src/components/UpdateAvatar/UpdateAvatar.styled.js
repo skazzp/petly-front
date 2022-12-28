@@ -7,6 +7,7 @@ export const Input = styled.input`
   overflow: hidden;
   position: absolute;
   z-index: -1;
+  cursor: pointer;
 `;
 
 export const LabelContainer = styled.div`

@@ -31,50 +31,35 @@ export const Div = styled.div`
   }
 `;
 export const WrapperForDesc = styled.div`
+  width: 240px;
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 20px;
+    width: auto;
   }
 `;
 export const ImageWrapper = styled.div`
   position: relative;
   width: 240px;
   height: 240px;
+  margin: auto;
   @media screen and (min-width: 768px) {
     width: 290px;
     height: 330px;
   }
+
   & .image-gallery-image {
-    width: 280px;
-    height: 288px;
-    bottom: 0;
+    border-radius: 0px 0px 40px 40px;
+    object-fit: fill;
     @media screen and (min-width: 768px) {
-      width: 336px;
-      height: 288px;
-      object-fit: fill;
+      width: 290px;
+      height: 330px;
     }
-
-    @media screen and (min-width: 1280px) {
-      width: 288px;
-      height: 288px;
-    }
-  }
-
-  & .image-gallery-svg {
-    width: 30px;
-    height: 60px;
-  }
-
-  & .image-gallery-index {
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    top: auto;
-    z-index: 0;
   }
 `;
 export const Img = styled.img`
   width: 240px;
+
   @media screen and (min-width: 768px) {
     width: 290px;
     height: 330px;

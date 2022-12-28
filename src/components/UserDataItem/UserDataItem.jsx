@@ -52,7 +52,19 @@ const UserDataItem = () => {
     validationSchema: validationSchemaUserUpdate,
     onSubmit: values => {
       setIsActiveEdit(false)
-   
+      console.log(values, user);
+      if (
+        values.name === user.name &&
+        values.email === user.email &&
+        values.birthday === user.birthday &&
+        values.city === user.city &&
+        values.phone === user.phone
+      ) {
+        setDisabled({
+          ...INITIAL_DISABLED,
+        });
+        return;
+      }
       dispatch(editUser(values));
       setDisabled({
         ...INITIAL_DISABLED,
