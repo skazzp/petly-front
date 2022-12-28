@@ -5,6 +5,7 @@ export const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 4;
+
   @media screen and (min-width: 768px) {
     overflow: scroll;
   }
@@ -12,6 +13,7 @@ export const ChatContainer = styled.div`
   @media screen and (min-width: 1280px) {
   }
 `;
+
 export const Display = styled.form`
   /* display: flex; */
   max-width: 100%;
