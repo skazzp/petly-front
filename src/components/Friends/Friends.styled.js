@@ -217,6 +217,9 @@ export const Address = styled.a`
   /* text-decoration-line: underline; */
   line-height: ${props => props.theme.lineHeights.main};
   color: #111111;
+  :hover {
+    color: #FF6101;
+  }
 
   ${props => props.theme.breakpoints.tab} {
     font-size: 14px;
@@ -247,6 +250,9 @@ export const Email = styled.a`
   /* text-decoration-line: underline; */
   line-height: ${props => props.theme.lineHeights.main};
   color: #111111;
+  :hover {
+    color: #FF6101;
+  }
 
   ${props => props.theme.breakpoints.tab} {
     font-size: 14px;
@@ -266,6 +272,9 @@ export const Phone = styled.a`
   line-height: ${props => props.theme.lineHeights.main};
   color: #111111;
   margin-bottom: 12px;
+  :hover {
+    color: #FF6101;
+  }
 
   ${props => props.theme.breakpoints.tab} {
     font-size: 14px;

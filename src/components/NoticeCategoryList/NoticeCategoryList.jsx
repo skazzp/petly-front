@@ -56,7 +56,11 @@ const NoticeCategoryList = () => {
         <>
           <List>
             {notices.map(notice => (
-              <NoticeCategoryItem key={notice._id} notice={notice} />
+              <NoticeCategoryItem
+                key={notice._id}
+                notice={notice}
+                page={page}
+              />
             ))}
           </List>
           {selectTotalPage > 1 && (
