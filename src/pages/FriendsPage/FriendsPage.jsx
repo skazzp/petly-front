@@ -4,18 +4,22 @@ import { ItemCard, ListCard, Title, Wrapper, WrapperList } from './FriendsPage.s
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getOurFriends } from 'redux/ourFriend/ourFriendOperations';
-import { selectOurFriends } from 'redux/ourFriend/ourFriendSelectors';
+import { selectOurFriends, selectSpinetToggle } from 'redux/ourFriend/ourFriendSelectors';
+import { LoaderSpiner } from 'components/LoaderSpiner/LoaderSpiner';
 
 const FriendsPage = () => {
   const dispatch = useDispatch();
   const dataFriends = useSelector(selectOurFriends);
+  const spiner = useSelector(selectSpinetToggle);
+
   
   useEffect(() => {
     dispatch(getOurFriends());
   }, [dispatch]);
 
   return (
-    <Wrapper>
+    !spiner?
+   ( <Wrapper>
       <Title>Our friend</Title>
       <WrapperList>
       <ListCard>
@@ -27,7 +31,7 @@ const FriendsPage = () => {
       </ListCard>
       </WrapperList>
       
-    </Wrapper>
+    </Wrapper>):(<LoaderSpiner/>)
   );
 };
 
