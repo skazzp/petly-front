@@ -382,3 +382,14 @@ export const AvatarInput = styled.input`
   appearance: none;
   cursor: pointer;
 `;
+
+export const ErrorText = styled.span`
+  color: red;
+  font-size: 10px;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  margin-bottom: -30px;
+`;
