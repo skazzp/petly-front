@@ -2,6 +2,7 @@ import {
   Checkbox,
   Content,
   Data,
+  Div,
   Footer,
   Label,
   Link,
@@ -23,26 +24,25 @@ export const CardNew = ({ news }) => {
   const newDescriptionStart = description.slice(0, 195);
   const newDescriptionEnd = description.slice(195);
 
-  // const more = () => {
-  //   return <a href="#">more</a>;
-  // };
 
   return (
     <>
       <Wrapper>
         <WrapperContent>
           <div>
-          <Strip />
-          <Title>{title || 'no title'}</Title>
+            <Strip />
+            <Title>{title || 'no title'}</Title>
           </div>
           <Content>
-            <P>
-              <Checkbox type="checkbox" id={id} />
-              {newDescriptionStart || 'no description'}
-              <SpanDots> ...</SpanDots>
-              <Span>{newDescriptionEnd}</Span>
-              <Label for={id} />
-            </P>
+            <Div>
+              <P>
+                <Checkbox type="checkbox" id={id} />
+                {newDescriptionStart || 'no description'}
+                <SpanDots> ...</SpanDots>
+                <Span>{newDescriptionEnd}</Span>
+                <Label htmlFor={id} />
+              </P>
+            </Div>
           </Content>
         </WrapperContent>
         <Footer>

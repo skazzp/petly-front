@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import * as yup from 'yup';
-import { addUserPet } from 'redux/pets/petsOperations';
 
+import { addUserPet } from 'redux/pets/petsOperations';
+import { validationsShema } from '../../utility/validationSchemaUserPet';
 import sprite from '../../assets/images/icons.svg';
 import {
   ButtonExit,
@@ -33,10 +33,15 @@ const ModalAddsPet = ({ open, onClose }) => {
   const [image, setImage] = useState();
   const [imageURL, setImageURL] = useState();
   const [firstPage, setFirstPage] = useState(true);
+  const [errorMsg, setErrorMsg] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const MAX_FILE_SIZE = 4194304; // 4MB
+
   useEffect(() => {
-    const handleEsc = (event) => {
-       if (event.keyCode === 27) {
-        handleCancle()
+    const handleEsc = event => {
+      if (event.keyCode === 27) {
+        handleCancle();
       }
     };
     window.addEventListener('keydown', handleEsc);
@@ -44,16 +49,15 @@ const ModalAddsPet = ({ open, onClose }) => {
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
-  }, );
+  });
+
   if (!open) return null;
 
-  
   const fileReader = new FileReader();
 
   fileReader.onloadend = () => {
     setImageURL(fileReader.result);
   };
-  const today = new Date();
 
   const handleOnChange = event => {
     event.preventDefault();
@@ -63,6 +67,21 @@ const ModalAddsPet = ({ open, onClose }) => {
       formData.append('image', file);
       setImage(file);
       fileReader.readAsDataURL(file);
+
+      if (!file) {
+        setErrorMsg('Please choose a file');
+        setIsSuccess(false);
+        return;
+      }
+
+      if (file.size > MAX_FILE_SIZE) {
+        setErrorMsg('File size is greater than maximum limit');
+        setIsSuccess(false);
+        return;
+      }
+
+      setErrorMsg('');
+      setIsSuccess(true);
     }
   };
 
@@ -76,55 +95,12 @@ const ModalAddsPet = ({ open, onClose }) => {
     }
   };
 
-  
   const handleCancle = () => {
     onClose();
     setFirstPage(true);
     setImage();
     setImageURL();
   };
-
-
-
-  const validationsShema = yup.object().shape({
-    name: yup
-      .string()
-      .typeError('String')
-      .required('Name is required!')
-      .matches(
-        /^([А-Яа-яЁёЇїІіЄєҐґ'\s]+|[a-zA-Z\s]+){2,}$/,
-        'Minimum 2 letters required'
-      )
-      .min(2, 'Minimum 2 letters required')
-      .max(16, 'Maximum 16 letters required'),
-    dateOfBirth: yup
-      .date()
-      .max(today, 'The maximum date is today')
-      .required(' Date of Birth is required (example: 22.10.2022'),
-    breed: yup
-      .string()
-      .required('Breed is required, even if the pet is purebred')
-      .matches(
-        /^([А-Яа-яЁёЇїІіЄєҐґ'\s]+|[a-zA-Z\s]+){2,}$/,
-        'Minimum 2 letters required'
-      )
-      .min(2, 'Minimum 2 letters required')
-      .max(24, 'Maximum 24 letters required'),
-    comments: yup
-      .string()
-      .required('Comments are required')
-      .min(8, 'Minimum 8 letters required')
-      .max(120, 'Maximum 120 letters required'),
-    image: yup.mixed().required('Image is required'),
-    // .test(5000000, 'the file is large',  value => {
-    //   console.log(image,value);
-
-    //   return value && image.size <= 5000000;
-    // }),
-    // (value) => value && value.size <=  4 * 1024 * 1024)  // 5MB
-  });
-
- 
 
   return (
     <Modal onClick={onBackdropClick}>
@@ -230,7 +206,6 @@ const ModalAddsPet = ({ open, onClose }) => {
                         errors.dateOfBirth ||
                         errors.name
                       }
-                     
                       onClick={() => setFirstPage(false)}
                       type="button"
                     >
@@ -261,7 +236,6 @@ const ModalAddsPet = ({ open, onClose }) => {
                       )}
                     </LabelImage>
                     <InputImage
-                   
                       type="file"
                       name={`image`}
                       defaultValue={values.image}
@@ -274,16 +248,7 @@ const ModalAddsPet = ({ open, onClose }) => {
                       onBlur={handleBlur}
                     />
                     {errors.image && <ErrorText>{errors.image}</ErrorText>}
-                    {/* {imageURL && (
-                      <Img
-                        src={imageURL ? imageURL : null}
-                        alt="pet image"
-                        onDrop={handleDrop}
-                        onDragEnter={handleDragEmpty}
-                        onDragOver={handleDragEmpty}
-                      />
-                    )} */}
-                    {/* <div>{image ? image.size : ''}</div> */}
+                    {errorMsg && <ErrorText>{errorMsg}</ErrorText>}
                   </AddList>
                   <Line>
                     <Label htmlFor="comments">Comments</Label>
@@ -304,7 +269,11 @@ const ModalAddsPet = ({ open, onClose }) => {
                   <ButtonSet>
                     <ButtonA
                       disabled={
-                        !values.comments || !values.image || !isValid || !dirty
+                        !isSuccess ||
+                        !values.comments ||
+                        !values.image ||
+                        !isValid ||
+                        !dirty
                       }
                       onClick={handleSubmit}
                       type="submit"

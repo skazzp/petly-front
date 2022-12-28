@@ -24,7 +24,7 @@ export const theme = {
     secondary: 'Poppins, sans-serif',
   },
   fontFamily: {
-    title: 'Poppins'
+    title: 'Poppins',
   },
   fontSizes: {
     xs: '12px',
@@ -72,7 +72,7 @@ export const theme = {
     onlyTab: '@media screen and (min-width: 768px) and (max-width: 1279px)',
   },
   retina: {
-    double: '@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
+    double:
+      '@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
   },
-
 };

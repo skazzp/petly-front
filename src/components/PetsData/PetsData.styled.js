@@ -32,7 +32,8 @@ display: flex;
 justify-content: space-between;
 align-items: flex-end;
 @media (min-width: 1280px) {
-   width: 821px;
+  min-width: 821px;
+   max-width: 100%;
    padding-right: 20px;
   } 
 
@@ -67,8 +68,8 @@ padding:8px;
 padding-top: 10px;
 &:hover,
 &:focus {
-    box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.2);
-    background:  ${props => props.theme.colors.orange};
+    /* box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.2); */
+    /* background:  ${props => props.theme.colors.orange}; */
 }
 &:active {
   /* background-color: #3e8e41;
@@ -97,4 +98,10 @@ export const Icon= styled.svg`
 width: 16px;
   height: 16px;
   color: rgba(17, 17, 17, 0.6);
+  transform: scale(1);
+  transition: transform 300ms linear;
+  ${Button}:hover &,
+  ${Button}:focus & {
+    transform: scale(1.4);
+  }
 `
