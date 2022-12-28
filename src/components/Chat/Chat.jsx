@@ -17,10 +17,10 @@ const Chat = ({ type }) => {
     messages: [],
   });
 
-  console.log(state);
+
 
   const onLogin = async obj => {
-    console.log(obj);
+    
     dispatch({
       type: 'JOINED',
       payload: obj,
@@ -30,7 +30,7 @@ const Chat = ({ type }) => {
     const { data } = await axios.get(
       `https://exemple-chat-back.onrender.com/rooms/${obj.roomId}`
     );
-    console.log(data);
+    
     setUsers(data.users);
   };
 
