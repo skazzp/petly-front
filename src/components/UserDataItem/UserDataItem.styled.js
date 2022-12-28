@@ -16,15 +16,17 @@ export const Container = styled.div`
     border-bottom-left-radius: 0;
     flex-direction: row-reverse;
     padding-right: 40px;
+    padding-left: 32px;
     justify-content: space-between;
   }
   ${p => p.theme.breakpoints.desc} {
-    width: 410px;
+    max-width: 430px;
     /* border-top-left-radius: 0; */
     /* border-bottom-left-radius: 0; */
     flex-direction: column;
     padding-left: 32px;
     justify-content: flex-start;
+    padding: 20px 16px 18px 16px;
   }
 `;
 
@@ -36,7 +38,8 @@ export const Form = styled.form`
   padding-right: 12px;
   gap: 8px;
   ${p => p.theme.breakpoints.tab} {
-    padding-left: 32px;
+    padding: 0;
+   
   }
 `;
 
@@ -87,6 +90,7 @@ export const Input = styled.input`
   padding-left: 18px;
   padding-top: 4px;
   padding-bottom: 4px;
+  padding-right: 6px;
   font-size: ${p => p.theme.fontSizes.xs};
   font-family: ${p => p.theme.fonts.main};
   font-weight: ${p => p.theme.fontWeights.normal};
@@ -99,13 +103,16 @@ export const Input = styled.input`
   &:disabled {
     background-color: ${p => p.theme.colors.background.white};
     border: transparent;
+
   }
+
   ${p => p.theme.breakpoints.tab} {
     font-size: 18px;
     width: 210px;
     height: 32px;
   }
 `;
+
 
 export const Btn = styled.button`
   display: flex;
@@ -126,6 +133,7 @@ export const Btn = styled.button`
 export const BtnIcon = styled.svg`
   width: 13px;
   height: 13px;
+  fill: ${p => p.isActiveEdit? p.theme.colors.grey : p.theme.colors.accent};
   ${p => p.theme.breakpoints.tab} {
     width: 20px;
     height: 20px;
@@ -137,9 +145,15 @@ export const LogoutBox = styled.div`
   display: flex;
   justify-content: end;
   margin-top: 42px;
-  ${p => p.theme.breakpoints.tab} {
+  ${p =>  p.theme.breakpoints.tab} {
     justify-content: start;
+    margin-top: 33px;
   }
+  ${p => p.theme.breakpoints.desc} {
+    margin-top: 24px;
+  }
+
+
 `;
 
 export const LogoutBtn = styled.button`
