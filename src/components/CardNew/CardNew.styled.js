@@ -60,8 +60,7 @@ export const Title = styled.h3`
   font-size: ${props => props.theme.fontSizes.l};
   line-height: ${props => props.theme.lineHeights.main};
   letter-spacing: -0.01em;
-
-  text-align: justify;
+  /* text-align: justify; */
 
   ${props => props.theme.breakpoints.tab} {
     margin-bottom: 16px;

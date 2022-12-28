@@ -9,15 +9,18 @@ import {
   SearchFormInput,
 } from './Searchbar.styled.js';
 import PropTypes from 'prop-types';
+import { useSearchParams } from 'react-router-dom';
 
 export const Searchbar = ({ submitForm }) => {
   const [input, setInput] = useState('');
+  const [, setSearchParams] = useSearchParams();
 
   const handleSubmit = e => {
     e.preventDefault();
     // Эта функция которая отвечает за отправку запроса. Приходит в пропсе. Нужно обраьотать напильником
-    submitForm(input);
-    // setInput('');
+    setSearchParams({ text: input });
+    // submitForm(input);
+    setInput('');
   };
 
   const saveInputState = e => {

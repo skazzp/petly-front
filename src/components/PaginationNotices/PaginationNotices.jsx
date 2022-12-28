@@ -2,7 +2,7 @@ import * as React from 'react';
 // import { useLocation } from 'react-router-dom';
 import { PaginationNotice } from './PaginationNotice.styled';
 
-const PaginationNotices = ({ page, totalPages, setSearch }) => {
+const PaginationNotices = ({ page, totalPages, setSearch, search }) => {
   const fixPage = () => {
     if (page === null) {
       return 1;
@@ -22,7 +22,10 @@ const PaginationNotices = ({ page, totalPages, setSearch }) => {
       count={totalPages}
       page={fixedPage}
       onChange={(e, value) => {
-        setSearch({ page: value });
+        search
+          ? setSearch({ page: value, text: search })
+          : setSearch({ page: value });
+
         setTimeout(() => {
           window.scrollTo(0, 0);
         }, 1300);
