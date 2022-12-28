@@ -61,6 +61,8 @@ export const Title = styled.h3`
   line-height: ${props => props.theme.lineHeights.main};
   letter-spacing: -0.01em;
 
+  text-align: justify;
+
   ${props => props.theme.breakpoints.tab} {
     margin-bottom: 16px;
   }
@@ -78,6 +80,7 @@ export const Content = styled.div`
   color: ${props => props.theme.colors.background.content};
 
   ${props => props.theme.breakpoints.tab} {
+    /* margin-bottom: auto; */
     margin-top: ${props => props.theme.space[0]}px;
   }
 
@@ -87,6 +90,7 @@ export const Content = styled.div`
 
 export const Div = styled.div`
 display: block ;
+/* margin-bottom: auto; */
 `
 
 export const Span = styled.span`
@@ -103,10 +107,21 @@ export const SpanDots = styled.span`
 
 export const Label = styled.label`
   color: ${props => props.theme.colors.accent};
+  cursor: pointer;
+  :hover {
+    color: ${props => props.theme.colors.orange};
+  }
   :before {
     display: block;
     margin-top: 15px;
     content: 'Show more';
+  }
+  ${props => props.theme.breakpoints.tab} {
+    display: none;
+  }
+
+  ${props => props.theme.breakpoints.desc} {
+    display: none;
   }
 `;
 
@@ -166,6 +181,9 @@ export const Link = styled.a`
   text-align: right;
   text-decoration-line: underline;
   color: ${props => props.theme.colors.accent};
+  :hover {
+    color: ${props => props.theme.colors.orange};
+  }
   ${props => props.theme.breakpoints.tab} {
   }
 

@@ -115,7 +115,7 @@ const Friends = ({ friends }) => {
             </WrapperTimeHover>
           </Data>
           <P> Adress:{buttonAddress()} </P>
-          <Address href={addressUrl}>
+          <Address href={addressUrl} target="_blank">
             {address || '-----------------------'}
           </Address>
           <P> Email:</P>
