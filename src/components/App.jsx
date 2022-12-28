@@ -60,7 +60,11 @@ export const App = () => {
             }
           />
           <Route path="friends" element={<FriendsPage />} />
-          <Route path="news" element={<NewsPage />} />
+
+          <Route path="news" element={<NewsPage />}>
+            <Route path="search" element={<></>} />
+          </Route>
+
           <Route path="notices" element={<NoticesPage />}>
             <Route path="lost-found" element={<></>} />
             <Route path="for-free" element={<></>} />

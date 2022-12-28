@@ -2,8 +2,8 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setAuthHeader } from 'redux/auth/authOperation';
 
-axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
-// axios.defaults.baseURL = 'http://localhost:3030/';
+// axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
+axios.defaults.baseURL = 'http://localhost:3030/';
 // Create new notice for logged in user
 export const createNotice = createAsyncThunk(
   'notice/createNotice',
@@ -202,7 +202,7 @@ export const getByQuery = createAsyncThunk(
   'notice/getByQuery',
   async (query, thunkApi) => {
     try {
-      const response = await axios.get(`/api/notices/search?query=${query}`);
+      const response = await axios.get(`/api/notices/search?text=${query}`);
       console.log('notice/getByQuery', response.data);
       return response.data; // TODO
     } catch (error) {
