@@ -95,7 +95,6 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  border-radius: 40px;
   outline: none;
   background: none;
   border: none;
