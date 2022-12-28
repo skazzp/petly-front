@@ -3,10 +3,16 @@ import socket from 'utility/chatSoket';
 import {
   ButtonSend,
   ChatContainer,
+  ChatName,
+  ChatUsers,
   Display,
   InputMassege,
   Label,
   MessageForm,
+  UserName,
+  ChatInfo,
+  ChatMessages,
+  MassegeText
 } from './MessangerChat.styled';
 
 export default function MessangerChat({
@@ -38,34 +44,34 @@ export default function MessangerChat({
   return (
     <ChatContainer className="chat-container">
       <Display>
-        <h2 id="room-name">chat: {roomId}</h2>
-        <h3>
-          <i className="fas fa-user"></i> Online ({users.length})
-        </h3>
-        <ul id="users">
-          {users.map((name, index) => (
-            <li key={name + index}>{name}</li>
-          ))}
-        </ul>
-        <div className="chat-messages" ref={messagesRef}>
+        <ChatInfo>
+          <ChatName id="room-name">chat: {roomId}</ChatName>
+          <ChatUsers> Online ({users.length})</ChatUsers>
+          <ul id="users">
+            {users.map((name, index) => (
+              <UserName key={name + index}>{name}</UserName>
+            ))}
+          </ul>
+        </ChatInfo>
+
+        <ChatMessages className="chat-messages" ref={messagesRef}>
           {messages.map((message, index) => (
             <div
-              className="chat-messages message"
               key={message.userName + index}
             >
-              <p>
-                {message.userName}
-                <span>1 sec</span>
-              </p>{' '}
-              <p>{message.text} </p>
+              <UserName>
+                {message.userName}:
+              </UserName>
+              <MassegeText>{message.text} </MassegeText>
             </div>
           ))}
-        </div>
+        </ChatMessages>
       </Display>
 
       <MessageForm onSubmit={e => onSendMessage(e)} id="chat-form">
-        <Label>
+        <Label autocomplete="off">
           <InputMassege
+            autoComplete="off"
             id="msg"
             type="text"
             placeholder="Type a Message"
@@ -74,7 +80,7 @@ export default function MessangerChat({
             onChange={e => setMessageValue(e.target.value)}
           />
           <ButtonSend type="submit">Enter</ButtonSend>
-        </Label>{' '}
+        </Label>
       </MessageForm>
     </ChatContainer>
   );

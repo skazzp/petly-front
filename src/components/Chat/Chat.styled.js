@@ -1,23 +1,31 @@
 import styled from 'styled-components';
 
 export const DivBox = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
   display: flex;
-  z-index: 10;
-  margin-left: auto;
-  justify-content: center;
+  overflow: scroll;
+  background: #ffffff;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 500px;
+  padding-bottom: 10px;
 
   @media screen and (min-width: 768px) {
-    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    z-index: 20;
+    margin-left: auto;
+    align-items: center;
+    height: 100vh;
     width: 40%;
     min-width: 450px;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     background: #ffffff;
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
     border-radius: 40px 0 0 40px;
@@ -58,13 +66,14 @@ export const Title = styled.h2`
   line-height: 33px;
   letter-spacing: 0.04em;
   color: #111111;
-  margin-bottom: 40px;
+
   @media screen and (min-width: 768px) {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     font-size: 36px;
     line-height: 49px;
+    margin-bottom: 20px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -77,9 +86,14 @@ export const Form = styled.form`
   flex-direction: column;
   position: relative;
   flex-grow: 4;
-  justify-content: space-between;
+  justify-content: center;
+
+  word-break: break-all;
+  width: 280px;
 
   @media screen and (min-width: 768px) {
+    width: 100%;
+    justify-content: space-between;
   }
 
   @media screen and (min-width: 1280px) {
@@ -98,7 +112,7 @@ export const Label = styled.label`
   border-radius: 40px;
 
   margin-bottom: 13px;
-  padding: 11px 14px;
+  padding: 0 14px;
   :focus,
   :hover {
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
