@@ -50,15 +50,11 @@ const NoticeCategoryItem = ({ notice, page }) => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const isLoading = useSelector(selectIsLoading);
-
   const user = useSelector(selectUser);
-
   const isOwner = user?._id === owner?._id || user?._id === owner;
   const favoriteNotice = useSelector(state => state.auth.user.favorites);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isAcceptDeleteOwner, setIsAcceptDeleteOwner] = useState(false);
-
-  // console.log(isOwner);
 
   useEffect(() => {
     checkFavorite(favoriteNotice, _id);
@@ -128,95 +124,89 @@ const NoticeCategoryItem = ({ notice, page }) => {
   const data = img.map(element => {
     return { original: element.photoURL, thumbnail: element.photoURL };
   });
-  // console.log('data', data);
+
   return (
-    <>
-      <Item>
-        {!photoURL ? (
-          <ReactImageGallery
-            items={data}
-            // defaultImage={defaultImage}
-            showBullets={false}
-            showIndex={true}
-            showThumbnails={false}
-            lazyLoad={true}
-            showPlayButton={false}
-            showFullscreenButton={false}
-          />
+    <Item>
+      {!photoURL ? (
+        <ReactImageGallery
+          items={data}
+          showBullets={false}
+          showIndex={true}
+          showThumbnails={false}
+          lazyLoad={true}
+          showPlayButton={false}
+          showFullscreenButton={false}
+        />
+      ) : (
+        <Image src={photoURL} alt={breed} />
+      )}
+      <Category>{setCategory(category)}</Category>
+
+      <BtnAddFavorite
+        type="button"
+        onClick={() => handleClickFavorite(_id)}
+        disabled={isLoading}
+      >
+        {isFavorite ? (
+          <svg width="24" height="22">
+            <use href={icon + '#heart-unlike'}></use>
+          </svg>
         ) : (
-          <Image src={photoURL} alt={breed} />
+          <svg width="24" height="22">
+            <use href={icon + '#heart'}></use>
+          </svg>
         )}
-        <Category>{setCategory(category)}</Category>
+      </BtnAddFavorite>
+      <Wrap>
+        <Wrapper>
+          <Title>{title}</Title>
+          <InfoList>
+            <InfoItem>
+              <InfoTitle>Breed:</InfoTitle>
+              <Info>{breed} </Info>
+            </InfoItem>
+            <InfoItem>
+              <InfoTitle>Place:</InfoTitle>
+              <Info>{location}</Info>
+            </InfoItem>
+            <InfoItem>
+              <InfoTitle>Age:</InfoTitle>
+              <Info>{birthdayFunc()}</Info>
+            </InfoItem>
+            <InfoItem>
+              {price && category === 'sell' ? (
+                <>
+                  <InfoTitle>Price:</InfoTitle>
+                  <Info>{price}$</Info>
+                </>
+              ) : null}
+            </InfoItem>
+          </InfoList>
+        </Wrapper>
+        <BtnBox>
+          <BtnLearnMore type="button" onClick={openModal}>
+            Learn more
+          </BtnLearnMore>
 
-        <BtnAddFavorite
-          type="button"
-          onClick={() => handleClickFavorite(_id)}
-          disabled={isLoading}
-        >
-          {isFavorite ? (
-            <svg width="24" height="22">
-              <use href={icon + '#heart-unlike'}></use>
-            </svg>
-          ) : (
-            <svg width="24" height="22">
-              <use href={icon + '#heart'}></use>
-            </svg>
+          {isOwner && (
+            <BtnDlt type="button" onClick={() => setIsAcceptDeleteOwner(true)}>
+              <Span>Delete</Span>
+              <Svg width="17" height="17">
+                <use href={icon + '#delete-button'}></use>
+              </Svg>
+            </BtnDlt>
           )}
-        </BtnAddFavorite>
-        <Wrap>
-          <Wrapper>
-            <Title>{title}</Title>
-            <InfoList>
-              <InfoItem>
-                <InfoTitle>Breed:</InfoTitle>
-                <Info>{breed} </Info>
-              </InfoItem>
-              <InfoItem>
-                <InfoTitle>Place:</InfoTitle>
-                <Info>{location}</Info>
-              </InfoItem>
-              <InfoItem>
-                <InfoTitle>Age:</InfoTitle>
-                <Info>{birthdayFunc()}</Info>
-              </InfoItem>
-              <InfoItem>
-                {price && category === 'sell' ? (
-                  <>
-                    <InfoTitle>Price:</InfoTitle>
-                    <Info>{price}$</Info>
-                  </>
-                ) : null}
-              </InfoItem>
-            </InfoList>
-          </Wrapper>
-          <BtnBox>
-            <BtnLearnMore type="button" onClick={openModal}>
-              Learn more
-            </BtnLearnMore>
-
-            {isOwner && (
-              <BtnDlt
-                type="button"
-                onClick={() => setIsAcceptDeleteOwner(true)}
-              >
-                <Span>Delete</Span>
-                <Svg width="17" height="17">
-                  <use href={icon + '#delete-button'}></use>
-                </Svg>
-              </BtnDlt>
-            )}
-          </BtnBox>
-          {isAcceptDeleteOwner && (
-            <ExitAccept
-              isAcceptDeleteOwner={isAcceptDeleteOwner}
-              setIsAcceptDeleteOwner={setIsAcceptDeleteOwner}
-              id={_id}
-              page={page}
-            />
-          )}
-        </Wrap>
-      </Item>
-    </>
+        </BtnBox>
+        {isAcceptDeleteOwner && (
+          <ExitAccept
+            isAcceptDeleteOwner={isAcceptDeleteOwner}
+            setIsAcceptDeleteOwner={setIsAcceptDeleteOwner}
+            id={_id}
+            page={page}
+          />
+        )}
+      </Wrap>
+    </Item>
   );
 };
 

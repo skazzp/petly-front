@@ -24,7 +24,6 @@ export default function MessangerChat({
 }) {
   const [messageValue, setMessageValue] = useState('');
   const messagesRef = useRef(null);
-  console.log(messages);
 
   const onSendMessage = e => {
     e.preventDefault();

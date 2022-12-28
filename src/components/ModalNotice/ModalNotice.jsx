@@ -121,7 +121,6 @@ const ModalNotice = () => {
             {!data?.photoURL ? (
               <ReactImageGallery
                 items={imgArr}
-                // defaultImage={defaultImage}
                 showBullets={true}
                 showIndex={true}
                 showThumbnails={false}
@@ -212,7 +211,6 @@ const ModalNotice = () => {
               <Btn
                 type="button"
                 onClick={() => {
-                  console.log(data._id);
                   dispatch(deleteFavorites(data._id));
                   setIsFavorite(null);
                 }}
@@ -237,18 +235,14 @@ const ModalNotice = () => {
                 </TxtWrapper>
               </Btn>
             ) : (
-              <>
-                {' '}
-                {/* <ToastContainer /> */}
-                <Btn type="button" onClick={handleClick}>
-                  <TxtWrapper>
-                    <TextBtn>Add to</TextBtn>
-                    <SvgHeart>
-                      <use href={heart + '#heart-button'}></use>
-                    </SvgHeart>
-                  </TxtWrapper>
-                </Btn>{' '}
-              </>
+              <Btn type="button" onClick={handleClick}>
+                <TxtWrapper>
+                  <TextBtn>Add to</TextBtn>
+                  <SvgHeart>
+                    <use href={heart + '#heart-button'}></use>
+                  </SvgHeart>
+                </TxtWrapper>
+              </Btn>
             )}
           </li>
         </ListButtons>

@@ -95,7 +95,7 @@ const ModalPage2 = ({ formData, setFormData, prevStep, onClose }) => {
   function checkImg() {
     let previewData = [];
     for (let element of fileInput) {
-      console.log(element);
+      // console.log(element);
       previewData.push({
         original: URL.createObjectURL(element),
         thumbnail: URL.createObjectURL(element),

@@ -34,7 +34,7 @@ const ExitAccept = ({
   const dispatch = useDispatch();
   const location = useLocation();
   const category = location.pathname.split('/')[2];
-  console.log(category);
+  // console.log(category);
 
   const acceptModal = () => {
     if (isModalOpen) {
