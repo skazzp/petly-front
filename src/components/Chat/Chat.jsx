@@ -1,4 +1,6 @@
+
 import { DivBox, Title } from './Chat.styled';
+
 
 import { useEffect, useReducer } from 'react';
 
@@ -61,7 +63,7 @@ const Chat = ({ type }) => {
         <LoginChat onLogin={onLogin} />
       ) : (
         <MessangerChat {...state} onAddMessage={addMessage} />
-      )}
+        )}
     </DivBox>
   );
 };
