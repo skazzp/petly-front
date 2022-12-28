@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 import socket from 'utility/chatSoket';
-import { ButtonSend, ChatContainer, Display, InputMassege, Label, MessageForm } from './MessangerChat.styled';
-
 const MessageForm = styled.form`
   max-height: 60%;
 `;
@@ -158,9 +157,12 @@ export default function MessangerChat({
   }, [messages]);
 
   return (
-    <ChatContainer className="chat-container">
-      <Display>
-        <h2 id="room-name">chat: {roomId}</h2>
+    <>
+      <div>
+        <ChatContainer className="chat-container">
+          <main className="chat-main">
+            <div className="chat-sidebar">
+              <h2 id="room-name">chat: {roomId}</h2>
               <h3>
                 <i className="fas fa-user"></i> Online ({users.length})
               </h3>
@@ -169,23 +171,20 @@ export default function MessangerChat({
                   <li key={name + index}>{name}</li>
                 ))}
               </ul>
+            </div>
             <div className="chat-messages" ref={messagesRef}>
               {messages.map((message, index) => (
                 <div
                   className="chat-messages message"
                   key={message.userName + index}
                 >
-                  <p>
+                  <p className="meta">
                     {message.userName}
                     <span>1 sec</span>
                   </p>
-                  <p>{message.text} </p>
+                  <p className="text">{message.text} </p>
                 </div>
               ))}
-            </div></Display>
-              
-            <MessageForm onSubmit={e => onSendMessage(e)} id="chat-form">
-              <Label><InputMassege
             </div>
           </main>
 
@@ -199,11 +198,6 @@ export default function MessangerChat({
                 value={messageValue}
                 onChange={e => setMessageValue(e.target.value)}
               />
-              <ButtonSend
-                type="submit"
-              >Enter
-              </ButtonSend></Label>
-            </MessageForm>
               <button
                 type="submit"
                 className="btn-plane"
@@ -214,5 +208,7 @@ export default function MessangerChat({
             </MessageForm>
           </div>
         </ChatContainer>
+      </div>
+    </>
   );
 }

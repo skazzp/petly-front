@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const DivBox = styled.div`
-  z-index: 49;
   position: fixed;
   top: 0;
   right: 0;
@@ -30,7 +29,6 @@ export const DivBox = styled.div`
     min-height: 100vh;
     width: 30%;
     z-index: 49;
-
   }
 
   animation: show 1000ms cubic-bezier(0.43, 0.21, 0, 1.03);
@@ -75,12 +73,9 @@ export const Title = styled.h2`
 
 export const Form = styled.form`
   width: 100%;
-  flex-grow: 4;
   display: flex;
-
   flex-direction: column;
-  justify-content: space-between;
-  /* position: relative; */
+  position: relative;
 
   @media screen and (min-width: 768px) {
   }
@@ -99,6 +94,7 @@ export const Label = styled.label`
   align-items: center;
   justify-content: center;
   border-radius: 40px;
+
   margin-bottom: 13px;
   padding: 11px 14px;
   :focus,
