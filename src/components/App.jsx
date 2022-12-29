@@ -16,7 +16,7 @@ const RegistrationPage = lazy(() =>
   import('pages/RegistrationPage/RegistrationPage')
 );
 const UserPage = lazy(() => import('pages/UserPage/UserPage'));
-const HomePage = lazy(() => import('pages/HomePage'));
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const NewsPage = lazy(() => import('pages/NewsPage/NewsPage'));
 const FriendsPage = lazy(() => import('pages/FriendsPage/FriendsPage'));
 
@@ -26,6 +26,7 @@ export const App = () => {
   useEffect(() => {
     isLoggedIn && dispatch(refreshUser());
   }, [dispatch, isLoggedIn]);
+
   return (
     <Suspense fallback={<LoaderSpinner />}>
       <Routes>
