@@ -5,8 +5,9 @@ export const Container = styled.div`
   flex-direction: column;
   ${p => p.theme.breakpoints.desc} {
     flex-direction: row;
-    margin-left:auto;
-    margin-right:auto;
-    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: calc(100vh - 68px);
   }
 `;
