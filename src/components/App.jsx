@@ -1,29 +1,39 @@
-import LoginPage from 'pages/LoginPage/LoginPage';
-import NoticesPage from 'pages/NoticesPage/NoticesPage';
-import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
-import UserPage from 'pages/UserPage/UserPage';
-import { HomePage } from 'pages/HomePage';
+
 import {
   useEffect,
-  // lazy,
+   lazy,
   Suspense,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectToken } from 'redux/auth/authSelectors';
-import NewsPage from 'pages/NewsPage/NewsPage';
+import GoogleAuth from './GoogleAuth/GoogleAuth';
+
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
 import { ToastContainer } from 'react-toastify';
-import FriendsPage from 'pages/FriendsPage/FriendsPage';
-import GoogleAuth from './GoogleAuth/GoogleAuth';
 
-const Test = () => {
-  return <h1>123</h1>;
-};
+// import FriendsPage from 'pages/FriendsPage/FriendsPage';
+// import LoginPage from 'pages/LoginPage/LoginPage';
+// import NoticesPage from 'pages/NoticesPage/NoticesPage';
+// import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
+// import UserPage from 'pages/UserPage/UserPage';
+// import { HomePage } from 'pages/HomePage';
+// import NewsPage from 'pages/NewsPage/NewsPage';
+
+
+const LoginPage = lazy(() =>  import ('pages/LoginPage/LoginPage'));
+const NoticesPage = lazy(() =>  import ('pages/NoticesPage/NoticesPage'));
+const RegistrationPage = lazy(() =>  import ('pages/RegistrationPage/RegistrationPage'));
+const UserPage = lazy(() =>  import ('pages/UserPage/UserPage'));
+const  HomePage  = lazy(() =>  import ('pages/HomePage'));
+const NewsPage = lazy(() =>  import ('pages/NewsPage/NewsPage'));
+const FriendsPage = lazy(() =>  import ('pages/FriendsPage/FriendsPage'));
+
+
 
 export const App = () => {
   const isLoggedIn = useSelector(selectToken);
@@ -43,7 +53,6 @@ export const App = () => {
             }
           />
           <Route path="google-redirect" element={<GoogleAuth />} />
-          <Route path="test" element={<Test />} />
           <Route
             path="register"
             element={
