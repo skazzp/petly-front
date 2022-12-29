@@ -9,13 +9,13 @@ import { PublicRoute } from './PublicRoute/PublicRoute';
 import { SharedLayout } from './SharedLayout';
 import { LoaderSpinner } from './LoaderSpinner/LoaderSpinner';
 import { ToastContainer } from 'react-toastify';
-const LoginPage = lazy(() => import('pages/LoginPage'));
-const NoticesPage = lazy(() => import('pages/NoticesPage'));
-const RegistrationPage = lazy(() => import('pages/RegistrationPage'));
-const UserPage = lazy(() => import('pages/UserPage'));
-const HomePage = lazy(() => import('pages/HomePage'));
-const NewsPage = lazy(() => import('pages/NewsPage'));
-const FriendsPage = lazy(() => import('pages/FriendsPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage'));
+const NoticesPage = lazy(() => import('../pages/NoticesPage'));
+const RegistrationPage = lazy(() => import('../pages/RegistrationPage'));
+const UserPage = lazy(() => import('../pages/UserPage'));
+const HomePage = lazy(() => import('../pages/HomePage'));
+const NewsPage = lazy(() => import('../pages/NewsPage'));
+const FriendsPage = lazy(() => import('../pages/FriendsPage'));
 
 export const App = () => {
   const isLoggedIn = useSelector(selectToken);

@@ -1,1 +1,2 @@
-export { NoticesPage } from './NoticesPage';
+import { NoticesPage } from './NoticesPage';
+export default NoticesPage;

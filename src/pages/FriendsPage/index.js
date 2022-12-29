@@ -1,1 +1,2 @@
-export { FriendsPage } from './FriendsPage';
+import { FriendsPage } from './FriendsPage';
+export default FriendsPage;
