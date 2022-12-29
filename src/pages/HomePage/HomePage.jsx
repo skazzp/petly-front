@@ -1,8 +1,8 @@
-import { DecorationContainer } from 'components/DecorationContainer';
 import { useSelector } from 'react-redux';
 import { isModalOpen } from 'redux/modal/modalSelectors';
+import { DecorationContainer } from 'components/DecorationContainer';
 import { Title, TitleThumb } from './HomePage.styled';
-const HomePage = () => {
+export const HomePage = () => {
   const modalOpen = useSelector(isModalOpen);
   return (
     <>
@@ -13,4 +13,3 @@ const HomePage = () => {
     </>
   );
 };
-export default HomePage;

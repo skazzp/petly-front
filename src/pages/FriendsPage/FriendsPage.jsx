@@ -15,7 +15,7 @@ import {
 } from 'redux/ourFriend/ourFriendSelectors';
 import { LoaderSpinner } from 'components/LoaderSpinner/LoaderSpinner';
 
-const FriendsPage = () => {
+export const FriendsPage = () => {
   const dispatch = useDispatch();
   const dataFriends = useSelector(selectOurFriends);
   const spinner = useSelector(selectSpinnerToggle);
@@ -41,5 +41,3 @@ const FriendsPage = () => {
     <LoaderSpinner />
   );
 };
-
-export default FriendsPage;

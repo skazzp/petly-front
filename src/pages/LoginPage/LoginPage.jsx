@@ -1,10 +1,12 @@
-import LoginForm from "components/LoginForm/LoginForm";
-import { GlobalStyleRegistration } from "pages/RegistrationPage/RegistrationPage.styled";
-import { Div } from "./LoginPage.styled";
+import LoginForm from 'components/LoginForm/LoginForm';
+import { GlobalStyleRegistration } from 'pages/RegistrationPage/RegistrationPage.styled';
+import { Div } from './LoginPage.styled';
 
-const LoginPage = () => {
-    return (<Div>
-        <GlobalStyleRegistration/><LoginForm /></Div>)
-}
- 
-export default LoginPage;
+export const LoginPage = () => {
+  return (
+    <Div>
+      <GlobalStyleRegistration />
+      <LoginForm />
+    </Div>
+  );
+};
