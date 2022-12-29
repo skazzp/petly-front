@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/petly-front/static/css/main.d078f510.css",
-    "main.js": "/petly-front/static/js/main.c6cdb74d.js",
+    "main.js": "/petly-front/static/js/main.78c51008.js",
     "static/js/266.985d3495.chunk.js": "/petly-front/static/js/266.985d3495.chunk.js",
-    "static/js/318.798ef426.chunk.js": "/petly-front/static/js/318.798ef426.chunk.js",
+    "static/js/318.4fa51e0f.chunk.js": "/petly-front/static/js/318.4fa51e0f.chunk.js",
     "static/js/158.28f741b5.chunk.js": "/petly-front/static/js/158.28f741b5.chunk.js",
-    "static/js/311.24b818da.chunk.js": "/petly-front/static/js/311.24b818da.chunk.js",
+    "static/js/935.3d6a87e8.chunk.js": "/petly-front/static/js/935.3d6a87e8.chunk.js",
     "static/js/79.ea40a15e.chunk.js": "/petly-front/static/js/79.ea40a15e.chunk.js",
-    "static/js/425.4798882e.chunk.js": "/petly-front/static/js/425.4798882e.chunk.js",
-    "static/js/886.a6bbeec7.chunk.js": "/petly-front/static/js/886.a6bbeec7.chunk.js",
+    "static/js/425.860b7afb.chunk.js": "/petly-front/static/js/425.860b7afb.chunk.js",
+    "static/js/886.e0dfa589.chunk.js": "/petly-front/static/js/886.e0dfa589.chunk.js",
     "static/js/839.380c22c8.chunk.js": "/petly-front/static/js/839.380c22c8.chunk.js",
     "static/js/427.4faf8a31.chunk.js": "/petly-front/static/js/427.4faf8a31.chunk.js",
     "static/js/909.9e43011b.chunk.js": "/petly-front/static/js/909.9e43011b.chunk.js",
@@ -22,7 +22,7 @@
     "static/media/Bg-girl-tablet-1x.png": "/petly-front/static/media/Bg-girl-tablet-1x.9fa1149c185138d2ceef.png",
     "static/media/Bg-girl-mobile-2x.png": "/petly-front/static/media/Bg-girl-mobile-2x.53f93c68e05934ede402.png",
     "static/media/Bg-girl-desc-1x.png": "/petly-front/static/media/Bg-girl-desc-1x.4b962aedb87370f2cbdc.png",
-    "static/media/petss.png": "/petly-front/static/media/petss.b158a71f672edb9d6733.png",
+    "static/media/pets.png": "/petly-front/static/media/pets.b158a71f672edb9d6733.png",
     "static/media/Bg-girl-mobile-1x.png": "/petly-front/static/media/Bg-girl-mobile-1x.87cc6a236812ca0948a6.png",
     "static/media/Poppins-Regular.eot": "/petly-front/static/media/Poppins-Regular.dd1ec14243b1116b57a0.eot",
     "static/media/Poppins-Regular.ttf": "/petly-front/static/media/Poppins-Regular.9c4f95b9398348dfe795.ttf",
@@ -58,14 +58,14 @@
     "static/media/bg-home-page-mobile.svg": "/petly-front/static/media/bg-home-page-mobile.fd6f01f6a38af91a9a5c8fd877e10dec.svg",
     "static/media/Circle.svg": "/petly-front/static/media/Circle.4c1efb0181c53be15351a65943b89755.svg",
     "main.d078f510.css.map": "/petly-front/static/css/main.d078f510.css.map",
-    "main.c6cdb74d.js.map": "/petly-front/static/js/main.c6cdb74d.js.map",
+    "main.78c51008.js.map": "/petly-front/static/js/main.78c51008.js.map",
     "266.985d3495.chunk.js.map": "/petly-front/static/js/266.985d3495.chunk.js.map",
-    "318.798ef426.chunk.js.map": "/petly-front/static/js/318.798ef426.chunk.js.map",
+    "318.4fa51e0f.chunk.js.map": "/petly-front/static/js/318.4fa51e0f.chunk.js.map",
     "158.28f741b5.chunk.js.map": "/petly-front/static/js/158.28f741b5.chunk.js.map",
-    "311.24b818da.chunk.js.map": "/petly-front/static/js/311.24b818da.chunk.js.map",
+    "935.3d6a87e8.chunk.js.map": "/petly-front/static/js/935.3d6a87e8.chunk.js.map",
     "79.ea40a15e.chunk.js.map": "/petly-front/static/js/79.ea40a15e.chunk.js.map",
-    "425.4798882e.chunk.js.map": "/petly-front/static/js/425.4798882e.chunk.js.map",
-    "886.a6bbeec7.chunk.js.map": "/petly-front/static/js/886.a6bbeec7.chunk.js.map",
+    "425.860b7afb.chunk.js.map": "/petly-front/static/js/425.860b7afb.chunk.js.map",
+    "886.e0dfa589.chunk.js.map": "/petly-front/static/js/886.e0dfa589.chunk.js.map",
     "839.380c22c8.chunk.js.map": "/petly-front/static/js/839.380c22c8.chunk.js.map",
     "427.4faf8a31.chunk.js.map": "/petly-front/static/js/427.4faf8a31.chunk.js.map",
     "909.9e43011b.chunk.js.map": "/petly-front/static/js/909.9e43011b.chunk.js.map",
@@ -77,6 +77,6 @@
   },
   "entrypoints": [
     "static/css/main.d078f510.css",
-    "static/js/main.c6cdb74d.js"
+    "static/js/main.78c51008.js"
   ]
 }
