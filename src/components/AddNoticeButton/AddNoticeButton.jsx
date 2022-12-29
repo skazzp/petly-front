@@ -25,7 +25,7 @@ const AddNoticeButton = () => {
   return (
     <>
       {!isOpen && (
-        <>
+        
           <BtnWrapper onClick={handleClick}>
             {!isMobile && text}
             <AddBtn type="button">
@@ -35,7 +35,7 @@ const AddNoticeButton = () => {
               {isMobile && text}
             </AddBtn>
           </BtnWrapper>
-        </>
+      
       )}
       {isOpen && (
         <ModalAddNotice

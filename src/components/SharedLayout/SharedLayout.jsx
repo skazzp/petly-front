@@ -6,13 +6,13 @@ import { LoaderSpiner } from 'components/LoaderSpiner/LoaderSpiner';
 
 export const SharedLayout = () => {
   return (
-    <>
+   
       <GlobalContainer>
         <Header />
         <Suspense fallback={<LoaderSpiner />}>
           <Outlet />
         </Suspense>
-      </GlobalContainer>{' '}
-    </>
+      </GlobalContainer>
+   
   );
 };

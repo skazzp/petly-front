@@ -26,7 +26,7 @@ export const CardNew = ({ news }) => {
 
 
   return (
-    <>
+  
       <Wrapper>
         <WrapperContent>
           <div>
@@ -52,6 +52,6 @@ export const CardNew = ({ news }) => {
           </Link>
         </Footer>
       </Wrapper>
-    </>
+   
   );
 };
