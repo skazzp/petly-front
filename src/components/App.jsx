@@ -1,6 +1,9 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectToken } from 'redux/auth/authSelectors';
 import GoogleAuth from './GoogleAuth/GoogleAuth';
@@ -8,7 +11,7 @@ import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { SharedLayout } from './SharedLayout';
 import { LoaderSpinner } from './LoaderSpinner/LoaderSpinner';
-import { ToastContainer } from 'react-toastify';
+
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const NoticesPage = lazy(() => import('../pages/NoticesPage'));
 const RegistrationPage = lazy(() => import('../pages/RegistrationPage'));

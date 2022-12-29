@@ -1,6 +1,6 @@
 import { CardNew } from 'components/CardNew';
 import PaginationNotices from 'components/PaginationNotices/PaginationNotices';
-import { SearchBar } from 'components/SearchBar';
+import { SearchBar } from 'components/SearchBar/SearchBar';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useSearchParams } from 'react-router-dom';

@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import FilterBtn from 'components/FilterBtn/FilterBtn';
 import NoticeCategoryList from 'components/NoticeCategoryList/NoticeCategoryList';
-import { SearchBar } from 'components/SearchBar';
+import { SearchBar } from 'components/SearchBar/SearchBar';
 import { Box, GlobalBox, Title, Wrapper } from './NoticesPage.styled';
 import { useDispatch } from 'react-redux';
 import { getByQuery } from 'redux/notice/noticeOperations';
