@@ -1,3 +1,16 @@
+import Select from 'react-select';
+import { useFormik } from 'formik';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { registerUser } from 'redux/auth/authOperation';
+import { selectError, selectToken } from 'redux/auth/authSelectors';
+import { useWindowSize } from '@react-hook/window-size';
+import Confetti from 'react-confetti';
+import Data from '../../assets/City.json';
+import InputMask from 'react-input-mask';
+import { schema } from './Validation';
+import { Validation } from 'utility/validationStyle';
+import { selectStyles } from './selectStyles';
 import {
   Div,
   Title,
@@ -11,24 +24,11 @@ import {
   ButtonRegister,
   SelectContainer,
 } from './RegistrationForm.styled';
-import { selectStyles } from './selectStyles';
-import Select from 'react-select';
-import { useFormik } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
-import { schema } from './Validation';
-import { useEffect, useState } from 'react';
-import { registerUser } from 'redux/auth/authOperation';
-import { selectError, selectToken } from 'redux/auth/authSelectors';
-import { useWindowSize } from '@react-hook/window-size';
-import Confetti from 'react-confetti';
-import Data from '../../assets/City.json';
-import InputMask from 'react-input-mask';
-import { Validation } from 'utility/validationStyle';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
-  const [formChenge, SetFormChenge] = useState(false);
-  const [emailErrorMassege, setEmailErrorMassege] = useState('');
+  const [formChange, SetFormChange] = useState(false);
+  const [emailErrorMessage, setEmailErrorMessage] = useState('');
   const [emailError, setEmailError] = useState('');
   const [emailErrorFixed, setEmailErrorFixed] = useState(false);
 
@@ -84,15 +84,15 @@ const RegistrationForm = () => {
     )
       return;
 
-    SetFormChenge(true);
+    SetFormChange(true);
   };
-  const Selectoptions = Data.map(i => ({
+  const SelectOptions = Data.map(i => ({
     value: `${i.City},${i.District}`,
     label: `${i.City}, ${i.District}`,
   }));
   useEffect(() => {
     if (emailError !== formik.values.email) {
-      setEmailErrorMassege('');
+      setEmailErrorMessage('');
       setEmailErrorFixed(false);
     }
     // eslint-disable-next-line
@@ -100,23 +100,23 @@ const RegistrationForm = () => {
 
   useEffect(() => {
     if (errorDB === 'Email in use') {
-      setEmailErrorMassege('Email in use');
+      setEmailErrorMessage('Email in use');
       setEmailError(formik.values.email);
       setEmailErrorFixed(true);
-      SetFormChenge(false);
+      SetFormChange(false);
     }
     if (errorDB === '"email" must be a valid email') {
-      setEmailErrorMassege('Email must be a valid');
+      setEmailErrorMessage('Email must be a valid');
       setEmailError(formik.values.email);
       setEmailErrorFixed(true);
-      SetFormChenge(false);
+      SetFormChange(false);
     }
 
     if (!errorDB) {
-      setEmailErrorMassege('');
+      setEmailErrorMessage('');
       setEmailError('');
       setEmailErrorFixed(false);
-      SetFormChenge(false);
+      SetFormChange(false);
     }
     // eslint-disable-next-line
   }, [errorDB]);
@@ -127,7 +127,7 @@ const RegistrationForm = () => {
   return (
     <Div>
       <Title>Registration</Title>
-      {!formChenge || emailErrorFixed ? (
+      {!formChange || emailErrorFixed ? (
         <Form>
           <Label>
             <Input
@@ -141,7 +141,7 @@ const RegistrationForm = () => {
             ></Input>
             {(formik.errors.email && formik.touched.email) || emailError ? (
               <Validation>
-                {formik.errors.email || emailErrorMassege}
+                {formik.errors.email || emailErrorMessage}
               </Validation>
             ) : null}
           </Label>
@@ -200,7 +200,7 @@ const RegistrationForm = () => {
                 name="city"
                 onBlur={formik.handleBlur}
                 styles={selectStyles()}
-                options={Selectoptions}
+                options={SelectOptions}
                 onChange={e => setCity(e.value)}
                 defaultInputValue={city}
               ></Select>
@@ -239,7 +239,7 @@ const RegistrationForm = () => {
           <ButtonBack
             onClick={e => {
               e.preventDefault();
-              SetFormChenge(false);
+              SetFormChange(false);
             }}
           >
             Back
