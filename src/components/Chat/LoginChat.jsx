@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import { ButtonRegister } from 'components/RegistrationForm/RegistrationForm.styled';
 import { SelectContainer } from './LoginChat.styled';
 import Select from 'react-select';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Form, Label } from './Chat.styled';
 import { selectStyles } from 'components/RegistrationForm/selectStyles';
 
@@ -24,7 +26,7 @@ export default function LoginChat({ onLogin }) {
   const onEnter = async e => {
     e.preventDefault();
     if (!roomId) {
-      return alert('оберіть тему чату');
+      return toast.error('Оберіть тему чату');
     }
 
     await axios.post('https://exemple-chat-back.onrender.com/rooms', obj);
