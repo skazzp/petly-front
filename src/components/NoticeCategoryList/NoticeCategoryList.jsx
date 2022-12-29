@@ -1,7 +1,5 @@
-import { LoaderSpiner } from 'components/LoaderSpiner/LoaderSpiner';
-import ModalNotice from 'components/ModalNotice/ModalNotice';
-import NoticeCategoryItem from 'components/NoticeCategoryItem/NoticeCategoryItem';
 import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllNotices, getByQuery } from 'redux/notice/noticeOperations';
 import {
@@ -9,9 +7,11 @@ import {
   selectNotices,
   selectTotalPages,
 } from 'redux/notice/noticeSelectors';
-import defaultCats from '../../assets/images/petss.png';
+import { LoaderSpinner } from 'components/LoaderSpinner/LoaderSpinner';
+import ModalNotice from 'components/ModalNotice/ModalNotice';
+import NoticeCategoryItem from 'components/NoticeCategoryItem/NoticeCategoryItem';
 import PaginationNotices from 'components/PaginationNotices/PaginationNotices';
-import { useSearchParams } from 'react-router-dom';
+import defaultCats from '../../assets/images/pets.png';
 import {
   Img,
   List,
@@ -68,7 +68,7 @@ const NoticeCategoryList = () => {
           )}
         </>
       ) : (
-        <LoaderSpiner />
+        <LoaderSpinner />
       )}
       {isModalOpen && <ModalNotice />}
     </Wrapper>
