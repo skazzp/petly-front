@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/petly-front/static/css/main.1a382bce.css",
-    "main.js": "/petly-front/static/js/main.8192ce30.js",
+    "main.js": "/petly-front/static/js/main.34769766.js",
     "static/js/464.b6a988ff.chunk.js": "/petly-front/static/js/464.b6a988ff.chunk.js",
     "static/css/292.cc875fef.chunk.css": "/petly-front/static/css/292.cc875fef.chunk.css",
     "static/js/292.70884e19.chunk.js": "/petly-front/static/js/292.70884e19.chunk.js",
-    "static/js/962.f6aff77a.chunk.js": "/petly-front/static/js/962.f6aff77a.chunk.js",
+    "static/js/962.81f3fa9e.chunk.js": "/petly-front/static/js/962.81f3fa9e.chunk.js",
     "static/js/259.d4241024.chunk.js": "/petly-front/static/js/259.d4241024.chunk.js",
     "static/js/79.febf869c.chunk.js": "/petly-front/static/js/79.febf869c.chunk.js",
     "static/js/568.c6fc584f.chunk.js": "/petly-front/static/js/568.c6fc584f.chunk.js",
@@ -58,11 +58,11 @@
     "static/media/bg-home-page-mobile.svg": "/petly-front/static/media/bg-home-page-mobile.fd6f01f6a38af91a9a5c8fd877e10dec.svg",
     "static/media/Circle.svg": "/petly-front/static/media/Circle.4c1efb0181c53be15351a65943b89755.svg",
     "main.1a382bce.css.map": "/petly-front/static/css/main.1a382bce.css.map",
-    "main.8192ce30.js.map": "/petly-front/static/js/main.8192ce30.js.map",
+    "main.34769766.js.map": "/petly-front/static/js/main.34769766.js.map",
     "464.b6a988ff.chunk.js.map": "/petly-front/static/js/464.b6a988ff.chunk.js.map",
     "292.cc875fef.chunk.css.map": "/petly-front/static/css/292.cc875fef.chunk.css.map",
     "292.70884e19.chunk.js.map": "/petly-front/static/js/292.70884e19.chunk.js.map",
-    "962.f6aff77a.chunk.js.map": "/petly-front/static/js/962.f6aff77a.chunk.js.map",
+    "962.81f3fa9e.chunk.js.map": "/petly-front/static/js/962.81f3fa9e.chunk.js.map",
     "259.d4241024.chunk.js.map": "/petly-front/static/js/259.d4241024.chunk.js.map",
     "79.febf869c.chunk.js.map": "/petly-front/static/js/79.febf869c.chunk.js.map",
     "568.c6fc584f.chunk.js.map": "/petly-front/static/js/568.c6fc584f.chunk.js.map",
@@ -77,6 +77,6 @@
   },
   "entrypoints": [
     "static/css/main.1a382bce.css",
-    "static/js/main.8192ce30.js"
+    "static/js/main.34769766.js"
   ]
 }
