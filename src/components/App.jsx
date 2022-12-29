@@ -1,39 +1,24 @@
-
-import {
-  useEffect,
-   lazy,
-  Suspense,
-} from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectToken } from 'redux/auth/authSelectors';
 import GoogleAuth from './GoogleAuth/GoogleAuth';
-
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
+import { LoaderSpinner } from './LoaderSpinner/LoaderSpinner';
 import { ToastContainer } from 'react-toastify';
 
-// import FriendsPage from 'pages/FriendsPage/FriendsPage';
-// import LoginPage from 'pages/LoginPage/LoginPage';
-// import NoticesPage from 'pages/NoticesPage/NoticesPage';
-// import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
-// import UserPage from 'pages/UserPage/UserPage';
-// import { HomePage } from 'pages/HomePage';
-// import NewsPage from 'pages/NewsPage/NewsPage';
-
-
-const LoginPage = lazy(() =>  import ('pages/LoginPage/LoginPage'));
-const NoticesPage = lazy(() =>  import ('pages/NoticesPage/NoticesPage'));
-const RegistrationPage = lazy(() =>  import ('pages/RegistrationPage/RegistrationPage'));
-const UserPage = lazy(() =>  import ('pages/UserPage/UserPage'));
-const  HomePage  = lazy(() =>  import ('pages/HomePage'));
-const NewsPage = lazy(() =>  import ('pages/NewsPage/NewsPage'));
-const FriendsPage = lazy(() =>  import ('pages/FriendsPage/FriendsPage'));
-
-
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const NoticesPage = lazy(() => import('pages/NoticesPage/NoticesPage'));
+const RegistrationPage = lazy(() =>
+  import('pages/RegistrationPage/RegistrationPage')
+);
+const UserPage = lazy(() => import('pages/UserPage/UserPage'));
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+const NewsPage = lazy(() => import('pages/NewsPage/NewsPage'));
+const FriendsPage = lazy(() => import('pages/FriendsPage/FriendsPage'));
 
 export const App = () => {
   const isLoggedIn = useSelector(selectToken);
@@ -41,8 +26,9 @@ export const App = () => {
   useEffect(() => {
     isLoggedIn && dispatch(refreshUser());
   }, [dispatch, isLoggedIn]);
+
   return (
-    <Suspense fallback={<LoaderSpiner />}>
+    <Suspense fallback={<LoaderSpinner />}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />

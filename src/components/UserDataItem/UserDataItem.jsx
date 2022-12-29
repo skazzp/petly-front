@@ -1,5 +1,5 @@
 import ExitAccept from 'components/ExitAccept/ExitAccept';
-import { NoPositionSpinner } from 'components/LoaderSpiner/NoPositionSpinner';
+import { NoPositionSpinner } from 'components/LoaderSpinner/NoPositionSpinner';
 import UpdateAvatar from 'components/UpdateAvatar/UpdateAvatar';
 import { useFormik } from 'formik';
 import { useEffect } from 'react';
@@ -51,8 +51,8 @@ const UserDataItem = () => {
     },
     validationSchema: validationSchemaUserUpdate,
     onSubmit: values => {
-      setIsActiveEdit(false)
-   
+      setIsActiveEdit(false);
+
       if (
         values.name === user.name &&
         values.email === user.email &&
@@ -93,8 +93,8 @@ const UserDataItem = () => {
   }, [user, setFieldValue]);
 
   const handleEditInput = e => {
-    setIsActiveEdit(true)
-   
+    setIsActiveEdit(true);
+
     setDisabled({
       ...INITIAL_DISABLED,
       [e.currentTarget.parentNode.htmlFor]: false,
@@ -104,7 +104,6 @@ const UserDataItem = () => {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
-       
         setDisabled({
           name: true,
           email: true,
@@ -155,13 +154,13 @@ const UserDataItem = () => {
           {disabled.name && (
             <Btn type="button" onClick={handleEditInput}>
               <BtnIcon isActiveEdit={isActiveEdit}>
-                <use href={`${icons}#icon-edit_pencil`} ></use>
+                <use href={`${icons}#icon-edit_pencil`}></use>
               </BtnIcon>
             </Btn>
           )}
           {!disabled.name && (
             <Btn type="submit">
-              <BtnIcon >
+              <BtnIcon>
                 <use href={`${icons}#icon-edit_check`}></use>
               </BtnIcon>
             </Btn>
