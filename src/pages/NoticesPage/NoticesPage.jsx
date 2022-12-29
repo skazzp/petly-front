@@ -3,12 +3,12 @@ import { Outlet } from 'react-router-dom';
 
 import FilterBtn from 'components/FilterBtn/FilterBtn';
 import NoticeCategoryList from 'components/NoticeCategoryList/NoticeCategoryList';
-import { Searchbar } from 'components/Searchbar';
+import { SearchBar } from 'components/SearchBar';
 import { Box, GlobalBox, Title, Wrapper } from './NoticesPage.styled';
 import { useDispatch } from 'react-redux';
 import { getByQuery } from 'redux/notice/noticeOperations';
 
-function NoticesPage() {
+export function NoticesPage() {
   const dispatch = useDispatch();
 
   const searchPets = query => {
@@ -20,7 +20,7 @@ function NoticesPage() {
       <Wrapper>
         <Box>
           <Title>Find your favorite pet</Title>
-          <Searchbar submitForm={searchPets} />
+          <SearchBar submitForm={searchPets} />
           <FilterBtn />
         </Box>
         <NoticeCategoryList />
@@ -29,5 +29,3 @@ function NoticesPage() {
     </GlobalBox>
   );
 }
-
-export default NoticesPage;
