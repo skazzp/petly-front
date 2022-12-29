@@ -1,10 +1,9 @@
-import { LoaderSpiner } from 'components/LoaderSpiner/LoaderSpiner';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperation';
 import { setTokenFromGAuth } from 'redux/auth/authSlice';
+import { LoaderSpinner } from 'components/LoaderSpinner/LoaderSpinner';
 
 const GoogleAuth = () => {
   const [params] = useSearchParams();
@@ -19,7 +18,7 @@ const GoogleAuth = () => {
 
   return (
     <>
-      <LoaderSpiner />
+      <LoaderSpinner />
     </>
   );
 };

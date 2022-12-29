@@ -1,4 +1,3 @@
-
 import {
   useEffect,
    lazy,
@@ -6,14 +5,18 @@ import {
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import NoticesPage from 'pages/NoticesPage/NoticesPage';
+import RegistrationPage from 'pages/RegistrationPage/RegistrationPage';
+import UserPage from 'pages/UserPage/UserPage';
+import { HomePage } from 'pages/HomePage';
 import { refreshUser } from 'redux/auth/authOperation';
 import { selectToken } from 'redux/auth/authSelectors';
 import GoogleAuth from './GoogleAuth/GoogleAuth';
-
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
+import { LoaderSpinner } from './LoaderSpinner/LoaderSpinner';
 import { ToastContainer } from 'react-toastify';
 
 // import FriendsPage from 'pages/FriendsPage/FriendsPage';
@@ -23,7 +26,6 @@ import { ToastContainer } from 'react-toastify';
 // import UserPage from 'pages/UserPage/UserPage';
 // import { HomePage } from 'pages/HomePage';
 // import NewsPage from 'pages/NewsPage/NewsPage';
-
 
 const LoginPage = lazy(() =>  import ('pages/LoginPage/LoginPage'));
 const NoticesPage = lazy(() =>  import ('pages/NoticesPage/NoticesPage'));
@@ -42,7 +44,7 @@ export const App = () => {
     isLoggedIn && dispatch(refreshUser());
   }, [dispatch, isLoggedIn]);
   return (
-    <Suspense fallback={<LoaderSpiner />}>
+    <Suspense fallback={<LoaderSpinner />}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
