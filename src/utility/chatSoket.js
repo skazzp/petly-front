@@ -1,3 +1,4 @@
 import io from 'socket.io-client';
-const socket = io();
+const server = 'https://exemple-chat-back.onrender.com';
+const socket = io(server);
 export default socket;
