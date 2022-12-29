@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 
-import {MAX_FILE_SIZE} from '../../utility/constants'
+import { MAX_FILE_SIZE } from '../../utility/constants';
 import { addUserPet } from 'redux/pets/petsOperations';
-import { validationsShema } from '../../utility/validationSchemaUserPet';
+import { validationsSchema } from '../../utility/validationSchemaUserPet';
 import sprite from '../../assets/images/icons.svg';
 import {
   ButtonExit,
@@ -42,7 +42,7 @@ const ModalAddsPet = ({ open, onClose }) => {
   useEffect(() => {
     const handleEsc = event => {
       if (event.keyCode === 27) {
-        handleCancle();
+        handleCancel();
       }
     };
     window.addEventListener('keydown', handleEsc);
@@ -92,11 +92,11 @@ const ModalAddsPet = ({ open, onClose }) => {
   };
   const onBackdropClick = e => {
     if (e.target === e.currentTarget) {
-      handleCancle();
+      handleCancel();
     }
   };
 
-  const handleCancle = () => {
+  const handleCancel = () => {
     onClose();
     setFirstPage(true);
     setImage();
@@ -107,7 +107,7 @@ const ModalAddsPet = ({ open, onClose }) => {
     <Modal onClick={onBackdropClick}>
       <Card>
         <Title>Add pet</Title>
-        <ButtonExit onClick={() => handleCancle()} type="button">
+        <ButtonExit onClick={() => handleCancel()} type="button">
           <Icon>
             <use href={`${sprite}#icon-close`}></use>
           </Icon>
@@ -123,7 +123,7 @@ const ModalAddsPet = ({ open, onClose }) => {
           }}
           validateOnBlur
           onSubmit={async values => {
-            handleCancle();
+            handleCancel();
             const form = {
               name: values.name,
               birthday: values.dateOfBirth,
@@ -136,7 +136,7 @@ const ModalAddsPet = ({ open, onClose }) => {
 
             // handleCancle();
           }}
-          validationSchema={validationsShema}
+          validationSchema={validationsSchema}
         >
           {({
             values,
