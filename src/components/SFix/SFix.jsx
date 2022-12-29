@@ -7,7 +7,7 @@ import {
   SearchFormButton,
   SearchFormButtonLabel,
   SearchFormInput,
-} from './SearchBar.styled.js';
+} from './SFix.styled.js';
 import PropTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
 
