@@ -16,7 +16,7 @@ import NewsPage from 'pages/NewsPage/NewsPage';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import { LoaderSpiner } from './LoaderSpiner/LoaderSpiner';
+import { LoaderSpiner } from './LoaderSpinner/LoaderSpinner';
 import { ToastContainer } from 'react-toastify';
 import FriendsPage from 'pages/FriendsPage/FriendsPage';
 import GoogleAuth from './GoogleAuth/GoogleAuth';
