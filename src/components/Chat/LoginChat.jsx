@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import { ButtonRegister } from 'components/RegistrationForm/RegistrationForm.styled';
 import { SelectContainer } from './LoginChat.styled';
 import Select from 'react-select';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Form, Label } from './Chat.styled';
 import { selectStyles } from 'components/RegistrationForm/selectStyles';
 
@@ -20,53 +22,60 @@ export default function LoginChat({ onLogin }) {
   };
   const handlerForm = room => {
     setRoomId(room);
-  }
-    const onEnter = async e => {
-      e.preventDefault();
-      if (!roomId) {
-        return alert('оберіть тему чату');
-      }
+  };
+  const onEnter = async e => {
+    e.preventDefault();
+    if (!roomId) {
+      return toast.error('Оберіть тему чату');
+    }
 
-      await axios
-        .post('https://exemple-chat-back.onrender.com/rooms', obj)
-        .then(onLogin(obj));
-    };
-      
-    const Selectoptions = [{
-      value: "sell",
-      label: "sell"
-    }, {
-      value: "lost-found",
-      label: "lost-found"
-    }, {
-      value: "for-free",
-      label: "for-free",
-    }, {
-      value: "good hands",
-      label: "good hands",
-    }, {
-      value: "teem chat",
-      label: "teem chat",
-    }];
-      
-    return (
-      <Form>
-        {/* <label htmlFor="roomId">Chat Channel</label> */}
-        <Label>
-          <SelectContainer>
-            <Select
-              placeholder="Chat Channel"
-              defaultValue={roomId}
-              id="city"
-              name="city"
-              styles={selectStyles()}
-              options={Selectoptions}
-              onChange={e => handlerForm(e.value)}
-              defaultInputValue={roomId}
-            ></Select>
-          </SelectContainer>
-        </Label>
-        <ButtonRegister type="button" className="btn" onClick={onEnter}>go to chat</ButtonRegister>
-      </Form>
-    );
-  }
+    await axios.post('https://exemple-chat-back.onrender.com/rooms', obj);
+    onLogin(obj);
+  };
+
+  const Selectoptions = [
+    {
+      value: 'sell',
+      label: 'sell',
+    },
+    {
+      value: 'lost-found',
+      label: 'lost-found',
+    },
+    {
+      value: 'for-free',
+      label: 'for-free',
+    },
+    {
+      value: 'good hands',
+      label: 'good hands',
+    },
+    {
+      value: 'teem chat',
+      label: 'teem chat',
+    },
+  ];
+
+  return (
+    <Form>
+      {/* <label htmlFor="roomId">Chat Channel</label> */}
+      <Label>
+        <SelectContainer>
+          <Select
+            placeholder="Chat Channel"
+            defaultValue={roomId}
+            id="city"
+            name="city"
+            styles={selectStyles()}
+            options={Selectoptions}
+            onChange={e => handlerForm(e.value)}
+            defaultInputValue={roomId}
+          ></Select>
+        </SelectContainer>
+      </Label>
+      <ButtonRegister type="button" className="btn" onClick={onEnter}>
+        go to chat
+      </ButtonRegister>
+    </Form>
+  );
+}

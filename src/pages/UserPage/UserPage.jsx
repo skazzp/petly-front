@@ -2,7 +2,7 @@ import PetsData from 'components/PetsData/PetsData';
 import UserData from 'components/UserData/UserData';
 import { Container } from './UserPage.styled';
 
-const UserPage = () => {
+export const UserPage = () => {
   return (
     <Container>
       <UserData />
@@ -10,5 +10,3 @@ const UserPage = () => {
     </Container>
   );
 };
-
-export default UserPage;

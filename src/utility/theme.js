@@ -7,6 +7,7 @@ export const theme = {
     fullBlack: '#000000',
     blackLink: '#181C27',
     grey: 'rgba(17, 17, 17, 0.6)',
+    warning: '#ff4747',
 
     background: {
       white: '#FFFFFF',
@@ -43,8 +44,10 @@ export const theme = {
     bold: 700,
   },
   lineHeights: {
-    main: 1.38,
+    validationHover: 1.14,
+    validation: 1.33,
     secondary: 1.36,
+    main: 1.38,
     title: 1.47,
     logo: 1.5,
   },

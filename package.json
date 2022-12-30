@@ -56,7 +56,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://exemple-chat-back.onrender.com",
   "browserslist": {
     "production": [
       ">0.2%",

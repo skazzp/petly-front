@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 
-export   const validationsShema = yup.object().shape({
+export   const validationsSchema = yup.object().shape({
     name: yup
       .string()
       .typeError('String')

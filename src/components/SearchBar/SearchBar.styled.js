@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BiSearchAlt2 } from 'react-icons/bi';
 
-export const HesderSearchbar = styled.div`
+export const HeaderSearchBar = styled.div`
   top: 0;
   left: 0;
   /* position: sticky; */
