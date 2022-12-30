@@ -23,10 +23,11 @@ export default function LoginChat({ onLogin }) {
   const handlerForm = room => {
     setRoomId(room);
   };
+  const customId = 'not-duplicate';
   const onEnter = async e => {
     e.preventDefault();
     if (!roomId) {
-      return toast.error('Оберіть тему чату');
+      return toast.error('Оберіть тему чату', { toastId: customId });
     }
 
     await axios.post('https://exemple-chat-back.onrender.com/rooms', obj);
