@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-const today = new Date();
+
 
 export   const validationsShema = yup.object().shape({
     name: yup
@@ -14,7 +14,7 @@ export   const validationsShema = yup.object().shape({
       .max(16, 'Maximum 16 letters required'),
     dateOfBirth: yup
       .date()
-      .max(today, 'The maximum date is today')
+      .max(new Date(), 'The maximum date is today')
       .required(' Date of Birth is required (example: 22.10.2022'),
     breed: yup
       .string()
