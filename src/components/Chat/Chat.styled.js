@@ -38,6 +38,7 @@ export const DivBox = styled.div`
   @media screen and (min-width: 1280px) {
     /* min-height: 100vh;
     width: 30%; */
+    overflow: hidden;
     max-height: 60vh;
     width: 20%;
     z-index: 49;
