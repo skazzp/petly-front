@@ -4,11 +4,11 @@ import icon from '../../assets/images/icons.svg';
 import { Div, Link, UserSvg, ChatButton } from '../UserNav/UserNav.styled';
 
 const UserNav = ({ closeMenu }) => {
-  const [chatOpen, setChatOpene] = useState(true);
+  const [chatOpen, setChatOpen] = useState(true);
   return (
     <>
       <Div>
-        <ChatButton onClick={e => setChatOpene(!chatOpen)}>
+        <ChatButton onClick={e => setChatOpen(!chatOpen)}>
           <UserSvg>
             <use href={icon + `#chat`}></use>
           </UserSvg>
@@ -21,7 +21,7 @@ const UserNav = ({ closeMenu }) => {
           <span>Account</span>
         </Link>
       </Div>
-     { !chatOpen ? <Chat/> :null}
+      {!chatOpen ? <Chat /> : null}
     </>
   );
 };

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 import { selectToken } from 'redux/auth/authSelectors';
 import { Spin as Hamburger } from 'hamburger-react';
 import { isModalOpen } from 'redux/modal/modalSelectors';
@@ -14,8 +15,11 @@ import { ModalNav } from 'components/ModalNav';
 import { Nav } from 'components/Nav';
 import UserNav from 'components/UserNav/UserNav';
 import { Container, Box } from './Navigation.styled';
+import { IconButton } from 'components/IconButton/IconButton';
+import icon from '../../assets/images/icons.svg';
 
 export const Navigation = ({ header }) => {
+  const [chatOpen, setChatOpen] = useState(false);
   let isLoggedIn = useSelector(selectToken);
   const modalOpen = useSelector(isModalOpen);
   const isMobile = useIsMobile();
@@ -25,6 +29,9 @@ export const Navigation = ({ header }) => {
   const dispatch = useDispatch();
   const modalClosed = () => dispatch(closeModal());
   const modalToggled = () => dispatch(toggleModal());
+  const openChat = () => {
+    setChatOpen(prevState => !prevState);
+  };
   return (
     <Container>
       {isDesktop && (
@@ -49,12 +56,15 @@ export const Navigation = ({ header }) => {
         </>
       )}
       {isMobile && (
-        <Hamburger
-          toggled={modalOpen}
-          toggle={modalToggled}
-          size={30}
-          color="#212121"
-        />
+        <>
+          <IconButton handlerFunction={openChat} iconRoute={icon + `#chat`} />
+          <Hamburger
+            toggled={modalOpen}
+            toggle={modalToggled}
+            size={30}
+            color="#212121"
+          />
+        </>
       )}
       {modalOpen && isMobileOrTablet && (
         <ModalNav header={header}>

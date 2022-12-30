@@ -10,20 +10,23 @@ export const DivBox = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 500px;
+  height: 25vh;
   padding-bottom: 10px;
 
   @media screen and (min-width: 768px) {
     position: fixed;
+    z-index: 49;
     /* top: 0; */
     bottom: 0;
     right: 0;
     display: flex;
-    z-index: 20;
-    margin-left: auto;
-    align-items: center;
-    height: 100vh;
+    overflow: hidden;
+    max-height: 70vh;
     width: 40%;
+    /* margin-left: auto; */
+    align-items: center;
+    /* height: 100vh;
+    width: 40%; */
     /* min-width: 450px; */
     flex-direction: column;
     justify-content: space-between;
@@ -32,15 +35,13 @@ export const DivBox = styled.div`
     border-radius: 40px 0 0 40px;
     /* padding: 90px 16px 60px 80px; */
     padding: 20px 16px 18px 16px;
-    border-left: 20px solid rgba(245, 146, 86, 0.5);
+    border-left: 10px solid rgba(245, 146, 86, 0.5);
   }
 
   @media screen and (min-width: 1280px) {
     /* min-height: 100vh;
     width: 30%; */
-    overflow: hidden;
-    max-height: 60vh;
-    width: 20%;
+
     z-index: 49;
   }
 

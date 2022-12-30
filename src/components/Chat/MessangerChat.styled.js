@@ -7,7 +7,7 @@ export const ChatContainer = styled.div`
   flex-grow: 4;
 
   @media screen and (min-width: 768px) {
-    overflow: scroll;
+    overflow: hidden;
   }
 
   @media screen and (min-width: 1280px) {
@@ -30,7 +30,7 @@ export const Display = styled.form`
 export const MessageForm = styled.form`
   display: flex;
   width: 100%;
-
+  overflow: hidden;
   margin-top: auto;
   flex-direction: row;
   justify-content: end;
@@ -209,15 +209,16 @@ export const ChatInfo = styled.div`
   }
 `;
 export const ChatMessages = styled.ul`
-  overflow: scroll;
-  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
   @media screen and (min-width: 768px) {
     padding: 0 10px;
     word-break: break-all;
     display: inline-block;
     white-space: normal;
     width: 100%;
-    max-height: 270px;
+    /* max-height: 270px; */
     overflow: scroll;
   }
 
