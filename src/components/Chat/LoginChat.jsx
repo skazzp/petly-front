@@ -34,7 +34,7 @@ export default function LoginChat({ onLogin }) {
     onLogin(obj);
   };
 
-  const Selectoptions = [
+  const SelectOptions = [
     {
       value: 'sell',
       label: 'sell',
@@ -68,7 +68,7 @@ export default function LoginChat({ onLogin }) {
             id="city"
             name="city"
             styles={selectStyles()}
-            options={Selectoptions}
+            options={SelectOptions}
             onChange={e => handlerForm(e.value)}
             defaultInputValue={roomId}
           ></Select>

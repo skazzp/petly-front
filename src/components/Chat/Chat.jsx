@@ -51,7 +51,7 @@ const Chat = ({ type }) => {
   }, []);
   return (
     <DivBox type={type}>
-      <Title>Petly-chat</Title>
+      <Title>Petly-chat:</Title>
       {!state.joined ? (
         <LoginChat onLogin={onLogin} />
       ) : (
