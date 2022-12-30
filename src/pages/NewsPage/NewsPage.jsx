@@ -1,14 +1,14 @@
 import { CardNew } from 'components/CardNew';
 import PaginationNotices from 'components/PaginationNotices/PaginationNotices';
-import { Searchbar } from 'components/Searchbar';
+import { SearchBar } from 'components/SearchBar/SearchBar';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useSearchParams } from 'react-router-dom';
-import defaultCats from '../../assets/images/petss.png';
+import defaultCats from '../../assets/images/pets.png';
 import { getByQueryNews, getNews } from 'redux/news/newsOperations';
 import {
   selectNews,
-  selectSpinetToggle,
+  selectSpinnerToggle,
   selectTotalPages,
 } from 'redux/news/newsSelectors';
 
@@ -19,18 +19,18 @@ import {
   Wrapper,
   WrapperList,
 } from './NewsPage.styled';
-import { LoaderSpiner } from 'components/LoaderSpiner/LoaderSpiner';
+import { LoaderSpinner } from 'components/LoaderSpinner/LoaderSpinner';
 import {
   Img,
   NotFoundBox,
 } from 'components/NoticeCategoryList/NoticeCategoryList.styled';
 
-const NewsPage = () => {
+export const NewsPage = () => {
   const [search, setSearch] = useSearchParams();
   const page = search.get('page');
   const query = search.get('text');
 
-  const spiner = useSelector(selectSpinetToggle);
+  const spinner = useSelector(selectSpinnerToggle);
 
   const dispatch = useDispatch();
 
@@ -49,10 +49,10 @@ const NewsPage = () => {
     }
   }, [page, query, dispatch]);
 
-  return !spiner ? (
+  return !spinner ? (
     <Wrapper>
       <Title>News</Title>
-      <Searchbar submitForm={searchNews} />
+      <SearchBar submitForm={searchNews} />
       {!newss ? (
         <NotFoundBox>
           <Title>Nothing found. Please, try again</Title>
@@ -80,7 +80,6 @@ const NewsPage = () => {
       )}
     </Wrapper>
   ) : (
-    <LoaderSpiner />
+    <LoaderSpinner />
   );
 };
-export default NewsPage;

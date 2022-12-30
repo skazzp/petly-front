@@ -11,9 +11,10 @@ export const Container = styled.div`
     padding-right: 32px;
   }
   ${p => p.theme.breakpoints.desc} {
-    align-items: flex-start;
+    justify-content: flex-start;
     padding-right: 16px;
-    max-width: 430px;
+    max-width: 450px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -28,6 +29,7 @@ export const Title = styled.h1`
   margin-bottom: 18px;
   ${p => p.theme.breakpoints.tab} {
     font-size: ${p => p.theme.fontSizes.xl};
+    justify-content: flex-start;
     width: 100%;
     text-align: start;
     padding-left: 32px;

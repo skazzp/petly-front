@@ -1,5 +1,5 @@
 import { Oval } from 'react-loader-spinner';
-export const LoaderSpiner = () => {
+export const LoaderSpinner = () => {
   return (
     <Oval
       height={80}

@@ -1,17 +1,17 @@
 import { useState } from 'react';
 
 import {
-  HesderSearchbar,
+  HeaderSearchBar,
   IconSearch,
   SearchForm,
   SearchFormButton,
   SearchFormButtonLabel,
   SearchFormInput,
-} from './Searchbar.styled.js';
+} from './SearchBar.styled.js';
 import PropTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
 
-export const Searchbar = ({ submitForm }) => {
+export const SearchBar = ({ submitForm }) => {
   const [input, setInput] = useState('');
   const [, setSearchParams] = useSearchParams();
 
@@ -28,7 +28,7 @@ export const Searchbar = ({ submitForm }) => {
   };
 
   return (
-    <HesderSearchbar>
+    <HeaderSearchBar>
       <SearchForm onSubmit={handleSubmit}>
         <SearchFormInput
           onChange={saveInputState}
@@ -43,10 +43,10 @@ export const Searchbar = ({ submitForm }) => {
           <IconSearch />
         </SearchFormButton>
       </SearchForm>
-    </HesderSearchbar>
+    </HeaderSearchBar>
   );
 };
 
-Searchbar.propTypes = {
+SearchBar.propTypes = {
   submitForm: PropTypes.func,
 };
