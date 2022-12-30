@@ -57,7 +57,14 @@ export const Navigation = ({ header }) => {
       )}
       {isMobile && (
         <>
-          <IconButton handlerFunction={openChat} iconRoute={icon + `#chat`} />
+          {isLoggedIn && (
+            <IconButton
+              handlerFunction={openChat}
+              iconRoute={icon + `#chat`}
+              size={'30px'}
+            />
+          )}
+
           <Hamburger
             toggled={modalOpen}
             toggle={modalToggled}

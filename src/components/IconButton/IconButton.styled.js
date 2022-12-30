@@ -5,7 +5,7 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   background-color: ${p => p.theme.colors.background.main};
-  /* color: ${p => p.color} ${p => p.theme.colors.black}; */
+  color: ${props => (props.color ? props.color : props.theme.colors.black)};
   padding: 0;
 
   ${p => p.theme.breakpoints.onlyMob} {
@@ -19,8 +19,8 @@ export const Button = styled.button`
 `;
 
 export const Svg = styled.svg`
-  width: ${p => p.theme.space[4]}px;
-  height: ${p => p.theme.space[4]}px;
+  width: ${p => p.size};
+  height: ${p => p.size};
   fill: currentColor;
   margin-right: ${p => p.theme.space[2]}px;
   ${p => p.theme.breakpoints.tab} {
