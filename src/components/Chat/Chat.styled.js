@@ -63,24 +63,36 @@ export const DivBox = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: 'Manrope';
+  /* font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 33px;
   letter-spacing: 0.04em;
-  color: #111111;
+  color: #111111; */
 
-  @media screen and (min-width: 768px) {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: ${props => props.theme.lineHeights.secondary};
+  color: ${props => props.theme.colors.black};
+  font-family: ${props => props.theme.fonts.main};
+  margin-bottom: 16px;
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+
+  /* @media screen and (min-width: 768px) {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     /* font-size: 36px;
     line-height: 49px;
     margin-bottom: 20px; */
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+  /* font-size: 24px;
+    margin-bottom: 10px; */
+  /* } */
 
   @media screen and (min-width: 1280px) {
   }
@@ -128,7 +140,9 @@ export const Label = styled.label`
     height: 52px;
 
     background: #fdf7f2;
-    padding: 14px 32px;
+    /* padding: 14px 32px; */
+    padding: 10px;
+    text-align: center;
   }
 
   @media screen and (min-width: 1280px) {

@@ -12,7 +12,7 @@ import {
   UserName,
   ChatInfo,
   ChatMessages,
-  MassegeText
+  MassegeText,
 } from './MessangerChat.styled';
 
 export default function MessangerChat({
@@ -44,8 +44,8 @@ export default function MessangerChat({
     <ChatContainer className="chat-container">
       <Display>
         <ChatInfo>
-          <ChatName id="room-name">chat: {roomId}</ChatName>
-          <ChatUsers> Online ({users.length})</ChatUsers>
+          <ChatName id="room-name">room: {roomId}</ChatName>
+          <ChatUsers> users online: {users.length}</ChatUsers>
           <ul id="users">
             {users.map((name, index) => (
               <UserName key={name + index}>{name}</UserName>
@@ -55,12 +55,8 @@ export default function MessangerChat({
 
         <ChatMessages className="chat-messages" ref={messagesRef}>
           {messages.map((message, index) => (
-            <div
-              key={message.userName + index}
-            >
-              <UserName>
-                {message.userName}:
-              </UserName>
+            <div key={message.userName + index}>
+              <UserName>{message.userName}:</UserName>
               <MassegeText>{message.text} </MassegeText>
             </div>
           ))}
