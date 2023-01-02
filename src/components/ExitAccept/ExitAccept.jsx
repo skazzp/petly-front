@@ -1,8 +1,9 @@
-// import { useState } from 'react';
+
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { logOutUser } from 'redux/auth/authOperation';
+
 import {
   deleteNotices,
   getAllNotices,
@@ -34,7 +35,6 @@ const ExitAccept = ({
   const dispatch = useDispatch();
   const location = useLocation();
   const category = location.pathname.split('/')[2];
-  // console.log(category);
 
   const acceptModal = () => {
     if (isModalOpen) {
@@ -61,17 +61,20 @@ const ExitAccept = ({
   };
   const logOutText = 'Do you really want to log out?';
   const deleteText = 'Are you sure you want to delete?';
+
   const closeModal = () => {
     if (isModalOpen) {
       return setIsModalOpen(false);
     }
-    if (isModalDeleteAccept) {
-      return setIsModalDeleteAccept(false);
+      if (isModalDeleteAccept) {
+     return setIsModalDeleteAccept(false)
+     
     }
     if (isAcceptDeleteOwner) {
       return setIsAcceptDeleteOwner(false);
     }
   };
+
   return createPortal(
     <Div>
       <Wrapper>
