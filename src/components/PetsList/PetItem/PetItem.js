@@ -5,12 +5,14 @@ import { useState } from 'react';
 import ExitAccept from 'components/ExitAccept/ExitAccept';
 
 const PetItem = ({ pet }) => {
+
   const [isModalDeleteAccept, setIsModalDeleteAccept] = useState(false);
+
   const editDateForm = event => {
     const reversDate = event.split('-').reverse();
     return reversDate.join('.');
   };
-// console.log(pet)
+
   return (
     <Card>
       <Img src={pet.photoURL} alt={`Your pet, ${pet.name}`} />
@@ -28,17 +30,18 @@ const PetItem = ({ pet }) => {
           Comments: <Span>{pet.comments}</Span>
         </Li>
         <ButtonDel onClick={() => setIsModalDeleteAccept(true)}>
-          {isModalDeleteAccept && (
+          
+          <Icon>
+            <use href={`${sprite}#delete`}></use>
+          </Icon>
+        </ButtonDel>
+        {isModalDeleteAccept && (
             <ExitAccept
               isModalDeleteAccept={isModalDeleteAccept}
               setIsModalDeleteAccept={setIsModalDeleteAccept}
               pet={pet}
             />
           )}
-          <Icon>
-            <use href={`${sprite}#delete`}></use>
-          </Icon>
-        </ButtonDel>
       </Ul>
     </Card>
   );

@@ -199,7 +199,7 @@ export const UserName = styled.h3`
   }
 `;
 
-export const ChatInfo = styled.h3`
+export const ChatInfo = styled.div`
   @media screen and (min-width: 768px) {
     padding-bottom: 10px;
     margin-bottom: auto;

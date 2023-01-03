@@ -23,17 +23,18 @@ export default function LoginChat({ onLogin }) {
   const handlerForm = room => {
     setRoomId(room);
   };
+  const customId = 'not-duplicate';
   const onEnter = async e => {
     e.preventDefault();
     if (!roomId) {
-      return toast.error('Оберіть тему чату');
+      return toast.error('Оберіть тему чату', { toastId: customId });
     }
 
     await axios.post('https://exemple-chat-back.onrender.com/rooms', obj);
     onLogin(obj);
   };
 
-  const Selectoptions = [
+  const SelectOptions = [
     {
       value: 'sell',
       label: 'sell',
@@ -67,7 +68,7 @@ export default function LoginChat({ onLogin }) {
             id="city"
             name="city"
             styles={selectStyles()}
-            options={Selectoptions}
+            options={SelectOptions}
             onChange={e => handlerForm(e.value)}
             defaultInputValue={roomId}
           ></Select>

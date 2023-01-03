@@ -17,9 +17,9 @@ const GoogleAuth = () => {
   }, [dispatch, navigate, token]);
 
   return (
-    <>
+    
       <LoaderSpinner />
-    </>
+    
   );
 };
 

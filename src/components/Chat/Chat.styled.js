@@ -15,7 +15,8 @@ export const DivBox = styled.div`
 
   @media screen and (min-width: 768px) {
     position: fixed;
-    top: 0;
+    /* top: 0; */
+    bottom: 0;
     right: 0;
     display: flex;
     z-index: 20;
@@ -23,19 +24,22 @@ export const DivBox = styled.div`
     align-items: center;
     height: 100vh;
     width: 40%;
-    min-width: 450px;
+    /* min-width: 450px; */
     flex-direction: column;
     justify-content: space-between;
     background: #ffffff;
     box-shadow: 7px 4px 14px rgba(0, 0, 0, 0.11);
     border-radius: 40px 0 0 40px;
-    padding: 90px 16px 60px 80px;
+    /* padding: 90px 16px 60px 80px; */
+    padding: 20px 16px 18px 16px;
     border-left: 20px solid rgba(245, 146, 86, 0.5);
   }
 
   @media screen and (min-width: 1280px) {
-    min-height: 100vh;
-    width: 30%;
+    /* min-height: 100vh;
+    width: 30%; */
+    max-height: 60vh;
+    width: 20%;
     z-index: 49;
   }
 
@@ -59,22 +63,36 @@ export const DivBox = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: 'Manrope';
+  /* font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 33px;
   letter-spacing: 0.04em;
-  color: #111111;
+  color: #111111; */
 
-  @media screen and (min-width: 768px) {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: ${props => props.theme.lineHeights.secondary};
+  color: ${props => props.theme.colors.black};
+  font-family: ${props => props.theme.fonts.main};
+  margin-bottom: 16px;
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+
+  /* @media screen and (min-width: 768px) {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
-    font-size: 36px;
+    /* font-size: 36px;
     line-height: 49px;
-    margin-bottom: 20px;
-  }
+    margin-bottom: 20px; */
+  /* font-size: 24px;
+    margin-bottom: 10px; */
+  /* } */
 
   @media screen and (min-width: 1280px) {
   }
@@ -122,7 +140,9 @@ export const Label = styled.label`
     height: 52px;
 
     background: #fdf7f2;
-    padding: 14px 32px;
+    /* padding: 14px 32px; */
+    padding: 10px;
+    text-align: center;
   }
 
   @media screen and (min-width: 1280px) {
@@ -142,6 +162,7 @@ export const Input = styled.input`
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
+  /* overflow: hidden; */
   ::placeholder {
     font-family: 'Manrope';
     font-weight: 400;
