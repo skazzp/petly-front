@@ -6,13 +6,13 @@ import { GlobalContainer } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
   return (
-    <>
+   
       <GlobalContainer>
         <Header />
         <Suspense fallback={<LoaderSpinner />}>
           <Outlet />
         </Suspense>
-      </GlobalContainer>{' '}
-    </>
+      </GlobalContainer>
+   
   );
 };

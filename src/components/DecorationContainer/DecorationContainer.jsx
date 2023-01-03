@@ -4,7 +4,9 @@ import { WaveDark, WaveLight, WaveSmall, WaveCircle, WaveHeart, WaveFrame, WaveG
 export const DecorationContainer = () => {
 const isMobileOrTablet = useIsMobileOrTablet();
 const isDesktop = useIsDesktop()
-    return (<><WaveGirl/>
+    return (
+    <>
+    <WaveGirl/>
     {isMobileOrTablet && <WaveSmall/>}
     {isDesktop && <><WaveLight/><WaveDark/><WaveCircle/><WaveHeart/><WaveFrame/></>}</>
    )
