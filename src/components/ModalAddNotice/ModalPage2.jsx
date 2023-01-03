@@ -28,6 +28,8 @@ import {
   // AvatarImg,
   AvatarIcon,
   AvatarInput,
+  ValidationFormik,
+  InputDiv,
 } from './ModalAddNotice.styled';
 import { MAX_FILE_SIZE } from '../../utility/constants';
 
@@ -171,22 +173,23 @@ for(let i = 0; i < file.length; i++) {
             </SexWrapper>
             <ErrorMessage
               name="sex"
-              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
+              render={msg => <ValidationFormik>{msg}</ValidationFormik>}
             />
 
             <FieldWrapper>
               <Label htmlFor="location" type="text">
                 Location*:
               </Label>
-              <InputStyled
+             <InputDiv><InputStyled
                 name="location"
                 id="location"
                 placeholder="Type location"
               />
               <ErrorMessage
                 name="location"
-                render={msg => <div style={{ color: 'red' }}>{msg}</div>}
-              />
+                render={msg => <ValidationFormik>{msg}</ValidationFormik>}
+              /></InputDiv>
+              
             </FieldWrapper>
 
             {formData.category === 'sell' && (
@@ -197,7 +200,7 @@ for(let i = 0; i < file.length; i++) {
                 <InputStyled name="price" id="price" placeholder="Type price" />
                 <ErrorMessage
                   name="price"
-                  render={msg => <div style={{ color: 'red' }}>{msg}</div>}
+                  render={msg => <ValidationFormik>{msg}</ValidationFormik>}
                 />
               </FieldWrapper>
             )}
@@ -234,24 +237,24 @@ for(let i = 0; i < file.length; i++) {
               />
               <ErrorMessage
                 name="image"
-                render={msg => <div style={{ color: 'red' }}>{msg} </div>}
+                render={msg => <ValidationFormik>{msg} </ValidationFormik>}
               />
               {errorMsg && <ErrorText>{errorMsg}</ErrorText>}
             </AvatarWrapper>
 
             <FieldWrapper>
               <Label htmlFor="comments">Comments</Label>
-              <InputTextareaStyled
+              <InputDiv><InputTextareaStyled
                 component="textarea"
                 name="comments"
                 id="comments"
                 rows="3"
                 placeholder="Type comment"
-              />
-              <ErrorMessage
+              /><ErrorMessage
                 name="comments"
-                render={msg => <div style={{ color: 'red' }}>{msg}</div>}
-              />
+                render={msg => <ValidationFormik>{msg}</ValidationFormik>}
+              /></InputDiv>
+              
             </FieldWrapper>
 
             <SubmitBtnWrapper>
