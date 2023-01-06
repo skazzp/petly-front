@@ -1,12 +1,10 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/authSelectors';
-import { getByCategory } from 'redux/notice/noticeOperations';
 import { v4 as uuidv4 } from 'uuid';
 
 import { Button, FilterList, Item, Wrapper } from './FilterBtn.styled';
-import { useLocation, useSearchParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import AddNoticeButton from '../AddNoticeButton/AddNoticeButton';
 
 const buttons = [
@@ -37,26 +35,9 @@ const authButtons = [
 
 function FilterBtn() {
   const token = useSelector(selectToken);
-  const dispatch = useDispatch();
-  const favoriteNotice = useSelector(state => state.auth.user.favorites);
-
-  const [search] = useSearchParams();
-
-  const page = search.get('page');
 
   const location = useLocation();
   const category = location.pathname.split('/')[2];
-
-  // const handleClick = e => {
-  //   if (e.target.name === category) {
-  //   return dispatch(getByCategory({ category: e.target.name, page }));
-  //   }
-  // };
-  useEffect(() => {
-    if (category) {
-      dispatch(getByCategory({ category: category, page }));
-    }
-  }, [category, dispatch, location.pathname, page, favoriteNotice]);
 
   return (
     <Wrapper>
@@ -66,7 +47,6 @@ function FilterBtn() {
             <Button
               to={b.link === category ? '/notices' : b.link}
               name={b.link}
-              // onClick={handleClick}
             >
               {b.btn}
             </Button>
