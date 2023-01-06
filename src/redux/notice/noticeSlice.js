@@ -11,6 +11,7 @@ import {
   addFavorites,
   getByCategory,
   getByQuery,
+  getByCategoryQuery,
 } from './noticeOperations';
 
 const noticeInitialState = {
@@ -74,7 +75,7 @@ const noticeSlice = createSlice({
     builder.addCase(addFavorites.pending, pendingHandlerForNoticeDetails);
     builder.addCase(getByCategory.pending, pendingHandlerAuth);
     builder.addCase(getByQuery.pending, pendingHandlerAuth);
-
+    builder.addCase(getByCategoryQuery.pending, pendingHandlerAuth);
     builder.addCase(createNotice.rejected, rejectedHandler);
     builder.addCase(getAllNotices.rejected, rejectedHandler);
     builder.addCase(getNoticeDetails.rejected, rejectedHandler);
@@ -85,6 +86,7 @@ const noticeSlice = createSlice({
     builder.addCase(addFavorites.rejected, rejectedHandler);
     builder.addCase(getByCategory.rejected, rejectedHandler);
     builder.addCase(getByQuery.rejected, rejectedHandler);
+    builder.addCase(getByCategoryQuery.rejected, rejectedHandler);
 
     builder.addCase(createNotice.fulfilled, (state, action) => {
       state.error = null;
@@ -138,6 +140,12 @@ const noticeSlice = createSlice({
       state.totalPages = action.payload.totalPages;
     });
     builder.addCase(getByQuery.fulfilled, (state, action) => {
+      state.error = null;
+      state.isLoading = false;
+      state.notices = action.payload.data;
+      state.totalPages = action.payload.totalPages;
+    });
+    builder.addCase(getByCategoryQuery.fulfilled, (state, action) => {
       state.error = null;
       state.isLoading = false;
       state.notices = action.payload.data;

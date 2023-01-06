@@ -2,8 +2,8 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setAuthHeader } from 'redux/auth/authOperation';
 
-axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
-// axios.defaults.baseURL = 'http://localhost:3030/';
+// axios.defaults.baseURL = 'https://petly-bc26.cyclic.app';
+axios.defaults.baseURL = 'http://localhost:3030/';
 // Create new notice for logged in user
 export const createNotice = createAsyncThunk(
   'notice/createNotice',
@@ -186,6 +186,7 @@ export const getByCategory = createAsyncThunk(
       const state = thunkApi.getState();
       const persistedToken = state.auth.token;
       setAuthHeader(persistedToken);
+
       const response = await axios.get(`/api/notices/${path}`, {
         params: { page },
       });
@@ -204,6 +205,34 @@ export const getByQuery = createAsyncThunk(
     try {
       const response = await axios.get(`/api/notices/search?text=${query}`);
       // console.log('notice/getByQuery', response.data);
+      return response.data; // TODO
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.status);
+    }
+  }
+);
+
+// Get by category query
+export const getByCategoryQuery = createAsyncThunk(
+  'notice/getByCategoryQuery',
+
+  async ({ category, page, query }, thunkApi) => {
+    let path;
+    if (category === 'personal' || category === 'favorites') {
+      path = category;
+    } else {
+      path = `${category}`;
+      console.log(path);
+    }
+    try {
+      const state = thunkApi.getState();
+      const persistedToken = state.auth.token;
+      setAuthHeader(persistedToken);
+
+      const response = await axios.get(`/api/notices/search?text=${query}&`, {
+        params: { page, category },
+      });
+      // console.log(response);
       return response.data; // TODO
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.status);
