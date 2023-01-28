@@ -17,7 +17,6 @@ import {
   Div,
   FirstList,
   ImageWrapper,
-  Img,
   ItemContact,
   Items,
   Link,
@@ -118,19 +117,15 @@ const ModalNotice = () => {
             <Status>
               <StatusText>{fixedStatus(data.category)}</StatusText>
             </Status>
-            {!data?.photoURL ? (
-              <ReactImageGallery
-                items={imgArr}
-                showBullets={true}
-                showIndex={true}
-                showThumbnails={false}
-                lazyLoad={true}
-                showPlayButton={false}
-                showFullscreenButton={false}
-              />
-            ) : (
-              <Img src={data.photoURL} alt="Animal"></Img>
-            )}
+            <ReactImageGallery
+              items={imgArr}
+              showBullets={false}
+              showIndex={true}
+              showThumbnails={false}
+              lazyLoad={true}
+              showPlayButton={false}
+              showFullscreenButton={false}
+            />
           </ImageWrapper>
           <div>
             <Title>{data.title}</Title>

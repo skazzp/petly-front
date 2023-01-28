@@ -29,6 +29,7 @@ export const Item = styled.li`
     width: 280px;
     height: 288px;
     bottom: 0;
+    object-fit: fill !important;
     @media screen and (min-width: 768px) {
       width: 336px;
       height: 288px;
@@ -42,8 +43,8 @@ export const Item = styled.li`
   }
 
   & .image-gallery-svg {
-    width: 30px;
-    height: 60px;
+    width: 30px !important;
+    height: 60px !important;
   }
 
   & .image-gallery-index {

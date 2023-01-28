@@ -23,8 +23,8 @@ export const Div = styled.div`
   position: relative;
   top: 5%;
   @media screen and (min-width: 768px) {
-    max-width: 704px;
-    max-height: 550px;
+    /* max-width: 704px; */
+    /* max-height: 550px; */
     padding: 32px 40px 32px 20px;
     top: 10%;
     border-radius: ${p => p.theme.space[6]}px;
@@ -50,13 +50,17 @@ export const ImageWrapper = styled.div`
 
   & .image-gallery-image {
     border-radius: 0px 0px 40px 40px;
-    object-fit: fill;
+    /* border-radius: 3px; */
+    width: 240px;
+    height: 240px;
+    object-fit: fill !important;
     @media screen and (min-width: 768px) {
       width: 290px;
       height: 330px;
     }
   }
 `;
+export const GalleryWrapper = styled.div``;
 export const Img = styled.img`
   width: 240px;
 
@@ -101,10 +105,11 @@ export const Title = styled.h2`
 `;
 export const ListWrapper = styled.div`
   display: flex;
-  gap: 55px;
+  gap: 10px;
   padding-top: ${p => p.theme.space[3]}px;
   @media screen and (min-width: 768px) {
     padding-top: ${p => p.theme.space[4]}px;
+    gap: 55px;
   }
 `;
 export const FirstList = styled.ul`
