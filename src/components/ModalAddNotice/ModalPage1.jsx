@@ -13,6 +13,8 @@ import {
   Label,
   SubmitBtnWrapper,
   SubmitBtn,
+  ValidationFormik,
+  InputDiv,
 } from './ModalAddNotice.styled';
 
 const today = new Date().toLocaleDateString();
@@ -111,39 +113,41 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
               />
               <RadioBtn>sell</RadioBtn>
             </label>
-            <ErrorMessage
+            <InputDiv><ErrorMessage
               name="category"
-              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
-            />
+              render={msg => <ValidationFormik style={{ color: 'red' }}>{msg}</ValidationFormik>}
+            /></InputDiv>
+            
           </RadioWrapper>
 
           <FieldWrapper>
             <Label htmlFor="title" type="text">
               Title of ad<span style={{ color: '#F59256' }}>*</span>
             </Label>
-            <InputStyled name="title" id="title" placeholder="Type name" />
+            <InputDiv><InputStyled name="title" id="title" placeholder="Type name" />
             <ErrorMessage
               name="title"
-              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
-            />
+              render={msg => <ValidationFormik>{msg}</ValidationFormik>}
+            /></InputDiv>
+            
           </FieldWrapper>
 
           <FieldWrapper>
             <Label htmlFor="name" type="text">
               Name pet
             </Label>
-            <InputStyled name="name" id="name" placeholder="Type name pet" />
+            <InputDiv><InputStyled name="name" id="name" placeholder="Type name pet" />
             <ErrorMessage
               name="name"
-              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
-            />
+              render={msg => <ValidationFormik>{msg}</ValidationFormik>}
+            /></InputDiv>
           </FieldWrapper>
 
           <FieldWrapper>
             <Label htmlFor="birthday" type="text">
               Date of birth
             </Label>
-            <InputStyled
+            <InputDiv><InputStyled
               name="birthday"
               id="birthday"
               type="date"
@@ -152,15 +156,16 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
             />
             <ErrorMessage
               name="birthday"
-              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
-            />
+              render={msg => <ValidationFormik style={{ color: 'red' }}>{msg}</ValidationFormik>}
+            /></InputDiv>
+            
           </FieldWrapper>
 
           <FieldWrapper>
             <Label htmlFor="breed" type="text">
               Breed
             </Label>
-            <InputStyled
+            <InputDiv><InputStyled
               name="breed"
               id="breed"
               placeholder="Type breed"
@@ -170,8 +175,8 @@ const ModalPage1 = ({ formData, setFormData, nextStep, onClose }) => {
             />
             <ErrorMessage
               name="breed"
-              render={msg => <div style={{ color: 'red' }}>{msg}</div>}
-            />
+              render={msg => <ValidationFormik>{msg}</ValidationFormik>}
+            /></InputDiv>
           </FieldWrapper>
 
           <SubmitBtnWrapper>

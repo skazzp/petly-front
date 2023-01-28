@@ -1,7 +1,12 @@
 import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllNotices, getByQuery } from 'redux/notice/noticeOperations';
+import {
+  getAllNotices,
+  getByCategory,
+  getByCategoryQuery,
+  getByQuery,
+} from 'redux/notice/noticeOperations';
 import {
   selectIsLoading,
   selectNotices,
@@ -24,20 +29,32 @@ const NoticeCategoryList = () => {
   const notices = useSelector(selectNotices);
   const selectTotalPage = useSelector(selectTotalPages);
   const isLoading = useSelector(selectIsLoading);
+  const location = useLocation();
+  const category = location.pathname.split('/')[2];
 
   const dispatch = useDispatch();
 
   const [search, setSearch] = useSearchParams();
   const page = search.get('page');
   const query = search.get('text');
+  console.log('category :>> ', category);
+  console.log('query :>> ', query);
 
   useEffect(() => {
-    if (query) {
+    if (!category && query) {
       dispatch(getByQuery(query));
+    }
+    if (category) {
+      if (query) {
+        console.log('Єта фунция поика по категории');
+        dispatch(getByCategoryQuery({ category: category, page, query }));
+      } else {
+        dispatch(getByCategory({ category: category, page }));
+      }
     } else {
       dispatch(getAllNotices(page));
     }
-  }, [page, query, dispatch]);
+  }, [page, query, dispatch, category]);
 
   const isModalOpen = useSelector(state => state.notice.isLearnMoreModalOpen);
 
