@@ -21,7 +21,7 @@ const UserNav = ({ closeMenu }) => {
           <span>Account</span>
         </Link>
       </Div>
-     { !chatOpen ? <Chat/> :null}
+      {!chatOpen ? <Chat /> : null}
     </>
   );
 };
