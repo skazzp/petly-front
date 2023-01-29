@@ -106,9 +106,15 @@ export const BtnAddFavorite = styled.button`
 
   &:hover {
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translate(-2%, -2%);
-    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
-      -8px -8px 12px rgba(255, 255, 255, 0.3);
+    transform: translate(-1%, -1%);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25),
+      -4px -4px 6px rgba(255, 255, 255, 0.3);
+  }
+  &:focus {
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-1%, -1%);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25),
+      -4px -4px 6px rgba(255, 255, 255, 0.3);
   }
 `;
 
@@ -200,9 +206,9 @@ export const BtnLearnMore = styled.button`
     border: 2px solid #ff6101;
     color: ${props => props.theme.colors.orange};
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translate(-2%, -2%);
-    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
-      -8px -8px 12px rgba(255, 255, 255, 0.3);
+    transform: translate(-1%, -1%);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25),
+      -4px -4px 6px rgba(255, 255, 255, 0.3);
   }
 `;
 
@@ -230,9 +236,9 @@ export const BtnDlt = styled.button`
     color: ${props => props.theme.colors.orange};
     fill: ${props => props.theme.colors.orange};
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translate(-2%, -2%);
-    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
-      -8px -8px 12px rgba(255, 255, 255, 0.3);
+    transform: translate(-1%, -1%);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25),
+      -4px -4px 6px rgba(255, 255, 255, 0.3);
   }
 `;
 

@@ -32,10 +32,18 @@ export const Link = styled(NavLink)`
     padding: 8px 28px;
     font-size: ${p => p.theme.fontSizes.m};
   }
+  :hover,
+  :focus {
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-1%, -1%);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25),
+      -4px -4px 6px rgba(255, 255, 255, 0.3);
+  }
 `;
 
 export const ChatButton = styled.button`
   z-index: 50;
+  cursor: pointer;
   border: 0;
   display: inline-flex;
   align-items: center;
@@ -55,6 +63,13 @@ export const ChatButton = styled.button`
     height: 44px;
     padding: 8px 28px;
     font-size: ${p => p.theme.fontSizes.m};
+  }
+  :hover,
+  :focus {
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-1%, -1%);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25),
+      -4px -4px 6px rgba(255, 255, 255, 0.3);
   }
 `;
 
