@@ -204,9 +204,9 @@ export const ItemContact = styled.li`
     height: ${p => p.theme.space[6]}px;
     &:hover {
       transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      transform: translate(-5%, -5%);
-      box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
-        -8px -8px 12px rgba(255, 255, 255, 0.3);
+      transform: translate(-1%, -1%);
+      box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25),
+        -4px -4px 6px rgba(255, 255, 255, 0.3);
     }
   }
 `;
@@ -226,9 +226,9 @@ export const Btn = styled.button`
     cursor: pointer;
     &:hover {
       transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      transform: translate(-5%, -5%);
-      box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
-        -8px -8px 12px rgba(255, 255, 255, 0.3);
+      transform: translate(-1%, -1%);
+      box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25),
+        -4px -4px 6px rgba(255, 255, 255, 0.3);
     }
   }
 `;
@@ -277,9 +277,9 @@ export const CloseBtn = styled.button`
   @media screen and (min-width: 768px) {
     &:hover {
       transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      transform: translate(-2%, -2%);
-      box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25),
-        -8px -8px 12px rgba(255, 255, 255, 0.3);
+      transform: translate(-1%, -1%);
+      box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25),
+        -4px -4px 6px rgba(255, 255, 255, 0.3);
     }
   }
 `;
